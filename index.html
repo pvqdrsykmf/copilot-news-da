@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copilot: Novità per te | Digital Attitude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue-dark:#1A3F6F;--blue:#2563EB;--blue-mid:#3B82F6;
+  --blue-soft:#DBEAFE;--blue-pale:#EFF6FF;
+  --ink:#111827;--ink-2:#374151;--ink-3:#6B7280;--ink-4:#9CA3AF;
+  --bg:#F9FAFB;--surface:#FFFFFF;
+  --border:rgba(17,24,39,0.08);--border-2:rgba(17,24,39,0.14);
+  --green-bg:#DCFCE7;--green-txt:#14532D;--green-brd:#86EFAC;
+  --amber-bg:#FEF3C7;--amber-txt:#78350F;--amber-brd:#FCD34D;
+  --red-bg:#FEE2E2;--red-txt:#7F1D1D;--red-brd:#FCA5A5;
+  --purple-bg:#EDE9FE;--purple-txt:#3B0764;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+  --r:10px;--r-lg:14px;
+  --sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --sh-md:0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:14px;color:var(--ink);background:var(--bg);line-height:1.55}
+
+/* TOP BAR */
+.topbar{background:var(--blue-dark);color:#fff;padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.22)}
+.topbar-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:16px;height:54px}
+.tb-brand{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+.tb-div{width:1px;height:18px;background:rgba(255,255,255,.2)}
+.tb-title{font-size:15px;font-weight:500;flex:1}
+.tb-chip{font-size:11px;padding:3px 11px;border-radius:20px;background:rgba(255,255,255,.12);letter-spacing:.02em;white-space:nowrap}
+.tb-date{font-size:11px;opacity:.45;white-space:nowrap;font-family:var(--mono);cursor:default}
+
+/* PAGE */
+.page{max-width:1160px;margin:0 auto;padding:28px 32px 64px}
+
+/* LOADING */
+.loading-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;color:var(--ink-3)}
+.loader{width:36px;height:36px;border:3px solid var(--border-2);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-screen{text-align:center;padding:60px 24px;color:var(--red-txt);background:var(--red-bg);border-radius:var(--r-lg);margin:40px}
+
+/* INTRO */
+.intro{display:flex;gap:16px;flex-wrap:wrap;align-items:stretch;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;margin-bottom:22px;box-shadow:var(--sh)}
+.intro-msg{flex:1;min-width:260px;display:flex;gap:12px;align-items:flex-start;background:var(--amber-bg);border-radius:var(--r);border:1px solid var(--amber-brd);padding:14px 16px}
+.intro-msg.hidden{display:none}
+.intro-msg-body strong{color:var(--amber-txt);font-size:13px;display:block;margin-bottom:3px}
+.intro-msg-body span{color:var(--ink-2);font-size:12.5px;line-height:1.4}
+.kpi-row{display:flex;gap:10px;flex-wrap:wrap}
+.kpi{padding:12px 18px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);text-align:center;min-width:80px}
+.kpi-n{font-size:26px;font-weight:600;line-height:1}
+.kpi-l{font-size:11px;color:var(--ink-3);margin-top:3px}
+.kpi-n.g{color:var(--green-txt)}.kpi-n.a{color:var(--amber-txt)}.kpi-n.b{color:var(--blue)}
+
+/* SHELL + TABS */
+.shell{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh)}
+.tab-nav{display:flex;border-bottom:1px solid var(--border);background:var(--bg);padding:0 8px;gap:2px;overflow-x:auto}
+.tab-btn{padding:11px 20px;font-family:var(--font);font-size:13px;font-weight:500;color:var(--ink-3);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .14s;display:flex;align-items:center;gap:7px}
+.tab-btn .ico{font-size:14px}
+.tab-btn:hover{color:var(--ink);background:rgba(0,0,0,.03)}
+.tab-btn.on{color:var(--blue);border-bottom-color:var(--blue);background:var(--surface)}
+.pane{display:none;padding:24px}.pane.on{display:block}
+
+/* FILTERS */
+.fbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.fgroup{display:flex;align-items:center;gap:6px}
+.flbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-4)}
+.pill{padding:5px 13px;border-radius:20px;font-size:12.5px;font-weight:500;cursor:pointer;border:1px solid var(--border-2);background:var(--surface);color:var(--ink-3);transition:all .12s;white-space:nowrap;font-family:var(--font)}
+.pill:hover{background:var(--bg);color:var(--ink)}
+.pill.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.fsep{width:1px;height:20px;background:var(--border-2);flex-shrink:0}
+.search{margin-left:auto;padding:7px 14px;border:1px solid var(--border-2);border-radius:20px;font-family:var(--font);font-size:13px;background:var(--bg);color:var(--ink);outline:none;width:220px;transition:all .15s}
+.search:focus{border-color:var(--blue-mid);background:var(--surface);box-shadow:0 0 0 3px rgba(59,130,246,.12)}
+.search::placeholder{color:var(--ink-4)}
+
+/* CARDS GRID */
+.cbar{font-size:12px;color:var(--ink-3);margin-bottom:12px}
+.cbar strong{color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+
+/* FEATURE CARD */
+.fcard{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface);display:flex;flex-direction:column;box-shadow:var(--sh);transition:box-shadow .15s,transform .15s;position:relative;overflow:hidden}
+.fcard:hover{box-shadow:var(--sh-md);transform:translateY(-1px)}
+.fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,#CBD5E1);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.fcard.c-word{--accent:#3B82F6}.fcard.c-excel{--accent:#22C55E}.fcard.c-ppt{--accent:#F97316}
+.fcard.c-teams{--accent:#8B5CF6}.fcard.c-outlook{--accent:#0EA5E9}
+.fcard.c-chat{--accent:#1A3F6F}.fcard.c-other{--accent:#64748B}.fcard.c-urgent{--accent:#EF4444}
+.fcard-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.fc-top{display:flex;align-items:flex-start;gap:10px}
+.fc-icon{width:38px;height:38px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--blue-pale)}
+.fcard.c-word .fc-icon{background:#EFF6FF}.fcard.c-excel .fc-icon{background:#F0FDF4}
+.fcard.c-ppt .fc-icon{background:#FFF7ED}.fcard.c-teams .fc-icon{background:#F5F3FF}
+.fcard.c-outlook .fc-icon{background:#F0F9FF}.fcard.c-urgent .fc-icon{background:#FEF2F2}
+.fc-meta{flex:1;min-width:0}
+.fc-app{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-4);margin-bottom:3px}
+.fc-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
+.fc-badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.b-avail{background:var(--green-bg);color:var(--green-txt)}
+.b-soon{background:var(--amber-bg);color:var(--amber-txt)}
+.b-prev{background:var(--purple-bg);color:var(--purple-txt)}
+.b-new{background:var(--blue-soft);color:var(--blue-dark);font-size:10px}
+.b-pub{background:var(--green-bg);color:var(--green-txt)}
+.b-wait{background:var(--amber-bg);color:var(--amber-txt)}
+.b-warn{background:#FEF9C3;color:#713F12}
+.fc-impact{font-size:13px;color:var(--ink-2);line-height:1.5;padding-top:8px;border-top:1px solid var(--border)}
+.fc-impact strong{color:var(--ink)}
+.fc-example{font-size:12px;color:var(--ink-3);line-height:1.45;background:var(--bg);border-radius:7px;padding:8px 10px;border-left:2px solid var(--border-2);font-style:italic}
+
+/* SOURCE LINK */
+.fc-source{display:flex;align-items:center;gap:6px;padding-top:8px;margin-top:2px}
+.fc-source a{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:11px;font-weight:600;color:var(--blue);
+  text-decoration:none;padding:3px 9px;border-radius:20px;
+  background:var(--blue-pale);border:1px solid var(--blue-soft);
+  transition:all .12s;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;
+}
+.fc-source a:hover{background:var(--blue-soft);color:var(--blue-dark)}
+.fc-source a::before{content:'↗';font-size:10px;flex-shrink:0}
+.fc-source-note{font-size:10.5px;color:var(--ink-4);font-style:italic}
+
+/* FLAG BUTTON */
+.flag-btn{position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:7px;border:1px solid var(--border-2);background:var(--surface);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;z-index:2;font-size:13px;line-height:1}
+.flag-btn:hover{background:var(--green-bg);border-color:var(--green-brd);transform:scale(1.1)}
+.flag-btn[data-flagged="true"]{background:var(--green-bg);border-color:var(--green-brd)}
+.flag-btn[data-flagged="true"]:hover{background:var(--red-bg);border-color:var(--red-brd)}
+
+/* TAB BADGE */
+.tab-count{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--green-bg);color:var(--green-txt);font-size:10px;font-weight:700;margin-left:4px}
+.tab-count.zero{display:none}
+
+/* EXPAND BUTTON */
+.expand-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:10px 18px;border:none;border-top:1px solid var(--border);background:var(--bg);font-family:var(--font);font-size:12.5px;font-weight:600;color:var(--blue);cursor:pointer;transition:background .12s,color .12s;letter-spacing:.01em}
+.expand-btn:hover{background:var(--blue-pale);color:var(--blue-dark)}
+.expand-btn .arr{display:inline-block;transition:transform .25s;font-style:normal;font-size:11px}
+.fcard.open .expand-btn .arr{transform:rotate(180deg)}
+
+/* DETAIL PANEL */
+.detail-wrap{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
+.fcard.open .detail-wrap{max-height:900px}
+.detail-inner{padding:16px 18px 18px;border-top:1px solid var(--blue-soft);background:var(--blue-pale);display:flex;flex-direction:column;gap:14px}
+.ds{display:flex;flex-direction:column;gap:6px}
+.ds-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-dark);display:flex;align-items:center;gap:5px}
+.ds-label span{font-size:12px}
+.steps{display:flex;flex-direction:column;gap:6px;padding-left:0;list-style:none}
+.steps li{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.step-n{width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.prompts{display:flex;flex-direction:column;gap:8px}
+.prompt-block{background:var(--surface);border:1px solid var(--blue-soft);border-radius:var(--r);padding:10px 12px;display:flex;align-items:flex-start;gap:8px}
+.prompt-text{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);line-height:1.5;flex:1}
+.copy-btn{flex-shrink:0;padding:3px 8px;border-radius:6px;border:1px solid var(--border-2);background:var(--bg);font-family:var(--font);font-size:10.5px;font-weight:600;color:var(--ink-3);cursor:pointer;transition:all .12s;white-space:nowrap;margin-top:1px}
+.copy-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.copy-btn.copied{background:var(--green-bg);color:var(--green-txt);border-color:var(--green-brd)}
+.tips{display:flex;flex-direction:column;gap:5px}
+.tip{display:flex;gap:7px;align-items:flex-start;font-size:12px;color:var(--ink-2);line-height:1.45}
+.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--blue-mid);flex-shrink:0;margin-top:5px}
+
+/* PUBLISHED TAB */
+.pub-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:10px}
+.pub-header-left strong{color:var(--ink);display:block;font-size:14px;margin-bottom:2px}
+.pub-header-left span{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.clear-all-btn{padding:6px 14px;border-radius:20px;border:1px solid var(--border-2);background:var(--surface);font-family:var(--font);font-size:12px;font-weight:600;color:var(--ink-3);cursor:pointer;transition:all .15s}
+.clear-all-btn:hover{background:var(--red-bg);color:var(--red-txt);border-color:var(--red-brd)}
+.pub-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);transition:background .12s;margin-bottom:8px}
+.pub-row:hover{background:var(--bg)}
+.pub-ico{width:32px;height:32px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--green-bg)}
+.pub-info{flex:1;min-width:0}
+.pub-name{font-size:13px;font-weight:600;color:var(--ink-2);line-height:1.3}
+.pub-meta{font-size:11px;color:var(--ink-4);margin-top:2px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pub-app-tag{display:inline-block;padding:1px 7px;border-radius:4px;background:var(--blue-soft);color:var(--blue-dark);font-size:10.5px;font-weight:600}
+.pub-done-badge{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:var(--green-bg);color:var(--green-txt);white-space:nowrap}
+.restore-btn{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--border-2);background:var(--surface);font-family:var(--font);font-size:11.5px;font-weight:600;color:var(--ink-3);cursor:pointer;transition:all .15s;white-space:nowrap}
+.restore-btn:hover{background:var(--amber-bg);color:var(--amber-txt);border-color:var(--amber-brd)}
+.pub-empty{text-align:center;padding:48px 24px;color:var(--ink-4)}
+.pub-empty-ico{font-size:36px;margin-bottom:10px}
+
+/* PLAN */
+.plan-intro{font-size:13px;color:var(--ink-3);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);line-height:1.6}
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.wcard{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface);box-shadow:var(--sh);overflow:hidden;transition:box-shadow .15s}
+.wcard:hover{box-shadow:var(--sh-md)}.wcard.hot{border-color:var(--red-brd)}
+.whead{padding:14px 16px;background:var(--bg);display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid var(--border)}
+.wcard.hot .whead{background:#FFF5F5}
+.wnum{width:42px;height:42px;border-radius:9px;flex-shrink:0;background:var(--blue-dark);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1.15}
+.wcard.hot .wnum{background:#DC2626}
+.winfo{flex:1;min-width:0}
+.wdate{font-size:11px;color:var(--ink-4);margin-bottom:3px;font-family:var(--mono)}
+.wtheme{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
+.wtag{display:inline-block;margin-top:5px;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--blue-soft);color:var(--blue-dark);letter-spacing:.03em}
+.wcard.hot .wtag{background:#FEE2E2;color:#991B1B}
+.wbody{padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.wrow-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-4);margin-bottom:3px}
+.wrow-val{font-size:13px;color:var(--ink-2);line-height:1.45}
+
+/* EMPTY */
+.empty{text-align:center;padding:48px 24px;color:var(--ink-4);grid-column:1/-1}
+.empty-ico{font-size:32px;margin-bottom:10px}
+
+/* FOOTER */
+footer{max-width:1160px;margin:0 auto;padding:14px 32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:11px;color:var(--ink-4);border-top:1px solid var(--border)}
+footer a{color:var(--ink-4);text-decoration:none}
+footer a:hover{color:var(--blue)}
+
+@media(max-width:720px){
+  .page{padding:14px}.topbar{padding:0 14px}.tb-title{display:none}
+  .cards{grid-template-columns:1fr}.plan-grid{grid-template-columns:1fr}
+  .search{width:100%}.fbar{gap:6px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="tb-brand">Digital Attitude</span>
+    <span class="tb-div"></span>
+    <span class="tb-title" id="tb-title">Copilot — Cosa c'è di nuovo per te</span>
+    <span class="tb-chip" id="tb-edition">caricamento…</span>
+    <span class="tb-date" id="tb-date" title="Data ultimo aggiornamento"></span>
+  </div>
+</header>
+
+<!-- LOADING -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loader"></div>
+  <span>Caricamento novità…</span>
+</div>
+
+<!-- MAIN (hidden until data loads) -->
+<div id="main" style="display:none">
+<div class="page">
+  <div class="intro">
+    <div class="intro-msg" id="intro-alert">
+      <span style="font-size:20px;line-height:1;flex-shrink:0">⚠️</span>
+      <div class="intro-msg-body">
+        <strong>Attenzione</strong>
+        <span id="alert-text"></span>
+      </div>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-n b" id="k-tot">—</div><div class="kpi-l">Funzioni</div></div>
+      <div class="kpi"><div class="kpi-n g" id="k-pub">—</div><div class="kpi-l">Disponibili ora</div></div>
+      <div class="kpi"><div class="kpi-n a" id="k-wait">—</div><div class="kpi-l">In arrivo</div></div>
+    </div>
+  </div>
+
+  <div class="shell">
+    <nav class="tab-nav">
+      <button class="tab-btn on"  onclick="go('feat',this)"><span class="ico">✦</span>Novità per te</button>
+      <button class="tab-btn"     onclick="go('plan',this)"><span class="ico">📅</span>Piano newsletter</button>
+      <button class="tab-btn" id="tab-pub-btn" onclick="go('pub',this)"><span class="ico">✅</span>Già pubblicate<span class="tab-count zero" id="pub-count">0</span></button>
+    </nav>
+
+    <!-- TAB NOVITÀ -->
+    <div id="pane-feat" class="pane on">
+      <div class="fbar">
+        <div class="fgroup">
+          <span class="flbl">App</span>
+          <button class="pill on" data-g="app" data-v="all"          onclick="sf('app','all',this)">Tutte</button>
+          <button class="pill"    data-g="app" data-v="Word"         onclick="sf('app','Word',this)">Word</button>
+          <button class="pill"    data-g="app" data-v="Excel"        onclick="sf('app','Excel',this)">Excel</button>
+          <button class="pill"    data-g="app" data-v="PowerPoint"   onclick="sf('app','PowerPoint',this)">PowerPoint</button>
+          <button class="pill"    data-g="app" data-v="Outlook"      onclick="sf('app','Outlook',this)">Outlook</button>
+          <button class="pill"    data-g="app" data-v="Teams"        onclick="sf('app','Teams',this)">Teams</button>
+          <button class="pill"    data-g="app" data-v="Copilot Chat" onclick="sf('app','Copilot Chat',this)">Copilot Chat</button>
+        </div>
+        <span class="fsep"></span>
+        <div class="fgroup">
+          <span class="flbl">Stato</span>
+          <button class="pill on" data-g="st" data-v="all"   onclick="sf('st','all',this)">Tutti</button>
+          <button class="pill"    data-g="st" data-v="avail" onclick="sf('st','avail',this)">Disponibile ora</button>
+          <button class="pill"    data-g="st" data-v="soon"  onclick="sf('st','soon',this)">In arrivo</button>
+        </div>
+        <input id="srch" class="search" type="text" placeholder="Cerca funzione…" oninput="render()">
+      </div>
+      <div class="cbar" id="cbar"></div>
+      <div class="cards" id="cards"></div>
+    </div>
+
+    <!-- TAB PIANO -->
+    <div id="pane-plan" class="pane">
+      <p class="plan-intro">Piano editoriale — una newsletter a settimana con funzioni concrete e un esempio pratico d'uso. Niente gergo tecnico.</p>
+      <div class="plan-grid" id="plan-grid"></div>
+    </div>
+
+    <!-- TAB GIÀ PUBBLICATE -->
+    <div id="pane-pub" class="pane">
+      <div class="pub-header">
+        <div class="pub-header-left">
+          <strong>Novità già pubblicate nella newsletter</strong>
+          <span>Clicca 🏁 su una scheda per archiviarla. Clicca "Ripristina" per riportarla tra le novità attive.</span>
+        </div>
+        <button class="clear-all-btn" onclick="clearAll()">Svuota archivio</button>
+      </div>
+      <div id="pub-list"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Digital Attitude</span>
+  <span>Dati: <a href="data.json" target="_blank">data.json</a> · Fonti: Microsoft Learn · TechCommunity · M365 Roadmap</span>
+</footer>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   STATE
+════════════════════════════════════════════ */
+let ITEMS = [], PLAN = [];
+const F = {app:'all', st:'all'};
+const LS_KEY = 'da_copilot_pub_2026';
+const LS_DATES = 'da_copilot_pub_dates_2026';
+
+/* ════════════════════════════════════════════
+   LOAD DATA FROM JSON
+════════════════════════════════════════════ */
+async function loadData() {
+  try {
+    const res = await fetch('data.json?v=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    // Populate meta
+    document.getElementById('tb-edition').textContent = data.meta.edition || '';
+    document.getElementById('tb-date').textContent = data.meta.updated || '';
+    document.title = 'Copilot Novità ' + (data.meta.edition || '') + ' | Digital Attitude';
+
+    // Alert
+    const alertEl = document.getElementById('intro-alert');
+    if (data.meta.alert && data.meta.alert.active) {
+      document.getElementById('alert-text').textContent = data.meta.alert.text;
+    } else {
+      alertEl.classList.add('hidden');
+    }
+
+    ITEMS = data.items || [];
+    PLAN  = data.plan  || [];
+
+    // KPIs
+    document.getElementById('k-tot').textContent  = ITEMS.length;
+    document.getElementById('k-pub').textContent  = ITEMS.filter(i => i.st === 'avail').length;
+    document.getElementById('k-wait').textContent = ITEMS.filter(i => i.st === 'soon').length;
+
+    syncCount();
+    render();
+    renderPlan();
+
+    // Show main, hide loader
+    document.getElementById('loading-screen').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+
+  } catch (e) {
+    document.getElementById('loading-screen').innerHTML =
+      `<div class="error-screen">
+        <div style="font-size:28px;margin-bottom:12px">⚠️</div>
+        <strong>Impossibile caricare i dati</strong><br>
+        <span style="font-size:12px;margin-top:8px;display:block;color:var(--ink-2)">
+          Assicurati che il file <code>data.json</code> sia nella stessa cartella di questo file.<br>
+          Errore: ${e.message}
+        </span>
+      </div>`;
+  }
+}
+
+/* ════════════════════════════════════════════
+   PUBLISHED (localStorage)
+════════════════════════════════════════════ */
+function loadSet()   { try{return new Set(JSON.parse(localStorage.getItem(LS_KEY)||'[]'))}catch(e){return new Set()} }
+function savSet(s)   { try{localStorage.setItem(LS_KEY, JSON.stringify([...s]))}catch(e){} }
+function loadDates() { try{return JSON.parse(localStorage.getItem(LS_DATES)||'{}')}catch(e){return {}} }
+function savDates(o) { try{localStorage.setItem(LS_DATES, JSON.stringify(o))}catch(e){} }
+let published = loadSet(), pubDates = loadDates();
+
+function flagItem(id) {
+  if (published.has(id)) {
+    published.delete(id); delete pubDates[id];
+  } else {
+    published.add(id);
+    pubDates[id] = new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric'});
+  }
+  savSet(published); savDates(pubDates);
+  syncCount(); render(); renderPublished();
+}
+function restoreItem(id) {
+  published.delete(id); delete pubDates[id];
+  savSet(published); savDates(pubDates);
+  syncCount(); render(); renderPublished();
+  go('feat', document.querySelector('.tab-btn'));
+}
+function clearAll() {
+  if (!published.size) return;
+  if (!confirm('Svuotare l\'archivio delle novità pubblicate?')) return;
+  published.clear(); pubDates = {};
+  savSet(published); savDates(pubDates);
+  syncCount(); render(); renderPublished();
+}
+function syncCount() {
+  const n = published.size, el = document.getElementById('pub-count');
+  el.textContent = n; el.classList.toggle('zero', n === 0);
+}
+
+/* ════════════════════════════════════════════
+   BADGES & HELPERS
+════════════════════════════════════════════ */
+function stBadge(s) {
+  if (s==='avail') return '<span class="badge b-avail">● Disponibile ora</span>';
+  if (s==='soon')  return '<span class="badge b-soon">◌ In arrivo</span>';
+  return '<span class="badge b-prev">◈ Anteprima</span>';
+}
+function flagBtn(id) {
+  const on = published.has(id);
+  return `<button class="flag-btn" data-flagged="${on}" onclick="flagItem('${id}')" title="${on ? 'Pubblicata — clicca per ripristinare' : 'Segna come pubblicata'}">${on ? '✅' : '🏁'}</button>`;
+}
+function promptRow(txt) {
+  const safe = txt.replace(/'/g,"&#39;").replace(/"/g,"&quot;");
+  return `<div class="prompt-block"><div class="prompt-text">"${txt}"</div><button class="copy-btn" onclick="copyPrompt(this,'${safe}')">Copia</button></div>`;
+}
+function copyPrompt(btn, txt) {
+  const decoded = txt.replace(/&#39;/g,"'").replace(/&quot;/g,'"');
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent='Copiato ✓'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent='Copia'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => { btn.textContent='OK'; setTimeout(() => btn.textContent='Copia', 2000); });
+}
+
+/* ════════════════════════════════════════════
+   DETAIL PANEL
+════════════════════════════════════════════ */
+function toggleDetail(id) {
+  const card = document.getElementById('card-' + id);
+  const open = card.classList.toggle('open');
+  card.querySelector('.expand-btn .lbl').textContent = open ? 'Chiudi' : 'Approfondisci';
+}
+function buildDetail(d) {
+  let html = '';
+  if (d.steps) {
+    const lines = d.steps.split('\n').filter(l => l.trim());
+    html += `<div class="ds"><div class="ds-label"><span>👣</span>Come si usa</div><ol class="steps">
+      ${lines.map(l => { const m = l.match(/^(\d+)\.\s*(.*)/); return m ? `<li><span class="step-n">${m[1]}</span><span>${m[2]}</span></li>` : `<li><span class="step-n">→</span><span>${l}</span></li>`; }).join('')}
+    </ol></div>`;
+  }
+  if (d.prompts && d.prompts.length) {
+    html += `<div class="ds"><div class="ds-label"><span>💬</span>Prompt pronti da usare</div><div class="prompts">${d.prompts.map(p => promptRow(p)).join('')}</div></div>`;
+  }
+  if (d.tips && d.tips.length) {
+    html += `<div class="ds"><div class="ds-label"><span>💡</span>Consigli pratici</div><div class="tips">${d.tips.map(t => `<div class="tip"><div class="tip-dot"></div><span>${t}</span></div>`).join('')}</div></div>`;
+  }
+  return html;
+}
+
+/* ════════════════════════════════════════════
+   RENDER CARDS
+════════════════════════════════════════════ */
+function render() {
+  const q = (document.getElementById('srch').value || '').toLowerCase();
+  const vis = ITEMS.filter(it => {
+    if (published.has(it.id)) return false;
+    if (F.app !== 'all' && it.app !== F.app) return false;
+    if (F.st  !== 'all' && it.st  !== F.st)  return false;
+    if (q && !it.name.toLowerCase().includes(q) && !it.impact.toLowerCase().includes(q) && !it.app.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  const box = document.getElementById('cards');
+  if (!vis.length) {
+    const allLeft = ITEMS.filter(i => !published.has(i.id));
+    box.innerHTML = allLeft.length === 0
+      ? `<div class="empty" style="grid-column:1/-1"><div class="empty-ico">🎉</div><strong>Tutte le novità sono state pubblicate!</strong><br><span style="font-size:12px">Archivio nel tab "Già pubblicate".</span></div>`
+      : `<div class="empty"><div class="empty-ico">🔍</div>Nessuna funzione corrisponde ai filtri.</div>`;
+    document.getElementById('cbar').textContent = '';
+    return;
+  }
+  box.innerHTML = vis.map(it => `
+    <div class="fcard ${it.cat}" id="card-${it.id}" style="position:relative">
+      ${flagBtn(it.id)}
+      <div class="fcard-body">
+        <div class="fc-top">
+          <div class="fc-icon">${it.ico}</div>
+          <div class="fc-meta" style="padding-right:36px">
+            <div class="fc-app">${it.app}</div>
+            <div class="fc-name">${it.name}${it.isNew ? '<span class="badge b-new" style="margin-left:6px;vertical-align:middle">NUOVO</span>' : ''}</div>
+          </div>
+        </div>
+        <div class="fc-badges">${stBadge(it.st)}</div>
+        <div class="fc-impact">${it.impact}</div>
+        <div class="fc-example">${it.example}</div>
+        ${it.source ? `<div class="fc-source">
+          <a href="${it.source.url}" target="_blank" rel="noopener" title="${it.source.note || ''}">${it.source.label}</a>
+          ${it.source.note ? `<span class="fc-source-note">${it.source.note}</span>` : ''}
+        </div>` : ''}
+      </div>
+      <button class="expand-btn" onclick="toggleDetail('${it.id}')">
+        <span class="lbl">Approfondisci</span><span class="arr">▾</span>
+      </button>
+      <div class="detail-wrap"><div class="detail-inner">${buildDetail(it.detail)}</div></div>
+    </div>`).join('');
+  document.getElementById('cbar').innerHTML = `<strong>${vis.length}</strong> novità da pubblicare — clicca <strong>🏁</strong> per archiviarla dopo la pubblicazione`;
+}
+
+/* ════════════════════════════════════════════
+   RENDER PUBLISHED
+════════════════════════════════════════════ */
+function renderPublished() {
+  const el = document.getElementById('pub-list');
+  const items = ITEMS.filter(i => published.has(i.id));
+  if (!items.length) {
+    el.innerHTML = `<div class="pub-empty"><div class="pub-empty-ico">📭</div>
+      <div style="font-size:14px;font-weight:600;color:var(--ink-3);margin-bottom:6px">Nessuna novità archiviata ancora</div>
+      <div style="font-size:12.5px;color:var(--ink-4)">Clicca il flag <strong style="color:var(--ink)">🏁</strong> su una scheda per spostarla qui dopo la pubblicazione.</div>
+    </div>`;
+    return;
+  }
+  el.innerHTML = items.map(it => `
+    <div class="pub-row">
+      <div class="pub-ico">${it.ico}</div>
+      <div class="pub-info">
+        <div class="pub-name">${it.name}</div>
+        <div class="pub-meta">
+          <span class="pub-app-tag">${it.app}</span>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--ink-4)">Archiviata il ${pubDates[it.id] || '—'}</span>
+        </div>
+      </div>
+      <span class="pub-done-badge">✓ Pubblicata</span>
+      <button class="restore-btn" onclick="restoreItem('${it.id}')">↩ Ripristina</button>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════
+   RENDER PLAN
+════════════════════════════════════════════ */
+function renderPlan() {
+  document.getElementById('plan-grid').innerHTML = PLAN.map(p => `
+    <div class="wcard${p.hot ? ' hot' : ''}">
+      <div class="whead">
+        <div class="wnum">${p.w}</div>
+        <div class="winfo">
+          <div class="wdate">${p.d}</div>
+          <div class="wtheme">${p.theme}</div>
+          <span class="wtag">${p.tag}</span>
+        </div>
+      </div>
+      <div class="wbody">
+        <div><div class="wrow-lbl">Focus</div><div class="wrow-val">${p.cov}</div></div>
+        <div><div class="wrow-lbl">Note redazionali</div><div class="wrow-val">${p.note}</div></div>
+      </div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════
+   TABS + FILTERS
+════════════════════════════════════════════ */
+function go(id, btn) {
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById('pane-' + id).classList.add('on');
+  btn.classList.add('on');
+  if (id === 'pub') renderPublished();
+}
+function sf(g, v, btn) {
+  F[g] = v;
+  document.querySelectorAll(`[data-g="${g}"]`).forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  render();
+}
+
+/* ════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════ */
+loadData();
+</script>
+</body>
+</html>
