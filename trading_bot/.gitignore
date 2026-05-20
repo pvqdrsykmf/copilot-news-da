@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.eggs/
+build/
+dist/
+
+# Secrets — MAI committare
+.env
+.env.local
+*.key
+*.pem
+
+# Logs e dati runtime
+logs/
+data/*.db
+data/*.parquet
+data/cache/
+
+# Output backtest
+backtest_results/
+reports/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Test/coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
