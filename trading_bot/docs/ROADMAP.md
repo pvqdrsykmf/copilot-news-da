@@ -3,7 +3,7 @@
 Approccio: **prove of edge → small live → scale**. Niente live finché non
 abbiamo numeri (paper + backtest fuori campione) che dimostrano un edge reale.
 
-## Fase 1 — Foundation (0–4 settimane)  ← *siamo qui*
+## Fase 1 — Foundation (0–4 settimane)  ✅
 
 Obiettivo: avere uno scheletro pulito su cui costruire.
 
@@ -13,24 +13,25 @@ Obiettivo: avere uno scheletro pulito su cui costruire.
 - [x] 2 strategie baseline (momentum cross-sectional, mean reversion RSI)
 - [x] Risk management hard-coded (sizing, stop, circuit breaker)
 - [x] CLI con `backtest`, `paper`, `status`
-- [ ] Setup Alpaca paper account + key in `.env`
-- [ ] Primo backtest reale su ETF settoriali 2018–oggi
 
-**Done quando**: il comando `trading-bot backtest -s momentum` gira senza
-errori e produce equity curve + metriche su dati storici reali.
-
-## Fase 2 — Validation (4–12 settimane)
+## Fase 2 — Validation (4–12 settimane)  ← *siamo qui*
 
 Obiettivo: capire se le strategie hanno edge vero o stiamo solo sovraadattando.
 
-- [ ] Walk-forward optimization (split train/test rolling)
+- [x] **Walk-forward optimization** (split train/test rolling o anchored)
+- [x] **Persistenza SQLite** di run, trade, equity, segnali
+- [x] **Crypto momentum** strategy (timeframe corto su universo crypto Alpaca)
+- [ ] **Da fare ora (tu)**: setup Alpaca paper account + `.env`
+- [ ] **Da fare ora (tu)**: primo backtest reale su ETF settoriali 2018–oggi
+- [ ] **Da fare ora (tu)**: primo walk-forward per validare edge fuori campione
 - [ ] Confronto vs benchmark (SPY buy-and-hold) — la strategia deve battere
       l'indice **a parità di rischio**, non solo in rendimento
 - [ ] Stress test: 2018 Q4, COVID Mar 2020, 2022 bear market
 - [ ] Paper trading live su Alpaca per **almeno 60 giorni**
 - [ ] Confronto paper-vs-backtest: gli slippage reali devono essere ≤ stimati
-- [ ] Aggiungere 1–2 strategie con edge diverso (crypto momentum, pairs trading)
-- [ ] Persistenza trade/equity in SQLite
+- [ ] Aggiungere pairs trading o vol-targeted sizing
+- [ ] Dashboard di monitoring (Streamlit) — opzionale
+- [ ] Notifiche Telegram/email su segnali importanti — opzionale
 
 **Gate per Fase 3**: Sharpe ≥ 1.0 con max DD ≤ 15% sia in backtest che in
 paper trading di 60 giorni. Se non si passa: tornare in Fase 2, NON andare live.

@@ -27,9 +27,12 @@ cp .env.example .env
 # inserisci ALPACA_API_KEY e ALPACA_API_SECRET (paper)
 
 # Esempi
-trading-bot backtest --strategy momentum --start 2020-01-01 --end 2024-12-31
-trading-bot paper    --strategy momentum
-trading-bot report   --last 30
+trading-bot backtest    --strategy momentum --start 2020-01-01 --end 2024-12-31
+trading-bot walkforward --strategy momentum --start 2018-01-01 --train-days 504 --test-days 126
+trading-bot paper       --strategy momentum --dry-run
+trading-bot status
+trading-bot report      --last 30
+trading-bot report      --run 3        # dettaglio di un singolo run
 ```
 
 ## Struttura
@@ -63,15 +66,16 @@ src/trading_bot/
 - [x] Struttura progetto + tooling
 - [x] Config + segreti via env
 - [x] Provider dati (yfinance gratis, Alpaca live)
-- [x] Strategy base + 2 strategie (momentum, mean reversion)
-- [x] Engine di backtest minimale
+- [x] Strategy base + 3 strategie (momentum, mean reversion, crypto momentum)
+- [x] Engine di backtest event-driven
 - [x] Risk management (sizing, stop loss, circuit breaker)
 - [x] Client broker Alpaca (paper)
-- [x] CLI con comandi backtest/paper/report
-- [ ] Walk-forward optimization
-- [ ] Dashboard di monitoring
-- [ ] Persistenza trade in SQLite
-- [ ] Strategie ML (fase 2)
+- [x] **Walk-forward optimization** con grid search out-of-sample
+- [x] **Persistenza SQLite** di run, trade, equity, segnali
+- [x] CLI con `backtest`, `walkforward`, `paper`, `status`, `report`
+- [ ] Dashboard di monitoring (Streamlit)
+- [ ] Notifiche (Telegram/email)
+- [ ] Strategie ML (fase 2 avanzata)
 - [ ] Live trading abilitato (fase 3, manuale)
 
 Vedi `docs/ROADMAP.md` per dettagli sulla prossima fase.

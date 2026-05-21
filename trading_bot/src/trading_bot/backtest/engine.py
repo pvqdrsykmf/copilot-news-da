@@ -20,6 +20,7 @@ import numpy as np
 import pandas as pd
 
 from trading_bot.monitoring import get_logger
+from trading_bot.portfolio.store import TradingStore
 from trading_bot.risk.circuit_breaker import CircuitBreaker
 from trading_bot.risk.sizing import PositionSizer
 from trading_bot.strategies.base import Signal, SignalType, Strategy
@@ -42,18 +43,21 @@ class BacktestEngine:
         slippage_bps: float = 5.0,     # 0.05% per side
         sizer: PositionSizer | None = None,
         circuit_breaker: CircuitBreaker | None = None,
+        store: TradingStore | None = None,
     ) -> None:
         self.initial_capital = initial_capital
         self.commission_bps = commission_bps
         self.slippage_bps = slippage_bps
         self.sizer = sizer or PositionSizer()
         self.cb = circuit_breaker or CircuitBreaker()
+        self.store = store
 
     def run(
         self,
         strategy: Strategy,
         data: pd.DataFrame,
         rebalance_every: int = 1,
+        run_id: int | None = None,
     ) -> BacktestResult:
         if data.empty:
             raise ValueError("dati vuoti")
@@ -92,6 +96,15 @@ class BacktestEngine:
             if prev_date != today:
                 day_open_equity = equity
                 prev_date = today
+                if self.store is not None and run_id is not None:
+                    ts_py = ts.to_pydatetime() if hasattr(ts, "to_pydatetime") else ts
+                    self.store.log_equity(
+                        run_id=run_id,
+                        ts=ts_py,
+                        equity=equity,
+                        cash=cash,
+                        gross_exposure=(equity - cash) / equity if equity > 0 else 0.0,
+                    )
 
             # Warmup
             if i < lookback:
@@ -142,6 +155,12 @@ class BacktestEngine:
                             "value": float(proceeds),
                         }
                     )
+                    if self.store is not None and run_id is not None:
+                        ts_py = ts.to_pydatetime() if hasattr(ts, "to_pydatetime") else ts
+                        self.store.log_trade(
+                            run_id=run_id, ts=ts_py, symbol=sym,
+                            side="SELL", shares=float(shares), price=float(px),
+                        )
                     positions[sym] = 0.0
 
             # Apri/aggiusta posizioni target
@@ -178,6 +197,12 @@ class BacktestEngine:
                             "value": float(cost),
                         }
                     )
+                    if self.store is not None and run_id is not None:
+                        ts_py = ts.to_pydatetime() if hasattr(ts, "to_pydatetime") else ts
+                        self.store.log_trade(
+                            run_id=run_id, ts=ts_py, symbol=sym,
+                            side="BUY", shares=float(delta), price=float(px),
+                        )
 
         equity_curve = pd.Series(
             data=[e for _, e in equity_history],
