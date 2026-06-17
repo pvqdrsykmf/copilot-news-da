@@ -1,7 +1,7 @@
 {
   "meta": {
-    "edition": "Febbraio – Maggio 2026",
-    "updated": "28 maggio 2026",
+    "edition": "Febbraio – Giugno 2026",
+    "updated": "17 giugno 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -286,9 +286,9 @@
         ]
       },
       "source": {
-        "label": "What's New Febbraio 2026 — Microsoft 365 Copilot Blog",
-        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489",
-        "note": "Rolled out febbraio 2026"
+        "label": "M365 Copilot Release Notes — Copilot can edit your document by default in Word (Roadmap ID 557673)",
+        "url": "https://learn.microsoft.com/copilot/microsoft-365/release-notes",
+        "note": "GA confermata 2 giugno 2026. Modifica diretta di default, disattivabile. Modifiche tracciabili e reversibili."
       }
     },
     {
@@ -562,14 +562,14 @@
       "cat": "c-chat",
       "ico": "🗺️",
       "name": "Copilot Notebooks: genera mappe mentali dal tuo notebook",
-      "st": "soon",
+      "st": "avail",
       "isNew": true,
-      "impact": "Dai Copilot Notebooks puoi generare una <strong>mappa mentale interattiva</strong> dei contenuti — temi, concetti e relazioni visualizzati come nodi espandibili. <strong>In distribuzione progressiva da maggio 2026</strong> (non più solo Frontier — rollout generale in corso).",
+      "impact": "Dai Copilot Notebooks puoi generare una <strong>mappa mentale interattiva</strong> dei contenuti — temi, concetti e relazioni visualizzati come nodi espandibili. Clicchi su un nodo e vedi il riassunto, poi puoi fare domande nella chat del notebook. <strong>In rollout verso GA (early aprile – early giugno 2026).</strong>",
       "example": "Hai un notebook con documenti di un progetto complesso. Generi la mappa mentale: in 2 minuti hai una visione d'insieme delle aree chiave, dei collegamenti tra temi e dei punti aperti — tutto da un colpo d'occhio.",
       "source": {
-        "label": "What's New Aprile 2026 — Roadmap ID 559029 (Mind Maps in Notebooks)",
-        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
-        "note": "Rolling out maggio 2026 — rollout generale (non più solo Frontier)"
+        "label": "MC1254552 + Microsoft Support — Mind Maps in Copilot Notebooks",
+        "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks",
+        "note": "GA rolling early aprile – early giugno 2026. Mappe private al creatore (30gg), sharing prima della GA completa."
       },
       "detail": {
         "steps": "1. Apri o crea un Copilot Notebook e aggiungi i tuoi documenti come riferimenti.\n2. Cerca l'opzione \"Mind Map\" nel menu o nella barra degli strumenti del notebook.\n3. Clicca per generare — Copilot analizza i contenuti del notebook e crea la mappa.\n4. Espandi i nodi cliccandoci sopra, usa la chat del notebook per approfondire un tema specifico.\n5. Esporta la mappa come immagine per condividerla via email o Teams.",
@@ -579,7 +579,7 @@
           "Quali sono le aree del notebook più collegate tra loro e quelle più isolate?"
         ],
         "tips": [
-          "⏳ Rolling out maggio 2026 (Roadmap ID 559029) — confermato nel What's New Aprile 2026 di Seth Patton. Rollout generale, non più limitato al Frontier Program.",
+          "⏳ GA in corso (early aprile – early giugno 2026, MC1254552). Disponibile per tutti gli utenti Copilot Chat enterprise ed education. Richiede licenza Microsoft 365 Copilot.",
           "Per ora le mappe mentali rimangono private: solo chi le ha create può vederle. La condivisione arriverà prima della GA.",
           "Le mappe vengono conservate 30 giorni nel periodo Frontier. Esporta sempre come immagine se vuoi tenerla più a lungo."
         ]
@@ -656,7 +656,7 @@
       "source": {
         "label": "What's New Aprile 2026 — Claude model for Copilot in Word",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
-        "note": "Rolled out aprile 2026. EU/EFTA/UK: off per default — richiede opt-in admin. Dati processati fuori EUDB."
+        "note": "Claude on by default Excel/PPT dal 4 mag 2026 (globale, non-EU). Word: estate 2026 (Roadmap ID 558440). EU esistenti: off per default, opt-in admin."
       },
       "detail": {
         "steps": "1. Apri un documento Word (web o desktop).\n2. Nel pannello Copilot in alto a destra, cerca il selettore modelli (icona a ingranaggio o menu a tendina accanto al prompt box).\n3. Scegli tra i modelli disponibili: GPT-5.x (default) o Claude.\n4. Fai la tua richiesta normalmente — Copilot userà il modello selezionato.",
@@ -680,12 +680,12 @@
       "name": "Excel: Copilot ti mostra il piano prima di modificare il foglio",
       "st": "soon",
       "isNew": true,
-      "impact": "Con la <strong>modalità Piano</strong>, Copilot non tocca il foglio finché non approvi ogni passaggio. Selezionala dal <strong>menu a tendina sopra il campo prompt</strong> — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\" — poi descrivi il task: Copilot mostra il piano step-by-step e agisce solo dopo il tuo via. In più: <strong>Python direttamente in Excel</strong> per analisi avanzate. <strong>Rolling out maggio 2026.</strong>",
-      "example": "Devi riorganizzare un foglio budget complesso. Selezioni \"Piano\" dal menu, descrivi il task: Copilot mostra i 5 passaggi che compirà. Tu li revisioni, ne modifichi uno se vuoi, poi dici \"Procedi\". Zero sorprese.",
+      "impact": "Con la <strong>modalità Piano</strong>, Copilot non tocca il foglio finché non approvi ogni passaggio. Si seleziona dal <strong>menu a tendina sopra il campo prompt</strong> — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\". Copilot mostra il piano step-by-step e agisce solo dopo il tuo via. In più: <strong>Python in Excel</strong> per analisi avanzate. <strong>Prevista per giugno 2026 (Roadmap ID 560338) — non ancora GA.</strong>",
+      "example": "Devi riorganizzare un foglio budget complesso. Quando sarà disponibile, selezioni \"Piano\" dal menu, descrivi il task: Copilot mostra i 5 passaggi che compirà. Tu li revisioni, ne modifichi uno se vuoi, poi dici \"Procedi\". Zero sorprese.",
       "source": {
-        "label": "What's New Aprile 2026 — Plan mode and Python for Copilot in Excel (Roadmap ID 560338)",
-        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
-        "note": "Rolling out maggio 2026. Piano selezionato dal menu sopra il prompt, non via testo."
+        "label": "Microsoft 365 Roadmap ID 560338 — Plan Mode for Copilot in Excel",
+        "url": "https://www.microsoft.com/it-it/microsoft-365/roadmap?id=560338",
+        "note": "Stato \"Due June 2026\" — non ancora GA. Web. Distinta da Agent Mode (già GA)."
       },
       "detail": {
         "steps": "1. Apri un file Excel e attiva il pannello Copilot.\n2. Sopra il campo prompt trovi un menu a tendina con tre opzioni: \"Modifica documento\" / \"Piano\" / \"Solo chat\". Seleziona \"Piano\".\n3. Descrivi nel prompt cosa vuoi fare: Copilot mostrerà il piano dettagliato dei passaggi PRIMA di eseguire qualsiasi modifica.\n4. Revisiona il piano: puoi approvarlo, chiedere di modificare un passaggio o bloccarlo prima che venga eseguito.\n5. Per Python: passa a \"Modifica documento\" e scrivi \"usa Python per [analisi]\", oppure Copilot lo invocherà automaticamente per task complessi.",
@@ -696,8 +696,8 @@
         ],
         "tips": [
           "⚠️ Il Piano si seleziona dal menu a tendina SOPRA il campo prompt — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\". NON serve scriverlo nel prompt.",
-          "⏳ Rolling out maggio 2026 (Roadmap ID 560338): se non vedi ancora l'opzione \"Piano\" nel menu, il rollout non è ancora arrivato al tuo tenant.",
-          "Python in Excel richiede che Python sia abilitato nel tuo tenant — se non vedi l'opzione, verifica con il tuo IT."
+          "⏳ Roadmap ID 560338: stato \"Due June 2026\" — feature distinta dall'Agent Mode (che è già GA). Plan Mode ha un suo ciclo di rilascio separato e non è ancora disponibile.",
+          "Da non confondere con Agent Mode in Excel, che è GA da marzo 2026: Plan Mode è una modalità specifica in arrivo che aggiunge l'approvazione preventiva dei passaggi."
         ]
       }
     },
@@ -818,15 +818,15 @@
       "app": "Copilot Chat",
       "cat": "c-chat",
       "ico": "📤",
-      "name": "Copilot Notebooks: genera PPT, Word e usa link web come fonti",
-      "st": "soon",
+      "name": "Copilot Notebooks: genera PPT, Word, Excel e usa link web come fonti",
+      "st": "avail",
       "isNew": true,
-      "impact": "Tre novità per Copilot Notebooks: puoi generare una <strong>presentazione PowerPoint</strong> o un <strong>documento Word</strong> direttamente dal notebook (report, sintesi, proposta), e aggiungere <strong>URL di pagine web come riferimenti</strong> per arricchire il contesto su cui Copilot ragiona. <strong>Rolling out maggio 2026.</strong>",
+      "impact": "Da Copilot Notebooks puoi generare <strong>presentazioni PowerPoint, documenti Word e ora anche fogli Excel</strong> direttamente dal notebook (report, sintesi, proposte). Puoi anche aggiungere <strong>URL di pagine web e siti SharePoint come riferimenti</strong>. In arrivo anche le infografiche. <strong>In rollout verso GA (entro giugno 2026).</strong>",
       "example": "Hai un notebook con il materiale di un progetto complesso. Con un click generi la presentazione per il cliente — Copilot sceglie i contenuti giusti, tu scegli tema e livello di dettaglio. Poi incolla l'URL del report di settore che vuoi usare come fonte aggiuntiva.",
       "source": {
-        "label": "What's New Aprile 2026 — Notebooks PPT (ID 558938) · Word (ID 558934) · Web links (ID 516040)",
-        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
-        "note": "Rolling out maggio 2026. Alcune funzioni ancora in Frontier Program."
+        "label": "Neowin + What's New Aprile 2026 — Notebooks output (PPT, Word, Excel, infografiche)",
+        "url": "https://www.neowin.net/news/microsoft-365-copilot-notebooks-gets-new-tools-to-turn-documents-into-mind-maps-and-more/",
+        "note": "GA in corso entro giugno 2026. PPT/Word + Excel (mag 2026) + infografiche in arrivo."
       },
       "detail": {
         "steps": "1. Apri un Copilot Notebook con i tuoi materiali di riferimento.\n2. Per generare una PPT: clicca 'Quick Create' → 'Presentazione'. Scegli focus principale, livello di dettaglio, numero di slide e tema grafico.\n3. Per generare un documento Word: clicca 'Quick Create' → 'Documento'. Specifica tipo (report, proposta, sintesi), destinatari e temi principali.\n4. Per aggiungere un link web: nel pannello Riferimenti del notebook, incolla l'URL — Copilot lo indicizzerà come fonte per la sessione.\n5. I file generati si aprono in PowerPoint o Word per la revisione finale.",
@@ -836,7 +836,7 @@
           "Usando questo link web come fonte aggiuntiva [URL], aggiorna la sezione sul contesto di mercato nel notebook."
         ],
         "tips": [
-          "⏳ Rolling out maggio 2026 (Roadmap ID 558938/558934/516040). Se non vedi 'Quick Create' nel tuo Notebook, il rollout non è ancora arrivato.",
+          "⏳ GA in corso entro giugno 2026. Generazione Excel e infografiche aggiunte a maggio 2026 (prima solo PPT e Word). Disponibile per utenti Copilot Chat enterprise.",
           "I file PPT e Word generati sono bozze strutturate: Copilot organizza il contenuto, ma la revisione grafica finale va fatta in PowerPoint/Word.",
           "I link web come riferimenti funzionano solo con URL pubblicamente accessibili — non con pagine che richiedono login o VPN."
         ]
@@ -884,7 +884,7 @@
       "source": {
         "label": "M365 Copilot Release Notes — Implicit Grounding in Outlook (19 maggio 2026)",
         "url": "https://learn.microsoft.com/copilot/microsoft-365/release-notes",
-        "note": "Rolled out 19 maggio 2026. Windows e Web. Roadmap: add emails to Copilot Chat prompt context."
+        "note": "GA confermata 19 maggio 2026 (Release Notes ufficiali). Windows e Web."
       },
       "detail": {
         "steps": "1. Apri Outlook (web o nuovo Outlook per Windows).\n2. Seleziona l'email o il thread che vuoi usare come contesto.\n3. Cerca il pulsante o l'opzione 'Aggiungi a Copilot Chat' (appare nella barra superiore o nel menu contestuale dell'email).\n4. L'email viene aggiunta come contesto al campo prompt di Copilot Chat.\n5. Scrivi la tua domanda o istruzione: Copilot usa il contenuto dell'email per rispondere.",
@@ -926,6 +926,35 @@
           "Funziona solo con PowerPoint Live — non con la condivisione schermo tradizionale. Il presentatore deve condividere il file PPT tramite l'opzione 'PowerPoint Live' in Teams.",
           "On by default per i tenant con licenza M365 Copilot. Se non vedi l'opzione, verifica che la riunione stia usando PowerPoint Live.",
           "Le spiegazioni sono private: gli altri partecipanti e il presentatore non vedono le tue domande a Copilot durante la presentazione."
+        ]
+      }
+    },
+    {
+      "id": "copilot-pdf-chat",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "📄",
+      "name": "Apri e analizza i PDF direttamente in Copilot Chat",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Quando clicchi un PDF mentre usi Copilot Chat, il file ora si <strong>apre direttamente dentro Copilot</strong> — non più in una scheda separata. Puoi leggerlo e contemporaneamente fare domande a Copilot sul contenuto, senza cambiare finestra. <strong>Disponibile da maggio 2026.</strong>",
+      "example": "Ricevi un contratto PDF di 30 pagine. Lo apri in Copilot Chat e chiedi: \"Estrai le scadenze e le penali previste\" — leggi il documento e la risposta fianco a fianco, senza saltare tra finestre.",
+      "source": {
+        "label": "M365 Copilot Release Notes — Open PDFs within Copilot Chat (19 maggio 2026)",
+        "url": "https://learn.microsoft.com/copilot/microsoft-365/release-notes",
+        "note": "GA 19 maggio 2026. Windows, Mac e Web."
+      },
+      "detail": {
+        "steps": "1. In Copilot Chat (web, Windows o Mac), clicca su un link PDF o su un allegato PDF.\n2. Il PDF si apre direttamente nell'interfaccia di Copilot, non in una scheda separata.\n3. Mentre leggi il documento, usa il campo chat per fare domande sul contenuto.\n4. Copilot risponde basandosi sul PDF che hai aperto.",
+        "prompts": [
+          "Riassumi questo PDF in 5 punti chiave.",
+          "Estrai tutte le scadenze, le date e gli importi citati nel documento.",
+          "Confronta la sezione 3 con la sezione 7 e dimmi se ci sono contraddizioni."
+        ],
+        "tips": [
+          "Disponibile su Copilot Chat web, Windows e Mac. Riduce il context switching: leggi e analizzi nello stesso posto.",
+          "Funziona con i PDF aperti da link o allegati dentro Copilot Chat — ideale per contratti, report, documentazione tecnica.",
+          "Puoi chiedere a Copilot di estrarre action items o confrontare sezioni diverse dello stesso documento."
         ]
       }
     }
