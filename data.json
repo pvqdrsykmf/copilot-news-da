@@ -31,6 +31,10 @@
         "label": "MC1253858 — Message Center",
         "url": "https://admin.microsoft.com",
         "note": "Accesso richiede ruolo Admin M365"
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Accesso richiede ruolo Admin M365"
       }
     },
     {
@@ -59,6 +63,10 @@
       "source": {
         "label": "Microsoft TechCommunity — Available today: GPT-5.5 Instant in M365 Copilot (7 mag 2026)",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-gpt-5-5-instant-in-microsoft-365-copilot/4517084",
+        "note": "Rolled out 7 maggio 2026. Aggiornamento automatico — nessuna azione richiesta da admin o utente."
+      },
+      "rollout": {
+        "stage": "complete",
         "note": "Rolled out 7 maggio 2026. Aggiornamento automatico — nessuna azione richiesta da admin o utente."
       }
     },
@@ -90,6 +98,10 @@
         "label": "learn.microsoft.com — Work IQ MCP overview",
         "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/use-work-iq",
         "note": "Documentazione ufficiale Microsoft"
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Documentazione ufficiale Microsoft"
       }
     },
     {
@@ -114,6 +126,10 @@
       "source": {
         "label": "Microsoft Blog — Copilot Wave 3 (Frontier Program)",
         "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/",
+        "note": "Annuncio 9 marzo 2026"
+      },
+      "rollout": {
+        "stage": "in-dev",
         "note": "Annuncio 9 marzo 2026"
       }
     },
@@ -146,6 +162,10 @@
         "label": "What's New Aprile 2026 — First draft in the canvas for Copilot in Outlook",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
         "note": "Rolled out aprile 2026. Outlook web e nuovo Outlook per Windows."
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out aprile 2026. Outlook web e nuovo Outlook per Windows."
       }
     },
     {
@@ -174,6 +194,10 @@
       "source": {
         "label": "Roadmap ID 506750 — Schedule with Copilot",
         "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?id=506750",
+        "note": "GA marzo 2026"
+      },
+      "rollout": {
+        "stage": "ga",
         "note": "GA marzo 2026"
       }
     },
@@ -204,6 +228,10 @@
         "label": "What's New Marzo 2026 — Video Recap GA (Roadmap ID 558540)",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--march-2026/4506322",
         "note": "GA confermata — disponibile per riunioni di almeno 10 minuti con registrazione attiva"
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA confermata — disponibile per riunioni di almeno 10 minuti con registrazione attiva"
       }
     },
     {
@@ -228,6 +256,10 @@
       "source": {
         "label": "Roadmap ID 554926 — Audio Recap multilingual",
         "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?id=554926",
+        "note": "Rolled out marzo 2026"
+      },
+      "rollout": {
+        "stage": "complete",
         "note": "Rolled out marzo 2026"
       }
     },
@@ -257,6 +289,10 @@
       "source": {
         "label": "What's New Febbraio 2026 — Microsoft 365 Copilot Blog",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--february-2026/4496489",
+        "note": "Rolled out febbraio 2026"
+      },
+      "rollout": {
+        "stage": "complete",
         "note": "Rolled out febbraio 2026"
       }
     },
@@ -289,6 +325,10 @@
         "label": "M365 Copilot Release Notes — Copilot can edit your document by default in Word (Roadmap ID 557673)",
         "url": "https://learn.microsoft.com/copilot/microsoft-365/release-notes",
         "note": "GA confermata 2 giugno 2026. Modifica diretta di default, disattivabile. Modifiche tracciabili e reversibili."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA confermata 2 giugno 2026. Modifica diretta di default, disattivabile. Modifiche tracciabili e reversibili."
       }
     },
     {
@@ -317,6 +357,10 @@
       "source": {
         "label": "Satya Nadella — annuncio X/Twitter 14 aprile 2026",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--march-2026/4506322",
+        "note": "In rollout aprile 2026"
+      },
+      "rollout": {
+        "stage": "in-dev",
         "note": "In rollout aprile 2026"
       }
     },
@@ -348,6 +392,10 @@
         "label": "Roadmap ID 557564 — What's New Marzo 2026",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--march-2026/4506322",
         "note": "Rolled out marzo 2026"
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out marzo 2026"
       }
     },
     {
@@ -376,6 +424,10 @@
       "source": {
         "label": "Roadmap ID 557564 — Local file support for Agent Mode in Excel",
         "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?id=557564",
+        "note": "Rollout partito marzo 2026, non completato"
+      },
+      "rollout": {
+        "stage": "preview",
         "note": "Rollout partito marzo 2026, non completato"
       }
     },
@@ -408,6 +460,10 @@
         "label": "Roadmap ID 557177 — Copilot can edit your document in PowerPoint",
         "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?id=557177",
         "note": "GA gennaio 2026"
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA gennaio 2026"
       }
     },
     {
@@ -436,6 +492,10 @@
       "source": {
         "label": "What's New Marzo 2026 — Microsoft 365 Copilot Blog",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--march-2026/4506322",
+        "note": "Rolled out marzo 2026"
+      },
+      "rollout": {
+        "stage": "complete",
         "note": "Rolled out marzo 2026"
       }
     },
@@ -467,6 +527,10 @@
         "label": "Roadmap ID 546246 — Researcher new output formats",
         "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?id=546246",
         "note": "Rolled out marzo 2026"
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out marzo 2026"
       }
     },
     {
@@ -495,6 +559,10 @@
       "source": {
         "label": "MC1239186 — Copilot Pages to SharePoint News",
         "url": "https://m365admin.handsontek.net/microsoft-365-copilot-turn-copilot-pages-sharepoint-news-posts/",
+        "note": "Rollout partito fine maggio 2026, completamento metà giugno 2026 (MC1239186). Worldwide e GCC. Abilitato di default, rispetta le permission SharePoint esistenti."
+      },
+      "rollout": {
+        "stage": "in-dev",
         "note": "Rollout partito fine maggio 2026, completamento metà giugno 2026 (MC1239186). Worldwide e GCC. Abilitato di default, rispetta le permission SharePoint esistenti."
       }
     },
@@ -525,6 +593,10 @@
           "Il costo computazionale di Critique è circa il 20% in più rispetto a un singolo modello — usa questa modalità per ricerche importanti, non per domande veloci.",
           "Il risultato finale include una sezione che mostra cosa ha modificato Claude rispetto alla bozza GPT: puoi leggere entrambe le versioni."
         ]
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Frontier Program da 30 marzo 2026. EU: richiede abilitazione Claude da parte dell'admin"
       }
     },
     {
@@ -554,6 +626,10 @@
           "Council costa circa 2,5 volte più di una singola ricerca — usalo per decisioni ad alto impatto dove vale la pena il confronto.",
           "Le sezioni \"Aree di accordo\" sono le più affidabili: se due modelli diversi arrivano alla stessa conclusione, la probabilità che sia corretta è più alta."
         ]
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Frontier Program da 30 marzo 2026. Costo ~2,5x rispetto a singolo modello. EU: richiede Claude abilitato"
       }
     },
     {
@@ -583,6 +659,10 @@
           "Per ora le mappe mentali rimangono private: solo chi le ha create può vederle. La condivisione arriverà prima della GA.",
           "Le mappe vengono conservate 30 giorni nel periodo Frontier. Esporta sempre come immagine se vuoi tenerla più a lungo."
         ]
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA rolling early aprile – early giugno 2026. Mappe private al creatore (30gg), sharing prima della GA completa."
       }
     },
     {
@@ -612,6 +692,10 @@
           "⚠️ Funziona SOLO nel nuovo Outlook per Windows (icona blu) e in Outlook web. NON funziona nell'Outlook classico né su mobile.",
           "Richiede licenza Microsoft 365 Copilot a pagamento. Verifica con il tuo IT se hai la licenza assegnata al tuo account."
         ]
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "GA su Outlook moderno (Windows, Mac, web, mobile). Annuncio 9 marzo 2026"
       }
     },
     {
@@ -641,6 +725,10 @@
           "Una volta disponibile, sarà la funzione più potente di Copilot Pages: il flusso sarà brainstorm → chat → pagina pronta → SharePoint News, tutto senza cambiare applicazione.",
           "Funzionerà sia su Copilot Chat web che nell'app Teams."
         ]
+      },
+      "rollout": {
+        "stage": "in-dev",
+        "note": "In sviluppo — listato in 'What's Next' sulla roadmap Copilot Chat. Data GA non ancora annunciata"
       }
     },
     {
@@ -670,6 +758,10 @@
           "Anche dopo l'abilitazione, i dati elaborati da Claude escono dall'EU Data Boundary (processing in US tramite Anthropic come subprocessore Microsoft). Valutazione GDPR necessaria prima dell'attivazione.",
           "GPT e Claude producono risultati diversi per gli stessi prompt: vale la pena testare entrambi per i casi d'uso più frequenti, una volta che l'admin ha abilitato Claude."
         ]
+      },
+      "rollout": {
+        "stage": "in-dev",
+        "note": "Claude on by default Excel/PPT dal 4 mag 2026 (globale, non-EU). Word: estate 2026 (Roadmap ID 558440). EU esistenti: off per default, opt-in admin."
       }
     },
     {
@@ -699,6 +791,10 @@
           "⏳ Roadmap ID 560338: stato \"Due June 2026\" — feature distinta dall'Agent Mode (che è già GA). Plan Mode ha un suo ciclo di rilascio separato e non è ancora disponibile.",
           "Da non confondere con Agent Mode in Excel, che è GA da marzo 2026: Plan Mode è una modalità specifica in arrivo che aggiunge l'approvazione preventiva dei passaggi."
         ]
+      },
+      "rollout": {
+        "stage": "in-dev",
+        "note": "Stato \"Due June 2026\" — non ancora GA. Web. Distinta da Agent Mode (già GA)."
       }
     },
     {
@@ -728,6 +824,10 @@
           "Per immagini in presentazioni aziendali formali usa GPT-Image (più fotorealistica). Per presentazioni creative o marketing prova Flux.",
           "L'impostazione Auto è la scelta sicura: Copilot seleziona il modello più adatto al tipo di contenuto richiesto."
         ]
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out aprile 2026. PowerPoint web."
       }
     },
     {
@@ -753,6 +853,10 @@
           "L'integrazione con Microsoft Bookings è opzionale ma molto utile: Copilot può fissare direttamente il follow-up nel calendario del chiamante.",
           "Il chiamante viene informato che sta parlando con Copilot, non direttamente con te — la trasparenza è built-in."
         ]
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Frontier early access program. Richiede licenza Microsoft 365 Copilot."
       }
     },
     {
@@ -782,6 +886,10 @@
           "Per condividere la Page con le visualizzazioni: usa il pulsante Condividi in alto — il link è accessibile a chiunque abbia accesso a Copilot Chat nella tua organizzazione.",
           "App Builder è lo strumento per trasformare una visualizzazione semplice in un'app più robusta — utile per dashboard di team da usare regolarmente."
         ]
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out aprile 2026."
       }
     },
     {
@@ -811,6 +919,10 @@
           "La formattazione del testo nei prompt (grassetto, liste) aiuta Copilot a capire meglio la struttura della richiesta — usala per domande multi-punto.",
           "Il menu semplificato raggruppa Notebooks, Pages e Agenti nella stessa schermata di navigazione — meno click per arrivare agli strumenti più usati."
         ]
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Rolling out maggio 2026. iOS e Android."
       }
     },
     {
@@ -840,6 +952,10 @@
           "I file PPT e Word generati sono bozze strutturate: Copilot organizza il contenuto, ma la revisione grafica finale va fatta in PowerPoint/Word.",
           "I link web come riferimenti funzionano solo con URL pubblicamente accessibili — non con pagine che richiedono login o VPN."
         ]
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA in corso entro giugno 2026. PPT/Word + Excel (mag 2026) + infografiche in arrivo."
       }
     },
     {
@@ -869,6 +985,10 @@
           "Puoi selezionare più file contemporaneamente e chiedere a Copilot di confrontarli o estrarre informazioni da tutti in un'unica risposta.",
           "Funziona in OneDrive web. Nell'app desktop di OneDrive per Windows l'esperienza potrebbe avere funzionalità diverse."
         ]
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out 19 maggio 2026 (Release Notes Microsoft, sezione OneDrive). Si attiva in preview del file, non con semplice selezione."
       }
     },
     {
@@ -898,6 +1018,10 @@
           "Puoi aggiungere più email o thread allo stesso prompt di Copilot Chat: utile per confrontare comunicazioni o fare un recap multi-mittente.",
           "Il contenuto delle email aggiunte al prompt rimane dentro l'EU Data Boundary (processato su GPT, non Claude) — nessuna implicazione GDPR aggiuntiva."
         ]
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA confermata 19 maggio 2026 (Release Notes ufficiali). Windows e Web."
       }
     },
     {
@@ -927,6 +1051,10 @@
           "On by default per i tenant con licenza M365 Copilot. Se non vedi l'opzione, verifica che la riunione stia usando PowerPoint Live.",
           "Le spiegazioni sono private: gli altri partecipanti e il presentatore non vedono le tue domande a Copilot durante la presentazione."
         ]
+      },
+      "rollout": {
+        "stage": "in-dev",
+        "note": "Annunciato per metà maggio 2026 (handsontek.net). Non ancora nei release notes ufficiali Microsoft al 28 maggio — rollout in corso."
       }
     },
     {
@@ -956,6 +1084,10 @@
           "Funziona con i PDF aperti da link o allegati dentro Copilot Chat — ideale per contratti, report, documentazione tecnica.",
           "Puoi chiedere a Copilot di estrarre action items o confrontare sezioni diverse dello stesso documento."
         ]
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA 19 maggio 2026. Windows, Mac e Web."
       }
     }
   ],
