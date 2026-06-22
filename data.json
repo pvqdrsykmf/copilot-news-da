@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "17 giugno 2026",
+    "updated": "22 giugno 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -44,7 +44,7 @@
       "ico": "🧠",
       "name": "Copilot risponde meglio: arriva GPT-5.5 nel selettore modelli",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal 7 maggio 2026 il motore rapido di Copilot è stato aggiornato a <strong>GPT-5.5 Instant</strong>, visibile come \"GPT-5.5 Quick response\" nel selettore modelli. Risposte più accurate, analisi immagini migliorata, task STEM più precisi. Il selettore ora offre: <strong>GPT-5.5 Quick response</strong> (veloce, uso quotidiano) e <strong>GPT-5.4 Thinking</strong> (ragionamento approfondito).",
       "example": "Carichi un grafico in Copilot Chat e chiedi di analizzarlo: con GPT-5.5 la lettura dei dati visivi è più precisa e la risposta arriva più velocemente. Nessuna azione richiesta — il modello si è aggiornato automaticamente.",
       "detail": {
@@ -109,28 +109,32 @@
       "app": "Copilot Chat",
       "cat": "c-chat",
       "ico": "🤖",
-      "name": "Copilot Cowork: delega task interi a Copilot",
-      "st": "soon",
+      "name": "Copilot Cowork è GA: delega task complessi al tuo AI collega",
+      "st": "avail",
       "isNew": true,
-      "impact": "Presto potrai assegnare a Copilot compiti che si svolgono nel tempo: scrive, pianifica, invia — lavorando in background e chiedendoti conferma prima di ogni azione importante.",
-      "example": "\"Scrivi la bozza del report settimanale, inviamela per revisione e poi pianifica la call con il team.\" Copilot esegue i passaggi uno alla volta, con la tua approvazione.",
+      "impact": "Dal <strong>16 giugno 2026</strong>, Copilot Cowork è <strong>generalmente disponibile</strong> per tutti gli utenti con licenza Microsoft 365 Copilot. Puoi assegnare a Copilot task complessi che si svolgono nel tempo — scrive, pianifica, agisce su sistemi esterni — con governance enterprise integrata (audit, eDiscovery, sensitivity labels). Disponibili da subito i plugin Dynamics 365 (Sales, Service, ERP, Fabric) e nove partner (Miro, monday.com, Harvey, LSEG e altri). Billing attivo dal 16 giugno; gli utenti Frontier non vengono addebitati fino al 1° luglio 2026.",
+      "example": "\"Analizza le email del cliente X degli ultimi 30 giorni, riassumi le richieste aperte e crea i task in Planner.\" Copilot esegue i passaggi uno alla volta, chiedendo la tua approvazione prima di ogni azione importante.",
       "detail": {
-        "steps": "1. Questa funzione è ancora in anteprima limitata (Frontier Program) — non è disponibile per tutti.\n2. Quando sarà disponibile, troverai l'opzione \"Cowork\" nel menu principale di Copilot Chat.\n3. Potrai descrivere un compito completo in linguaggio naturale e Copilot chiederà conferma prima di ogni passaggio.",
-        "prompts": [],
+        "steps": "1. Apri Microsoft 365 Copilot Chat (web o app) e cerca la sezione \"Cowork\" nel menu principale.\n2. Descrivi il task che vuoi delegare in linguaggio naturale: Copilot scompone il lavoro in passaggi e te li mostra prima di procedere.\n3. Approva ogni passaggio con il tuo \"Via\": niente viene eseguito senza il tuo consenso esplicito.\n4. Per azioni su sistemi esterni, usa i plugin disponibili: Dynamics 365 Sales/Service/ERP, Fabric, Miro, monday.com, Harvey e altri.\n5. Controlla budget e utilizzo in Teams Admin Center: puoi impostare limiti di spesa per il tuo tenant prima che il rollout si allarghi.",
+        "prompts": [
+          "Analizza le email del cliente [Nome] degli ultimi 30 giorni, riassumi le richieste aperte e crea i task corrispondenti in Planner.",
+          "Prepara una bozza del report mensile usando i dati su SharePoint, inviamela per revisione e poi pianifica la call di allineamento con il team.",
+          "Ricerca i 3 competitor principali su web, crea una slide di confronto e caricala nella cartella [Nome] su SharePoint."
+        ],
         "tips": [
-          "È una delle funzioni più attese del 2026: Copilot non risponde più solo alle domande, ma esegue autonomamente sequenze di lavoro.",
-          "Ogni azione richiede il tuo \"Vai\" prima di essere eseguita: niente succede senza il tuo consenso esplicito.",
-          "Tieni d'occhio gli aggiornamenti di Teams e Copilot Chat nei prossimi mesi per sapere quando sarà disponibile nel tuo tenant."
+          "Billing attivo dal 16 giugno 2026: imposta i limiti di spesa in Teams Admin Center PRIMA di attivare Cowork per i tuoi utenti.",
+          "I dati di Cowork fluiscono attraverso i tuoi controlli M365 esistenti (audit, eDiscovery, sensitivity labels). Data Lifecycle Management sarà GA il 22 giugno 2026; DLP è in arrivo.",
+          "⚠️ EU/EFTA/UK: Claude è off per default anche in Cowork. Per usare Claude Opus come modello in Cowork, l'admin deve abilitarlo in M365 Admin Center."
         ]
       },
       "source": {
-        "label": "Microsoft Blog — Copilot Wave 3 (Frontier Program)",
-        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/",
-        "note": "Annuncio 9 marzo 2026"
+        "label": "Microsoft 365 Blog — Copilot Cowork is now generally available (16 giu 2026)",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+        "note": "GA globale 16 giugno 2026. Billing attivo. Plugin Dynamics 365 e partner disponibili da subito."
       },
       "rollout": {
-        "stage": "in-dev",
-        "note": "Annuncio 9 marzo 2026"
+        "stage": "ga",
+        "note": "GA globale 16 giugno 2026. Billing attivo. Plugin Dynamics 365 e partner disponibili da subito."
       }
     },
     {
@@ -241,7 +245,7 @@
       "ico": "🎧",
       "name": "Ascolta il recap della riunione in italiano",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Il riepilogo della riunione ora si può <strong>ascoltare in italiano</strong>. Copilot genera un audio narrativo con i punti chiave, le decisioni e le azioni — ideale in mobilità.",
       "example": "Riunione finita alle 18:00, sei in auto. Avvia il recap audio: senti le decisioni principali in 3 minuti mentre torni a casa.",
       "detail": {
@@ -338,7 +342,7 @@
       "ico": "🔍",
       "name": "Copilot come revisore: commenti e modifiche tracciate",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Copilot sta diventando un vero co-revisore: lascerà <strong>commenti a margine</strong> e userà le revisioni tracciate come farebbero i tuoi colleghi. Puoi accettare o rifiutare ogni singola modifica.",
       "example": "Stai finalizzando un contratto? Copilot suggerisce riformulazioni con \"revisioni attive\" — accetti solo le modifiche che ritieni giuste.",
       "detail": {
@@ -371,7 +375,7 @@
       "ico": "📊",
       "name": "Copilot in Excel capisce il contesto delle tue email",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Quando lavori su un foglio Excel, Copilot collega automaticamente <strong>email, riunioni e chat recenti</strong> pertinenti ai dati — senza che tu debba copiare nulla da altri programmi.",
       "example": "Stai aggiornando il budget Q2: Copilot porta le indicazioni dell'ultima call con il CFO e le applica alle celle pertinenti del foglio.",
       "detail": {
@@ -405,7 +409,7 @@
       "ico": "💾",
       "name": "Copilot funziona anche sui file Excel salvati sul tuo PC",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Prima era obbligatorio salvare il file su OneDrive per usare Copilot in modalità \"Edit with Copilot\". La funzione per i <strong>file in locale è in distribuzione</strong> (rollout partito a marzo, non ancora completato per tutti — Roadmap ID 557564).",
       "example": "Hai un file Excel sul desktop che usi ogni settimana? Quando arriverà nel tuo tenant, potrai usare Copilot direttamente senza dover prima spostare il file nel cloud.",
       "detail": {
@@ -473,7 +477,7 @@
       "ico": "🖋️",
       "name": "Uniforma font e stili su tutta la presentazione in un click",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con un solo comando Copilot rende coerenti <strong>font, dimensioni e stili dei punti elenco</strong> su tutte le slide — addio presentazioni assemblate con 4 font diversi.",
       "example": "Hai ricevuto una presentazione costruita da persone diverse con stili diversi? Un click e Copilot la uniforma seguendo il template impostato.",
       "detail": {
@@ -506,7 +510,7 @@
       "ico": "📎",
       "name": "Trasforma la ricerca di Copilot in presentazione, PDF o audio",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con il modulo Researcher puoi generare report approfonditi e poi <strong>convertirli direttamente in PowerPoint, PDF o un audio riepilogativo</strong> — senza rifare il lavoro a mano.",
       "example": "Chiedi a Copilot una ricerca sui competitor principali → clicca \"Converti in PowerPoint\" → ottieni una presentazione pronta con slide, dati e fonti.",
       "detail": {
@@ -539,10 +543,10 @@
       "cat": "c-chat",
       "ico": "📰",
       "name": "Pubblica i contenuti di Copilot su SharePoint News",
-      "st": "soon",
+      "st": "avail",
       "isNew": false,
-      "impact": "Le pagine create con Copilot (Copilot Pages) potranno essere <strong>pubblicate direttamente come notizie su SharePoint</strong> tramite un nuovo pulsante \"SharePoint\" nel menu Crea della Page. <strong>Rollout iniziato fine maggio 2026</strong>, completamento atteso metà giugno 2026 (MC1239186). Se non vedi ancora l'opzione, è normale.",
-      "example": "Il team marketing genera una comunicazione interna con Copilot, la rifinisce in Pages e la pubblica come notizia aziendale. Disponibile da fine maggio 2026.",
+      "impact": "Le pagine create con Copilot (Copilot Pages) possono essere <strong>pubblicate direttamente come notizie su SharePoint</strong> tramite il pulsante \"SharePoint\" nel menu Crea della Page. Rollout completato entro metà giugno 2026 (MC1239186) — disponibile per tutti i tenant Worldwide e GCC. Abilitato di default, rispetta le permission SharePoint esistenti.",
+      "example": "Il team marketing genera una comunicazione interna con Copilot, la rifinisce in Pages e la pubblica come notizia aziendale in un flusso unico, senza copiare testo.",
       "detail": {
         "steps": "1. Crea o apri una Copilot Page (da Copilot Chat, clicca \"Crea pagina\" dopo una risposta interessante).\n2. Rifinisci il contenuto collaborando con i colleghi direttamente sulla Page.\n3. Quando pronto, clicca il menu \"Crea\" nella Page e seleziona \"SharePoint\".\n4. Il contenuto si apre nell'editor di SharePoint News: aggiungi immagine, categoria e pubblica.",
         "prompts": [
@@ -551,19 +555,19 @@
           "Genera una comunicazione interna su [Tema] di massimo 200 parole, adatta a tutti i livelli aziendali."
         ],
         "tips": [
-          "Questa funzione sarà disponibile da fine maggio 2026: se non la vedi ancora, è normale.",
+          "Rollout completato per tutti i tenant (MC1239186). Se non vedi ancora il pulsante SharePoint nella Page, ricarica la pagina o controlla i permessi.",
           "Per pubblicare su SharePoint News devi avere i permessi di pubblicazione sul sito: chiedi alla tua IT se non li hai.",
           "Il passaggio da Copilot Pages a SharePoint conserva la formattazione: titoli, elenchi e grassetti vengono mantenuti."
         ]
       },
       "source": {
-        "label": "MC1239186 — Copilot Pages to SharePoint News",
-        "url": "https://m365admin.handsontek.net/microsoft-365-copilot-turn-copilot-pages-sharepoint-news-posts/",
-        "note": "Rollout partito fine maggio 2026, completamento metà giugno 2026 (MC1239186). Worldwide e GCC. Abilitato di default, rispetta le permission SharePoint esistenti."
+        "label": "MC1239186 — Copilot Pages to SharePoint News (Message Center)",
+        "url": "https://admin.microsoft.com",
+        "note": "Rollout completato entro metà giugno 2026. Worldwide e GCC. Abilitato di default. Accesso richiede ruolo Admin M365."
       },
       "rollout": {
-        "stage": "in-dev",
-        "note": "Rollout partito fine maggio 2026, completamento metà giugno 2026 (MC1239186). Worldwide e GCC. Abilitato di default, rispetta le permission SharePoint esistenti."
+        "stage": "ga",
+        "note": "Rollout completato entro metà giugno 2026 (MC1239186). Worldwide e GCC."
       }
     },
     {
@@ -573,7 +577,7 @@
       "ico": "🔬",
       "name": "Researcher: due AI controllano la qualità della ricerca",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Quando usi Researcher con la modalità automatica, <strong>GPT scrive la ricerca e Claude la controlla</strong> — verifica le fonti, corregge le imprecisioni e migliora la chiarezza del testo prima che tu veda il risultato. La ricerca non la fa più un solo modello, ma due.",
       "example": "Stai preparando un'analisi di mercato per un cliente importante. Con Critique attivo, il report finale è già stato revisionato da un secondo modello AI prima di arrivare a te — meno allucinazioni, fonti più verificate.",
       "source": {
@@ -606,7 +610,7 @@
       "ico": "⚖️",
       "name": "Researcher Council: confronta le risposte di GPT e Claude fianco a fianco",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con Council, <strong>GPT e Claude elaborano la stessa ricerca in parallelo e separatamente</strong>. Vedi i due report affiancati, con un riassunto che indica dove i modelli concordano, dove divergono, e cosa ognuno ha apportato in più.",
       "example": "Stai valutando una decisione strategica rischiosa. Lanci la stessa domanda a GPT e Claude: dove concordano puoi essere più fiducioso, dove divergono hai un segnale per approfondire ulteriormente.",
       "source": {
@@ -639,7 +643,7 @@
       "ico": "🗺️",
       "name": "Copilot Notebooks: genera mappe mentali dal tuo notebook",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dai Copilot Notebooks puoi generare una <strong>mappa mentale interattiva</strong> dei contenuti — temi, concetti e relazioni visualizzati come nodi espandibili. Clicchi su un nodo e vedi il riassunto, poi puoi fare domande nella chat del notebook. <strong>In rollout verso GA (early aprile – early giugno 2026).</strong>",
       "example": "Hai un notebook con documenti di un progetto complesso. Generi la mappa mentale: in 2 minuti hai una visione d'insieme delle aree chiave, dei collegamenti tra temi e dei punti aperti — tutto da un colpo d'occhio.",
       "source": {
@@ -661,8 +665,8 @@
         ]
       },
       "rollout": {
-        "stage": "ga",
-        "note": "GA rolling early aprile – early giugno 2026. Mappe private al creatore (30gg), sharing prima della GA completa."
+        "stage": "complete",
+        "note": "Rollout completato giugno 2026. Mind maps condivisibili disponibili."
       }
     },
     {
@@ -672,7 +676,7 @@
       "ico": "🤖",
       "name": "Outlook: Copilot accetta o rifiuta riunioni automaticamente per te",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Potrai creare <strong>regole personalizzate</strong> che dicono a Copilot come gestire il tuo calendario: accetta automaticamente le riunioni del tuo manager nelle ore lavorative, rifiuta quelle con certi titoli, segui quelle fuori orario. <strong>In distribuzione progressiva</strong> — rollout partito a gennaio 2026, non ancora arrivato a tutti i tenant. Solo nel nuovo Outlook per Windows e Outlook web.",
       "example": "Imposti la regola: 'Accetta tutte le riunioni di [Nome Manager] se sono tra le 9 e le 18 e il mio calendario è libero.' Da quel momento Copilot gestisce automaticamente quegli inviti — tu li trovi già in agenda senza aver fatto nulla.",
       "source": {
@@ -705,7 +709,7 @@
       "ico": "📄",
       "name": "Copilot Pages: aggiorna la pagina conversando nella chat",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con Pages Chat Steering, la <strong>chat a sinistra aggiorna la pagina in tempo reale a destra</strong> — aggiungi sezioni, riscrivi parti, modifica la struttura semplicemente chiedendolo a Copilot nella chat, senza dover editare manualmente la pagina.",
       "example": "Hai una Copilot Page con 5 idee per un evento. Scrivi nella chat: 'Aggiungi altre 3 idee e sviluppa la prima sezione con più dettagli' — Copilot aggiorna la pagina direttamente davanti a te, senza che tu debba cambiare schermata.",
       "source": {
@@ -738,7 +742,7 @@
       "ico": "🤖",
       "name": "Scegli il modello AI in Word: GPT o Claude",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da aprile 2026 è possibile scegliere tra <strong>GPT (OpenAI) e Claude (Anthropic)</strong> come modello per le bozze e le modifiche in Word. <strong>⚠️ Tenant EU/EFTA/UK: Claude è off per default.</strong> La funzione richiede che il Global Admin del tenant abbia abilitato i modelli Anthropic tramite il Microsoft 365 Admin Center. Senza quell'impostazione, il selettore modelli mostra solo GPT.",
       "example": "Stai scrivendo una relazione tecnica? Prova GPT. Stai scrivendo una comunicazione interna o una proposta commerciale con tono più caldo? Prova Claude. Puoi cambiare modello in qualsiasi momento.",
       "source": {
@@ -771,7 +775,7 @@
       "ico": "🧩",
       "name": "Excel: Copilot ti mostra il piano prima di modificare il foglio",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con la <strong>modalità Piano</strong>, Copilot non tocca il foglio finché non approvi ogni passaggio. Si seleziona dal <strong>menu a tendina sopra il campo prompt</strong> — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\". Copilot mostra il piano step-by-step e agisce solo dopo il tuo via. In più: <strong>Python in Excel</strong> per analisi avanzate. <strong>Prevista per giugno 2026 (Roadmap ID 560338) — non ancora GA.</strong>",
       "example": "Devi riorganizzare un foglio budget complesso. Quando sarà disponibile, selezioni \"Piano\" dal menu, descrivi il task: Copilot mostra i 5 passaggi che compirà. Tu li revisioni, ne modifichi uno se vuoi, poi dici \"Procedi\". Zero sorprese.",
       "source": {
@@ -804,7 +808,7 @@
       "ico": "🌐",
       "name": "PowerPoint: usa pagine web come fonte e scegli il modello immagini",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Due novità per PowerPoint Web: puoi usare <strong>pagine web pubbliche come fonte</strong> per costruire slide (Copilot estrae il contenuto e crea la presentazione), e puoi <strong>scegliere il modello AI per le immagini</strong> — GPT-Image, Flux, o Auto. Entrambe disponibili da aprile 2026.",
       "example": "Devi fare una presentazione su un report appena pubblicato online. Incolla l'URL del report: Copilot legge la pagina, estrae i punti chiave e costruisce le slide. Zero copia-incolla.",
       "source": {
@@ -837,7 +841,7 @@
       "ico": "📞",
       "name": "Copilot risponde alle tue chiamate Teams mentre sei occupato",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con la <strong>Call Delegation</strong>, Copilot può rispondere alle chiamate Teams in arrivo mentre sei in riunione: raccoglie il contesto dal chiamante, te lo riepiloga e può fissare un appuntamento di follow-up via Microsoft Bookings. Tutto con il tuo consenso — niente succede senza che tu veda il riassunto.",
       "example": "Sei in una call importante e arriva una chiamata da un cliente. Copilot risponde, capisce l'urgenza, ti manda un messaggio con il riassunto e fissa automaticamente una chiamata di richiamo per il pomeriggio.",
       "source": {
@@ -866,7 +870,7 @@
       "ico": "📊",
       "name": "Copilot Pages: crea dashboard e visualizzazioni interattive",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "In Copilot Pages puoi ora usare <strong>Work IQ per generare dashboard interattive, report e visualizzazioni dati</strong> — grafici, tabelle dinamiche e app leggere — direttamente nella pagina. Quando vuoi configurarle ulteriormente, le apri con un click in App Builder.",
       "example": "Stai preparando un aggiornamento mensile per il manager. Nella Copilot Page chiedi: 'Crea un grafico con l'andamento delle vendite degli ultimi 6 mesi dai dati in SharePoint' — appare direttamente nella pagina, condivisibile con un link.",
       "source": {
@@ -899,7 +903,7 @@
       "ico": "📱",
       "name": "App mobile Copilot: nuovo design chat-first con liquid glass",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "L'app mobile Microsoft 365 Copilot (iOS e Android) ha un <strong>design completamente rinnovato</strong>: layout chat-first più pulito, supporto per la formattazione del testo nei prompt, nuovo menu di navigazione semplificato e visualizzazione vocale in stile liquid glass. <strong>Rolling out maggio 2026</strong> (Roadmap ID 559310).",
       "example": "Sei fuori ufficio e apri Copilot sul telefono: il layout è più leggibile, puoi scrivere prompt con grassetto e liste, e le risposte sono più facili da copiare grazie alle citazioni visibili direttamente nella chat.",
       "source": {
@@ -930,15 +934,15 @@
       "app": "Copilot Chat",
       "cat": "c-chat",
       "ico": "📤",
-      "name": "Copilot Notebooks: genera PPT, Word, Excel e usa link web come fonti",
+      "name": "Copilot Notebooks: genera PPT, Word, Excel e infografiche",
       "st": "avail",
-      "isNew": true,
-      "impact": "Da Copilot Notebooks puoi generare <strong>presentazioni PowerPoint, documenti Word e ora anche fogli Excel</strong> direttamente dal notebook (report, sintesi, proposte). Puoi anche aggiungere <strong>URL di pagine web e siti SharePoint come riferimenti</strong>. In arrivo anche le infografiche. <strong>In rollout verso GA (entro giugno 2026).</strong>",
+      "isNew": false,
+      "impact": "Da Copilot Notebooks puoi generare <strong>presentazioni PowerPoint, documenti Word, fogli Excel e infografiche</strong> direttamente dal notebook — tutte disponibili da giugno 2026. Puoi aggiungere <strong>URL di pagine web, siti SharePoint e ora anche riunioni Teams</strong> come riferimenti. Copilot converte automaticamente il contenuto del notebook nel formato scelto.",
       "example": "Hai un notebook con il materiale di un progetto complesso. Con un click generi la presentazione per il cliente — Copilot sceglie i contenuti giusti, tu scegli tema e livello di dettaglio. Poi incolla l'URL del report di settore che vuoi usare come fonte aggiuntiva.",
       "source": {
-        "label": "Neowin + What's New Aprile 2026 — Notebooks output (PPT, Word, Excel, infografiche)",
-        "url": "https://www.neowin.net/news/microsoft-365-copilot-notebooks-gets-new-tools-to-turn-documents-into-mind-maps-and-more/",
-        "note": "GA in corso entro giugno 2026. PPT/Word + Excel (mag 2026) + infografiche in arrivo."
+        "label": "What's New in Notebooks — Giugno 2026 | Microsoft Community Hub",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-notebooks--june-2026/4525625",
+        "note": "Infografiche GA giugno 2026. PPT/Word disponibili da aprile, Excel da maggio 2026."
       },
       "detail": {
         "steps": "1. Apri un Copilot Notebook con i tuoi materiali di riferimento.\n2. Per generare una PPT: clicca 'Quick Create' → 'Presentazione'. Scegli focus principale, livello di dettaglio, numero di slide e tema grafico.\n3. Per generare un documento Word: clicca 'Quick Create' → 'Documento'. Specifica tipo (report, proposta, sintesi), destinatari e temi principali.\n4. Per aggiungere un link web: nel pannello Riferimenti del notebook, incolla l'URL — Copilot lo indicizzerà come fonte per la sessione.\n5. I file generati si aprono in PowerPoint o Word per la revisione finale.",
@@ -948,14 +952,14 @@
           "Usando questo link web come fonte aggiuntiva [URL], aggiorna la sezione sul contesto di mercato nel notebook."
         ],
         "tips": [
-          "⏳ GA in corso entro giugno 2026. Generazione Excel e infografiche aggiunte a maggio 2026 (prima solo PPT e Word). Disponibile per utenti Copilot Chat enterprise.",
+          "Infografiche GA da giugno 2026 — tutte e quattro le tipologie di output (PPT, Word, Excel, Infografiche) sono ora disponibili. Le riunioni Teams possono essere aggiunte come fonte direttamente nel pannello Riferimenti.",
           "I file PPT e Word generati sono bozze strutturate: Copilot organizza il contenuto, ma la revisione grafica finale va fatta in PowerPoint/Word.",
           "I link web come riferimenti funzionano solo con URL pubblicamente accessibili — non con pagine che richiedono login o VPN."
         ]
       },
       "rollout": {
-        "stage": "ga",
-        "note": "GA in corso entro giugno 2026. PPT/Word + Excel (mag 2026) + infografiche in arrivo."
+        "stage": "complete",
+        "note": "Tutti i tipi di output (PPT, Word, Excel, Infografiche) GA e completati a giugno 2026."
       }
     },
     {
@@ -965,7 +969,7 @@
       "ico": "💡",
       "name": "OneDrive: prompt pronti sui tuoi file senza aprirli",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "In OneDrive, quando apri la <strong>preview</strong> di un file, Copilot mostra <strong>prompt suggeriti contestuali</strong> accanto al pulsante Copilot — riassumi, genera FAQ, estrai punti chiave — senza dover scrivere il prompt da zero. <strong>Rolled out 19 maggio 2026.</strong>",
       "example": "Apri la preview di un contratto PDF in OneDrive: compaiono subito \"Riassumi i punti principali\", \"Genera una FAQ\", \"Estrai i punti chiave\". Clicchi e ottieni la risposta senza aprire il documento a parte.",
       "source": {
@@ -998,7 +1002,7 @@
       "ico": "📧",
       "name": "Copilot Chat capisce le tue email: aggiungi thread al prompt direttamente da Outlook",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da maggio 2026, in Outlook puoi <strong>aggiungere email e thread al contesto di Copilot Chat</strong> con pochi click — senza dover copiare e incollare il testo. Copilot usa il contenuto dell'email per risponderti in modo più preciso e contestualizzato.",
       "example": "Stai lavorando a una proposta e ricevi una email con nuove richieste dal cliente. Selezioni il thread in Outlook, lo aggiungi al prompt di Copilot Chat e chiedi: \"Aggiorna la proposta tenendo conto di queste nuove indicazioni.\" Niente copia-incolla.",
       "source": {
@@ -1031,7 +1035,7 @@
       "ico": "🔍",
       "name": "PowerPoint Live in Teams: Copilot spiega i termini durante la presentazione",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Nelle riunioni Teams con PowerPoint Live, i partecipanti potranno <strong>selezionare un termine o acronimo nelle slide e chiedere a Copilot una spiegazione privata</strong> — senza interrompere il presentatore. Annunciato per metà maggio 2026, ma rollout non ancora confermato nei release notes ufficiali Microsoft (ultimo aggiornamento: 19 maggio 2026).",
       "example": "Il CFO sta presentando i risultati Q2. Nelle slide appare 'EBITDA adjusted'. Il nuovo collega non conosce il termine: lo seleziona, chiede a Copilot — riceve la spiegazione sul suo schermo in privato. La presentazione continua senza interruzioni.",
       "source": {
@@ -1064,7 +1068,7 @@
       "ico": "📄",
       "name": "Apri e analizza i PDF direttamente in Copilot Chat",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Quando clicchi un PDF mentre usi Copilot Chat, il file ora si <strong>apre direttamente dentro Copilot</strong> — non più in una scheda separata. Puoi leggerlo e contemporaneamente fare domande a Copilot sul contenuto, senza cambiare finestra. <strong>Disponibile da maggio 2026.</strong>",
       "example": "Ricevi un contratto PDF di 30 pagine. Lo apri in Copilot Chat e chiedi: \"Estrai le scadenze e le penali previste\" — leggi il documento e la risposta fianco a fianco, senza saltare tra finestre.",
       "source": {
@@ -1088,6 +1092,73 @@
       "rollout": {
         "stage": "ga",
         "note": "GA 19 maggio 2026. Windows, Mac e Web."
+      }
+    },
+    {
+      "id": "planner-agent",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "✅",
+      "name": "Planner Agent in M365 Copilot: crea task e piani con linguaggio naturale",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Dal <strong>16 giugno 2026</strong>, il <strong>Planner Agent è generalmente disponibile</strong> per tutti gli utenti con licenza Microsoft 365 Copilot. Descrivi un progetto o un obiettivo in linguaggio naturale: Copilot crea il piano con task strutturati in Microsoft Planner, assegna priorità, imposta scadenze. Le novità GA: <strong>plan picker</strong> (cerca e filtra i tuoi piani), <strong>draft mode</strong> (Copilot propone il piano, tu lo approvi prima che venga salvato) e <strong>goals bucket</strong> (organizza i task sotto obiettivi più ampi).",
+      "example": "\"Crea un piano per il lancio del prodotto X: includi le fasi di testing, marketing, formazione e go-live, con scadenze distribuite su 6 settimane.\" Copilot genera il piano in bozza — tu lo revisioni e poi lo salvi in Planner.",
+      "detail": {
+        "steps": "1. Apri Microsoft 365 Copilot Chat e digita il tuo obiettivo di progetto in linguaggio naturale.\n2. Planner Agent risponde con un piano strutturato in draft mode: task, responsabili, scadenze, priorità — tutto come bozza.\n3. Revisiona la bozza: puoi modificare task, cambiare scadenze o aggiungere note prima di salvare.\n4. Clicca 'Salva in Planner' per trasferire il piano: apparirà in Microsoft Planner e in Teams (scheda Planner).\n5. Per aggiornare task esistenti: usa il plan picker per selezionare il piano, poi chiedi le modifiche in linguaggio naturale.",
+        "prompts": [
+          "Crea un piano di progetto per [Nome Progetto] con fase di avvio, sviluppo, test e lancio — 8 settimane totali.",
+          "Quali task del piano [Nome Piano] sono in scadenza questa settimana? Aggiorna lo stato di quelli completati.",
+          "Aggiungi al piano [Nome Piano] i task emersi dalla riunione di oggi: [lista punti]."
+        ],
+        "tips": [
+          "Usa la draft mode a tuo vantaggio: Copilot propone ma non salva nulla finché non clicchi 'Conferma'. Puoi modificare liberamente prima del salvataggio.",
+          "Il goals bucket è utile per collegare task operativi a obiettivi strategici: crea prima il goal ('Aumentare le vendite Q3'), poi aggiungi i task sotto di esso.",
+          "Planner Agent funziona sia su Microsoft Planner web che nell'app Teams (scheda Planner). I piani creati via Copilot sono identici a quelli creati manualmente."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity Planner Blog — Planner Agent in Microsoft 365 Copilot is now generally available (16 giu 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/plannerblog/planner-agent-in-microsoft-365-copilot-is-now-generally-available/4527629",
+        "note": "GA 16 giugno 2026. MC1323264. Richiede licenza Microsoft 365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "eta": "Rollout in corso — metà/fine giugno 2026",
+        "note": "GA 16 giugno 2026. MC1323264. Richiede licenza Microsoft 365 Copilot."
+      }
+    },
+    {
+      "id": "claude-opus-48",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🧬",
+      "name": "Claude Opus 4.8 nel selettore modelli: AI più potente per task complessi",
+      "st": "avail",
+      "isNew": false,
+      "impact": "Dal <strong>28 maggio 2026</strong>, <strong>Claude Opus 4.8 di Anthropic</strong> è disponibile nel selettore modelli di Microsoft 365 Copilot per gli utenti con licenza M365 Copilot. Opus 4.8 eccelle in: task multi-step complessi, scrittura di documenti articolati, analisi dati, presentazioni con Work IQ grounding. Disponibile in <strong>Copilot Chat, Excel, PowerPoint e Copilot Studio</strong>. <strong>⚠️ EU/EFTA/UK: Claude è off per default.</strong> L'admin deve abilitarlo in M365 Admin Center.",
+      "example": "Stai preparando un'analisi di scenario complessa su più passaggi. Selezioni Claude Opus 4.8 nel menu modelli: la risposta è più strutturata, segue meglio le istruzioni complesse e mantiene il filo su prompt multi-step.",
+      "detail": {
+        "steps": "1. Apri Copilot Chat (web, Windows, Mac) oppure Excel o PowerPoint.\n2. Nel campo prompt, cerca il selettore modelli (icona a tendina o ingranaggio in alto a destra).\n3. Seleziona 'Claude Opus 4.8' dall'elenco.\n4. Scrivi il tuo prompt normalmente: Copilot userà Opus 4.8 per elaborare la risposta.\n5. Il modello scelto rimane attivo per la sessione corrente.",
+        "prompts": [
+          "Analizza questo documento di 10 pagine e crea un executive summary con i 5 punti più rilevanti per il board.",
+          "Scrivi una proposta commerciale completa per [Cliente] basandoti su questi dati: [dati]. Include pricing, timeline e next steps.",
+          "Elabora questo foglio Excel con 500 righe: identifica i 3 trend principali e proponi le azioni correttive."
+        ],
+        "tips": [
+          "⚠️ EU/EFTA/UK: Claude Opus 4.8 è off per default nel selettore modelli. Il tuo Global Admin deve abilitarlo in M365 Admin Center → Copilot → Settings. Senza questa impostazione il modello non è visibile.",
+          "Opus 4.8 è ottimizzato per agentic work multi-step: usalo quando hai task complessi che richiedono molti passaggi o una lunga catena di ragionamento.",
+          "In Excel e PowerPoint, il selettore modello appare nello stesso pannello Copilot. Se non lo vedi, controlla che il rollout sia arrivato al tuo tenant (in corso da maggio 2026)."
+        ]
+      },
+      "source": {
+        "label": "Microsoft Community Hub — Available today: Anthropic Claude Opus 4.8 in Microsoft 365 Copilot (28 mag 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-opus-4-8-in-microsoft-365-copilot/4523405",
+        "note": "Disponibile dal 28 maggio 2026. Copilot Chat, Excel, PowerPoint, Copilot Studio. EU: richiede abilitazione admin."
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Disponibile dal 28 maggio 2026. Rollout completato a tutti gli utenti M365 Copilot con licenza."
       }
     }
   ],
@@ -1163,6 +1234,15 @@
       "tag": "Prossimamente · Riepilogo estate",
       "cov": "Copilot Cowork (anteprima) · Guida funzioni attive estate 2026",
       "note": "Comunicare come anteprima entusiasmante, non promessa certa. Chiudere il ciclo con una guida rapida alle funzioni già attive e prompt pratici da portare in vacanza."
+    },
+    {
+      "w": "W9",
+      "d": "23–27 giu",
+      "hot": true,
+      "theme": "Copilot Cowork è GA: il tuo AI collega lavora davvero",
+      "tag": "GA GLOBALE — Cowork + Planner Agent",
+      "cov": "Copilot Cowork GA (16 giu) · Planner Agent GA (16 giu) · Claude Opus 4.8 nel selettore · Pages→SharePoint News completo",
+      "note": "Grande notizia della settimana: Cowork passa da anteprima a prodotto GA. Focus impatto pratico: plugin Dynamics 365, governance, billing attivo. Planner Agent: dall'italiano naturale a task strutturati. Claude 4.8: quando usarlo vs GPT. Chiudere con guida 'quale funzione per quale caso d'uso' — estate 2026."
     }
   ]
 }
