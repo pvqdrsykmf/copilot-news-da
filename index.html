@@ -221,6 +221,11 @@ footer a:hover{color:var(--blue)}
 .rstep.current .rdot{background:#fff;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,0,0,.08)}
 .rstep.done .rlbl,.rstep.current .rlbl{color:var(--accent);font-weight:600}
 .fc-timeline-meta{font-size:11px;color:#6a6a73;margin:0 0 6px}
+/* ── Badge cambio di stato ── */
+.fc-change{display:inline-block;margin:2px 0 8px;padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:600;color:#0a7d33;background:rgba(16,160,64,.12);border:1px solid rgba(16,160,64,.25)}
+/* ── Archivi (date + badge ritirata) ── */
+.arch-date{font-family:var(--mono);font-size:11px;color:var(--ink-4)}
+.badge.b-canc{background:rgba(190,40,40,.10);color:#b32626;border:1px solid rgba(190,40,40,.25)}
 </style>
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -265,6 +270,8 @@ footer a:hover{color:var(--blue)}
       <button class="tab-btn on"  onclick="go('feat',this)"><span class="ico">✦</span>Novità per te</button>
       <button class="tab-btn"     onclick="go('plan',this)"><span class="ico">📅</span>Piano newsletter</button>
       <button class="tab-btn" id="tab-pub-btn" onclick="go('pub',this)"><span class="ico">✅</span>Già pubblicate<span class="tab-count zero" id="pub-count">0</span></button>
+      <button class="tab-btn" id="tab-dist-btn" onclick="go('dist',this)"><span class="ico">📦</span>Distribuite<span class="tab-count zero" id="dist-count">0</span></button>
+      <button class="tab-btn" id="tab-canc-btn" onclick="go('canc',this)"><span class="ico">🗂️</span>Annullate<span class="tab-count zero" id="canc-count">0</span></button>
     </nav>
 
     <!-- TAB NOVITÀ -->
@@ -283,9 +290,11 @@ footer a:hover{color:var(--blue)}
         <span class="fsep"></span>
         <div class="fgroup">
           <span class="flbl">Stato</span>
-          <button class="pill on" data-g="st" data-v="all"   onclick="sf('st','all',this)">Tutti</button>
-          <button class="pill"    data-g="st" data-v="avail" onclick="sf('st','avail',this)">Disponibile ora</button>
-          <button class="pill"    data-g="st" data-v="soon"  onclick="sf('st','soon',this)">In arrivo</button>
+          <button class="pill on" data-g="stage" data-v="all"      onclick="sf('stage','all',this)">Tutti</button>
+          <button class="pill"    data-g="stage" data-v="in-dev"   onclick="sf('stage','in-dev',this)">In sviluppo</button>
+          <button class="pill"    data-g="stage" data-v="preview"  onclick="sf('stage','preview',this)">Anteprima</button>
+          <button class="pill"    data-g="stage" data-v="ga"       onclick="sf('stage','ga',this)">GA distribuz.</button>
+          <button class="pill"    data-g="stage" data-v="complete" onclick="sf('stage','complete',this)">Per tutti</button>
         </div>
         <input id="srch" class="search" type="text" placeholder="Cerca funzione…" oninput="render()">
       </div>
@@ -310,6 +319,28 @@ footer a:hover{color:var(--blue)}
       </div>
       <div id="pub-list"></div>
     </div>
+
+    <!-- TAB DISTRIBUITE (per tutti, archiviate il mese dopo) -->
+    <div id="pane-dist" class="pane">
+      <div class="pub-header">
+        <div class="pub-header-left">
+          <strong>Funzionalità distribuite a tutti</strong>
+          <span>Funzioni arrivate allo stadio "Per tutti" (Launched su Microsoft 365). Archiviate automaticamente il mese successivo.</span>
+        </div>
+      </div>
+      <div id="dist-list"></div>
+    </div>
+
+    <!-- TAB ANNULLATE / RITIRATE -->
+    <div id="pane-canc" class="pane">
+      <div class="pub-header">
+        <div class="pub-header-left">
+          <strong>Funzionalità annullate o ritirate</strong>
+          <span>Funzioni annunciate poi cancellate (status "Cancelled") o sparite dalla roadmap Microsoft.</span>
+        </div>
+      </div>
+      <div id="canc-list"></div>
+    </div>
   </div>
 </div>
 
@@ -324,7 +355,7 @@ footer a:hover{color:var(--blue)}
    STATE
 ════════════════════════════════════════════ */
 let ITEMS = [], PLAN = [];
-const F = {app:'all', st:'all'};
+const F = {app:'all', stage:'all'};
 const LS_KEY = 'da_copilot_pub_2026';
 const LS_DATES = 'da_copilot_pub_dates_2026';
 
@@ -353,12 +384,14 @@ async function loadData() {
     ITEMS = data.items || [];
     PLAN  = data.plan  || [];
 
-    // KPIs
-    document.getElementById('k-tot').textContent  = ITEMS.length;
-    document.getElementById('k-pub').textContent  = ITEMS.filter(i => i.st === 'avail').length;
-    document.getElementById('k-wait').textContent = ITEMS.filter(i => i.st === 'soon').length;
+    // KPIs (escludono gli archiviati)
+    const active = ITEMS.filter(i => !i.archived);
+    document.getElementById('k-tot').textContent  = active.length;
+    document.getElementById('k-pub').textContent  = active.filter(i => i.st === 'avail').length;
+    document.getElementById('k-wait').textContent = active.filter(i => i.st === 'soon').length;
 
     syncCount();
+    updateArchiveCounts();
     render();
     renderPlan();
 
@@ -440,6 +473,15 @@ function rolloutTimeline(ro) {
   const meta = [ro.note, ro.eta].filter(Boolean).join(" · ");
   return `<div class="fc-timeline">${steps}</div>` + (meta ? `<div class="fc-timeline-meta">${meta}</div>` : "");
 }
+function stageLabel(key) {
+  const s = ROLLOUT_STAGES.find(x => x.key === key);
+  return s ? s.label : key;
+}
+function changeBadge(ro) {
+  if (!ro || !ro.changedFrom) return "";
+  const extra = ro.changedOn ? ` · ${ro.changedOn}` : "";
+  return `<div class="fc-change">⬆ Avanzata: <strong>${stageLabel(ro.changedFrom)} → ${stageLabel(ro.stage)}</strong>${extra}</div>`;
+}
 function flagBtn(id) {
   const on = published.has(id);
   return `<button class="flag-btn" data-flagged="${on}" onclick="flagItem('${id}')" title="${on ? 'Pubblicata — clicca per ripristinare' : 'Segna come pubblicata'}">${on ? '✅' : '🏁'}</button>`;
@@ -487,15 +529,16 @@ function buildDetail(d) {
 function render() {
   const q = (document.getElementById('srch').value || '').toLowerCase();
   const vis = ITEMS.filter(it => {
+    if (it.archived) return false;
     if (published.has(it.id)) return false;
     if (F.app !== 'all' && it.app !== F.app) return false;
-    if (F.st  !== 'all' && it.st  !== F.st)  return false;
+    if (F.stage !== 'all' && (it.rollout || {}).stage !== F.stage) return false;
     if (q && !it.name.toLowerCase().includes(q) && !it.impact.toLowerCase().includes(q) && !it.app.toLowerCase().includes(q)) return false;
     return true;
   });
   const box = document.getElementById('cards');
   if (!vis.length) {
-    const allLeft = ITEMS.filter(i => !published.has(i.id));
+    const allLeft = ITEMS.filter(i => !i.archived && !published.has(i.id));
     box.innerHTML = allLeft.length === 0
       ? `<div class="empty" style="grid-column:1/-1"><div class="empty-ico">🎉</div><strong>Tutte le novità sono state pubblicate!</strong><br><span style="font-size:12px">Archivio nel tab "Già pubblicate".</span></div>`
       : `<div class="empty"><div class="empty-ico">🔍</div>Nessuna funzione corrisponde ai filtri.</div>`;
@@ -514,6 +557,7 @@ function render() {
           </div>
         </div>
         <div class="fc-badges">${stBadge(it.st)}</div>
+        ${changeBadge(it.rollout)}
         ${rolloutTimeline(it.rollout)}
         <div class="fc-impact">${it.impact}</div>
         <div class="fc-example">${it.example}</div>
@@ -559,6 +603,44 @@ function renderPublished() {
 }
 
 /* ════════════════════════════════════════════
+   RENDER ARCHIVI (Distribuite / Annullate)
+════════════════════════════════════════════ */
+function updateArchiveCounts() {
+  const setC = (id, n) => { const el = document.getElementById(id); if (el) { el.textContent = n; el.classList.toggle('zero', n === 0); } };
+  setC('dist-count', ITEMS.filter(i => i.archived === 'distribuite').length);
+  setC('canc-count', ITEMS.filter(i => i.archived === 'annullate').length);
+}
+function renderArchive(kind) {
+  const listId = kind === 'distribuite' ? 'dist-list' : 'canc-list';
+  const el = document.getElementById(listId);
+  const items = ITEMS.filter(i => i.archived === kind);
+  if (!items.length) {
+    const msg = kind === 'distribuite'
+      ? 'Nessuna funzione ancora archiviata come "distribuita a tutti".'
+      : 'Nessuna funzione annullata o ritirata.';
+    el.innerHTML = `<div class="pub-empty"><div class="pub-empty-ico">${kind === 'distribuite' ? '📦' : '🗂️'}</div>
+      <div style="font-size:13px;color:var(--ink-4)">${msg}</div></div>`;
+    return;
+  }
+  el.innerHTML = items.map(it => `
+    <div class="pub-row">
+      <div class="pub-ico">${it.ico}</div>
+      <div class="pub-info">
+        <div class="pub-name">${it.name}</div>
+        <div class="pub-meta">
+          <span class="pub-app-tag">${it.app}</span>
+          ${kind === 'distribuite'
+            ? `<span class="arch-date">Distribuita a tutti${it.completedOn ? ' · ' + it.completedOn : ''}</span>`
+            : `<span class="arch-date">${it.archivedReason || 'Ritirata'}${it.archivedOn ? ' · ' + it.archivedOn : ''}</span>`}
+        </div>
+      </div>
+      ${kind === 'distribuite'
+        ? '<span class="pub-done-badge">✓ Per tutti</span>'
+        : '<span class="badge b-canc">✕ Ritirata</span>'}
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════
    RENDER PLAN
 ════════════════════════════════════════════ */
 function renderPlan() {
@@ -587,7 +669,9 @@ function go(id, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
   document.getElementById('pane-' + id).classList.add('on');
   btn.classList.add('on');
-  if (id === 'pub') renderPublished();
+  if (id === 'pub')  renderPublished();
+  if (id === 'dist') renderArchive('distribuite');
+  if (id === 'canc') renderArchive('annullate');
 }
 function sf(g, v, btn) {
   F[g] = v;
