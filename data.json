@@ -68,7 +68,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out 7 maggio 2026. Aggiornamento automatico — nessuna azione richiesta da admin o utente."
-      }
+      },
+      "completedOn": "7 mag 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "workiq",
@@ -170,7 +173,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out aprile 2026. Outlook web e nuovo Outlook per Windows."
-      }
+      },
+      "completedOn": "30 apr 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "scheduling",
@@ -265,7 +271,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out marzo 2026"
-      }
+      },
+      "completedOn": "31 mar 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "recap-tpl",
@@ -298,7 +307,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out febbraio 2026"
-      }
+      },
+      "completedOn": "28 feb 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "word-edit",
@@ -359,13 +371,15 @@
         ]
       },
       "source": {
-        "label": "Satya Nadella — annuncio X/Twitter 14 aprile 2026",
-        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--march-2026/4506322",
-        "note": "In rollout aprile 2026"
+        "label": "Copilot in Word: New Capabilities for Document Workflows (apr 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/copilot-in-word-new-capabilities-for-document-workflows/4508974",
+        "note": "Frontier Program e Office Insiders Beta Channel da aprile 2026. Word web e Mac in arrivo."
       },
       "rollout": {
-        "stage": "in-dev",
-        "note": "In rollout aprile 2026"
+        "stage": "preview",
+        "note": "Frontier Program e Office Insiders Beta da aprile 2026. Supporto Word web e Mac in arrivo.",
+        "changedFrom": "in-dev",
+        "changedOn": "23 giu 2026"
       }
     },
     {
@@ -400,7 +414,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out marzo 2026"
-      }
+      },
+      "completedOn": "31 mar 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "excel-local",
@@ -501,7 +518,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out marzo 2026"
-      }
+      },
+      "completedOn": "31 mar 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "researcher-out",
@@ -535,7 +555,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out marzo 2026"
-      }
+      },
+      "completedOn": "31 mar 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "pages-sp",
@@ -667,7 +690,8 @@
       "rollout": {
         "stage": "complete",
         "note": "Rollout completato giugno 2026. Mind maps condivisibili disponibili."
-      }
+      },
+      "completedOn": "2 giu 2026"
     },
     {
       "id": "outlook-calendar-rsvp",
@@ -714,7 +738,7 @@
       "example": "Hai una Copilot Page con 5 idee per un evento. Scrivi nella chat: 'Aggiungi altre 3 idee e sviluppa la prima sezione con più dettagli' — Copilot aggiorna la pagina direttamente davanti a te, senza che tu debba cambiare schermata.",
       "source": {
         "label": "Microsoft 365 Copilot Chat Roadmap — Pages chat steering",
-        "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap/copilotchat",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap",
         "note": "In sviluppo — listato in 'What's Next' sulla roadmap Copilot Chat. Data GA non ancora annunciata"
       },
       "detail": {
@@ -832,7 +856,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out aprile 2026. PowerPoint web."
-      }
+      },
+      "completedOn": "30 apr 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "teams-call-delegation",
@@ -894,7 +921,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out aprile 2026."
-      }
+      },
+      "completedOn": "30 apr 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "copilot-app-mobile",
@@ -960,7 +990,8 @@
       "rollout": {
         "stage": "complete",
         "note": "Tutti i tipi di output (PPT, Word, Excel, Infografiche) GA e completati a giugno 2026."
-      }
+      },
+      "completedOn": "23 giu 2026"
     },
     {
       "id": "onedrive-prompts",
@@ -993,7 +1024,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Rolled out 19 maggio 2026 (Release Notes Microsoft, sezione OneDrive). Si attiva in preview del file, non con semplice selezione."
-      }
+      },
+      "completedOn": "19 mag 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "outlook-implicit-grounding",
@@ -1159,7 +1193,10 @@
       "rollout": {
         "stage": "complete",
         "note": "Disponibile dal 28 maggio 2026. Rollout completato a tutti gli utenti M365 Copilot con licenza."
-      }
+      },
+      "completedOn": "28 mag 2026",
+      "archived": "distribuite",
+      "archivedOn": "23 giu 2026"
     },
     {
       "id": "copilot-app-design",
@@ -1168,7 +1205,7 @@
       "ico": "✨",
       "name": "Nuova app Microsoft 365 Copilot: più veloce, chat-first e task-aware",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da giugno 2026 la <strong>Microsoft 365 Copilot app</strong> si aggiorna con un design completamente ripensato: layout chat-first, prompt box <em>task-aware</em> (suggerisce strumenti in base a quello che scrivi), navigazione semplificata. Le performance migliorano sensibilmente: <strong>50% più veloce nell'avvio</strong> e <strong>10% più veloce nelle risposte complesse</strong>. Dopo l'introduzione del nuovo design, l'uso di Copilot nelle app è cresciuto del 27% in Word, 33% in Excel, 43% in PowerPoint e 30% in Outlook.",
       "example": "Apri l'app Copilot (m365copilot.com o dal launcher Microsoft 365): trovi il campo prompt più ampio, i suggerimenti di strumenti che appaiono mentre scrivi, e Notebooks e Pages accessibili in un click senza cambiare schermata.",
       "detail": {
@@ -1201,7 +1238,7 @@
       "ico": "🔇",
       "name": "Teams: riepilogo AI della riunione senza salvare la registrazione",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>In arrivo agosto–settembre 2026.</strong>",
       "example": "La tua azienda non consente la registrazione delle riunioni. Attivi il 'Recap senza transcript' prima della call: Copilot cattura i punti chiave in tempo reale e li condivide con i partecipanti dopo la riunione — niente registrazione salvata, ma niente da perdere.",
       "detail": {
@@ -1230,7 +1267,7 @@
       "ico": "🎛️",
       "name": "Copilot Tuning: addestra Copilot con i dati e lo stile della tua azienda",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da giugno 2026, <strong>Copilot Tuning</strong> entra in rollout worldwide per le organizzazioni con almeno <strong>5.000 licenze Microsoft 365 Copilot</strong>. Senza codice né data scientist: selezioni un template in Agent Builder, carichi esempi di documenti aziendali, e Copilot impara lo stile e le regole della tua organizzazione. Template disponibili: <strong>Document Writing</strong> (genera bozze nel tuo formato), <strong>Style Editing</strong> (corregge secondo la voce aziendale), <strong>Expert Answers</strong> (risponde dalla knowledge base interna), <strong>Document Summary</strong> (riepiloga secondo standard aziendali).",
       "example": "Il tuo ufficio legale usa sempre lo stesso schema per i contratti. Carichi 20 contratti come esempi in Copilot Tuning: da quel momento, quando chiedi una bozza di contratto, Copilot genera automaticamente il tuo formato standard — non uno generico.",
       "detail": {
@@ -1254,6 +1291,35 @@
       "rollout": {
         "stage": "preview",
         "note": "Rollout worldwide giugno 2026. Richiede 5.000+ licenze Microsoft 365 Copilot."
+      }
+    },
+    {
+      "id": "purview-dlp",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "🛡️",
+      "name": "Purview DLP blocca i dati sensibili nei prompt Copilot",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da giugno 2026, <strong>Microsoft Purview Data Loss Prevention (DLP)</strong> è generalmente disponibile per Microsoft 365 Copilot e Copilot Chat. Se un utente include dati sensibili nel prompt (numeri di conto, codici fiscali, dati finanziari), la policy DLP può bloccare la risposta o impedire che le informazioni finiscano in una ricerca web esterna — tutto in base alle regole configurate dall'admin. I dati interni su SharePoint e OneDrive continuano a funzionare normalmente come grounding.",
+      "example": "Un collega incolla un numero IBAN in un prompt Copilot per cercare informazioni online. La policy DLP rileva il dato sensibile e blocca la web search, mostrando un avviso. La risposta basata sui dati interni aziendali resta disponibile.",
+      "detail": {
+        "steps": "1. (Admin) Accedi a Microsoft Purview Compliance Portal (compliance.microsoft.com).\n2. Vai su Data Loss Prevention → Policy e crea o modifica una policy.\n3. Seleziona 'Microsoft 365 Copilot' e 'Copilot Chat' come location.\n4. Definisci le sensitive information types (SIT) da proteggere: dati finanziari, codici fiscali, numeri di conti, SIT personalizzati aziendali.\n5. Scegli l'azione: blocca la web search / blocca la risposta Copilot / mostra avviso con opzione di override.\n6. Pubblica la policy: Copilot applica i controlli in tempo reale su tutti i prompt degli utenti.",
+        "prompts": [],
+        "tips": [
+          "⚠️ Funzionalità configurata dall'IT: gli utenti finali vedono un avviso o un blocco quando Copilot rileva dati sensibili nel loro prompt. Non è un'impostazione utente — la configura il reparto IT/Security.",
+          "La policy DLP protegge la ricerca web di Copilot (impedisce che dati sensibili finiscano in query verso fonti esterne) senza bloccare l'accesso ai dati interni su SharePoint/OneDrive.",
+          "DLP per Copilot è incluso nelle licenze Microsoft Purview E3/E5 con Copilot — senza costi aggiuntivi oltre la licenza esistente. Configura la policy prima di comunicarla agli utenti."
+        ]
+      },
+      "source": {
+        "label": "Microsoft Learn — Microsoft Purview DLP for Microsoft 365 Copilot and Copilot Chat",
+        "url": "https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about",
+        "note": "GA giugno 2026. Espansione include protezione web search. Blog TechCommunity Security (4512497)."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA giugno 2026. Rolling out worldwide. Copre Copilot Chat, Word, Excel, PowerPoint e web search."
       }
     }
   ],
@@ -1347,6 +1413,15 @@
       "tag": "Copilot Chat · Teams · Enterprise",
       "cov": "Nuova app M365 Copilot (50% più veloce, chat-first) · Copilot Tuning worldwide (addestra Copilot con i tuoi dati) · Teams recap senza trascrizione in arrivo ad agosto",
       "note": "Tre angoli: 1) Nuova app — mostrare l'impatto pratico del design (50% avvio, 10% risposte). 2) Copilot Tuning — per chi ha 5000+ licenze: concept no-code, template Document Writing e Style Editing, esempi concreti (contratti, proposte). 3) Teams recap senza transcript — introdurre come 'coming soon agosto' con focus compliance (chi non può registrare). Tono: estate produttiva, non rallentare."
+    },
+    {
+      "w": "W11",
+      "d": "7–11 lug",
+      "hot": false,
+      "theme": "Copilot e sicurezza: i tuoi dati sensibili non escono dall'azienda",
+      "tag": "Governance · Word · Compliance",
+      "cov": "Purview DLP per Copilot (GA) · Word Track Changes in anteprima (Frontier) · Guida funzioni estate 2026",
+      "note": "Angolo sicurezza pratico: spiegare DLP in modo semplice — 'Copilot non manda i tuoi dati sensibili fuori dall'azienda'. Cosa vede l'utente (avviso), cosa configura l'IT (policy). Word Track Changes (Frontier): quando arriva per tutti? Chiudere con mappa pratica 'quale Copilot per quale task' questa estate."
     }
   ]
 }
