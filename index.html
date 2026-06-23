@@ -226,6 +226,7 @@ footer a:hover{color:var(--blue)}
 /* ── Archivi (date + badge ritirata) ── */
 .arch-date{font-family:var(--mono);font-size:11px;color:var(--ink-4)}
 .badge.b-canc{background:rgba(190,40,40,.10);color:#b32626;border:1px solid rgba(190,40,40,.25)}
+.badge.b-dist{background:var(--green-bg);color:var(--green-txt);border:1px solid var(--green-brd)}
 </style>
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -524,6 +525,44 @@ function buildDetail(d) {
 }
 
 /* ════════════════════════════════════════════
+   FEATURE CARD (riusata: novità attive + archivio distribuite)
+════════════════════════════════════════════ */
+function featureCard(it, opts) {
+  opts = opts || {};
+  const d = it.detail || {};
+  const hasDetail = d.steps || (d.prompts && d.prompts.length) || (d.tips && d.tips.length);
+  const distBadge = opts.archived
+    ? `<span class="badge b-dist">✓ Per tutti${it.completedOn ? ' · ' + it.completedOn : ''}</span>`
+    : '';
+  return `
+    <div class="fcard ${it.cat}" id="card-${it.id}" style="position:relative">
+      ${opts.archived ? '' : flagBtn(it.id)}
+      <div class="fcard-body">
+        <div class="fc-top">
+          <div class="fc-icon">${it.ico}</div>
+          <div class="fc-meta" style="padding-right:36px">
+            <div class="fc-app">${it.app}</div>
+            <div class="fc-name">${it.name}${it.isNew && !opts.archived ? '<span class="badge b-new" style="margin-left:6px;vertical-align:middle">NUOVO</span>' : ''}</div>
+          </div>
+        </div>
+        <div class="fc-badges">${stBadge(it.st)}${distBadge}</div>
+        ${changeBadge(it.rollout)}
+        ${rolloutTimeline(it.rollout)}
+        <div class="fc-impact">${it.impact}</div>
+        <div class="fc-example">${it.example}</div>
+        ${it.source ? `<div class="fc-source">
+          <a href="${it.source.url}" target="_blank" rel="noopener" title="${it.source.note || ''}">${it.source.label}</a>
+          ${it.source.note ? `<span class="fc-source-note">${it.source.note}</span>` : ''}
+        </div>` : ''}
+      </div>
+      ${hasDetail ? `<button class="expand-btn" onclick="toggleDetail('${it.id}')">
+        <span class="lbl">Approfondisci</span><span class="arr">▾</span>
+      </button>
+      <div class="detail-wrap"><div class="detail-inner">${buildDetail(it.detail)}</div></div>` : ''}
+    </div>`;
+}
+
+/* ════════════════════════════════════════════
    RENDER CARDS
 ════════════════════════════════════════════ */
 function render() {
@@ -545,32 +584,7 @@ function render() {
     document.getElementById('cbar').textContent = '';
     return;
   }
-  box.innerHTML = vis.map(it => `
-    <div class="fcard ${it.cat}" id="card-${it.id}" style="position:relative">
-      ${flagBtn(it.id)}
-      <div class="fcard-body">
-        <div class="fc-top">
-          <div class="fc-icon">${it.ico}</div>
-          <div class="fc-meta" style="padding-right:36px">
-            <div class="fc-app">${it.app}</div>
-            <div class="fc-name">${it.name}${it.isNew ? '<span class="badge b-new" style="margin-left:6px;vertical-align:middle">NUOVO</span>' : ''}</div>
-          </div>
-        </div>
-        <div class="fc-badges">${stBadge(it.st)}</div>
-        ${changeBadge(it.rollout)}
-        ${rolloutTimeline(it.rollout)}
-        <div class="fc-impact">${it.impact}</div>
-        <div class="fc-example">${it.example}</div>
-        ${it.source ? `<div class="fc-source">
-          <a href="${it.source.url}" target="_blank" rel="noopener" title="${it.source.note || ''}">${it.source.label}</a>
-          ${it.source.note ? `<span class="fc-source-note">${it.source.note}</span>` : ''}
-        </div>` : ''}
-      </div>
-      <button class="expand-btn" onclick="toggleDetail('${it.id}')">
-        <span class="lbl">Approfondisci</span><span class="arr">▾</span>
-      </button>
-      <div class="detail-wrap"><div class="detail-inner">${buildDetail(it.detail)}</div></div>
-    </div>`).join('');
+  box.innerHTML = vis.map(it => featureCard(it)).join('');
   document.getElementById('cbar').innerHTML = `<strong>${vis.length}</strong> novità da pubblicare — clicca <strong>🏁</strong> per archiviarla dopo la pubblicazione`;
 }
 
@@ -620,6 +634,11 @@ function renderArchive(kind) {
       : 'Nessuna funzione annullata o ritirata.';
     el.innerHTML = `<div class="pub-empty"><div class="pub-empty-ico">${kind === 'distribuite' ? '📦' : '🗂️'}</div>
       <div style="font-size:13px;color:var(--ink-4)">${msg}</div></div>`;
+    return;
+  }
+  // Distribuite: schede complete e cliccabili (source + Approfondisci), come le novità attive
+  if (kind === 'distribuite') {
+    el.innerHTML = `<div class="cards">${items.map(it => featureCard(it, { archived: true })).join('')}</div>`;
     return;
   }
   el.innerHTML = items.map(it => `
