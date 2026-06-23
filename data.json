@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "22 giugno 2026",
+    "updated": "23 giugno 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -111,7 +111,7 @@
       "ico": "🤖",
       "name": "Copilot Cowork è GA: delega task complessi al tuo AI collega",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>16 giugno 2026</strong>, Copilot Cowork è <strong>generalmente disponibile</strong> per tutti gli utenti con licenza Microsoft 365 Copilot. Puoi assegnare a Copilot task complessi che si svolgono nel tempo — scrive, pianifica, agisce su sistemi esterni — con governance enterprise integrata (audit, eDiscovery, sensitivity labels). Disponibili da subito i plugin Dynamics 365 (Sales, Service, ERP, Fabric) e nove partner (Miro, monday.com, Harvey, LSEG e altri). Billing attivo dal 16 giugno; gli utenti Frontier non vengono addebitati fino al 1° luglio 2026.",
       "example": "\"Analizza le email del cliente X degli ultimi 30 giorni, riassumi le richieste aperte e crea i task in Planner.\" Copilot esegue i passaggi uno alla volta, chiedendo la tua approvazione prima di ogni azione importante.",
       "detail": {
@@ -902,14 +902,14 @@
       "cat": "c-chat",
       "ico": "📱",
       "name": "App mobile Copilot: nuovo design chat-first con liquid glass",
-      "st": "soon",
+      "st": "avail",
       "isNew": false,
       "impact": "L'app mobile Microsoft 365 Copilot (iOS e Android) ha un <strong>design completamente rinnovato</strong>: layout chat-first più pulito, supporto per la formattazione del testo nei prompt, nuovo menu di navigazione semplificato e visualizzazione vocale in stile liquid glass. <strong>Rolling out maggio 2026</strong> (Roadmap ID 559310).",
       "example": "Sei fuori ufficio e apri Copilot sul telefono: il layout è più leggibile, puoi scrivere prompt con grassetto e liste, e le risposte sono più facili da copiare grazie alle citazioni visibili direttamente nella chat.",
       "source": {
         "label": "What's New Aprile 2026 — Mobile app redesign (Roadmap ID 559310)",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
-        "note": "Rolling out maggio 2026. iOS e Android."
+        "note": "GA giugno 2026. Design completo in rollout (Microsoft 365 Blog 28 maggio 2026). iOS e Android."
       },
       "detail": {
         "steps": "1. Aggiorna l'app Microsoft 365 Copilot sul tuo telefono all'ultima versione (App Store o Google Play).\n2. Apri l'app: troverai il nuovo layout chat-first con navigazione semplificata.\n3. Nel campo prompt puoi ora formattare il testo con grassetto, corsivo e liste.\n4. Il nuovo menu di navigazione dà accesso diretto a Notebooks, Pages e Agenti senza schermate intermedie.\n5. Per la voce: tocca il microfono — la nuova visualizzazione liquid glass mostra l'elaborazione vocale in modo più intuitivo.",
@@ -919,14 +919,14 @@
           "Aggiornami sullo stato del progetto [Nome] basandoti sulle ultime comunicazioni."
         ],
         "tips": [
-          "⏳ Rolling out maggio 2026: se non vedi ancora il nuovo design, aggiorna l'app e attendi che il rollout raggiunga il tuo account.",
+          "Il nuovo design è GA da giugno 2026: aggiorna l'app all'ultima versione (App Store o Google Play) se non vedi ancora il nuovo layout.",
           "La formattazione del testo nei prompt (grassetto, liste) aiuta Copilot a capire meglio la struttura della richiesta — usala per domande multi-punto.",
           "Il menu semplificato raggruppa Notebooks, Pages e Agenti nella stessa schermata di navigazione — meno click per arrivare agli strumenti più usati."
         ]
       },
       "rollout": {
-        "stage": "preview",
-        "note": "Rolling out maggio 2026. iOS e Android."
+        "stage": "ga",
+        "note": "GA giugno 2026. Rollout completato per iOS e Android."
       }
     },
     {
@@ -1039,9 +1039,9 @@
       "impact": "Nelle riunioni Teams con PowerPoint Live, i partecipanti potranno <strong>selezionare un termine o acronimo nelle slide e chiedere a Copilot una spiegazione privata</strong> — senza interrompere il presentatore. Annunciato per metà maggio 2026, ma rollout non ancora confermato nei release notes ufficiali Microsoft (ultimo aggiornamento: 19 maggio 2026).",
       "example": "Il CFO sta presentando i risultati Q2. Nelle slide appare 'EBITDA adjusted'. Il nuovo collega non conosce il termine: lo seleziona, chiede a Copilot — riceve la spiegazione sul suo schermo in privato. La presentazione continua senza interruzioni.",
       "source": {
-        "label": "HANDS ON tek — What's New Copilot Aprile 2026 (PowerPoint Live + Copilot in Teams)",
-        "url": "https://handsontek.net/whats-new-for-copilot-april-2026/",
-        "note": "Annunciato per metà maggio 2026 (handsontek.net). Non ancora nei release notes ufficiali Microsoft al 28 maggio — rollout in corso."
+        "label": "What's New Maggio 2026 — Microsoft 365 Copilot Blog",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--may-2026/4522010",
+        "note": "Rolling out giugno 2026. Annuncio nel blog What's New maggio 2026 (fonte primaria Microsoft)."
       },
       "detail": {
         "steps": "1. Il presentatore avvia una riunione Teams e condivide la presentazione con PowerPoint Live (non come condivisione schermo, ma caricando il file PPT).\n2. I partecipanti vedono le slide nella loro finestra Teams individualmente.\n3. Per chiedere una spiegazione: seleziona del testo nella slide con il cursore, poi clicca sull'icona Copilot che appare accanto alla selezione.\n4. Copilot risponde privatamente: solo tu vedi la spiegazione, il presentatore non viene interrotto.",
@@ -1057,8 +1057,8 @@
         ]
       },
       "rollout": {
-        "stage": "in-dev",
-        "note": "Annunciato per metà maggio 2026 (handsontek.net). Non ancora nei release notes ufficiali Microsoft al 28 maggio — rollout in corso."
+        "stage": "preview",
+        "note": "Rolling out giugno 2026 — confermato nel What's New maggio 2026 blog Microsoft."
       }
     },
     {
@@ -1101,7 +1101,7 @@
       "ico": "✅",
       "name": "Planner Agent in M365 Copilot: crea task e piani con linguaggio naturale",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>16 giugno 2026</strong>, il <strong>Planner Agent è generalmente disponibile</strong> per tutti gli utenti con licenza Microsoft 365 Copilot. Descrivi un progetto o un obiettivo in linguaggio naturale: Copilot crea il piano con task strutturati in Microsoft Planner, assegna priorità, imposta scadenze. Le novità GA: <strong>plan picker</strong> (cerca e filtra i tuoi piani), <strong>draft mode</strong> (Copilot propone il piano, tu lo approvi prima che venga salvato) e <strong>goals bucket</strong> (organizza i task sotto obiettivi più ampi).",
       "example": "\"Crea un piano per il lancio del prodotto X: includi le fasi di testing, marketing, formazione e go-live, con scadenze distribuite su 6 settimane.\" Copilot genera il piano in bozza — tu lo revisioni e poi lo salvi in Planner.",
       "detail": {
@@ -1159,6 +1159,101 @@
       "rollout": {
         "stage": "complete",
         "note": "Disponibile dal 28 maggio 2026. Rollout completato a tutti gli utenti M365 Copilot con licenza."
+      }
+    },
+    {
+      "id": "copilot-app-design",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "✨",
+      "name": "Nuova app Microsoft 365 Copilot: più veloce, chat-first e task-aware",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da giugno 2026 la <strong>Microsoft 365 Copilot app</strong> si aggiorna con un design completamente ripensato: layout chat-first, prompt box <em>task-aware</em> (suggerisce strumenti in base a quello che scrivi), navigazione semplificata. Le performance migliorano sensibilmente: <strong>50% più veloce nell'avvio</strong> e <strong>10% più veloce nelle risposte complesse</strong>. Dopo l'introduzione del nuovo design, l'uso di Copilot nelle app è cresciuto del 27% in Word, 33% in Excel, 43% in PowerPoint e 30% in Outlook.",
+      "example": "Apri l'app Copilot (m365copilot.com o dal launcher Microsoft 365): trovi il campo prompt più ampio, i suggerimenti di strumenti che appaiono mentre scrivi, e Notebooks e Pages accessibili in un click senza cambiare schermata.",
+      "detail": {
+        "steps": "1. Il nuovo design si attiva automaticamente con il rollout — nessuna azione richiesta.\n2. Nota il nuovo campo prompt 'task-aware': mentre scrivi, Copilot suggerisce gli strumenti più adatti (Researcher, Notebooks, Pages) in base al tipo di richiesta.\n3. La navigazione è semplificata: Copilot Chat, Notebooks e Pages sono accessibili con un click senza schermate intermedie.\n4. Le risposte arrivano circa il 10% più velocemente sulle richieste complesse; l'avvio dell'app è dimezzato rispetto a prima.",
+        "prompts": [
+          "Analizza le email della settimana e dimmi quali richiedono una mia risposta urgente.",
+          "Crea un piano per la prossima trimestrale: obiettivi, milestone, rischi principali.",
+          "Riassumi lo stato del progetto [Nome] basandoti sulle ultime comunicazioni in Teams e le email."
+        ],
+        "tips": [
+          "Il nuovo campo prompt è 'task-aware': se scrivi una domanda di ricerca, Copilot suggerisce Researcher; se menzioni un progetto, suggerisce Notebooks. Segui i suggerimenti per lavorare più velocemente.",
+          "Il rollout è graduale: se non vedi ancora il nuovo design, aggiorna l'app e attendi — nessuna azione richiesta da admin.",
+          "Il 50% di riduzione nel tempo di avvio e il 10% di miglioramento nelle risposte sono misurati da Microsoft su campioni reali di utilizzo (dato da Microsoft 365 Blog 28 maggio 2026)."
+        ]
+      },
+      "source": {
+        "label": "Microsoft 365 Blog — Introducing a new design for Microsoft 365 Copilot (28 mag 2026)",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/28/introducing-a-new-design-for-microsoft-365-copilot/",
+        "note": "Rolling out giugno 2026. Design disponibile su desktop, web e mobile. Aggiornamento automatico."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out giugno 2026. Aggiornamento automatico — nessuna azione richiesta da admin o utente."
+      }
+    },
+    {
+      "id": "teams-recap-no-transcript",
+      "app": "Teams",
+      "cat": "c-teams",
+      "ico": "🔇",
+      "name": "Teams: riepilogo AI della riunione senza salvare la registrazione",
+      "st": "soon",
+      "isNew": true,
+      "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>In arrivo agosto–settembre 2026.</strong>",
+      "example": "La tua azienda non consente la registrazione delle riunioni. Attivi il 'Recap senza transcript' prima della call: Copilot cattura i punti chiave in tempo reale e li condivide con i partecipanti dopo la riunione — niente registrazione salvata, ma niente da perdere.",
+      "detail": {
+        "steps": "1. Prima della riunione, vai su Opzioni riunione → Copilot e altri AI → attiva 'Recap senza transcript'.\n2. Oppure, durante la riunione, usa il toggle AI in alto a sinistra per attivare la funzione.\n3. Copilot cattura il contesto audio in tempo reale — nessuna trascrizione viene salvata.\n4. Dopo la riunione, il riepilogo AI è disponibile nella scheda Recap per tutti i partecipanti con licenza Copilot.\n5. Il documento di riepilogo viene archiviato nel OneDrive dell'organizzatore per 120 giorni (configurabile dall'admin in admin center).",
+        "prompts": [],
+        "tips": [
+          "⏳ In arrivo agosto–settembre 2026 (MC1275312). Targeted Release: metà agosto 2026. GA worldwide: fine agosto–settembre 2026.",
+          "Nessuna trascrizione o registrazione viene salvata: il recap è disponibile come documento post-riunione nel OneDrive dell'organizzatore per 120 giorni (configurabile).",
+          "La funzione richiede licenza Microsoft 365 Copilot. I partecipanti senza licenza Copilot non possono visualizzare il riepilogo AI dopo la riunione."
+        ]
+      },
+      "source": {
+        "label": "MC1275312 — Microsoft Teams: AI meeting recap without transcript (Message Center)",
+        "url": "https://admin.microsoft.com",
+        "note": "Targeted Release metà agosto 2026. GA worldwide: fine agosto–settembre 2026. Accesso richiede ruolo Admin M365."
+      },
+      "rollout": {
+        "stage": "in-dev",
+        "note": "Targeted Release: metà agosto 2026. GA worldwide: fine agosto–settembre 2026 (MC1275312)."
+      }
+    },
+    {
+      "id": "copilot-tuning",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "🎛️",
+      "name": "Copilot Tuning: addestra Copilot con i dati e lo stile della tua azienda",
+      "st": "soon",
+      "isNew": true,
+      "impact": "Da giugno 2026, <strong>Copilot Tuning</strong> entra in rollout worldwide per le organizzazioni con almeno <strong>5.000 licenze Microsoft 365 Copilot</strong>. Senza codice né data scientist: selezioni un template in Agent Builder, carichi esempi di documenti aziendali, e Copilot impara lo stile e le regole della tua organizzazione. Template disponibili: <strong>Document Writing</strong> (genera bozze nel tuo formato), <strong>Style Editing</strong> (corregge secondo la voce aziendale), <strong>Expert Answers</strong> (risponde dalla knowledge base interna), <strong>Document Summary</strong> (riepiloga secondo standard aziendali).",
+      "example": "Il tuo ufficio legale usa sempre lo stesso schema per i contratti. Carichi 20 contratti come esempi in Copilot Tuning: da quel momento, quando chiedi una bozza di contratto, Copilot genera automaticamente il tuo formato standard — non uno generico.",
+      "detail": {
+        "steps": "1. Vai su Microsoft 365 Copilot → Agent Builder (richiede ruolo admin o delegato).\n2. Scegli il template di Copilot Tuning adatto al tuo caso d'uso (Document Writing, Style Editing, Expert Answers, Document Summary).\n3. Carica i documenti di riferimento aziendali come esempi: contratti, report, linee guida, manuale di stile.\n4. Configura le istruzioni e i parametri del modello (contesto, strumenti, modello AI di base).\n5. Pubblica l'agente: i colleghi lo trovano nel catalogo agenti di Copilot Chat e possono usarlo subito.",
+        "prompts": [
+          "Scrivi una proposta commerciale per [Cliente] usando il nostro formato standard con executive summary, scope e pricing.",
+          "Correggi questo documento secondo le nostre linee guida di stile: tono formale, frasi brevi, sezioni standard.",
+          "Cerca nella nostra knowledge base interna informazioni su [Procedura] e dimmi come procedere secondo le nostre policy."
+        ],
+        "tips": [
+          "⚠️ Richiede almeno 5.000 licenze Microsoft 365 Copilot nell'organizzazione. Se siete sotto questa soglia, Copilot Tuning non è accessibile — considerate gli agenti standard di Agent Builder come alternativa.",
+          "Copilot Tuning non richiede programmazione: è un processo di configurazione guidato. La qualità del risultato dipende dagli esempi caricati — usa 20-50 documenti rappresentativi e ben scritti.",
+          "I dati caricati restano nel tuo tenant Microsoft 365 e non escono dall'EU Data Boundary (se sei in EU). Valuta la sensitivity dei documenti usati come esempi prima del caricamento."
+        ]
+      },
+      "source": {
+        "label": "learn.microsoft.com — Microsoft 365 Copilot Tuning Overview",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-tuning-overview",
+        "note": "Rollout worldwide giugno 2026 per organizzazioni con 5.000+ licenze M365 Copilot. Documentazione Microsoft Learn."
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Rollout worldwide giugno 2026. Richiede 5.000+ licenze Microsoft 365 Copilot."
       }
     }
   ],
@@ -1243,6 +1338,15 @@
       "tag": "GA GLOBALE — Cowork + Planner Agent",
       "cov": "Copilot Cowork GA (16 giu) · Planner Agent GA (16 giu) · Claude Opus 4.8 nel selettore · Pages→SharePoint News completo",
       "note": "Grande notizia della settimana: Cowork passa da anteprima a prodotto GA. Focus impatto pratico: plugin Dynamics 365, governance, billing attivo. Planner Agent: dall'italiano naturale a task strutturati. Claude 4.8: quando usarlo vs GPT. Chiudere con guida 'quale funzione per quale caso d'uso' — estate 2026."
+    },
+    {
+      "w": "W10",
+      "d": "30 giu–4 lug",
+      "hot": false,
+      "theme": "App più veloce, Copilot Tuning e il recap senza registrazione",
+      "tag": "Copilot Chat · Teams · Enterprise",
+      "cov": "Nuova app M365 Copilot (50% più veloce, chat-first) · Copilot Tuning worldwide (addestra Copilot con i tuoi dati) · Teams recap senza trascrizione in arrivo ad agosto",
+      "note": "Tre angoli: 1) Nuova app — mostrare l'impatto pratico del design (50% avvio, 10% risposte). 2) Copilot Tuning — per chi ha 5000+ licenze: concept no-code, template Document Writing e Style Editing, esempi concreti (contratti, proposte). 3) Teams recap senza transcript — introdurre come 'coming soon agosto' con focus compliance (chi non può registrare). Tono: estate produttiva, non rallentare."
     }
   ]
 }
