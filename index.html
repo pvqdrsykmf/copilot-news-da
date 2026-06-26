@@ -228,6 +228,17 @@ footer a:hover{color:var(--blue)}
 .badge.b-canc{background:rgba(190,40,40,.10);color:#b32626;border:1px solid rgba(190,40,40,.25)}
 .badge.b-dist{background:var(--green-bg);color:var(--green-txt);border:1px solid var(--green-brd)}
 .flags-banner{display:none;background:var(--amber-bg);color:var(--amber-txt);border:1px solid var(--amber-brd);border-radius:var(--r);padding:8px 14px;margin-bottom:14px;font-size:12.5px;font-weight:600}
+.p-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2px}
+.p-tag{font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:4px}
+.p-tag.cat{background:var(--blue-soft);color:var(--blue-dark)}
+.p-tag.surf{background:var(--purple-bg);color:var(--purple-txt)}
+.p-output{font-size:12.5px;color:var(--ink-2);line-height:1.5;background:var(--green-bg);border-radius:7px;padding:8px 10px;border-left:2px solid var(--green-brd)}
+.p-output b{color:var(--green-txt)}
+.p-lang{display:flex;gap:4px;margin:6px 0 4px}
+.p-lang button{font-family:var(--font);font-size:10.5px;font-weight:600;padding:2px 9px;border-radius:20px;border:1px solid var(--border-2);background:var(--surface);color:var(--ink-3);cursor:pointer}
+.p-lang button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.p-promptbox{background:var(--bg);border:1px solid var(--border-2);border-radius:var(--r);padding:10px 12px;display:flex;gap:8px;align-items:flex-start}
+.p-prompttext{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);line-height:1.5;flex:1;white-space:pre-wrap}
 </style>
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -274,6 +285,8 @@ footer a:hover{color:var(--blue)}
       <button class="tab-btn" id="tab-pub-btn" onclick="go('pub',this)"><span class="ico">✅</span>Già pubblicate<span class="tab-count zero" id="pub-count">0</span></button>
       <button class="tab-btn" id="tab-dist-btn" onclick="go('dist',this)"><span class="ico">📦</span>Distribuite<span class="tab-count zero" id="dist-count">0</span></button>
       <button class="tab-btn" id="tab-canc-btn" onclick="go('canc',this)"><span class="ico">🗂️</span>Annullate<span class="tab-count zero" id="canc-count">0</span></button>
+      <button class="tab-btn" id="tab-prompts-btn" onclick="go('prompts',this)"><span class="ico">💡</span>Prompt efficaci</button>
+      <button class="tab-btn" id="tab-prompts-used-btn" onclick="go('prompts-used',this)"><span class="ico">🗂️</span>Prompt già usati<span class="tab-count zero" id="prompts-used-count">0</span></button>
     </nav>
 
     <!-- TAB NOVITÀ -->
@@ -343,6 +356,29 @@ footer a:hover{color:var(--blue)}
       </div>
       <div id="canc-list"></div>
     </div>
+
+    <!-- TAB PROMPT EFFICACI -->
+    <div id="pane-prompts" class="pane">
+      <div class="fbar" id="prompts-fbar">
+        <div class="fgroup"><span class="flbl">Categoria</span><span id="pf-cat"></span></div>
+        <span class="fsep"></span>
+        <div class="fgroup"><span class="flbl">Dove lanciarlo</span><span id="pf-surface"></span></div>
+        <input id="psrch" class="search" type="text" placeholder="Cerca prompt…" oninput="renderPrompts()">
+      </div>
+      <div class="cbar" id="pcbar"></div>
+      <div class="cards" id="prompt-cards"></div>
+    </div>
+
+    <!-- TAB PROMPT GIÀ USATI -->
+    <div id="pane-prompts-used" class="pane">
+      <div class="pub-header">
+        <div class="pub-header-left">
+          <strong>Prompt già usati</strong>
+          <span>Clicca 🏁 su una scheda per spostarla qui. Clicca "Ripristina" per riportarla tra i prompt attivi. Lo stato è condiviso con il team.</span>
+        </div>
+      </div>
+      <div id="prompts-used-list"></div>
+    </div>
   </div>
 </div>
 
@@ -384,6 +420,7 @@ async function loadData() {
     PLAN  = data.plan  || [];
 
     await loadFlags();
+    await loadPrompts();
 
     // KPIs (escludono gli archiviati)
     const active = ITEMS.filter(i => !i.archived);
@@ -392,6 +429,7 @@ async function loadData() {
     document.getElementById('k-wait').textContent = active.filter(i => i.st === 'soon').length;
 
     syncCount();
+    syncPromptCount();
     updateArchiveCounts();
     render();
     renderPlan();
@@ -721,12 +759,105 @@ function go(id, btn) {
   if (id === 'pub')  renderPublished();
   if (id === 'dist') renderArchive('distribuite');
   if (id === 'canc') renderArchive('annullate');
+  if (id === 'prompts') renderPrompts();
+  if (id === 'prompts-used') renderPromptsUsed();
 }
 function sf(g, v, btn) {
   F[g] = v;
   document.querySelectorAll(`[data-g="${g}"]`).forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
   render();
+}
+
+/* ════════ PROMPT EFFICACI ════════ */
+let PROMPTS = [], CATS = [];
+const PF = { cat: 'all', surface: 'all' };
+
+async function loadPrompts() {
+  try {
+    const r = await fetch('prompts.json?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    PROMPTS = (d.prompts || []).filter(p => !p.archived);
+    CATS = d.categories || [];
+    buildPromptFilters();
+  } catch (e) { PROMPTS = []; CATS = []; }
+}
+function surfacesList() {
+  const set = new Set();
+  PROMPTS.forEach(p => (p.surface || '').split('/').forEach(s => { s = s.trim(); if (s) set.add(s); }));
+  return [...set].sort();
+}
+function pill(group, val, label) {
+  return `<button class="pill${val === 'all' ? ' on' : ''}" data-pg="${group}" data-v="${val}" onclick="spf('${group}','${val.replace(/'/g, "\\'")}',this)">${label}</button>`;
+}
+function buildPromptFilters() {
+  document.getElementById('pf-cat').innerHTML = pill('cat', 'all', 'Tutte') + CATS.map(c => pill('cat', c, c)).join('');
+  document.getElementById('pf-surface').innerHTML = pill('surface', 'all', 'Tutte') + surfacesList().map(s => pill('surface', s, s)).join('');
+}
+function spf(group, val, btn) {
+  PF[group] = val;
+  document.querySelectorAll(`[data-pg="${group}"]`).forEach(b => b.classList.remove('on'));
+  btn.classList.add('on'); renderPrompts();
+}
+function escAttr(s) { return (s || '').replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;'); }
+function escHtml(s) { return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function promptCard(p) {
+  const it = escHtml(p.prompt_it), en = escHtml(p.prompt_en);
+  return `
+    <div class="fcard c-chat" id="pcard-${p.id}" style="position:relative">
+      <button class="flag-btn" data-flagged="false" onclick="flagItem('prompt','${p.id}')" title="Segna come usato">🏁</button>
+      <div class="fcard-body">
+        <div class="p-tags"><span class="p-tag cat">${escHtml(p.category)}</span><span class="p-tag surf">${escHtml(p.surface)}</span></div>
+        <div class="fc-name" style="padding-right:36px">${escHtml(p.title)}</div>
+        <div class="fc-impact" style="border-top:none;padding-top:2px">${escHtml(p.summary)}</div>
+        <div class="p-output"><b>Output atteso:</b> ${escHtml(p.output)}</div>
+        <div class="p-lang">
+          <button class="on" onclick="togglePromptLang('${p.id}','it',this)">IT</button>
+          <button onclick="togglePromptLang('${p.id}','en',this)">EN</button>
+        </div>
+        <div class="p-promptbox">
+          <div class="p-prompttext" id="ptext-${p.id}" data-it="${escAttr(p.prompt_it)}" data-en="${escAttr(p.prompt_en)}">${it}</div>
+          <button class="copy-btn" onclick="copyPromptCard('${p.id}')">Copia</button>
+        </div>
+        <div class="fc-source"><a href="${escAttr(p.source.url)}" target="_blank" rel="noopener">${escHtml(p.source.label || 'PnP sample')}</a></div>
+      </div>
+    </div>`;
+}
+function togglePromptLang(id, lang, btn) {
+  const box = document.getElementById('ptext-' + id);
+  box.textContent = lang === 'en' ? box.dataset.en : box.dataset.it;
+  btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+}
+function copyPromptCard(id) {
+  const box = document.getElementById('ptext-' + id);
+  const btn = box.parentElement.querySelector('.copy-btn');
+  navigator.clipboard.writeText(box.textContent).then(() => {
+    btn.textContent = 'Copiato ✓'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copia'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => { btn.textContent = 'OK'; setTimeout(() => btn.textContent = 'Copia', 2000); });
+}
+function renderPrompts() {
+  const q = (document.getElementById('psrch').value || '').toLowerCase();
+  const vis = PROMPTS.filter(p => {
+    if (promptsUsed.has(p.id)) return false;
+    if (PF.cat !== 'all' && p.category !== PF.cat) return false;
+    if (PF.surface !== 'all' && !(p.surface || '').toLowerCase().includes(PF.surface.toLowerCase())) return false;
+    if (q && !((p.title + p.summary + p.prompt_it + p.prompt_en + (p.tags || []).join(' ')).toLowerCase().includes(q))) return false;
+    return true;
+  });
+  const box = document.getElementById('prompt-cards');
+  if (!vis.length) {
+    box.innerHTML = `<div class="empty"><div class="empty-ico">🔍</div>Nessun prompt corrisponde ai filtri.</div>`;
+    document.getElementById('pcbar').textContent = ''; return;
+  }
+  box.innerHTML = vis.map(promptCard).join('');
+  document.getElementById('pcbar').innerHTML = `<strong>${vis.length}</strong> prompt — clicca <strong>🏁</strong> per spostarlo in "Prompt già usati"`;
+}
+function syncPromptCount() {
+  const n = promptsUsed.size, el = document.getElementById('prompts-used-count');
+  el.textContent = n; el.classList.toggle('zero', n === 0);
 }
 
 /* ════════════════════════════════════════════
