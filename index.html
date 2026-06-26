@@ -227,6 +227,7 @@ footer a:hover{color:var(--blue)}
 .arch-date{font-family:var(--mono);font-size:11px;color:var(--ink-4)}
 .badge.b-canc{background:rgba(190,40,40,.10);color:#b32626;border:1px solid rgba(190,40,40,.25)}
 .badge.b-dist{background:var(--green-bg);color:var(--green-txt);border:1px solid var(--green-brd)}
+.flags-banner{display:none;background:var(--amber-bg);color:var(--amber-txt);border:1px solid var(--amber-brd);border-radius:var(--r);padding:8px 14px;margin-bottom:14px;font-size:12.5px;font-weight:600}
 </style>
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -357,9 +358,6 @@ footer a:hover{color:var(--blue)}
 ════════════════════════════════════════════ */
 let ITEMS = [], PLAN = [];
 const F = {app:'all', stage:'all'};
-const LS_KEY = 'da_copilot_pub_2026';
-const LS_DATES = 'da_copilot_pub_dates_2026';
-
 /* ════════════════════════════════════════════
    LOAD DATA FROM JSON
 ════════════════════════════════════════════ */
@@ -384,6 +382,8 @@ async function loadData() {
 
     ITEMS = data.items || [];
     PLAN  = data.plan  || [];
+
+    await loadFlags();
 
     // KPIs (escludono gli archiviati)
     const active = ITEMS.filter(i => !i.archived);
@@ -414,41 +414,71 @@ async function loadData() {
 }
 
 /* ════════════════════════════════════════════
-   PUBLISHED (localStorage)
+   STATO CONDIVISO (KV via /api/flags)
 ════════════════════════════════════════════ */
-function loadSet()   { try{return new Set(JSON.parse(localStorage.getItem(LS_KEY)||'[]'))}catch(e){return new Set()} }
-function savSet(s)   { try{localStorage.setItem(LS_KEY, JSON.stringify([...s]))}catch(e){} }
-function loadDates() { try{return JSON.parse(localStorage.getItem(LS_DATES)||'{}')}catch(e){return {}} }
-function savDates(o) { try{localStorage.setItem(LS_DATES, JSON.stringify(o))}catch(e){} }
-let published = loadSet(), pubDates = loadDates();
+const API = '/api/flags';
+let published = new Set(), pubDates = {};
+let promptsUsed = new Set(), promptDates = {};
+let flagsReadOnly = false;
 
-function flagItem(id) {
-  if (published.has(id)) {
-    published.delete(id); delete pubDates[id];
-  } else {
-    published.add(id);
-    pubDates[id] = new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric'});
-  }
-  savSet(published); savDates(pubDates);
-  syncCount(); render(); renderPublished();
+async function loadFlags() {
+  try {
+    const r = await fetch(API, { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    applyFlagsState(await r.json());
+    flagsReadOnly = false; hideFlagsBanner();
+  } catch (e) { flagsReadOnly = true; showFlagsBanner('Stato condiviso non raggiungibile — flag in sola lettura.'); }
 }
-function restoreItem(id) {
-  published.delete(id); delete pubDates[id];
-  savSet(published); savDates(pubDates);
-  syncCount(); render(); renderPublished();
-  go('feat', document.querySelector('.tab-btn'));
+function applyFlagsState(s) {
+  const news = s.news || {}, pr = s.prompts || {};
+  published = new Set(Object.keys(news));
+  pubDates = Object.fromEntries(Object.entries(news).map(([k, v]) => [k, v.date]));
+  promptsUsed = new Set(Object.keys(pr));
+  promptDates = Object.fromEntries(Object.entries(pr).map(([k, v]) => [k, v.date]));
 }
-function clearAll() {
-  if (!published.size) return;
-  if (!confirm('Svuotare l\'archivio delle novità pubblicate?')) return;
-  published.clear(); pubDates = {};
-  savSet(published); savDates(pubDates);
-  syncCount(); render(); renderPublished();
+async function postFlag(type, id, action) {
+  const r = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ type, id, action }) });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  applyFlagsState(await r.json());
+}
+function reRenderFor(type) {
+  if (type === 'news') { syncCount(); render(); renderPublished(); }
+  else { if (window.syncPromptCount) syncPromptCount(); if (window.renderPrompts) renderPrompts(); if (window.renderPromptsUsed) renderPromptsUsed(); }
+}
+async function flagItem(type, id) {
+  if (flagsReadOnly) return;
+  const set = type === 'news' ? published : promptsUsed;
+  const wasOn = set.has(id), action = wasOn ? 'unset' : 'set';
+  if (wasOn) set.delete(id); else set.add(id); reRenderFor(type);
+  try { await postFlag(type, id, action); }
+  catch { if (wasOn) set.add(id); else set.delete(id); showFlagsBanner('Modifica non salvata, riprova.'); }
+  reRenderFor(type);
+}
+async function restoreItem(type, id) {
+  if (flagsReadOnly) return;
+  const set = type === 'news' ? published : promptsUsed;
+  set.delete(id); reRenderFor(type);
+  try { await postFlag(type, id, 'unset'); } catch { set.add(id); showFlagsBanner('Modifica non salvata.'); }
+  reRenderFor(type);
+}
+async function clearAll() {
+  if (flagsReadOnly || !published.size) return;
+  if (!confirm("Svuotare l'archivio delle novità pubblicate?")) return;
+  const ids = [...published]; published.clear(); syncCount(); render(); renderPublished();
+  for (const id of ids) { try { await postFlag('news', id, 'unset'); } catch {} }
 }
 function syncCount() {
   const n = published.size, el = document.getElementById('pub-count');
   el.textContent = n; el.classList.toggle('zero', n === 0);
 }
+function showFlagsBanner(msg) {
+  let b = document.getElementById('flags-banner');
+  if (!b) { b = document.createElement('div'); b.id = 'flags-banner'; b.className = 'flags-banner';
+    document.querySelector('.page').prepend(b); }
+  b.textContent = '⚠️ ' + (msg || 'Problema con lo stato condiviso.'); b.style.display = 'block';
+}
+function hideFlagsBanner() { const b = document.getElementById('flags-banner'); if (b) b.style.display = 'none'; }
 
 /* ════════════════════════════════════════════
    BADGES & HELPERS
@@ -485,7 +515,7 @@ function changeBadge(ro) {
 }
 function flagBtn(id) {
   const on = published.has(id);
-  return `<button class="flag-btn" data-flagged="${on}" onclick="flagItem('${id}')" title="${on ? 'Pubblicata — clicca per ripristinare' : 'Segna come pubblicata'}">${on ? '✅' : '🏁'}</button>`;
+  return `<button class="flag-btn" data-flagged="${on}" onclick="flagItem('news','${id}')" title="${on ? 'Pubblicata — clicca per ripristinare' : 'Segna come pubblicata'}">${on ? '✅' : '🏁'}</button>`;
 }
 function promptRow(txt) {
   const safe = txt.replace(/'/g,"&#39;").replace(/"/g,"&quot;");
@@ -612,7 +642,7 @@ function renderPublished() {
         </div>
       </div>
       <span class="pub-done-badge">✓ Pubblicata</span>
-      <button class="restore-btn" onclick="restoreItem('${it.id}')">↩ Ripristina</button>
+      <button class="restore-btn" onclick="restoreItem('news','${it.id}')">↩ Ripristina</button>
     </div>`).join('');
 }
 
@@ -702,6 +732,10 @@ function sf(g, v, btn) {
 /* ════════════════════════════════════════════
    INIT
 ════════════════════════════════════════════ */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible')
+    loadFlags().then(() => { render(); renderPublished(); if (window.renderPrompts) renderPrompts(); if (window.renderPromptsUsed) renderPromptsUsed(); });
+});
 loadData();
 </script>
 </body>
