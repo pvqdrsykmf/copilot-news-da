@@ -859,6 +859,30 @@ function syncPromptCount() {
   const n = promptsUsed.size, el = document.getElementById('prompts-used-count');
   el.textContent = n; el.classList.toggle('zero', n === 0);
 }
+function renderPromptsUsed() {
+  const el = document.getElementById('prompts-used-list');
+  const items = PROMPTS.filter(p => promptsUsed.has(p.id));
+  if (!items.length) {
+    el.innerHTML = `<div class="pub-empty"><div class="pub-empty-ico">📭</div>
+      <div style="font-size:14px;font-weight:600;color:var(--ink-3);margin-bottom:6px">Nessun prompt usato ancora</div>
+      <div style="font-size:12.5px;color:var(--ink-4)">Clicca il flag <strong style="color:var(--ink)">🏁</strong> su una scheda per spostarla qui.</div>
+    </div>`;
+    return;
+  }
+  el.innerHTML = items.map(p => `
+    <div class="pub-row">
+      <div class="pub-ico">💡</div>
+      <div class="pub-info">
+        <div class="pub-name">${escHtml(p.title)}</div>
+        <div class="pub-meta">
+          <span class="pub-app-tag">${escHtml(p.category)}</span>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--ink-4)">Usato il ${promptDates[p.id] || '—'}</span>
+        </div>
+      </div>
+      <span class="pub-done-badge">✓ Usato</span>
+      <button class="restore-btn" onclick="restoreItem('prompt','${p.id}')">↩ Ripristina</button>
+    </div>`).join('');
+}
 
 /* ════════════════════════════════════════════
    INIT
