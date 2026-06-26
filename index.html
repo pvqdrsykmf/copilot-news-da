@@ -227,6 +227,18 @@ footer a:hover{color:var(--blue)}
 .arch-date{font-family:var(--mono);font-size:11px;color:var(--ink-4)}
 .badge.b-canc{background:rgba(190,40,40,.10);color:#b32626;border:1px solid rgba(190,40,40,.25)}
 .badge.b-dist{background:var(--green-bg);color:var(--green-txt);border:1px solid var(--green-brd)}
+.flags-banner{display:none;background:var(--amber-bg);color:var(--amber-txt);border:1px solid var(--amber-brd);border-radius:var(--r);padding:8px 14px;margin-bottom:14px;font-size:12.5px;font-weight:600}
+.p-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2px}
+.p-tag{font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:4px}
+.p-tag.cat{background:var(--blue-soft);color:var(--blue-dark)}
+.p-tag.surf{background:var(--purple-bg);color:var(--purple-txt)}
+.p-output{font-size:12.5px;color:var(--ink-2);line-height:1.5;background:var(--green-bg);border-radius:7px;padding:8px 10px;border-left:2px solid var(--green-brd)}
+.p-output b{color:var(--green-txt)}
+.p-lang{display:flex;gap:4px;margin:6px 0 4px}
+.p-lang button{font-family:var(--font);font-size:10.5px;font-weight:600;padding:2px 9px;border-radius:20px;border:1px solid var(--border-2);background:var(--surface);color:var(--ink-3);cursor:pointer}
+.p-lang button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.p-promptbox{background:var(--bg);border:1px solid var(--border-2);border-radius:var(--r);padding:10px 12px;display:flex;gap:8px;align-items:flex-start}
+.p-prompttext{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);line-height:1.5;flex:1;white-space:pre-wrap}
 </style>
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -273,6 +285,8 @@ footer a:hover{color:var(--blue)}
       <button class="tab-btn" id="tab-pub-btn" onclick="go('pub',this)"><span class="ico">✅</span>Già pubblicate<span class="tab-count zero" id="pub-count">0</span></button>
       <button class="tab-btn" id="tab-dist-btn" onclick="go('dist',this)"><span class="ico">📦</span>Distribuite<span class="tab-count zero" id="dist-count">0</span></button>
       <button class="tab-btn" id="tab-canc-btn" onclick="go('canc',this)"><span class="ico">🗂️</span>Annullate<span class="tab-count zero" id="canc-count">0</span></button>
+      <button class="tab-btn" id="tab-prompts-btn" onclick="go('prompts',this)"><span class="ico">💡</span>Prompt efficaci</button>
+      <button class="tab-btn" id="tab-prompts-used-btn" onclick="go('prompts-used',this)"><span class="ico">🗂️</span>Prompt già usati<span class="tab-count zero" id="prompts-used-count">0</span></button>
     </nav>
 
     <!-- TAB NOVITÀ -->
@@ -342,6 +356,29 @@ footer a:hover{color:var(--blue)}
       </div>
       <div id="canc-list"></div>
     </div>
+
+    <!-- TAB PROMPT EFFICACI -->
+    <div id="pane-prompts" class="pane">
+      <div class="fbar" id="prompts-fbar">
+        <div class="fgroup"><span class="flbl">Categoria</span><span id="pf-cat"></span></div>
+        <span class="fsep"></span>
+        <div class="fgroup"><span class="flbl">Dove lanciarlo</span><span id="pf-surface"></span></div>
+        <input id="psrch" class="search" type="text" placeholder="Cerca prompt…" oninput="renderPrompts()">
+      </div>
+      <div class="cbar" id="pcbar"></div>
+      <div class="cards" id="prompt-cards"></div>
+    </div>
+
+    <!-- TAB PROMPT GIÀ USATI -->
+    <div id="pane-prompts-used" class="pane">
+      <div class="pub-header">
+        <div class="pub-header-left">
+          <strong>Prompt già usati</strong>
+          <span>Clicca 🏁 su una scheda per spostarla qui. Clicca "Ripristina" per riportarla tra i prompt attivi. Lo stato è condiviso con il team.</span>
+        </div>
+      </div>
+      <div id="prompts-used-list"></div>
+    </div>
   </div>
 </div>
 
@@ -357,9 +394,6 @@ footer a:hover{color:var(--blue)}
 ════════════════════════════════════════════ */
 let ITEMS = [], PLAN = [];
 const F = {app:'all', stage:'all'};
-const LS_KEY = 'da_copilot_pub_2026';
-const LS_DATES = 'da_copilot_pub_dates_2026';
-
 /* ════════════════════════════════════════════
    LOAD DATA FROM JSON
 ════════════════════════════════════════════ */
@@ -385,6 +419,9 @@ async function loadData() {
     ITEMS = data.items || [];
     PLAN  = data.plan  || [];
 
+    await loadFlags();
+    await loadPrompts();
+
     // KPIs (escludono gli archiviati)
     const active = ITEMS.filter(i => !i.archived);
     document.getElementById('k-tot').textContent  = active.length;
@@ -392,6 +429,7 @@ async function loadData() {
     document.getElementById('k-wait').textContent = active.filter(i => i.st === 'soon').length;
 
     syncCount();
+    syncPromptCount();
     updateArchiveCounts();
     render();
     renderPlan();
@@ -414,41 +452,71 @@ async function loadData() {
 }
 
 /* ════════════════════════════════════════════
-   PUBLISHED (localStorage)
+   STATO CONDIVISO (KV via /api/flags)
 ════════════════════════════════════════════ */
-function loadSet()   { try{return new Set(JSON.parse(localStorage.getItem(LS_KEY)||'[]'))}catch(e){return new Set()} }
-function savSet(s)   { try{localStorage.setItem(LS_KEY, JSON.stringify([...s]))}catch(e){} }
-function loadDates() { try{return JSON.parse(localStorage.getItem(LS_DATES)||'{}')}catch(e){return {}} }
-function savDates(o) { try{localStorage.setItem(LS_DATES, JSON.stringify(o))}catch(e){} }
-let published = loadSet(), pubDates = loadDates();
+const API = '/api/flags';
+let published = new Set(), pubDates = {};
+let promptsUsed = new Set(), promptDates = {};
+let flagsReadOnly = false;
 
-function flagItem(id) {
-  if (published.has(id)) {
-    published.delete(id); delete pubDates[id];
-  } else {
-    published.add(id);
-    pubDates[id] = new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric'});
-  }
-  savSet(published); savDates(pubDates);
-  syncCount(); render(); renderPublished();
+async function loadFlags() {
+  try {
+    const r = await fetch(API, { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    applyFlagsState(await r.json());
+    flagsReadOnly = false; hideFlagsBanner();
+  } catch (e) { flagsReadOnly = true; showFlagsBanner('Stato condiviso non raggiungibile — flag in sola lettura.'); }
 }
-function restoreItem(id) {
-  published.delete(id); delete pubDates[id];
-  savSet(published); savDates(pubDates);
-  syncCount(); render(); renderPublished();
-  go('feat', document.querySelector('.tab-btn'));
+function applyFlagsState(s) {
+  const news = s.news || {}, pr = s.prompts || {};
+  published = new Set(Object.keys(news));
+  pubDates = Object.fromEntries(Object.entries(news).map(([k, v]) => [k, v.date]));
+  promptsUsed = new Set(Object.keys(pr));
+  promptDates = Object.fromEntries(Object.entries(pr).map(([k, v]) => [k, v.date]));
 }
-function clearAll() {
-  if (!published.size) return;
-  if (!confirm('Svuotare l\'archivio delle novità pubblicate?')) return;
-  published.clear(); pubDates = {};
-  savSet(published); savDates(pubDates);
-  syncCount(); render(); renderPublished();
+async function postFlag(type, id, action) {
+  const r = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ type, id, action }) });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  applyFlagsState(await r.json());
+}
+function reRenderFor(type) {
+  if (type === 'news') { syncCount(); render(); renderPublished(); }
+  else { if (window.syncPromptCount) syncPromptCount(); if (window.renderPrompts) renderPrompts(); if (window.renderPromptsUsed) renderPromptsUsed(); }
+}
+async function flagItem(type, id) {
+  if (flagsReadOnly) return;
+  const set = type === 'news' ? published : promptsUsed;
+  const wasOn = set.has(id), action = wasOn ? 'unset' : 'set';
+  if (wasOn) set.delete(id); else set.add(id); reRenderFor(type);
+  try { await postFlag(type, id, action); }
+  catch { if (wasOn) set.add(id); else set.delete(id); showFlagsBanner('Modifica non salvata, riprova.'); }
+  reRenderFor(type);
+}
+async function restoreItem(type, id) {
+  if (flagsReadOnly) return;
+  const set = type === 'news' ? published : promptsUsed;
+  set.delete(id); reRenderFor(type);
+  try { await postFlag(type, id, 'unset'); } catch { set.add(id); showFlagsBanner('Modifica non salvata.'); }
+  reRenderFor(type);
+}
+async function clearAll() {
+  if (flagsReadOnly || !published.size) return;
+  if (!confirm("Svuotare l'archivio delle novità pubblicate?")) return;
+  const ids = [...published]; published.clear(); syncCount(); render(); renderPublished();
+  for (const id of ids) { try { await postFlag('news', id, 'unset'); } catch {} }
 }
 function syncCount() {
   const n = published.size, el = document.getElementById('pub-count');
   el.textContent = n; el.classList.toggle('zero', n === 0);
 }
+function showFlagsBanner(msg) {
+  let b = document.getElementById('flags-banner');
+  if (!b) { b = document.createElement('div'); b.id = 'flags-banner'; b.className = 'flags-banner';
+    document.querySelector('.page').prepend(b); }
+  b.textContent = '⚠️ ' + (msg || 'Problema con lo stato condiviso.'); b.style.display = 'block';
+}
+function hideFlagsBanner() { const b = document.getElementById('flags-banner'); if (b) b.style.display = 'none'; }
 
 /* ════════════════════════════════════════════
    BADGES & HELPERS
@@ -485,7 +553,7 @@ function changeBadge(ro) {
 }
 function flagBtn(id) {
   const on = published.has(id);
-  return `<button class="flag-btn" data-flagged="${on}" onclick="flagItem('${id}')" title="${on ? 'Pubblicata — clicca per ripristinare' : 'Segna come pubblicata'}">${on ? '✅' : '🏁'}</button>`;
+  return `<button class="flag-btn" data-flagged="${on}" onclick="flagItem('news','${id}')" title="${on ? 'Pubblicata — clicca per ripristinare' : 'Segna come pubblicata'}">${on ? '✅' : '🏁'}</button>`;
 }
 function promptRow(txt) {
   const safe = txt.replace(/'/g,"&#39;").replace(/"/g,"&quot;");
@@ -612,7 +680,7 @@ function renderPublished() {
         </div>
       </div>
       <span class="pub-done-badge">✓ Pubblicata</span>
-      <button class="restore-btn" onclick="restoreItem('${it.id}')">↩ Ripristina</button>
+      <button class="restore-btn" onclick="restoreItem('news','${it.id}')">↩ Ripristina</button>
     </div>`).join('');
 }
 
@@ -691,6 +759,8 @@ function go(id, btn) {
   if (id === 'pub')  renderPublished();
   if (id === 'dist') renderArchive('distribuite');
   if (id === 'canc') renderArchive('annullate');
+  if (id === 'prompts') renderPrompts();
+  if (id === 'prompts-used') renderPromptsUsed();
 }
 function sf(g, v, btn) {
   F[g] = v;
@@ -699,9 +769,128 @@ function sf(g, v, btn) {
   render();
 }
 
+/* ════════ PROMPT EFFICACI ════════ */
+let PROMPTS = [], CATS = [];
+const PF = { cat: 'all', surface: 'all' };
+
+async function loadPrompts() {
+  try {
+    const r = await fetch('prompts.json?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    PROMPTS = (d.prompts || []).filter(p => !p.archived);
+    CATS = d.categories || [];
+    buildPromptFilters();
+  } catch (e) { PROMPTS = []; CATS = []; }
+}
+function surfacesList() {
+  const set = new Set();
+  PROMPTS.forEach(p => (p.surface || '').split('/').forEach(s => { s = s.trim(); if (s) set.add(s); }));
+  return [...set].sort();
+}
+function pill(group, val, label) {
+  return `<button class="pill${val === 'all' ? ' on' : ''}" data-pg="${group}" data-v="${val}" onclick="spf('${group}','${val.replace(/'/g, "\\'")}',this)">${label}</button>`;
+}
+function buildPromptFilters() {
+  document.getElementById('pf-cat').innerHTML = pill('cat', 'all', 'Tutte') + CATS.map(c => pill('cat', c, c)).join('');
+  document.getElementById('pf-surface').innerHTML = pill('surface', 'all', 'Tutte') + surfacesList().map(s => pill('surface', s, s)).join('');
+}
+function spf(group, val, btn) {
+  PF[group] = val;
+  document.querySelectorAll(`[data-pg="${group}"]`).forEach(b => b.classList.remove('on'));
+  btn.classList.add('on'); renderPrompts();
+}
+function escAttr(s) { return (s || '').replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;'); }
+function escHtml(s) { return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function promptCard(p) {
+  const it = escHtml(p.prompt_it), en = escHtml(p.prompt_en);
+  return `
+    <div class="fcard c-chat" id="pcard-${p.id}" style="position:relative">
+      <button class="flag-btn" data-flagged="false" onclick="flagItem('prompt','${p.id}')" title="Segna come usato">🏁</button>
+      <div class="fcard-body">
+        <div class="p-tags"><span class="p-tag cat">${escHtml(p.category)}</span><span class="p-tag surf">${escHtml(p.surface)}</span></div>
+        <div class="fc-name" style="padding-right:36px">${escHtml(p.title)}</div>
+        <div class="fc-impact" style="border-top:none;padding-top:2px">${escHtml(p.summary)}</div>
+        <div class="p-output"><b>Output atteso:</b> ${escHtml(p.output)}</div>
+        <div class="p-lang">
+          <button class="on" onclick="togglePromptLang('${p.id}','it',this)">IT</button>
+          <button onclick="togglePromptLang('${p.id}','en',this)">EN</button>
+        </div>
+        <div class="p-promptbox">
+          <div class="p-prompttext" id="ptext-${p.id}" data-it="${escAttr(p.prompt_it)}" data-en="${escAttr(p.prompt_en)}">${it}</div>
+          <button class="copy-btn" onclick="copyPromptCard('${p.id}')">Copia</button>
+        </div>
+        <div class="fc-source"><a href="${escAttr(p.source.url)}" target="_blank" rel="noopener">${escHtml(p.source.label || 'PnP sample')}</a></div>
+      </div>
+    </div>`;
+}
+function togglePromptLang(id, lang, btn) {
+  const box = document.getElementById('ptext-' + id);
+  box.textContent = lang === 'en' ? box.dataset.en : box.dataset.it;
+  btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+}
+function copyPromptCard(id) {
+  const box = document.getElementById('ptext-' + id);
+  const btn = box.parentElement.querySelector('.copy-btn');
+  navigator.clipboard.writeText(box.textContent).then(() => {
+    btn.textContent = 'Copiato ✓'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copia'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => { btn.textContent = 'OK'; setTimeout(() => btn.textContent = 'Copia', 2000); });
+}
+function renderPrompts() {
+  const q = (document.getElementById('psrch').value || '').toLowerCase();
+  const vis = PROMPTS.filter(p => {
+    if (promptsUsed.has(p.id)) return false;
+    if (PF.cat !== 'all' && p.category !== PF.cat) return false;
+    if (PF.surface !== 'all' && !(p.surface || '').toLowerCase().includes(PF.surface.toLowerCase())) return false;
+    if (q && !((p.title + p.summary + p.prompt_it + p.prompt_en + (p.tags || []).join(' ')).toLowerCase().includes(q))) return false;
+    return true;
+  });
+  const box = document.getElementById('prompt-cards');
+  if (!vis.length) {
+    box.innerHTML = `<div class="empty"><div class="empty-ico">🔍</div>Nessun prompt corrisponde ai filtri.</div>`;
+    document.getElementById('pcbar').textContent = ''; return;
+  }
+  box.innerHTML = vis.map(promptCard).join('');
+  document.getElementById('pcbar').innerHTML = `<strong>${vis.length}</strong> prompt — clicca <strong>🏁</strong> per spostarlo in "Prompt già usati"`;
+}
+function syncPromptCount() {
+  const n = promptsUsed.size, el = document.getElementById('prompts-used-count');
+  el.textContent = n; el.classList.toggle('zero', n === 0);
+}
+function renderPromptsUsed() {
+  const el = document.getElementById('prompts-used-list');
+  const items = PROMPTS.filter(p => promptsUsed.has(p.id));
+  if (!items.length) {
+    el.innerHTML = `<div class="pub-empty"><div class="pub-empty-ico">📭</div>
+      <div style="font-size:14px;font-weight:600;color:var(--ink-3);margin-bottom:6px">Nessun prompt usato ancora</div>
+      <div style="font-size:12.5px;color:var(--ink-4)">Clicca il flag <strong style="color:var(--ink)">🏁</strong> su una scheda per spostarla qui.</div>
+    </div>`;
+    return;
+  }
+  el.innerHTML = items.map(p => `
+    <div class="pub-row">
+      <div class="pub-ico">💡</div>
+      <div class="pub-info">
+        <div class="pub-name">${escHtml(p.title)}</div>
+        <div class="pub-meta">
+          <span class="pub-app-tag">${escHtml(p.category)}</span>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--ink-4)">Usato il ${promptDates[p.id] || '—'}</span>
+        </div>
+      </div>
+      <span class="pub-done-badge">✓ Usato</span>
+      <button class="restore-btn" onclick="restoreItem('prompt','${p.id}')">↩ Ripristina</button>
+    </div>`).join('');
+}
+
 /* ════════════════════════════════════════════
    INIT
 ════════════════════════════════════════════ */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible')
+    loadFlags().then(() => { render(); renderPublished(); if (window.renderPrompts) renderPrompts(); if (window.renderPromptsUsed) renderPromptsUsed(); });
+});
 loadData();
 </script>
 </body>
