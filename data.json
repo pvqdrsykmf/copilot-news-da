@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "23 giugno 2026",
+    "updated": "29 giugno 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -377,9 +377,7 @@
       },
       "rollout": {
         "stage": "preview",
-        "note": "Frontier Program e Office Insiders Beta da aprile 2026. Supporto Word web e Mac in arrivo.",
-        "changedFrom": "in-dev",
-        "changedOn": "23 giu 2026"
+        "note": "Frontier Program e Office Insiders Beta da aprile 2026. Supporto Word web e Mac in arrivo."
       }
     },
     {
@@ -798,14 +796,14 @@
       "cat": "c-excel",
       "ico": "🧩",
       "name": "Excel: Copilot ti mostra il piano prima di modificare il foglio",
-      "st": "soon",
+      "st": "avail",
       "isNew": false,
-      "impact": "Con la <strong>modalità Piano</strong>, Copilot non tocca il foglio finché non approvi ogni passaggio. Si seleziona dal <strong>menu a tendina sopra il campo prompt</strong> — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\". Copilot mostra il piano step-by-step e agisce solo dopo il tuo via. In più: <strong>Python in Excel</strong> per analisi avanzate. <strong>Prevista per giugno 2026 (Roadmap ID 560338) — non ancora GA.</strong>",
-      "example": "Devi riorganizzare un foglio budget complesso. Quando sarà disponibile, selezioni \"Piano\" dal menu, descrivi il task: Copilot mostra i 5 passaggi che compirà. Tu li revisioni, ne modifichi uno se vuoi, poi dici \"Procedi\". Zero sorprese.",
+      "impact": "Con la <strong>modalità Piano</strong>, Copilot non tocca il foglio finché non approvi ogni passaggio. Si seleziona dal <strong>menu a tendina sopra il campo prompt</strong> — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\". Copilot mostra il piano step-by-step e agisce solo dopo il tuo via. In più: <strong>Python in Excel</strong> per analisi avanzate. <strong>GA da giugno 2026 (Roadmap ID 560338).</strong>",
+      "example": "Devi riorganizzare un foglio budget complesso. Selezioni \"Piano\" dal menu a tendina, descrivi il task: Copilot mostra i 5 passaggi che compirà. Tu li revisioni, ne modifichi uno se vuoi, poi dici \"Procedi\". Zero sorprese.",
       "source": {
-        "label": "Microsoft 365 Roadmap ID 560338 — Plan Mode for Copilot in Excel",
-        "url": "https://www.microsoft.com/it-it/microsoft-365/roadmap?id=560338",
-        "note": "Stato \"Due June 2026\" — non ancora GA. Web. Distinta da Agent Mode (già GA)."
+        "label": "Microsoft 365 Blog — Copilot in Excel: Built for the era of Frontier Finance (25 giu 2026)",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/",
+        "note": "GA confermata 25 giugno 2026 (Finance Blog). Roadmap ID 560338. Excel Web, Windows e Mac."
       },
       "detail": {
         "steps": "1. Apri un file Excel e attiva il pannello Copilot.\n2. Sopra il campo prompt trovi un menu a tendina con tre opzioni: \"Modifica documento\" / \"Piano\" / \"Solo chat\". Seleziona \"Piano\".\n3. Descrivi nel prompt cosa vuoi fare: Copilot mostrerà il piano dettagliato dei passaggi PRIMA di eseguire qualsiasi modifica.\n4. Revisiona il piano: puoi approvarlo, chiedere di modificare un passaggio o bloccarlo prima che venga eseguito.\n5. Per Python: passa a \"Modifica documento\" e scrivi \"usa Python per [analisi]\", oppure Copilot lo invocherà automaticamente per task complessi.",
@@ -815,14 +813,16 @@
           "Analizza questa serie temporale e identifica i 3 picchi principali con le relative date."
         ],
         "tips": [
-          "⚠️ Il Piano si seleziona dal menu a tendina SOPRA il campo prompt — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\". NON serve scriverlo nel prompt.",
-          "⏳ Roadmap ID 560338: stato \"Due June 2026\" — feature distinta dall'Agent Mode (che è già GA). Plan Mode ha un suo ciclo di rilascio separato e non è ancora disponibile.",
-          "Da non confondere con Agent Mode in Excel, che è GA da marzo 2026: Plan Mode è una modalità specifica in arrivo che aggiunge l'approvazione preventiva dei passaggi."
+          "Il Piano si seleziona dal menu a tendina SOPRA il campo prompt — le tre opzioni sono \"Modifica documento\", \"Piano\" e \"Solo chat\". NON serve scriverlo nel prompt.",
+          "Roadmap ID 560338: Plan Mode è ora GA da giugno 2026. Distinta dall'Agent Mode (GA da marzo 2026) — Plan Mode aggiunge la revisione preventiva dei passaggi prima dell'esecuzione.",
+          "Da non confondere con Agent Mode in Excel, già GA da marzo 2026: Plan Mode è una modalità specifica che aggiunge l'approvazione preventiva — Copilot ti mostra cosa farà prima di eseguire qualsiasi modifica."
         ]
       },
       "rollout": {
-        "stage": "in-dev",
-        "note": "Stato \"Due June 2026\" — non ancora GA. Web. Distinta da Agent Mode (già GA)."
+        "stage": "ga",
+        "note": "GA confermata giugno 2026. Excel Web, Windows e Mac. Distinta da Agent Mode (GA da marzo 2026).",
+        "changedFrom": "in-dev",
+        "changedOn": "29 giu 2026"
       }
     },
     {
@@ -1300,7 +1300,7 @@
       "ico": "🛡️",
       "name": "Purview DLP blocca i dati sensibili nei prompt Copilot",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da giugno 2026, <strong>Microsoft Purview Data Loss Prevention (DLP)</strong> è generalmente disponibile per Microsoft 365 Copilot e Copilot Chat. Se un utente include dati sensibili nel prompt (numeri di conto, codici fiscali, dati finanziari), la policy DLP può bloccare la risposta o impedire che le informazioni finiscano in una ricerca web esterna — tutto in base alle regole configurate dall'admin. I dati interni su SharePoint e OneDrive continuano a funzionare normalmente come grounding.",
       "example": "Un collega incolla un numero IBAN in un prompt Copilot per cercare informazioni online. La policy DLP rileva il dato sensibile e blocca la web search, mostrando un avviso. La risposta basata sui dati interni aziendali resta disponibile.",
       "detail": {
@@ -1320,6 +1320,72 @@
       "rollout": {
         "stage": "ga",
         "note": "GA giugno 2026. Rolling out worldwide. Copre Copilot Chat, Word, Excel, PowerPoint e web search."
+      }
+    },
+    {
+      "id": "excel-finance",
+      "app": "Excel",
+      "cat": "c-excel",
+      "ico": "💹",
+      "name": "Copilot in Excel per la finanza: Skills, Connector e tracciabilità",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Dal <strong>25 giugno 2026</strong>, un pacchetto di funzionalità specifiche per i professionisti della finanza in Excel è generalmente disponibile. <strong>Skills</strong>: definisci processi ripetibili (DCF, chiusura conti, analisi varianze) con un file SKILL.md — Copilot li esegue con struttura e formattazione standardizzate. <strong>Connector finanziari</strong>: collega dati live da LSEG, Moody's, CB Insights, Daloopa, Morningstar, PitchBook, S&amp;P Global direttamente nelle celle Excel. <strong>Plan with Copilot</strong>: prima di eseguire, Copilot mostra quali range, fogli e formule toccherà — approvi, poi esegue. <strong>Copilot Attribution</strong>: ogni modifica di Copilot è tracciata nel pannello \"Mostra modifiche\" con link alle celle.",
+      "example": "Il team FP&A aggiorna il report mensile di chiusura. Attivi la Skill \"Monthly Close\": Copilot applica i passaggi standardizzati del vostro processo, recupera i dati da Morningstar e PitchBook, mostra il piano prima di eseguire, e annota ogni modifica nel pannello \"Mostra modifiche\". Zero lavoro manuale, piena tracciabilità.",
+      "detail": {
+        "steps": "1. Apri Excel (web, Windows o Mac) con il tuo file finanziario.\n2. Per le Skills: nel pannello Copilot seleziona la skill del tuo processo (es. \"Monthly Close\", \"DCF Build\") o crea la tua con un file SKILL.md salvato su OneDrive.\n3. Per i Connector: scegli \"Aggiungi dati\" nel pannello Copilot e seleziona il fornitore (LSEG, Morningstar, PitchBook, ecc.) — i dati arrivano direttamente nelle celle.\n4. Per Plan with Copilot: prima di ogni modifica multi-step, Copilot mostra il piano dettagliato (range, fogli, formule) — approvi, poi Copilot esegue.\n5. Verifica le modifiche nel pannello \"Mostra modifiche\": trovi le modifiche di Copilot elencate con link alle celle, accanto a quelle dei colleghi.",
+        "prompts": [
+          "Applica la skill \"Monthly Close\" al foglio di chiusura e importa i dati aggiornati da Morningstar.",
+          "Recupera i fondamentali per [Nome Azienda] da S&P Global e aggiornali nel nostro modello DCF.",
+          "Prima di ricalcolare il modello di varianza, mostrami il piano: quali celle e fogli toccherai?"
+        ],
+        "tips": [
+          "Le Skills si creano con un file SKILL.md in linguaggio naturale salvato su OneDrive — non serve codice. Microsoft mette a disposizione una libreria di skill finanziarie pre-costruite da usare come punto di partenza.",
+          "I Connector finanziari possono richiedere sottoscrizioni separate con i fornitori (es. FactSet, PitchBook, LSEG). FactSet è ancora in preview (disponibile a luglio). Verifica con il tuo IT se le licenze sono già attive.",
+          "Copilot Attribution nel pannello \"Mostra modifiche\" è fondamentale per audit e compliance di fine periodo: ogni modifica è datata, tracciata e attribuita esplicitamente a Copilot."
+        ]
+      },
+      "source": {
+        "label": "Microsoft 365 Blog — Copilot in Excel: Built for the era of Frontier Finance (25 giu 2026)",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/",
+        "note": "GA 25 giugno 2026. Excel Web, Windows e Mac. FactSet in preview (luglio). Partner-built Skills in arrivo Q3 2026."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA 25 giugno 2026. Excel Web, Windows e Mac. Skills, Connector e Attribution disponibili. FactSet in preview (luglio)."
+      }
+    },
+    {
+      "id": "ms-scout",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🛸",
+      "name": "Microsoft Scout: agente Autopilot sempre attivo in Microsoft 365",
+      "st": "soon",
+      "isNew": true,
+      "impact": "Dal <strong>2 giugno 2026</strong>, Microsoft lancia <strong>Scout</strong>, il primo agente della categoria <em>Autopilot</em> — opera autonomamente in background attraverso Teams, Outlook, OneDrive e SharePoint. Pianifica riunioni tra fusi orari, blocca il calendario per le scadenze, identifica decisioni in stallo e apprende il tuo contesto lavorativo tramite Work IQ. <strong>⚠️ Frontier private preview</strong>: richiede iscrizione al Frontier Program, policy Intune configurata, attestazione opt-in e licenza GitHub Copilot.",
+      "example": "Hai 12 email in attesa e 3 decisioni bloccate da settimane. Scout le identifica autonomamente, suggerisce le azioni prioritarie e blocca il tempo nel tuo calendario per affrontarle — tutto senza che tu abbia chiesto.",
+      "detail": {
+        "steps": "1. Scout è disponibile solo per organizzazioni iscritte al <strong>Frontier Program</strong>: verifica con il tuo IT admin.\n2. Requisiti tecnici: Frontier enrollment, policy Intune configurata, attestazione opt-in, licenza GitHub Copilot.\n3. Una volta attivato, trovi Scout in Teams: funziona come agente dedicato nel canale.\n4. Estendi le capacità con l'app desktop Scout: può accedere al browser, ai file locali e ai server MCP configurati.\n5. Scout apprende il tuo contesto con Work IQ: più lo usi, più le sue azioni sono pertinenti al tuo stile e alle tue priorità.",
+        "prompts": [
+          "Scout: quali decisioni sono rimaste in sospeso nelle ultime 2 settimane? Suggerisci le priorità.",
+          "Organizza automaticamente una call di allineamento con il team prima della scadenza del progetto [Nome].",
+          "Blocca il mio calendario la prossima settimana per le attività più urgenti dalla mia inbox."
+        ],
+        "tips": [
+          "⚠️ Frontier private preview: non disponibile a tutti. Richiede iscrizione Frontier, policy Intune, attestazione e licenza GitHub Copilot. Contatta il tuo IT admin per verificare i requisiti.",
+          "Scout usa Work IQ per imparare il tuo contesto di lavoro: persone chiave, progetti attivi, stile di risposta. Più lo usi, più diventa preciso e utile.",
+          "Security enterprise-grade: ogni azione di Scout opera sotto identità Entra governata con policy Purview applicate end-to-end (sensitivity label, DLP). I dati restano nel tuo tenant Microsoft 365."
+        ]
+      },
+      "source": {
+        "label": "Microsoft 365 Blog — Introducing Microsoft Scout: Your always-on personal agent (2 giu 2026)",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+        "note": "Frontier private preview da giugno 2026. Richiede Frontier enrollment, Intune policy, attestazione opt-in e licenza GitHub Copilot."
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Frontier private preview da giugno 2026. Richiede Frontier enrollment, Intune policy, attestazione opt-in e GitHub Copilot license."
       }
     }
   ],
@@ -1422,6 +1488,15 @@
       "tag": "Governance · Word · Compliance",
       "cov": "Purview DLP per Copilot (GA) · Word Track Changes in anteprima (Frontier) · Guida funzioni estate 2026",
       "note": "Angolo sicurezza pratico: spiegare DLP in modo semplice — 'Copilot non manda i tuoi dati sensibili fuori dall'azienda'. Cosa vede l'utente (avviso), cosa configura l'IT (policy). Word Track Changes (Frontier): quando arriva per tutti? Chiudere con mappa pratica 'quale Copilot per quale task' questa estate."
+    },
+    {
+      "w": "W12",
+      "d": "14–18 lug",
+      "hot": false,
+      "theme": "Copilot diventa un esperto di finanza in Excel",
+      "tag": "Excel Finance · Frontier",
+      "cov": "Copilot in Excel Finance Suite (Skills, Connector, Plan, Attribution) · Microsoft Scout preview (Frontier)",
+      "note": "Due angoli: 1) Excel Finance Suite — per team FP&A e professionisti finanziari: come creare Skills personalizzate, come collegare LSEG/Morningstar/PitchBook/S&P Global, come usare Plan with Copilot per approvare le modifiche prima di eseguirle, come leggere Copilot Attribution. 2) Microsoft Scout — presentare come la visione del futuro di Copilot: agente autonomo, sempre attivo, che apprende il contesto. Chiarire che è in private preview Frontier. Chiudere con guida 'estate 2026': quali feature sono già attive, quali arrivano in autunno."
     }
   ]
 }
