@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "29 giugno 2026",
+    "updated": "6 lug 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -689,7 +689,9 @@
         "stage": "complete",
         "note": "Rollout completato giugno 2026. Mind maps condivisibili disponibili."
       },
-      "completedOn": "2 giu 2026"
+      "completedOn": "2 giu 2026",
+      "archived": "distribuite",
+      "archivedOn": "6 lug 2026"
     },
     {
       "id": "outlook-calendar-rsvp",
@@ -820,9 +822,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "GA confermata giugno 2026. Excel Web, Windows e Mac. Distinta da Agent Mode (GA da marzo 2026).",
-        "changedFrom": "in-dev",
-        "changedOn": "29 giu 2026"
+        "note": "GA confermata giugno 2026. Excel Web, Windows e Mac. Distinta da Agent Mode (GA da marzo 2026)."
       }
     },
     {
@@ -991,7 +991,9 @@
         "stage": "complete",
         "note": "Tutti i tipi di output (PPT, Word, Excel, Infografiche) GA e completati a giugno 2026."
       },
-      "completedOn": "23 giu 2026"
+      "completedOn": "23 giu 2026",
+      "archived": "distribuite",
+      "archivedOn": "6 lug 2026"
     },
     {
       "id": "onedrive-prompts",
@@ -1329,7 +1331,7 @@
       "ico": "💹",
       "name": "Copilot in Excel per la finanza: Skills, Connector e tracciabilità",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>25 giugno 2026</strong>, un pacchetto di funzionalità specifiche per i professionisti della finanza in Excel è generalmente disponibile. <strong>Skills</strong>: definisci processi ripetibili (DCF, chiusura conti, analisi varianze) con un file SKILL.md — Copilot li esegue con struttura e formattazione standardizzate. <strong>Connector finanziari</strong>: collega dati live da LSEG, Moody's, CB Insights, Daloopa, Morningstar, PitchBook, S&amp;P Global direttamente nelle celle Excel. <strong>Plan with Copilot</strong>: prima di eseguire, Copilot mostra quali range, fogli e formule toccherà — approvi, poi esegue. <strong>Copilot Attribution</strong>: ogni modifica di Copilot è tracciata nel pannello \"Mostra modifiche\" con link alle celle.",
       "example": "Il team FP&A aggiorna il report mensile di chiusura. Attivi la Skill \"Monthly Close\": Copilot applica i passaggi standardizzati del vostro processo, recupera i dati da Morningstar e PitchBook, mostra il piano prima di eseguire, e annota ogni modifica nel pannello \"Mostra modifiche\". Zero lavoro manuale, piena tracciabilità.",
       "detail": {
@@ -1362,7 +1364,7 @@
       "ico": "🛸",
       "name": "Microsoft Scout: agente Autopilot sempre attivo in Microsoft 365",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>2 giugno 2026</strong>, Microsoft lancia <strong>Scout</strong>, il primo agente della categoria <em>Autopilot</em> — opera autonomamente in background attraverso Teams, Outlook, OneDrive e SharePoint. Pianifica riunioni tra fusi orari, blocca il calendario per le scadenze, identifica decisioni in stallo e apprende il tuo contesto lavorativo tramite Work IQ. <strong>⚠️ Frontier private preview</strong>: richiede iscrizione al Frontier Program, policy Intune configurata, attestazione opt-in e licenza GitHub Copilot.",
       "example": "Hai 12 email in attesa e 3 decisioni bloccate da settimane. Scout le identifica autonomamente, suggerisce le azioni prioritarie e blocca il tempo nel tuo calendario per affrontarle — tutto senza che tu abbia chiesto.",
       "detail": {
@@ -1386,6 +1388,39 @@
       "rollout": {
         "stage": "preview",
         "note": "Frontier private preview da giugno 2026. Richiede Frontier enrollment, Intune policy, attestazione opt-in e GitHub Copilot license."
+      }
+    },
+    {
+      "id": "excel-personalization",
+      "app": "Excel",
+      "cat": "c-excel",
+      "ico": "⚙️",
+      "name": "Copilot in Excel impara il tuo stile: Personalizzazione e Regole del foglio",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Dal <strong>25 giugno 2026</strong>, Copilot in Excel si adatta al tuo modo di lavorare in due modi complementari. <strong>Personalizzazione</strong>: imposti le tue preferenze una volta (formato delle risposte, livello di dettaglio, stile di output) e Copilot le applica in modo coerente in tutte le sessioni future su qualsiasi file. <strong>Workbook Rules</strong>: cattura struttura, nomenclatura e convenzioni sulle formule in un foglio dedicato del workbook — Copilot usa automaticamente queste regole per mantenere coerenza in tutte le sue modifiche su quel file specifico.",
+      "example": "Il tuo team usa sempre la stessa struttura per le variance analysis. Scrivi le regole nel foglio 'RULES' del tuo file master: da quel momento, ogni modifica di Copilot rispetta automaticamente quella struttura — nessuna correzione manuale per allinearsi agli standard aziendali.",
+      "detail": {
+        "steps": "1. Per la Personalizzazione: apri il pannello Copilot in Excel (web, Windows o Mac) → cerca la sezione Impostazioni o Preferenze.\n2. Imposta le preferenze: stile di risposta (breve o dettagliato), formattazione preferita, lingua degli output.\n3. Per le Workbook Rules: nel tuo file Excel, aggiungi un foglio dedicato (es. 'RULES' o 'COPILOT_RULES') e scrivi in linguaggio naturale le regole di struttura, nomenclatura delle colonne, convenzioni sulle formule.\n4. Salva il file su OneDrive: Copilot legge automaticamente il foglio delle regole e le applica nelle sue modifiche a tutto il workbook.\n5. Le regole seguono il file: condividi il workbook con un collega e anche lui beneficierà delle stesse regole quando usa Copilot.",
+        "prompts": [
+          "Applica le regole del foglio RULES a questa tabella e aggiungi le colonne mancanti secondo lo standard.",
+          "Ricalcola il modello rispettando le convenzioni definite nelle regole del workbook.",
+          "Riscrivi questa formula usando la nomenclatura standard definita nel foglio delle regole."
+        ],
+        "tips": [
+          "Le Workbook Rules seguono il file: se condividi il workbook con un collega, anche lui beneficia automaticamente delle stesse regole. Le Preferenze invece sono legate al tuo account: si applicano a tutti i file Excel su cui usi Copilot.",
+          "Le regole sono scritte in linguaggio naturale nel foglio dedicato — non serve codice. Più sono specifiche, più Copilot le rispetta: 'Usa sempre euro con 2 decimali nelle colonne finanziarie' funziona meglio di 'Formatta i numeri correttamente'.",
+          "Feature GA da giugno 2026, disponibile su Excel Web, Windows e Mac per tutti gli utenti con licenza Microsoft 365 Copilot."
+        ]
+      },
+      "source": {
+        "label": "Microsoft 365 Blog — Copilot in Excel: Built for the era of Frontier Finance (25 giu 2026)",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/",
+        "note": "GA 25 giugno 2026. Stessa release del pacchetto Finance Suite. Excel Web, Windows e Mac."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA 25 giugno 2026. Excel Web, Windows e Mac."
       }
     }
   ],
@@ -1497,6 +1532,15 @@
       "tag": "Excel Finance · Frontier",
       "cov": "Copilot in Excel Finance Suite (Skills, Connector, Plan, Attribution) · Microsoft Scout preview (Frontier)",
       "note": "Due angoli: 1) Excel Finance Suite — per team FP&A e professionisti finanziari: come creare Skills personalizzate, come collegare LSEG/Morningstar/PitchBook/S&P Global, come usare Plan with Copilot per approvare le modifiche prima di eseguirle, come leggere Copilot Attribution. 2) Microsoft Scout — presentare come la visione del futuro di Copilot: agente autonomo, sempre attivo, che apprende il contesto. Chiarire che è in private preview Frontier. Chiudere con guida 'estate 2026': quali feature sono già attive, quali arrivano in autunno."
+    },
+    {
+      "w": "W13",
+      "d": "21–25 lug",
+      "hot": false,
+      "theme": "Excel si adatta a te: Personalizzazione e regole nel foglio di lavoro",
+      "tag": "Excel · Personalizzazione",
+      "cov": "Excel Personalization (preferenze utente persistenti) · Workbook Rules (standard aziendali embedded nel file) · FactSet GA luglio (verifica) · Panoramica funzioni estate 2026",
+      "note": "Due angoli pratici: 1) Personalization — spiega la differenza tra preferenze utente (legate all'account, si applicano a tutti i file) e Workbook Rules (legate al file, seguono il workbook). Esempio: team finance che standardizza la struttura delle variance analysis. 2) FactSet — da preview a GA luglio: se confermato, aggiungere come update a excel-finance. Chiudere con mappa pratica 'cosa usare per cosa in Excel': Agent Mode per modifiche automatiche, Plan Mode per approvazione preventiva, Personalization per preferenze persistenti, Skills per workflow ripetibili, Connectors per dati live."
     }
   ]
 }
