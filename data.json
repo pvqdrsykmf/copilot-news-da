@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "6 lug 2026",
+    "updated": "13 lug 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1397,7 +1397,7 @@
       "ico": "⚙️",
       "name": "Copilot in Excel impara il tuo stile: Personalizzazione e Regole del foglio",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>25 giugno 2026</strong>, Copilot in Excel si adatta al tuo modo di lavorare in due modi complementari. <strong>Personalizzazione</strong>: imposti le tue preferenze una volta (formato delle risposte, livello di dettaglio, stile di output) e Copilot le applica in modo coerente in tutte le sessioni future su qualsiasi file. <strong>Workbook Rules</strong>: cattura struttura, nomenclatura e convenzioni sulle formule in un foglio dedicato del workbook — Copilot usa automaticamente queste regole per mantenere coerenza in tutte le sue modifiche su quel file specifico.",
       "example": "Il tuo team usa sempre la stessa struttura per le variance analysis. Scrivi le regole nel foglio 'RULES' del tuo file master: da quel momento, ogni modifica di Copilot rispetta automaticamente quella struttura — nessuna correzione manuale per allinearsi agli standard aziendali.",
       "detail": {
@@ -1421,6 +1421,105 @@
       "rollout": {
         "stage": "ga",
         "note": "GA 25 giugno 2026. Excel Web, Windows e Mac."
+      }
+    },
+    {
+      "id": "copilot-vision",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "👁️",
+      "name": "Mostra lo schermo a Copilot: Vision in rollout per tutti gli utenti M365 Copilot",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da luglio 2026, <strong>Vision in Microsoft 365 Copilot</strong> è in rollout per tutti gli utenti con licenza M365 Copilot. Durante una sessione vocale, puoi condividere il tuo schermo o la fotocamera del telefono: Copilot analizza ciò che vedi in tempo reale e risponde ai tuoi dubbi — dashboard, messaggi di errore, oggetti fisici, documenti stampati. Niente più descrizioni verbose: mostri e chiedi. <strong>Roadmap ID 561037.</strong>",
+      "example": "Hai una dashboard con un'anomalia che non sai spiegare. Avvii Vision, condividi lo schermo e chiedi a Copilot in voce: 'Cosa indica questa spike nel grafico?' Copilot risponde in tempo reale senza che tu debba descrivere nulla.",
+      "detail": {
+        "steps": "1. Apri Microsoft 365 Copilot (app desktop, web o mobile) e avvia una sessione vocale cliccando sull'icona microfono.\n2. Durante la sessione vocale, cerca il pulsante 'Condividi schermo' o 'Fotocamera' nell'interfaccia.\n3. Scegli cosa condividere: lo schermo del computer o la fotocamera del dispositivo mobile.\n4. Fai le tue domande in voce: Copilot vede quello che stai mostrando e risponde in base al contenuto visivo.\n5. La condivisione è completamente sotto il tuo controllo: puoi interromperla in qualsiasi momento. I dati audio/video vengono eliminati automaticamente dopo 48 ore.",
+        "prompts": [
+          "Cosa mi indica questo messaggio di errore? (condividendo lo schermo)",
+          "Analizza questa dashboard e dimmi quale dato richiede attenzione immediata.",
+          "Come funziona questo pannello? Spiegami ogni sezione. (condividendo lo schermo dell'applicazione)"
+        ],
+        "tips": [
+          "⚠️ Admin control: il tuo IT admin può disabilitare Vision per schermo, fotocamera o entrambi tramite M365 Admin Center. Se non vedi l'opzione di condivisione durante la sessione vocale, contatta il tuo IT.",
+          "Privacy: ogni sessione di condivisione è interamente avviata da te e limitata alla conversazione attiva. I dati audio e video vengono eliminati automaticamente dopo 48 ore — niente viene conservato.",
+          "Funziona meglio con domande specifiche su ciò che stai mostrando: 'spiega questa colonna' è più efficace di 'analizza il foglio'. Copilot combina il contesto visivo con i tuoi dati aziendali (SharePoint, email) per rispondere."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft 365 Copilot — June 2026 (Roadmap ID 561037)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572",
+        "note": "Rolling out luglio 2026 per tutti gli utenti M365 Copilot. Annunciato nel What's New giugno 2026. Roadmap ID 561037."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out luglio 2026. Roadmap ID 561037. Richiede licenza Microsoft 365 Copilot."
+      }
+    },
+    {
+      "id": "sales-agent",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "🤝",
+      "name": "Sales Agent GA: contesto cliente e trattativa direttamente in Outlook e Teams",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Dal <strong>2 luglio 2026</strong>, <strong>Sales Agent</strong> in Microsoft 365 Copilot è generalmente disponibile. L'agente porta contesto clienti e trattative direttamente dove già lavori — Outlook, Teams, Copilot Chat — senza aprire il CRM. Genera riepiloghi account, email personalizzate basate su dati di vendita, note post-meeting e aggiornamenti CRM. Richiede licenza Microsoft 365 Copilot <strong>e</strong> Dynamics 365 Sales.",
+      "example": "Prima di una call con un cliente, chiedi a Sales Agent: 'Riepilogami la trattativa con [Nome Cliente]: storia, ultime interazioni, deal value.' L'agente recupera i dati da Dynamics 365 e te li presenta in Outlook o Teams — niente copia-incolla tra sistemi.",
+      "detail": {
+        "steps": "1. Verifica con il tuo IT admin che la tua organizzazione abbia sia la licenza Microsoft 365 Copilot sia Dynamics 365 Sales.\n2. Apri Copilot Chat in Microsoft 365 (web, app Teams o Outlook) e cerca 'Sales Agent' nell'elenco degli agenti.\n3. Avvia una sessione con Sales Agent descrivendo il task: riepilogo account, preparazione meeting, draft email.\n4. L'agente accede ai dati Dynamics 365 e alle tue email/riunioni M365 per costruire la risposta.\n5. Rivedi l'output e usa le azioni suggerite (aggiorna CRM, invia bozza) per completare il task nel sistema.",
+        "prompts": [
+          "Fammi un riepilogo del deal con [Nome Azienda]: stato, valore, prossimi passi e chi è il decision maker.",
+          "Scrivi una email di follow-up post-meeting per [Nome Cliente], basandoti sulle note della call di ieri.",
+          "Quali opportunità nel mio pipeline scadono questo mese? Ordina per valore e probabilità di chiusura."
+        ],
+        "tips": [
+          "⚠️ Richiede licenza Microsoft 365 Copilot E Dynamics 365 Sales: Sales Agent non funziona con solo una delle due licenze. Verifica con il tuo IT admin prima di cercare l'agente.",
+          "Sales Agent non sostituisce il CRM — lo alimenta. Gli aggiornamenti a record e note vengono revisionati da te prima di essere salvati in Dynamics 365.",
+          "Le note di meeting vengono catturate da Teams e sincronizzate in Dynamics 365 automaticamente — configura questa integrazione una volta con il tuo admin e poi funziona da sola."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity M365 Copilot Blog — Sales Agent is now generally available (2 lug 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/sales-agent-is-now-generally-available-bringing-customer-and-deal-intelligence-i/4532629",
+        "note": "GA 2 luglio 2026. Disponibile in Outlook, Teams e Copilot Chat. Richiede M365 Copilot + Dynamics 365 Sales."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA 2 luglio 2026. Disponibile in Outlook, Teams e Copilot Chat. Richiede M365 Copilot + Dynamics 365 Sales."
+      }
+    },
+    {
+      "id": "pages-suggested-edits",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "✏️",
+      "name": "Copilot Pages: polish automatico con Suggested Edits",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da luglio 2026, in <strong>Copilot Pages</strong> puoi chiedere a Copilot di rileggere la pagina e proporre modifiche inline per migliorare chiarezza e qualità. Si accede tramite il menu <strong>Copilot Shortcuts → \"Suggested edits\"</strong>: Copilot analizza il contenuto e suggerisce le correzioni direttamente nel testo — accetti o rifiuti ogni singola modifica. Ideale per rifinire comunicazioni e report prima di condividerli.",
+      "example": "Hai scritto una comunicazione interna in Copilot Pages e vuoi rifinirla prima di condividerla. Apri Copilot Shortcuts e clicca 'Suggested edits': Copilot evidenzia i punti poco chiari e propone riformulazioni — tu approvi solo quelle che convincono.",
+      "detail": {
+        "steps": "1. Apri una Copilot Page con il contenuto che vuoi rifinire.\n2. Nel menu 'Copilot Shortcuts' (icona in alto nella Page, a forma di fulmine o scorciatoia AI), clicca 'Suggested edits'.\n3. Copilot analizza il testo e propone le modifiche inline — evidenziate direttamente nel corpo della pagina.\n4. Per ogni suggerimento, clicca ✓ per accettarlo o ✗ per ignorarlo.\n5. Una volta revisionate tutte le modifiche, la pagina è pronta per essere condivisa o convertita in SharePoint News.",
+        "prompts": [
+          "Rendi questa pagina più chiara e concisa, con proposte di modifica che posso accettare una per una.",
+          "Suggerisci modifiche per rendere il tono più professionale senza perdere il senso dei contenuti.",
+          "Migliora la struttura: identifica dove mancano titoli o dove i paragrafi sono troppo lunghi."
+        ],
+        "tips": [
+          "Copilot Shortcuts è il menu delle scorciatoie AI nella Page: lo trovi in alto nella pagina con l'icona a fulmine. 'Suggested edits' è una delle voci disponibili.",
+          "La funzione è ideale per rifinire comunicazioni, report o aggiornamenti prima della condivisione — simile al track changes di Word, ma direttamente in Pages.",
+          "Usa 'Suggested edits' dopo aver generato il contenuto di base: prima il contenuto, poi la rifinitura. È uno strumento di polish — non sostituisce una riscrittura strutturale."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft 365 Copilot — June 2026 (GA luglio 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572",
+        "note": "Preview giugno 2026. GA luglio 2026. Annunciato nel What's New giugno 2026 Microsoft TechCommunity Blog."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Preview giugno 2026. GA luglio 2026."
       }
     }
   ],
@@ -1541,6 +1640,15 @@
       "tag": "Excel · Personalizzazione",
       "cov": "Excel Personalization (preferenze utente persistenti) · Workbook Rules (standard aziendali embedded nel file) · FactSet GA luglio (verifica) · Panoramica funzioni estate 2026",
       "note": "Due angoli pratici: 1) Personalization — spiega la differenza tra preferenze utente (legate all'account, si applicano a tutti i file) e Workbook Rules (legate al file, seguono il workbook). Esempio: team finance che standardizza la struttura delle variance analysis. 2) FactSet — da preview a GA luglio: se confermato, aggiungere come update a excel-finance. Chiudere con mappa pratica 'cosa usare per cosa in Excel': Agent Mode per modifiche automatiche, Plan Mode per approvazione preventiva, Personalization per preferenze persistenti, Skills per workflow ripetibili, Connectors per dati live."
+    },
+    {
+      "w": "W14",
+      "d": "28 lug–1 ago",
+      "hot": false,
+      "theme": "Mostra lo schermo a Copilot: Vision e i nuovi agenti di luglio",
+      "tag": "Copilot Chat · Vision · Agenti",
+      "cov": "Vision in M365 Copilot (schermo e fotocamera in sessione vocale, Roadmap 561037) · Sales Agent GA (2 lug) · Pages Suggested Edits",
+      "note": "Tre novità di luglio da presentare insieme: 1) Vision — spiegare in modo semplice cosa si può fare: mostrare un errore, una dashboard, un oggetto fisico durante una sessione vocale. Enfatizzare privacy (48h, dati eliminati) e admin control. 2) Sales Agent GA — per organizzazioni con Dynamics 365: cosa cambia nella pratica quotidiana del venditore (meno switch di app, contesto sempre disponibile). Chiarire il doppio requisito licenza (M365 Copilot + D365 Sales). 3) Pages Suggested Edits — chiudere il ciclo Pages→SharePoint News con il polish finale: Copilot non scrive solo, ora corregge anche. Tono: estate che non rallenta l'innovazione — tre funzioni pronte da usare adesso."
     }
   ]
 }
