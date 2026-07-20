@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "13 lug 2026",
+    "updated": "20 lug 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1430,7 +1430,7 @@
       "ico": "👁️",
       "name": "Mostra lo schermo a Copilot: Vision in rollout per tutti gli utenti M365 Copilot",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, <strong>Vision in Microsoft 365 Copilot</strong> è in rollout per tutti gli utenti con licenza M365 Copilot. Durante una sessione vocale, puoi condividere il tuo schermo o la fotocamera del telefono: Copilot analizza ciò che vedi in tempo reale e risponde ai tuoi dubbi — dashboard, messaggi di errore, oggetti fisici, documenti stampati. Niente più descrizioni verbose: mostri e chiedi. <strong>Roadmap ID 561037.</strong>",
       "example": "Hai una dashboard con un'anomalia che non sai spiegare. Avvii Vision, condividi lo schermo e chiedi a Copilot in voce: 'Cosa indica questa spike nel grafico?' Copilot risponde in tempo reale senza che tu debba descrivere nulla.",
       "detail": {
@@ -1463,7 +1463,7 @@
       "ico": "🤝",
       "name": "Sales Agent GA: contesto cliente e trattativa direttamente in Outlook e Teams",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>2 luglio 2026</strong>, <strong>Sales Agent</strong> in Microsoft 365 Copilot è generalmente disponibile. L'agente porta contesto clienti e trattative direttamente dove già lavori — Outlook, Teams, Copilot Chat — senza aprire il CRM. Genera riepiloghi account, email personalizzate basate su dati di vendita, note post-meeting e aggiornamenti CRM. Richiede licenza Microsoft 365 Copilot <strong>e</strong> Dynamics 365 Sales.",
       "example": "Prima di una call con un cliente, chiedi a Sales Agent: 'Riepilogami la trattativa con [Nome Cliente]: storia, ultime interazioni, deal value.' L'agente recupera i dati da Dynamics 365 e te li presenta in Outlook o Teams — niente copia-incolla tra sistemi.",
       "detail": {
@@ -1496,7 +1496,7 @@
       "ico": "✏️",
       "name": "Copilot Pages: polish automatico con Suggested Edits",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, in <strong>Copilot Pages</strong> puoi chiedere a Copilot di rileggere la pagina e proporre modifiche inline per migliorare chiarezza e qualità. Si accede tramite il menu <strong>Copilot Shortcuts → \"Suggested edits\"</strong>: Copilot analizza il contenuto e suggerisce le correzioni direttamente nel testo — accetti o rifiuti ogni singola modifica. Ideale per rifinire comunicazioni e report prima di condividerli.",
       "example": "Hai scritto una comunicazione interna in Copilot Pages e vuoi rifinirla prima di condividerla. Apri Copilot Shortcuts e clicca 'Suggested edits': Copilot evidenzia i punti poco chiari e propone riformulazioni — tu approvi solo quelle che convincono.",
       "detail": {
@@ -1521,6 +1521,172 @@
         "stage": "ga",
         "note": "Preview giugno 2026. GA luglio 2026."
       }
+    },
+    {
+      "id": "gpt56",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🧠",
+      "name": "Copilot risponde meglio: arriva GPT-5.6 come modello preferito",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Dal <strong>9 luglio 2026</strong>, il motore di Microsoft 365 Copilot è aggiornato a <strong>GPT-5.6</strong>, ora il modello preferito in <strong>Word, Excel, PowerPoint, Copilot Chat e Cowork</strong>. Ragionamento più potente per task multi-step complessi, bozze più solide in Word, analisi più precise in Excel e presentazioni più ricche. L'aggiornamento è silenzioso e automatico — nessuna azione richiesta da admin o utente.",
+      "example": "Chiedi a Copilot in Excel di analizzare un foglio complesso con più condizioni: con GPT-5.6 il piano di lavoro è più preciso, segue meglio le istruzioni multi-step e i risultati richiedono meno correzioni manuali.",
+      "detail": {
+        "steps": "1. Apri qualsiasi app M365 Copilot (Word, Excel, PowerPoint, Copilot Chat, Cowork).\n2. GPT-5.6 è ora il modello preferito di default: usa Copilot normalmente, non devi fare nulla.\n3. Nel selettore modelli di Copilot Chat puoi ancora scegliere manualmente un modello diverso se lo preferisci.",
+        "prompts": [
+          "Analizza questo documento e proponi una struttura migliorata per renderlo più efficace per il pubblico target.",
+          "Elabora questo foglio Excel con 5 criteri di filtro e crea una tabella di sintesi con le anomalie evidenziate.",
+          "Scrivi una proposta commerciale completa per [Cliente] partendo da queste note: includi exec summary, scope, pricing e timeline."
+        ],
+        "tips": [
+          "Aggiornamento automatico: GPT-5.6 sostituisce GPT-5.5 come modello preferito dal 9 luglio 2026. Nessuna azione richiesta da admin o utente — il cambio è già attivo.",
+          "GPT-5.6 eccelle in agentic work multi-step: task che richiedono più passaggi sequenziali (analisi → piano → azione → revisione) beneficiano di più rispetto alle risposte semplici.",
+          "Il selettore modelli in Copilot Chat mostra ancora tutte le opzioni: GPT-5.6 Quick response (nuovo default), GPT-5.4 Thinking (ragionamento approfondito) e Claude Opus 4.8 (se abilitato dall'admin)."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity M365 Copilot Blog — Available today: OpenAI's GPT-5.6 in Microsoft 365 Copilot (9 lug 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-openai%e2%80%99s-gpt-5-6-in-microsoft-365-copilot/4533152",
+        "note": "Disponibile dal 9 luglio 2026. Word, Excel, PowerPoint, Copilot Chat e Cowork. Aggiornamento automatico."
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Disponibile dal 9 luglio 2026. Aggiornamento automatico in tutti i tenant con licenza M365 Copilot."
+      },
+      "completedOn": "9 lug 2026"
+    },
+    {
+      "id": "agent-store-submit",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "🏪",
+      "name": "Pubblica il tuo agente nell'Agent Store aziendale",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da luglio 2026, chi costruisce agenti in <strong>Agent Builder</strong> può sottoporli all'approvazione dell'admin e pubblicarli nell'<strong>Agent Store</strong> sotto la sezione \"Built by your org\". Gli utenti dell'organizzazione trovano l'agente direttamente nell'Agent Store — senza link da condividere, senza installazioni manuali. Il flusso è governato: l'admin rivede, approva e pubblica dall'M365 Admin Center.",
+      "example": "Il team HR costruisce un agente per le domande frequenti sui benefit aziendali. Lo sottopone all'admin, che lo approva: da quel momento tutti i dipendenti lo trovano nell'Agent Store con un click — senza link, senza configurazioni.",
+      "detail": {
+        "steps": "1. Costruisci l'agente in Agent Builder (Copilot Chat → menu agenti → 'Crea agente').\n2. Quando è pronto, clicca 'Pubblica' → seleziona 'Agent Store — Built by your org'.\n3. L'agente entra in coda di revisione: l'admin riceve la notifica in M365 Admin Center.\n4. L'admin rivede, approva e pubblica: l'agente compare nell'Agent Store per tutti gli utenti del tenant.\n5. Chi trova l'agente può avviarlo direttamente dall'Agent Store senza configurazioni aggiuntive.",
+        "prompts": [
+          "Crea un agente che risponda alle domande frequenti su [Processo aziendale] basandosi sui documenti SharePoint del team.",
+          "Costruisci un agente per la preparazione delle offerte commerciali: prende il nome del cliente e genera una bozza nel nostro formato standard.",
+          "Agente per l'onboarding: risponde alle domande dei nuovi assunti attingendo al manuale e alle policy aziendali su SharePoint."
+        ],
+        "tips": [
+          "Richiede che l'admin abbia configurato il flusso di approvazione in M365 Admin Center. Se il pulsante 'Pubblica nell'Agent Store' non compare in Agent Builder, contatta il tuo IT.",
+          "La sezione 'Built by your org' dell'Agent Store è visibile a tutti gli utenti del tenant: gli agenti pubblicati diventano accessibili immediatamente, senza distribuzioni manuali.",
+          "Gli agenti pubblicati tramite Agent Store operano con le stesse policy di sicurezza del tenant (DLP Purview, sensitivity labels, EU Data Boundary). Nessuna configurazione di sicurezza aggiuntiva richiesta."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — Submit agents to Agent Store from Agent Builder (lug 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+        "note": "Rilasciato luglio 1–15, 2026. Windows e Web. Richiede admin approval in M365 Admin Center."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rilasciato luglio 2026. Windows e Web. Richiede admin approval in M365 Admin Center."
+      }
+    },
+    {
+      "id": "notebooks-outlook-email",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "📧",
+      "name": "Copilot Notebooks: aggiungi email Outlook come riferimento",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da luglio 2026, in <strong>Copilot Notebooks</strong> puoi aggiungere <strong>email e thread Outlook</strong> come riferimenti, esattamente come già fai con file Word, PPT, Excel e riunioni Teams. Copilot analizza il contenuto delle email e lo usa come contesto per rispondere alle domande, generare output e costruire il riassunto del notebook.",
+      "example": "Stai preparando una proposta per un cliente. Aggiungi al Notebook le ultime email con quel cliente, il deck e le note della call: Copilot conosce tutta la storia e genera la proposta con il contesto completo — senza copiare nulla manualmente.",
+      "detail": {
+        "steps": "1. Apri o crea un Copilot Notebook in Copilot Chat.\n2. Nel pannello 'Riferimenti', clicca 'Aggiungi riferimento' → seleziona 'Email Outlook'.\n3. Cerca le email o i thread che vuoi aggiungere: puoi cercare per mittente, oggetto o data.\n4. Le email vengono indicizzate come riferimento: Copilot le usa come contesto per tutta la sessione del notebook.\n5. Fai domande o genera output: Copilot risponde integrando le email con gli altri riferimenti del notebook.",
+        "prompts": [
+          "Riassumi tutte le richieste del cliente [Nome] emerse dalle email nel notebook e organizzale per priorità.",
+          "Sulla base delle email e dei file nel notebook, quali punti aperti restano da affrontare prima della prossima call?",
+          "Genera una timeline della nostra relazione con [Nome Cliente] basandoti sulle email in questo notebook."
+        ],
+        "tips": [
+          "Le email rimangono nel tuo mailbox Outlook: il notebook non le copia, le indicizza. Le permission di accesso originali sono rispettate.",
+          "Usa thread completi come riferimento invece di email singole: Copilot ha il contesto dell'intera conversazione e risponde con più precisione.",
+          "Aggiungere email come riferimento permette di costruire un notebook 'per cliente' o 'per progetto' con tutta la storia — email + file + riunioni Teams — in un unico spazio."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — Outlook email references in Copilot Notebooks (lug 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+        "note": "Rolling out luglio 2026. Confermato nelle release notes Microsoft e nel blog What's New Notebooks giugno 2026."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out luglio 2026. Disponibile su Windows, Mac e Web."
+      }
+    },
+    {
+      "id": "ai-watermarks",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "🔏",
+      "name": "Filigrana AI sui contenuti video e audio generati con Copilot",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da fine giugno 2026, gli <strong>admin M365 possono abilitare una filigrana AI</strong> (visuale o audio) su video e audio generati o modificati con Copilot. La policy si configura in M365 Admin Center e si applica automaticamente a tutti i contenuti AI-generati del tenant — trasparenza automatica su cosa è stato creato o alterato dall'AI, senza che l'utente finale debba fare nulla.",
+      "example": "Il team marketing genera un video con Copilot. Con la policy abilitata dall'admin, il video include automaticamente un watermark che segnala il contenuto AI-generato — zero azioni aggiuntive richieste a chi crea il contenuto.",
+      "detail": {
+        "steps": "1. (Admin) Accedi a Microsoft 365 Admin Center → Impostazioni → Copilot → Governance.\n2. Trova la sezione 'Filigrana AI per contenuti video e audio' e abilita la policy.\n3. Scegli tra filigrana visuale (testo sovrapposto al video) o filigrana audio (tono incorporato, non percepibile all'ascolto normale).\n4. La policy si applica automaticamente a tutti i nuovi contenuti video/audio generati o modificati con Copilot nel tenant da quel momento in poi.",
+        "prompts": [],
+        "tips": [
+          "⚠️ Feature configurata dall'IT: gli utenti finali non vedono alcuna impostazione. Il watermark viene aggiunto automaticamente se la policy è attiva.",
+          "La filigrana audio non è percepibile all'ascolto normale: è un metadato sonoro incorporato, rilevabile da strumenti di verifica AI ma non fastidioso per gli ascoltatori.",
+          "La policy si applica solo ai contenuti NUOVI generati dopo l'abilitazione — non ai video e audio già creati in precedenza."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — Enable watermarks for AI-generated content (giu–lug 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+        "note": "Rolled out giugno 17–luglio 1, 2026. Android, Windows, iOS, Mac, Web. Policy admin in M365 Admin Center."
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out giugno 17–luglio 1, 2026. Tutti i piani M365 Copilot. Policy configurata dall'admin."
+      },
+      "completedOn": "1 lug 2026"
+    },
+    {
+      "id": "ppt-sp-grounding",
+      "app": "PowerPoint",
+      "cat": "c-ppt",
+      "ico": "📂",
+      "name": "PowerPoint: crea presentazioni dai tuoi documenti SharePoint e OneDrive",
+      "st": "avail",
+      "isNew": false,
+      "impact": "Da giugno 2026, quando crei una presentazione con Copilot in PowerPoint, puoi <strong>referenziare librerie SharePoint e cartelle OneDrive</strong> come fonte per il contenuto. Copilot attinge ai documenti della tua organizzazione per costruire le slide — non più solo da ciò che scrivi nel prompt o da fonti generiche.",
+      "example": "Devi presentare i risultati di un progetto. Invece di descriverlo nel prompt, dici a Copilot: 'Usa i documenti nella cartella [Nome] su SharePoint.' Copilot legge i file e costruisce le slide con i dati e i contenuti reali del progetto.",
+      "detail": {
+        "steps": "1. Apri PowerPoint (web o desktop) con il pannello Copilot attivo.\n2. Nel campo prompt clicca '+' oppure cerca l'opzione 'Aggiungi fonte'.\n3. Seleziona 'SharePoint' o 'OneDrive': sfoglia e scegli la libreria o la cartella da usare come base.\n4. Descrivi la presentazione che vuoi costruire: Copilot usa i file nella cartella come contesto per generare le slide.\n5. Rivedi la bozza e chiedi modifiche in linguaggio naturale.",
+        "prompts": [
+          "Crea una presentazione di 8 slide sui risultati del progetto usando i documenti in [Cartella SharePoint].",
+          "Costruisci una presentazione per il cliente usando il materiale nella nostra libreria [Nome] su SharePoint.",
+          "Genera un aggiornamento di stato usando i file presenti nella cartella [Progetto] su OneDrive."
+        ],
+        "tips": [
+          "Funziona con librerie SharePoint accessibili al tuo account e con le cartelle OneDrive del tuo account — nessuna configurazione aggiuntiva.",
+          "Selezionare una cartella specifica produce risultati migliori rispetto a referenziare un'intera libreria: meno contenuto irrilevante, presentazione più focalizzata.",
+          "Le immagini presenti nei file SharePoint (loghi, grafici) possono essere incluse nelle slide: specifica nel prompt se vuoi che Copilot le riutilizzi."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft 365 Copilot — June 2026 (SharePoint/OneDrive grounding in PowerPoint)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572",
+        "note": "Rolled out giugno 2026. PowerPoint Web e Desktop. Confermato nelle release notes Microsoft giugno 2026."
+      },
+      "rollout": {
+        "stage": "complete",
+        "note": "Rolled out giugno 2026. PowerPoint Web e Desktop."
+      },
+      "completedOn": "30 giu 2026",
+      "archived": "distribuite",
+      "archivedOn": "20 lug 2026"
     }
   ],
   "plan": [
@@ -1649,6 +1815,15 @@
       "tag": "Copilot Chat · Vision · Agenti",
       "cov": "Vision in M365 Copilot (schermo e fotocamera in sessione vocale, Roadmap 561037) · Sales Agent GA (2 lug) · Pages Suggested Edits",
       "note": "Tre novità di luglio da presentare insieme: 1) Vision — spiegare in modo semplice cosa si può fare: mostrare un errore, una dashboard, un oggetto fisico durante una sessione vocale. Enfatizzare privacy (48h, dati eliminati) e admin control. 2) Sales Agent GA — per organizzazioni con Dynamics 365: cosa cambia nella pratica quotidiana del venditore (meno switch di app, contesto sempre disponibile). Chiarire il doppio requisito licenza (M365 Copilot + D365 Sales). 3) Pages Suggested Edits — chiudere il ciclo Pages→SharePoint News con il polish finale: Copilot non scrive solo, ora corregge anche. Tono: estate che non rallenta l'innovazione — tre funzioni pronte da usare adesso."
+    },
+    {
+      "w": "W15",
+      "d": "4–8 ago",
+      "hot": false,
+      "theme": "Teams in autunno: riunioni senza registrazione e chiamate gestite da Copilot",
+      "tag": "Teams · Compliance",
+      "cov": "Teams recap senza trascrizione (Targeted Release metà agosto) · Teams call delegation (Frontier) · Aggiornamento funzioni estate",
+      "note": "Due angoli Teams per prepararsi all'autunno: 1) Recap senza trascrizione — spiegare in anticipo agli utenti cosa arriva e come funzionerà (chi lo attiva, dove si trova il recap, cosa non viene salvato). Focus su compliance: utile per settori con policy di privacy rigide. 2) Teams call delegation — presentare la funzione e chiarire che è ancora in Frontier: quando arriviamo per tutti? Cosa configurare ora. Chiudere con panoramica aggiornata delle funzioni Teams attive in estate 2026."
     }
   ]
 }
