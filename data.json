@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "20 lug 2026",
+    "updated": "24 lug 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1529,7 +1529,7 @@
       "ico": "🧠",
       "name": "Copilot risponde meglio: arriva GPT-5.6 come modello preferito",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>9 luglio 2026</strong>, il motore di Microsoft 365 Copilot è aggiornato a <strong>GPT-5.6</strong>, ora il modello preferito in <strong>Word, Excel, PowerPoint, Copilot Chat e Cowork</strong>. Ragionamento più potente per task multi-step complessi, bozze più solide in Word, analisi più precise in Excel e presentazioni più ricche. L'aggiornamento è silenzioso e automatico — nessuna azione richiesta da admin o utente.",
       "example": "Chiedi a Copilot in Excel di analizzare un foglio complesso con più condizioni: con GPT-5.6 il piano di lavoro è più preciso, segue meglio le istruzioni multi-step e i risultati richiedono meno correzioni manuali.",
       "detail": {
@@ -1563,7 +1563,7 @@
       "ico": "🏪",
       "name": "Pubblica il tuo agente nell'Agent Store aziendale",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, chi costruisce agenti in <strong>Agent Builder</strong> può sottoporli all'approvazione dell'admin e pubblicarli nell'<strong>Agent Store</strong> sotto la sezione \"Built by your org\". Gli utenti dell'organizzazione trovano l'agente direttamente nell'Agent Store — senza link da condividere, senza installazioni manuali. Il flusso è governato: l'admin rivede, approva e pubblica dall'M365 Admin Center.",
       "example": "Il team HR costruisce un agente per le domande frequenti sui benefit aziendali. Lo sottopone all'admin, che lo approva: da quel momento tutti i dipendenti lo trovano nell'Agent Store con un click — senza link, senza configurazioni.",
       "detail": {
@@ -1596,7 +1596,7 @@
       "ico": "📧",
       "name": "Copilot Notebooks: aggiungi email Outlook come riferimento",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, in <strong>Copilot Notebooks</strong> puoi aggiungere <strong>email e thread Outlook</strong> come riferimenti, esattamente come già fai con file Word, PPT, Excel e riunioni Teams. Copilot analizza il contenuto delle email e lo usa come contesto per rispondere alle domande, generare output e costruire il riassunto del notebook.",
       "example": "Stai preparando una proposta per un cliente. Aggiungi al Notebook le ultime email con quel cliente, il deck e le note della call: Copilot conosce tutta la storia e genera la proposta con il contesto completo — senza copiare nulla manualmente.",
       "detail": {
@@ -1629,7 +1629,7 @@
       "ico": "🔏",
       "name": "Filigrana AI sui contenuti video e audio generati con Copilot",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da fine giugno 2026, gli <strong>admin M365 possono abilitare una filigrana AI</strong> (visuale o audio) su video e audio generati o modificati con Copilot. La policy si configura in M365 Admin Center e si applica automaticamente a tutti i contenuti AI-generati del tenant — trasparenza automatica su cosa è stato creato o alterato dall'AI, senza che l'utente finale debba fare nulla.",
       "example": "Il team marketing genera un video con Copilot. Con la policy abilitata dall'admin, il video include automaticamente un watermark che segnala il contenuto AI-generato — zero azioni aggiuntive richieste a chi crea il contenuto.",
       "detail": {
@@ -1687,6 +1687,68 @@
       "completedOn": "30 giu 2026",
       "archived": "distribuite",
       "archivedOn": "20 lug 2026"
+    },
+    {
+      "id": "claude-sonnet5",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🤖",
+      "name": "Claude Sonnet 5 nel selettore modelli: AI più veloce per task agentic",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Dal <strong>2 luglio 2026</strong>, <strong>Claude Sonnet 5 di Anthropic</strong> è disponibile nel selettore modelli di Microsoft 365 Copilot. Sonnet 5 ha prestazioni vicine a Claude Opus 4.8 ma con velocità superiore — ideale per task agentic multi-step su documenti, fogli di calcolo e presentazioni. Disponibile in <strong>Copilot Cowork e Copilot in PowerPoint</strong>. <strong>⚠️ EU/EFTA/UK: Claude è off per default.</strong> L'admin deve abilitarlo in M365 Admin Center.",
+      "example": "Stai usando Cowork per automatizzare un processo multi-step complesso. Selezioni Claude Sonnet 5: risposte più precise di Sonnet 4, velocità superiore a Opus 4.8 — il punto di equilibrio per lavoro agentic quotidiano.",
+      "detail": {
+        "steps": "1. Apri Copilot Chat (Cowork) o PowerPoint con il pannello Copilot attivo.\n2. Nel selettore modelli (icona a tendina accanto al campo prompt), cerca 'Claude Sonnet 5'.\n3. Selezionalo: Copilot userà Sonnet 5 per elaborare le tue richieste in quella sessione.\n4. Confronta con Claude Opus 4.8: Sonnet 5 è più veloce su task standard, Opus 4.8 è preferibile per analisi multi-step molto complesse.",
+        "prompts": [
+          "Crea una presentazione di 10 slide sui risultati del progetto [Nome] con dati da SharePoint, struttura executive e immagini pertinenti.",
+          "Esegui questo workflow in Cowork: analizza le email del cliente [Nome], crea una bozza di risposta e pianifica il follow-up in Planner.",
+          "Riscrivi questa proposta commerciale adattandola al cliente [Nome] mantenendo la nostra struttura standard."
+        ],
+        "tips": [
+          "⚠️ EU/EFTA/UK: Claude Sonnet 5 è off per default. Il Global Admin deve abilitarlo in M365 Admin Center → Copilot → Settings → 'Copilot in M365 apps with Anthropic models'. Senza questa impostazione il modello non è visibile nel selettore.",
+          "Sonnet 5 vs Opus 4.8: per la maggior parte dei task agentic quotidiani Sonnet 5 è sufficiente e più veloce. Usa Opus 4.8 per analisi estremamente complesse che richiedono ragionamento profondo su contesti molto ampi.",
+          "Il rollout parte da Copilot Cowork e Copilot in PowerPoint. Verifica nel selettore modelli della tua app se il modello è già disponibile nel tuo tenant."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity M365 Copilot Blog — Available today: Anthropic's Claude Sonnet 5 in Microsoft 365 Copilot (2 lug 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic%e2%80%99s-claude-sonnet-5-in-microsoft-365-copilot/4532188",
+        "note": "Disponibile dal 2 luglio 2026. Copilot Cowork e PowerPoint. EU: richiede abilitazione admin."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out da luglio 2026. Copilot Cowork e Copilot in PowerPoint. Espansione ad altre app in arrivo."
+      }
+    },
+    {
+      "id": "sharepoint-copilot-apps",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "🔷",
+      "name": "SharePoint Copilot Apps: app interattive dentro il canvas di Copilot",
+      "st": "soon",
+      "isNew": true,
+      "impact": "Da luglio 2026, <strong>SharePoint Copilot Apps</strong> sono in <strong>public preview</strong> — una nuova categoria di esperienze interattive che il tuo IT può costruire e integrare direttamente nel canvas di Copilot. Invece di descrivere un task via chat, vedi una vera app interattiva: approva una spesa, classifica un'istanza di supporto, completa una checklist di onboarding — tutto senza uscire dal flusso Copilot. Disponibilità end-user globale completata entro il 20 luglio 2026. <strong>GA prevista in autunno 2026.</strong>",
+      "example": "Il team HR pubblica una Copilot App per l'onboarding: i nuovi assunti trovano la checklist direttamente in Copilot Chat e la completano passo dopo passo senza aprire altri sistemi. Il team legale pubblica un'app per la revisione contratti: approva, rifiuta, commenta ogni clausola dall'interfaccia Copilot.",
+      "detail": {
+        "steps": "1. (Per gli utenti finali) Cerca le app disponibili nel catalogo agenti di Copilot Chat: le SharePoint Copilot Apps appaiono come agenti interattivi costruiti dalla tua organizzazione.\n2. Avvia l'app e interagisci con l'interfaccia strutturata — bottoni, form, checklist — senza dover descrivere i task in linguaggio naturale.\n3. (Per sviluppatori/IT) Le app si costruiscono con SharePoint Framework (SPFx) v1.24: qualsiasi libreria JS (React, Angular, Vue, Svelte) è supportata. Il Copilot Workbench è disponibile per test locali.\n4. La pubblicazione avviene tramite lo stesso processo delle app SPFx esistenti — nessuna infrastruttura aggiuntiva da gestire.",
+        "prompts": [],
+        "tips": [
+          "⏳ Public preview luglio 2026, GA in autunno 2026. Le app sono già disponibili per gli utenti finali se il tuo IT le ha sviluppate e pubblicate nel catalogo agenti.",
+          "Le SharePoint Copilot Apps sono complementari agli agenti conversazionali: usale quando il task richiede interazioni strutturate (form, checklist, approvazioni) invece di risposte in linguaggio naturale.",
+          "Gli sviluppatori possono usare subito il Copilot Workbench per costruire e testare le prime app. Il packaging usa il modello SPFx esistente — nessuna nuova infrastruttura da gestire nel tenant."
+        ]
+      },
+      "source": {
+        "label": "What's New in Copilot in SharePoint: July 2026 — Microsoft Community Hub",
+        "url": "https://techcommunity.microsoft.com/blog/spblog/what%e2%80%99s-new-in-copilot-in-sharepoint-july-2026/4535420",
+        "note": "Public preview luglio 2026. Disponibilità end-user globale entro il 20 luglio 2026. GA in autunno 2026."
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Public preview luglio 2026. GA in autunno 2026."
+      }
     }
   ],
   "plan": [
@@ -1824,6 +1886,15 @@
       "tag": "Teams · Compliance",
       "cov": "Teams recap senza trascrizione (Targeted Release metà agosto) · Teams call delegation (Frontier) · Aggiornamento funzioni estate",
       "note": "Due angoli Teams per prepararsi all'autunno: 1) Recap senza trascrizione — spiegare in anticipo agli utenti cosa arriva e come funzionerà (chi lo attiva, dove si trova il recap, cosa non viene salvato). Focus su compliance: utile per settori con policy di privacy rigide. 2) Teams call delegation — presentare la funzione e chiarire che è ancora in Frontier: quando arriviamo per tutti? Cosa configurare ora. Chiudere con panoramica aggiornata delle funzioni Teams attive in estate 2026."
+    },
+    {
+      "w": "W16",
+      "d": "11–15 ago",
+      "hot": false,
+      "theme": "Claude Sonnet 5 e SharePoint Copilot Apps: AI più veloce e app interattive in Copilot",
+      "tag": "Copilot Chat · SharePoint · Modelli",
+      "cov": "Claude Sonnet 5 (Cowork + PowerPoint) · SharePoint Copilot Apps (public preview) · Riepilogo novità luglio 2026",
+      "note": "Due angoli: 1) Claude Sonnet 5 — spiegare la differenza rispetto a Opus 4.8 e GPT-5.6: quando usare quale modello, focus EU (off per default, admin opt-in richiesto). 2) SharePoint Copilot Apps — spiegare il concetto di 'app interattiva dentro Copilot' con esempi concreti (onboarding, approvazioni, checklist): come differisce dagli agenti conversazionali, quando usarla. Chiudere con riepilogo luglio 2026: tutti gli aggiornamenti del mese in un colpo d'occhio (GPT-5.6, Agent Store, Notebooks email, Vision, Sales Agent, Pages Suggested Edits, Sonnet 5, SP Copilot Apps)."
     }
   ]
 }
