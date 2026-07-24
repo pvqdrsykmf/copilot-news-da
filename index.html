@@ -452,20 +452,37 @@ async function loadData() {
 }
 
 /* ════════════════════════════════════════════
-   STATO CONDIVISO (KV via /api/flags)
+   STATO CONDIVISO (KV via /api/flags, fallback localStorage)
 ════════════════════════════════════════════ */
 const API = '/api/flags';
+const LS_KEY = 'copilot-flags';
 let published = new Set(), pubDates = {};
 let promptsUsed = new Set(), promptDates = {};
 let flagsReadOnly = false;
+let useLocalStorage = false;
+
+function lsLoad() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY) || '{"news":{},"prompts":{}}'); }
+  catch { return { news: {}, prompts: {} }; }
+}
+function lsSave(s) {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(s)); } catch {}
+}
+function todayLabel() {
+  return new Date().toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' });
+}
 
 async function loadFlags() {
   try {
     const r = await fetch(API, { cache: 'no-store' });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     applyFlagsState(await r.json());
-    flagsReadOnly = false; hideFlagsBanner();
-  } catch (e) { flagsReadOnly = true; showFlagsBanner('Stato condiviso non raggiungibile — flag in sola lettura.'); }
+    flagsReadOnly = false; useLocalStorage = false; hideFlagsBanner();
+  } catch (e) {
+    useLocalStorage = true; flagsReadOnly = false;
+    applyFlagsState(lsLoad());
+    showFlagsBanner('Stato salvato in locale su questo browser (server non raggiungibile).');
+  }
 }
 function applyFlagsState(s) {
   const news = s.news || {}, pr = s.prompts || {};
@@ -475,6 +492,13 @@ function applyFlagsState(s) {
   promptDates = Object.fromEntries(Object.entries(pr).map(([k, v]) => [k, v.date]));
 }
 async function postFlag(type, id, action) {
+  if (useLocalStorage) {
+    const s = lsLoad();
+    if (!s[type]) s[type] = {};
+    if (action === 'set') s[type][id] = { date: todayLabel() };
+    else delete s[type][id];
+    lsSave(s); applyFlagsState(s); return;
+  }
   const r = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ type, id, action }) });
   if (!r.ok) throw new Error('HTTP ' + r.status);
