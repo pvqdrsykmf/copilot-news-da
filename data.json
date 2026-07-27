@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "24 lug 2026",
+    "updated": "27 lug 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1695,7 +1695,7 @@
       "ico": "🤖",
       "name": "Claude Sonnet 5 nel selettore modelli: AI più veloce per task agentic",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>2 luglio 2026</strong>, <strong>Claude Sonnet 5 di Anthropic</strong> è disponibile nel selettore modelli di Microsoft 365 Copilot. Sonnet 5 ha prestazioni vicine a Claude Opus 4.8 ma con velocità superiore — ideale per task agentic multi-step su documenti, fogli di calcolo e presentazioni. Disponibile in <strong>Copilot Cowork e Copilot in PowerPoint</strong>. <strong>⚠️ EU/EFTA/UK: Claude è off per default.</strong> L'admin deve abilitarlo in M365 Admin Center.",
       "example": "Stai usando Cowork per automatizzare un processo multi-step complesso. Selezioni Claude Sonnet 5: risposte più precise di Sonnet 4, velocità superiore a Opus 4.8 — il punto di equilibrio per lavoro agentic quotidiano.",
       "detail": {
@@ -1728,7 +1728,7 @@
       "ico": "🔷",
       "name": "SharePoint Copilot Apps: app interattive dentro il canvas di Copilot",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, <strong>SharePoint Copilot Apps</strong> sono in <strong>public preview</strong> — una nuova categoria di esperienze interattive che il tuo IT può costruire e integrare direttamente nel canvas di Copilot. Invece di descrivere un task via chat, vedi una vera app interattiva: approva una spesa, classifica un'istanza di supporto, completa una checklist di onboarding — tutto senza uscire dal flusso Copilot. Disponibilità end-user globale completata entro il 20 luglio 2026. <strong>GA prevista in autunno 2026.</strong>",
       "example": "Il team HR pubblica una Copilot App per l'onboarding: i nuovi assunti trovano la checklist direttamente in Copilot Chat e la completano passo dopo passo senza aprire altri sistemi. Il team legale pubblica un'app per la revisione contratti: approva, rifiuta, commenta ogni clausola dall'interfaccia Copilot.",
       "detail": {
@@ -1748,6 +1748,39 @@
       "rollout": {
         "stage": "preview",
         "note": "Public preview luglio 2026. GA in autunno 2026."
+      }
+    },
+    {
+      "id": "sp-copilot-jul26",
+      "app": "SharePoint",
+      "cat": "c-other",
+      "ico": "📂",
+      "name": "Copilot in SharePoint: crea file Office, condividi e genera report interattivi",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da luglio 2026, Copilot in SharePoint aggiunge tre nuove funzioni concrete. <strong>Crea file Office</strong>: chiedi a Copilot di creare un documento Word, un foglio Excel o una presentazione PowerPoint direttamente dai contenuti del tuo sito SharePoint — senza copiare nulla tra app. <strong>Condividi file via chat</strong>: chiedi a Copilot di condividere un file con un collega direttamente nella conversazione, saltando la finestra di condivisione. <strong>Report HTML interattivo</strong>: genera un report navigabile dai contenuti del sito, condivisibile via link.",
+      "example": "Hai un sito SharePoint con i documenti del progetto. Scrivi a Copilot: 'Crea una presentazione con i punti chiave di questa libreria.' In pochi secondi hai una bozza pronta — senza aprire PowerPoint, senza copiare contenuto.",
+      "detail": {
+        "steps": "1. Apri il sito SharePoint e avvia Copilot (icona in alto a destra nel sito o nella barra laterale di Copilot).\n2. Per creare un file Office: scrivi 'Crea un documento Word / foglio Excel / presentazione PowerPoint con i contenuti di questa libreria [nome]'. Il file viene salvato automaticamente nel sito.\n3. Per condividere: scrivi 'Condividi il file [nome] con [collega o email]' — Copilot gestisce la condivisione rispettando i permessi del sito.\n4. Per il report HTML interattivo: scrivi 'Crea un report interattivo dai documenti in questa cartella' — ottieni una pagina HTML navigabile, condivisibile via link.",
+        "prompts": [
+          "Crea una presentazione PowerPoint con i principali aggiornamenti del progetto in questa libreria.",
+          "Condividi il file [nome file] con [collega] in sola lettura.",
+          "Genera un report interattivo con i contenuti di questa cartella per condividerlo con il management."
+        ],
+        "tips": [
+          "Il file creato viene salvato automaticamente nella libreria SharePoint corrente — non devi scegliere dove salvarlo.",
+          "La condivisione via chat rispetta i permessi del sito: Copilot non può estendere l'accesso oltre quanto già configurato.",
+          "I report HTML interattivi si aprono nel browser e possono essere condivisi via link — ideali per presentare informazioni a chi non ha accesso diretto al sito SharePoint."
+        ]
+      },
+      "source": {
+        "label": "What's New in Copilot in SharePoint: July 2026 — Microsoft Community Hub",
+        "url": "https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-july-2026/4535420",
+        "note": "GA luglio 2026. Richiede licenza Microsoft 365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA luglio 2026. Confermato nel blog ufficiale What's New Copilot in SharePoint: July 2026."
       }
     }
   ],
@@ -1895,6 +1928,15 @@
       "tag": "Copilot Chat · SharePoint · Modelli",
       "cov": "Claude Sonnet 5 (Cowork + PowerPoint) · SharePoint Copilot Apps (public preview) · Riepilogo novità luglio 2026",
       "note": "Due angoli: 1) Claude Sonnet 5 — spiegare la differenza rispetto a Opus 4.8 e GPT-5.6: quando usare quale modello, focus EU (off per default, admin opt-in richiesto). 2) SharePoint Copilot Apps — spiegare il concetto di 'app interattiva dentro Copilot' con esempi concreti (onboarding, approvazioni, checklist): come differisce dagli agenti conversazionali, quando usarla. Chiudere con riepilogo luglio 2026: tutti gli aggiornamenti del mese in un colpo d'occhio (GPT-5.6, Agent Store, Notebooks email, Vision, Sales Agent, Pages Suggested Edits, Sonnet 5, SP Copilot Apps)."
+    },
+    {
+      "w": "W17",
+      "d": "18–22 ago",
+      "hot": false,
+      "theme": "Teams recap senza registrazione: arriva il Targeted Release",
+      "tag": "Teams · Compliance · SharePoint",
+      "cov": "Teams AI recap senza trascrizione (Targeted Release metà agosto) · Copilot in SharePoint luglio: crea file Office, condividi via chat, report HTML · Previsione autunno (SharePoint Copilot Apps GA, Claude per Word in attesa)",
+      "note": "Focus Teams compliance: il recap senza transcript è la novità chiave per chi non può registrare le riunioni (settori regolamentati, policy di privacy rigide). Spiegare come funziona: recap disponibile 120 giorni nel OneDrive dell'organizzatore, nessuna trascrizione salvata, chi vede cosa. Aggiornare su SharePoint Copilot luglio: tre funzioni pratiche (crea file Office, condividi file via chat, report HTML interattivi) disponibili da subito per chi usa Copilot nei siti SharePoint. Chiudere con sguardo all'autunno: SharePoint Copilot Apps prevista GA, Claude per Word (Roadmap 558440) ancora in attesa, Teams recap in GA worldwide fine agosto–settembre."
     }
   ]
 }
