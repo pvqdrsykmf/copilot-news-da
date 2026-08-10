@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "3 ago 2026",
+    "updated": "10 ago 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -352,13 +352,13 @@
       "app": "Word",
       "cat": "c-word",
       "ico": "🔍",
-      "name": "Copilot come revisore: commenti e modifiche tracciate",
-      "st": "soon",
-      "isNew": false,
-      "impact": "Copilot sta diventando un vero co-revisore: lascerà <strong>commenti a margine</strong> e userà le revisioni tracciate come farebbero i tuoi colleghi. Puoi accettare o rifiutare ogni singola modifica.",
-      "example": "Stai finalizzando un contratto? Copilot suggerisce riformulazioni con \"revisioni attive\" — accetti solo le modifiche che ritieni giuste.",
+      "name": "Copilot come revisore: commenti e modifiche tracciate ora disponibili",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, Copilot in Word lascia <strong>commenti a margine</strong> e usa le <strong>revisioni tracciate</strong> come farebbero i tuoi colleghi. Puoi accettare o rifiutare ogni singola modifica — le revisioni di Copilot appaiono nel pannello \"Revisioni\" accanto a quelle dei colleghi. Ideale per contratti, proposte e documenti formali dove ogni modifica deve essere tracciata e approvata.",
+      "example": "Stai finalizzando un contratto? Copilot suggerisce riformulazioni con revisioni tracciate — vedi esattamente cosa ha cambiato e accetti solo le modifiche che ritieni giuste, esattamente come faresti con un collega.",
       "detail": {
-        "steps": "1. Questa funzione è in distribuzione progressiva (in arrivo per tutti entro maggio 2026).\n2. Quando sarà attiva, troverai l'opzione \"Revisiona con Copilot\" nel pannello Copilot di Word.\n3. Copilot leggerà il documento e proporrà modifiche tracciate come farebbe un collega revisore.\n4. Userai il normale strumento \"Accetta/Rifiuta modifiche\" di Word per gestire i suggerimenti.",
+        "steps": "1. Apri un documento Word (web o desktop) con licenza Microsoft 365 Copilot.\n2. Nel pannello Copilot a destra, scrivi le tue istruzioni di revisione con Tracked Changes abilitato nel documento.\n3. Copilot proporrà le modifiche come revisioni tracciate — visibili nel pannello \"Revisioni\" di Word.\n4. Usa il normale strumento \"Accetta/Rifiuta modifiche\" di Word per gestire i suggerimenti di Copilot.",
         "prompts": [
           "Rivedi questo documento e suggerisci dove il linguaggio è troppo vago o ambiguo.",
           "Controlla la coerenza dei termini: ho usato sempre lo stesso nome per indicare questo processo?",
@@ -371,13 +371,15 @@
         ]
       },
       "source": {
-        "label": "Copilot in Word: New Capabilities for Document Workflows (apr 2026)",
-        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/copilot-in-word-new-capabilities-for-document-workflows/4508974",
-        "note": "Frontier Program e Office Insiders Beta Channel da aprile 2026. Word web e Mac in arrivo."
+        "label": "What's New in Microsoft 365 Copilot — July 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332",
+        "note": "In rollout GA agosto 2026. Preview Frontier da aprile 2026. Word web e desktop."
       },
       "rollout": {
-        "stage": "preview",
-        "note": "Frontier Program e Office Insiders Beta da aprile 2026. Supporto Word web e Mac in arrivo."
+        "stage": "ga",
+        "note": "In rollout GA agosto 2026. Preview Frontier da aprile 2026. Word web e desktop.",
+        "changedFrom": "preview",
+        "changedOn": "10 ago 2026"
       }
     },
     {
@@ -422,32 +424,34 @@
       "app": "Excel",
       "cat": "c-excel",
       "ico": "💾",
-      "name": "Copilot funziona anche sui file Excel salvati sul tuo PC",
-      "st": "soon",
-      "isNew": false,
-      "impact": "Prima era obbligatorio salvare il file su OneDrive per usare Copilot in modalità \"Edit with Copilot\". La funzione per i <strong>file in locale è in distribuzione</strong> (rollout partito a marzo, non ancora completato per tutti — Roadmap ID 557564).",
-      "example": "Hai un file Excel sul desktop che usi ogni settimana? Quando arriverà nel tuo tenant, potrai usare Copilot direttamente senza dover prima spostare il file nel cloud.",
+      "name": "Copilot in Excel funziona sui file locali e con AutoSave disattivato",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, Copilot in Excel è disponibile anche nei workbook con <strong>AutoSave disattivato</strong> — inclusi i file salvati in locale sul tuo PC. Prima era obbligatorio avere AutoSave attivo (e quindi il file su OneDrive/SharePoint). Ora, se AutoSave è off, Excel ti ricorda di abilitarlo prima che Copilot faccia modifiche, ma puoi procedere comunque. Disponibile su Windows e Mac.",
+      "example": "Hai un file Excel sul desktop con AutoSave disattivato — prima Copilot non funzionava. Da agosto 2026 Copilot si attiva: Excel mostra un promemoria per abilitare AutoSave, puoi scegliere se farlo o procedere comunque. Addio vincolo del cloud per usare Copilot.",
       "detail": {
-        "steps": "1. Apri un file Excel salvato sul tuo computer (Desktop, Documenti, Download…).\n2. Vai nella scheda \"Home\" e clicca sull'icona Copilot — se il rollout ha raggiunto il tuo tenant, si attiverà anche su file locali.\n3. Usa la funzione \"Edit with Copilot\" (non il semplice pannello chat) per modifiche multi-step.\n4. Il file deve essere in formato moderno .xlsx — non .xls.",
+        "steps": "1. Apri un file Excel salvato sul tuo computer (Desktop, Documenti, Download…) oppure un file OneDrive/SharePoint con AutoSave disattivato.\n2. Vai nella scheda \"Home\" e clicca sull'icona Copilot.\n3. Se AutoSave è disattivato, Excel mostra un banner che suggerisce di abilitarlo prima che Copilot modifichi il file — puoi scegliere se abilitarlo o procedere.\n4. Usa Copilot normalmente: \"Edit with Copilot\" per modifiche multi-step, la chat per analisi e domande.\n5. Il file deve essere in formato moderno .xlsx — non .xls.",
         "prompts": [
           "Analizza questi dati e dimmi se c'è un trend rilevante nell'ultimo trimestre.",
           "Crea una tabella pivot che raggruppi i valori per categoria e per mese.",
           "Aggiungi una riga di totale in fondo a ogni sezione e calcola la percentuale sul totale generale."
         ],
         "tips": [
-          "⏳ Rollout in corso: partito a marzo 2026, non ancora arrivato a tutti i tenant (Roadmap ID 557564).",
-          "Se il pannello Copilot non si attiva su un file locale, il rollout non è ancora arrivato al tuo tenant: salva il file su OneDrive come soluzione temporanea.",
-          "Funziona solo con \"Edit with Copilot\" (modalità agentica multi-step), non con il Copilot Chat classico in Excel."
+          "La funzione è ora in rollout GA (agosto 2026, Roadmap ID 557564). Se Copilot non si attiva ancora su file locali, aggiorna Excel all'ultima versione e attendi il rollout nel tuo tenant.",
+          "AutoSave off significa che le modifiche non vengono salvate automaticamente sul cloud — se procedi senza abilitarlo, salva manualmente dopo le modifiche di Copilot.",
+          "Funziona sia con file locali che con file OneDrive/SharePoint quando hai scelto di lavorare offline. Il formato deve essere .xlsx moderno, non .xls."
         ]
       },
       "source": {
-        "label": "Roadmap ID 557564 — Local file support for Agent Mode in Excel",
-        "url": "https://www.microsoft.com/en-us/microsoft-365/roadmap?id=557564",
-        "note": "Rollout partito marzo 2026, non completato"
+        "label": "What's New in Microsoft 365 Copilot — July 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332",
+        "note": "In rollout GA agosto 2026. Roadmap ID 557564. Excel Windows e Mac."
       },
       "rollout": {
-        "stage": "preview",
-        "note": "Rollout partito marzo 2026, non completato"
+        "stage": "ga",
+        "note": "In rollout GA agosto 2026. Excel Windows e Mac. AutoSave-off supportato — Excel avvisa prima di permettere modifiche Copilot.",
+        "changedFrom": "preview",
+        "changedOn": "10 ago 2026"
       }
     },
     {
@@ -789,9 +793,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "Claude Sonnet 5 disponibile in Word da luglio 2026. Roadmap ID 558440. EU: richiede abilitazione admin.",
-        "changedFrom": "in-dev",
-        "changedOn": "3 ago 2026"
+        "note": "Claude Sonnet 5 disponibile in Word da luglio 2026. Roadmap ID 558440. EU: richiede abilitazione admin."
       }
     },
     {
@@ -1243,13 +1245,13 @@
       "name": "Teams: riepilogo AI della riunione senza salvare la registrazione",
       "st": "soon",
       "isNew": false,
-      "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>In arrivo agosto–settembre 2026.</strong>",
+      "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>⚠️ Data posticipata (aggiornamento 27 lug 2026): Targeted Release inizio ottobre 2026, GA worldwide metà ottobre 2026.</strong>",
       "example": "La tua azienda non consente la registrazione delle riunioni. Attivi il 'Recap senza transcript' prima della call: Copilot cattura i punti chiave in tempo reale e li condivide con i partecipanti dopo la riunione — niente registrazione salvata, ma niente da perdere.",
       "detail": {
         "steps": "1. Prima della riunione, vai su Opzioni riunione → Copilot e altri AI → attiva 'Recap senza transcript'.\n2. Oppure, durante la riunione, usa il toggle AI in alto a sinistra per attivare la funzione.\n3. Copilot cattura il contesto audio in tempo reale — nessuna trascrizione viene salvata.\n4. Dopo la riunione, il riepilogo AI è disponibile nella scheda Recap per tutti i partecipanti con licenza Copilot.\n5. Il documento di riepilogo viene archiviato nel OneDrive dell'organizzatore per 120 giorni (configurabile dall'admin in admin center).",
         "prompts": [],
         "tips": [
-          "⏳ In arrivo agosto–settembre 2026 (MC1275312). Targeted Release: metà agosto 2026. GA worldwide: fine agosto–settembre 2026.",
+          "⏳ RITARDO: Targeted Release posticipata a inizio ottobre 2026. GA worldwide: metà ottobre 2026 (aggiornamento MC1275312 del 27 luglio 2026).",
           "Nessuna trascrizione o registrazione viene salvata: il recap è disponibile come documento post-riunione nel OneDrive dell'organizzatore per 120 giorni (configurabile).",
           "La funzione richiede licenza Microsoft 365 Copilot. I partecipanti senza licenza Copilot non possono visualizzare il riepilogo AI dopo la riunione."
         ]
@@ -1257,11 +1259,11 @@
       "source": {
         "label": "MC1275312 — Microsoft Teams: AI meeting recap without transcript (Message Center)",
         "url": "https://admin.microsoft.com",
-        "note": "Targeted Release metà agosto 2026. GA worldwide: fine agosto–settembre 2026. Accesso richiede ruolo Admin M365."
+        "note": "⚠️ RITARDO: Targeted Release posticipata a inizio ottobre 2026. GA worldwide: metà ottobre 2026. Accesso richiede ruolo Admin M365."
       },
       "rollout": {
         "stage": "in-dev",
-        "note": "Targeted Release: metà agosto 2026. GA worldwide: fine agosto–settembre 2026 (MC1275312)."
+        "note": "⚠️ RITARDO: Targeted Release posticipata a inizio ottobre 2026. GA worldwide: metà ottobre 2026 (aggiornamento MC1275312 del 27 luglio 2026)."
       }
     },
     {
@@ -1796,7 +1798,7 @@
       "ico": "📬",
       "name": "Copilot Chat in Outlook ragiona su tutta la tua casella e il calendario",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, <strong>Copilot Chat in Outlook</strong> non si limita più a un singolo thread email: ragiona sull'<strong>intera casella di posta, il calendario, le riunioni e tutti i dati Microsoft 365</strong> a cui hai già accesso. Puoi fare domande sull'inbox completo, ricevere riepiloghi delle email non lette o confrontare più thread. <strong>Disponibile anche senza licenza Microsoft 365 Copilot a pagamento</strong> (Roadmap ID RM554934).",
       "example": "\"Riassumimi le email urgenti non lette di oggi e dimmi cosa devo rispondere prima della call delle 15.\" Copilot legge l'intera inbox, seleziona le email rilevanti e propone le risposte — senza che tu apra ogni messaggio singolarmente.",
       "detail": {
@@ -1830,7 +1832,7 @@
       "ico": "🎯",
       "name": "PowerPoint Agent Mode: costruisce la presentazione dai tuoi file, email e riunioni",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, PowerPoint ha un <strong>Agent Mode</strong> che costruisce presentazioni usando automaticamente il tuo contesto lavorativo via <strong>Work IQ</strong>: accede ai tuoi file SharePoint, alle riunioni Teams recenti e alle email pertinenti per generare slide contestualizzate. Puoi referenziare anche una specifica riunione Teams o chat come fonte. Niente più ricerca manuale di documenti — Copilot trova il materiale giusto in autonomia.",
       "example": "\"Crea una presentazione sui risultati del Q2 del progetto Alpha.\" Copilot accede automaticamente ai file di progetto su SharePoint, alle riunioni Teams e alle email recenti — e costruisce le slide con dati reali, non un template generico.",
       "detail": {
@@ -1863,7 +1865,7 @@
       "ico": "💬",
       "name": "@Word, @Excel, @PowerPoint in Copilot Chat: crea file senza cambiare app",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, puoi <strong>@menzionare l'agente Word, Excel o PowerPoint</strong> direttamente nel campo prompt di Copilot Chat per creare documenti, fogli di calcolo e presentazioni senza uscire dall'app. Scrivi <strong>@Word</strong>, <strong>@Excel</strong> o <strong>@PowerPoint</strong> seguito dalla descrizione: Copilot genera il file e te lo consegna pronto nell'interfaccia chat. Niente cambio di app, niente template da scegliere manualmente.",
       "example": "Nella chat di Copilot scrivi: \"@PowerPoint crea una presentazione di 6 slide sui risultati del Q3 per il management.\" L'agente PPT costruisce la presentazione direttamente in chat e te la consegna per il download o l'apertura immediata in PowerPoint.",
       "detail": {
@@ -1894,10 +1896,10 @@
       "app": "Copilot Chat",
       "cat": "c-chat",
       "ico": "📄",
-      "name": "Copilot Notebooks: aggiungi file .txt, .rtf e presto .md come riferimenti",
+      "name": "Copilot Notebooks: aggiungi file .txt, .rtf e .md come riferimenti",
       "st": "avail",
-      "isNew": true,
-      "impact": "Da luglio 2026, i <strong>Copilot Notebooks accettano file .txt e .rtf come riferimenti</strong> — trascrizioni video, documentazione tecnica, note in testo semplice. Il supporto per i file <strong>Markdown (.md)</strong> è in rollout ad agosto 2026. Aggiungili esattamente come i file Word o PDF: Copilot li indicizza e li usa come contesto per tutte le sessioni del notebook.",
+      "isNew": false,
+      "impact": "Da luglio 2026, i <strong>Copilot Notebooks accettano file .txt e .rtf come riferimenti</strong> — trascrizioni video, documentazione tecnica, note in testo semplice. Da <strong>inizio agosto 2026</strong> anche i file <strong>Markdown (.md)</strong> sono disponibili worldwide (<strong>MC1423103</strong>). Aggiungili esattamente come i file Word o PDF: Copilot li indicizza e li usa come contesto per tutte le sessioni del notebook.",
       "example": "Hai la trascrizione .txt di un webinar di 2 ore. La aggiungi al notebook del progetto: Copilot la analizza insieme agli altri file e alle email, genera una sintesi e risponde alle tue domande sul contenuto — senza che tu legga tutto il testo riga per riga.",
       "detail": {
         "steps": "1. Apri o crea un Copilot Notebook in Copilot Chat.\n2. Nel pannello 'Riferimenti', clicca 'Aggiungi riferimento' → seleziona 'File'.\n3. Scegli il file .txt o .rtf (o .md quando disponibile ad agosto) dal tuo OneDrive o caricalo da locale.\n4. Il file viene indicizzato: Copilot lo usa come contesto per rispondere alle domande e generare output dal notebook.\n5. Combina più tipi di file nello stesso notebook: Word, PDF, .txt, .rtf, email Outlook e riunioni Teams.",
@@ -1907,19 +1909,19 @@
           "Crea una presentazione PowerPoint che sintetizzi i contenuti di tutti i riferimenti in questo notebook."
         ],
         "tips": [
-          "Formati supportati da luglio 2026: .txt e .rtf. Markdown (.md) in rollout agosto 2026 — se lavori con documentazione tecnica in Markdown, il supporto completo arriverà a breve.",
+          "Formati supportati: .txt e .rtf (GA luglio 2026), .md Markdown (GA worldwide agosto 2026, MC1423103). Tutti e tre disponibili ora — se lavori con documentazione tecnica in Markdown, puoi già aggiungerla come riferimento.",
           "I file .txt e .rtf sono ideali per: trascrizioni di webinar e interviste, documentazione tecnica, note riunioni esportate da altri strumenti, log di sistema.",
           "Non c'è un limite di file per notebook: combina .txt con Word, PDF, email Outlook e riunioni Teams per avere tutto il contesto di un progetto in un unico spazio."
         ]
       },
       "source": {
-        "label": "What's New in Microsoft 365 Copilot — July 2026 (TechCommunity Blog)",
+        "label": "What's New in Microsoft 365 Copilot — July 2026 + MC1423103 (agosto 2026)",
         "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332",
-        "note": "TXT e RTF GA luglio 2026. Markdown (.md) in rollout agosto 2026. Richiede licenza Microsoft 365 Copilot."
+        "note": "TXT e RTF GA luglio 2026. Markdown (.md) GA worldwide inizio agosto 2026 (MC1423103). Richiede licenza Microsoft 365 Copilot."
       },
       "rollout": {
         "stage": "ga",
-        "note": "TXT e RTF GA luglio 2026. Markdown (.md) in rollout agosto 2026."
+        "note": "TXT e RTF GA luglio 2026. Markdown (.md) GA worldwide inizio agosto 2026 (MC1423103)."
       }
     },
     {
@@ -1929,8 +1931,8 @@
       "ico": "🚫",
       "name": "Domain Exclusion: l'admin esclude siti indesiderati dal web grounding di Copilot",
       "st": "avail",
-      "isNew": true,
-      "impact": "Da luglio 2026, gli admin M365 possono configurare una <strong>lista di esclusione dominio</strong> (fino a 1.000 siti) per il web grounding di Microsoft 365 Copilot. I siti nella lista non vengono consultati da Copilot quando risponde usando fonti web — utile per escludere competitor, fonti non autorizzate o siti inaffidabili dalle risposte Copilot degli utenti.",
+      "isNew": false,
+      "impact": "⚠️ <strong>Aggiornamento agosto 2026: Microsoft ha temporaneamente sospeso questa funzione</strong> pochi giorni dopo il rilascio (inizio agosto 2026), rimuovendo l'accesso anche alle organizzazioni che l'avevano già attivata. Microsoft sta 'valutando i prossimi passi' senza fornire una data di ripristino. — La funzione originale permetteva agli admin M365 di configurare una <strong>lista di esclusione dominio</strong> (fino a 1.000 siti) per il web grounding di Microsoft 365 Copilot.",
       "example": "L'IT configura la lista con i siti dei competitor e alcune fonti non attendibili. Da quel momento, quando gli utenti chiedono informazioni di mercato, Copilot non porta risultati da quei siti — solo da fonti autorizzate dalla tua organizzazione.",
       "detail": {
         "steps": "1. (Admin) Scarica lo script PowerShell da https://aka.ms/Copilot/DomainExclusionScript.\n2. Esegui lo script come Search Administrator o Global Administrator nel tuo tenant.\n3. Aggiorna il file di configurazione con i domini da escludere (fino a 1.000 siti, fino a due livelli di sottodominio).\n4. Applica la configurazione: la lista di esclusione è attiva per tutti gli utenti del tenant.\n5. Per aggiornare la lista: riesegui lo script con la configurazione aggiornata.",
@@ -1942,13 +1944,13 @@
         ]
       },
       "source": {
-        "label": "Microsoft Learn — Domain exclusion overview (luglio 2026)",
-        "url": "https://learn.microsoft.com/en-us/copilot/domain-exclusion",
-        "note": "Annunciato luglio 28, 2026. Configurazione tramite PowerShell script. Richiede Search Administrator o Global Administrator."
+        "label": "TechCommunity — Update: Domain Exclusion for Microsoft 365 Copilot (agosto 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/Microsoft365CopilotBlog/update-domain-exclusion-for-microsoft-365-copilot/4543648",
+        "note": "Funzione temporaneamente sospesa da Microsoft inizio agosto 2026. Microsoft sta valutando i prossimi passi. Nessuna data di ripristino annunciata."
       },
       "rollout": {
         "stage": "ga",
-        "note": "Annunciato e disponibile da luglio 28, 2026. Configurazione tramite script PowerShell (aka.ms/Copilot/DomainExclusionScript)."
+        "note": "⚠️ SOSPESA TEMPORANEAMENTE: funzione lanciata fine luglio 2026, ritirata da Microsoft inizio agosto 2026. Nessuna data di ripristino. Blog ufficiale: techcommunity.microsoft.com (Update: Domain Exclusion for Microsoft 365 Copilot)."
       }
     },
     {
@@ -1958,7 +1960,7 @@
       "ico": "🖼️",
       "name": "Copilot mostra immagini inline nelle risposte: meno testo, più contesto visivo",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da luglio 2026, Copilot Chat include <strong>immagini inline nelle risposte</strong> — grafici, screenshot e illustrazioni estratti dai tuoi file e dalle riunioni Teams recenti. Quando Copilot fa riferimento a un documento o a una slide, la relativa immagine appare direttamente nella risposta per rendere il contesto visivo immediato, senza dover aprire il file.",
       "example": "Chiedi a Copilot un riepilogo dell'ultima presentazione di sales review. Invece di solo testo, Copilot mostra le slide chiave in miniatura inline nella risposta — vedi i grafici e i dati direttamente nella chat.",
       "detail": {
@@ -1982,6 +1984,138 @@
       "rollout": {
         "stage": "ga",
         "note": "Rolling out luglio 15–29, 2026. Windows e Web."
+      }
+    },
+    {
+      "id": "notebooks-onenote",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "📒",
+      "name": "Copilot Notebooks sincronizza con OneNote",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026 (<strong>MC1420901</strong>), i Copilot Notebooks si sincronizzano con <strong>OneNote</strong>: i tuoi notebook Copilot sono accessibili e aggiornati anche in OneNote, e viceversa. Un unico spazio di lavoro per le note strutturate e le analisi AI — senza copiare contenuti tra le app.",
+      "example": "Hai preso note in OneNote durante una riunione. Le ritrovi automaticamente nel tuo Copilot Notebook — Copilot le usa come contesto per le analisi successive senza che tu debba spostarle manualmente.",
+      "detail": {
+        "steps": "1. Aggiorna l'app Microsoft 365 Copilot (Windows, Mac o mobile).\n2. Apri Copilot Notebooks: la sincronizzazione con OneNote si attiva automaticamente con l'aggiornamento dell'app (nessuna configurazione aggiuntiva richiesta).\n3. I notebook Copilot e i relativi contenuti appaiono in OneNote, e le note OneNote sono accessibili come riferimenti nei Copilot Notebooks.\n4. Usa la chat del notebook per fare domande che integrano sia i file di riferimento che le note OneNote sincronizzate.",
+        "prompts": [
+          "Riassumi le note di OneNote di questo mese e dimmi quali task sono rimasti aperti.",
+          "Basandoti sulle note della riunione di ieri in OneNote, genera una lista di azioni con responsabili e scadenze.",
+          "Confronta le note di OneNote del progetto [Nome] con le email nel notebook e dimmi se ci sono discrepanze."
+        ],
+        "tips": [
+          "La sincronizzazione è automatica e non richiede configurazione admin aggiuntiva (MC1420901). Si attiva con l'aggiornamento dell'app — nessuna azione richiesta dall'utente finale.",
+          "La funzione rispetta i permessi esistenti: le note OneNote sincronizzate restano accessibili solo a chi aveva già accesso al notebook.",
+          "Ideale per chi già usa OneNote per le note di riunione: ora quelle note diventano automaticamente contesto per le analisi Copilot, senza dover copiare nulla tra le app."
+        ]
+      },
+      "source": {
+        "label": "MC1420901 — M365 Copilot App: Notebooks + OneNote sync (agosto 2026)",
+        "url": "https://admin.microsoft.com",
+        "note": "Rolling out early–mid agosto 2026. Nessuna azione admin richiesta. Accesso richiede ruolo Admin M365."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out early–mid agosto 2026 (MC1420901). Aggiornamento automatico — nessuna azione richiesta da admin o utente."
+      }
+    },
+    {
+      "id": "excel-powerbi",
+      "app": "Excel",
+      "cat": "c-excel",
+      "ico": "📊",
+      "name": "Copilot in Excel analizza dati Power BI con sicurezza row-level",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026 (<strong>MC1323266</strong>), Copilot in Excel può usare <strong>report Power BI come fonte di grounding</strong> per le analisi, rispettando la sicurezza a livello di riga (row-level security). Aggiungi il report Power BI come contesto dal selettore contenuti: Copilot analizza i dati governati senza che tu debba esportarli in Excel. Disponibile su Excel Web, Windows e Mac.",
+      "example": "Il team finance ha il modello finanziario su Power BI con row-level security che nasconde i dati di altre BU. Alleghi il report Power BI a Copilot in Excel: Copilot analizza solo i dati a cui hai accesso, secondo le regole di sicurezza del modello semantico — zero export manuali.",
+      "detail": {
+        "steps": "1. Apri Excel (web, Windows o Mac) con il pannello Copilot attivo.\n2. Nel campo prompt, clicca il selettore contenuti (icona '+') e seleziona 'Report Power BI'.\n3. Cerca il report Power BI che vuoi usare come fonte di grounding.\n4. Aggiungi il report: Copilot usa i dati governati del modello semantico per rispondere alle tue domande.\n5. Fai domande normalmente: Copilot risponde basandosi sui dati Power BI, rispettando la row-level security del tuo account.",
+        "prompts": [
+          "Analizza i dati di vendita del report Power BI allegato e dimmi qual è il trend principale dell'ultimo trimestre.",
+          "Confronta i valori di budget nel report Power BI con quelli inseriti manualmente in questo foglio.",
+          "Genera un grafico Excel con i dati del report Power BI per la presentazione di domani."
+        ],
+        "tips": [
+          "La row-level security del modello Power BI è rispettata automaticamente: Copilot vede solo i dati che vedi tu in base al tuo account. Nessun rischio di esposizione di dati riservati ad altri reparti.",
+          "Il modello semantico Power BI deve essere pubblicato nel tuo tenant e accessibile al tuo account. Non funziona con report salvati solo in locale o file Power BI Desktop non pubblicati.",
+          "Combinare Power BI grounding con Excel Skills (pacchetto Finance) è molto potente: usa i dati governati di Power BI come input per le Skills finanziarie e ottieni analisi strutturate e tracciabili."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft 365 Copilot — July 2026 + MC1323266 (agosto 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332",
+        "note": "Rolling out agosto 2026 (MC1323266). Excel Web, Windows e Mac. Rispetta row-level security del modello semantico Power BI."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026 (MC1323266). Excel Web, Windows e Mac."
+      }
+    },
+    {
+      "id": "sp-copilot-aug26",
+      "app": "SharePoint",
+      "cat": "c-other",
+      "ico": "📋",
+      "name": "Copilot in SharePoint agosto 2026: dashboard live da Liste e pulsanti prompt personalizzati",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, Copilot in SharePoint aggiunge due nuove funzioni. <strong>Live Dashboards da Liste</strong>: Copilot genera un report HTML interattivo da una SharePoint List, collegato ai dati live della lista e aggiornato automaticamente ad ogni apertura — funziona anche con Excel e CSV. <strong>Pulsanti prompt personalizzati</strong>: aggiungi un pulsante su qualsiasi pagina SharePoint collegato a un prompt Copilot specifico — i visitatori lo eseguono con un click, senza dover scrivere il prompt.",
+      "example": "Il team IT ha una SharePoint List con lo stato dei ticket aperti. Attiva il Live Dashboard: chiunque apra la pagina vede un report grafico aggiornato senza esportare dati. Il team marketing aggiunge un pulsante 'Riassumi questa pagina' su ogni pagina intranet: i colleghi ottengono la sintesi di Copilot con un click.",
+      "detail": {
+        "steps": "1. Per il Live Dashboard: apri una SharePoint List, clicca su 'Copilot' nella barra in alto e seleziona 'Genera dashboard'. Il report HTML interattivo viene creato nella stessa pagina SharePoint, collegato ai dati live.\n2. Per i pulsanti prompt: apri la pagina SharePoint in modifica, aggiungi il web part 'Copilot Button', inserisci il prompt che vuoi collegare e pubblica la pagina.\n3. I visitatori vedranno il pulsante e potranno eseguire il prompt con un click — Copilot risponde usando il contesto della pagina corrente.\n4. Entrambe le funzioni rispettano i permessi SharePoint esistenti — Copilot non mostra dati a cui l'utente non ha accesso.",
+        "prompts": [
+          "Genera un dashboard interattivo con lo stato degli elementi in questa lista, raggruppati per categoria e priorità.",
+          "Crea un grafico che mostra l'andamento degli aggiornamenti della lista negli ultimi 30 giorni.",
+          "Riassumi automaticamente i contenuti di questa pagina e mostrami le 3 informazioni chiave."
+        ],
+        "tips": [
+          "Il Live Dashboard si aggiorna automaticamente ad ogni apertura della pagina — nessun aggiornamento manuale o esportazione dati necessaria.",
+          "I pulsanti prompt sono ideali per le pagine intranet: standardizzano l'uso di Copilot per chi non sa scrivere prompt efficaci, portando Copilot a tutti gli utenti senza formazione aggiuntiva.",
+          "I Live Dashboards funzionano anche con Excel e CSV come fonte dati, non solo con SharePoint Lists — espandi la funzione a qualsiasi foglio dati presente nel sito."
+        ]
+      },
+      "source": {
+        "label": "What's New in Copilot in SharePoint: August 2026 — Microsoft Community Hub",
+        "url": "https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-august-2026/4535421",
+        "note": "Rolling out agosto 2026. Richiede licenza Microsoft 365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Confermato nel blog ufficiale What's New Copilot in SharePoint: August 2026."
+      }
+    },
+    {
+      "id": "ppt-brand-kit",
+      "app": "PowerPoint",
+      "cat": "c-ppt",
+      "ico": "🎨",
+      "name": "PowerPoint: usa il Brand Kit aziendale direttamente nelle slide con Copilot",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da metà luglio 2026 (<strong>MC1405505</strong>), Copilot in PowerPoint accede al <strong>Brand Kit aziendale</strong>: colori, loghi, font e icone ufficiali sono disponibili direttamente nel pannello Copilot quando generi o modifichi le slide. Le presentazioni generate con Copilot usano automaticamente gli asset del brand — senza cercare file loghi o inserire codici colore manualmente.",
+      "example": "Chiedi a Copilot di creare una presentazione per un cliente. Con il Brand Kit attivo, Copilot usa automaticamente i colori aziendali, il font standard e il logo nella posizione corretta — zero aggiustamenti manuali di branding.",
+      "detail": {
+        "steps": "1. (Admin) Configura il Brand Kit in Microsoft 365 Admin Center: carica loghi, definisci palette colori e font aziendali.\n2. Apri PowerPoint (web o desktop) e attiva il pannello Copilot.\n3. Quando generi slide o chiedi modifiche di stile, Copilot usa automaticamente gli asset del Brand Kit aziendale.\n4. Per scegliere esplicitamente gli asset: nel pannello Copilot, cerca l'opzione 'Usa Brand Kit' per specificare quale brand usare se l'organizzazione ha più brand configurati.",
+        "prompts": [
+          "Crea una presentazione di 6 slide per la proposta cliente usando il nostro brand aziendale.",
+          "Aggiorna il layout di questa slide applicando i colori e i font del nostro Brand Kit.",
+          "Aggiungi il logo aziendale in basso a destra su tutte le slide dove manca."
+        ],
+        "tips": [
+          "Il Brand Kit deve essere configurato dall'admin prima che gli utenti possano usarlo. Se non vedi gli asset aziendali applicati automaticamente, chiedi al tuo IT di verificare la configurazione in M365 Admin Center.",
+          "Funziona sia su PowerPoint web che desktop. Le funzionalità legate al Brand Kit si attivano automaticamente quando il kit è configurato nel tenant.",
+          "Se la tua organizzazione ha più brand (es. diverse divisioni), puoi specificare quale usare nel prompt: 'usa il Brand Kit [Nome Brand]'."
+        ]
+      },
+      "source": {
+        "label": "MC1405505 — Access brand assets (Brand Kit) in PowerPoint (lug–ago 2026)",
+        "url": "https://admin.microsoft.com",
+        "note": "GA metà luglio – inizio agosto 2026. Configurazione Brand Kit richiede ruolo Admin M365. Accesso richiede ruolo Admin M365."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA metà luglio – inizio agosto 2026 (MC1405505). PowerPoint web e desktop."
       }
     }
   ],
@@ -2147,6 +2281,15 @@
       "tag": "Outlook · PowerPoint · Copilot Chat · Notebooks",
       "cov": "@mention Word/Excel/PPT in chat · Copilot Chat Outlook su inbox completa (RM554934) · PowerPoint Agent Mode con Work IQ · Notebooks .txt e .rtf",
       "note": "Quattro novità di luglio da presentare insieme: 1) @mention agents in Copilot Chat — il modo più veloce per creare file Office senza cambiare app; mostrare l'esempio pratico con @PowerPoint. 2) Copilot Chat in Outlook che ora ragiona su tutta la casella e il calendario, non solo un singolo thread — funziona anche senza licenza Copilot a pagamento. 3) PowerPoint Agent Mode con Work IQ — la presentazione si costruisce dai tuoi file e riunioni Teams automaticamente, senza cercare i documenti uno per uno. 4) Notebooks con .txt e .rtf — trascrizioni e documentazione tecnica finalmente come riferimenti, .md in arrivo ad agosto. Tono: luglio è stato il mese del salto di qualità nella chat-first experience."
+    },
+    {
+      "w": "W19",
+      "d": "10–15 ago",
+      "hot": false,
+      "theme": "Word si aggiorna, Excel parla con Power BI: le novità di agosto",
+      "tag": "Word · Excel · Notebooks · SharePoint",
+      "cov": "Word Track Changes GA · Excel + Power BI grounding (MC1323266) · Notebooks + OneNote sync (MC1420901) · SharePoint Live Dashboards da Liste · Brand Kit in PowerPoint",
+      "note": "Quattro novità pratiche: 1) Word Track Changes GA — Copilot come revisore che lascia modifiche tracciate. 2) Excel + Power BI — analisi dati governati senza export, row-level security rispettata. 3) Notebooks + OneNote sync — note e analisi AI in un unico spazio. 4) SharePoint Live Dashboards — una lista diventa un report grafico live. Chiudere con nota su Domain Exclusion temporaneamente sospesa da Microsoft."
     }
   ]
 }
