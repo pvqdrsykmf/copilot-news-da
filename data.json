@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "10 ago 2026",
+    "updated": "17 ago 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -354,7 +354,7 @@
       "ico": "🔍",
       "name": "Copilot come revisore: commenti e modifiche tracciate ora disponibili",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, Copilot in Word lascia <strong>commenti a margine</strong> e usa le <strong>revisioni tracciate</strong> come farebbero i tuoi colleghi. Puoi accettare o rifiutare ogni singola modifica — le revisioni di Copilot appaiono nel pannello \"Revisioni\" accanto a quelle dei colleghi. Ideale per contratti, proposte e documenti formali dove ogni modifica deve essere tracciata e approvata.",
       "example": "Stai finalizzando un contratto? Copilot suggerisce riformulazioni con revisioni tracciate — vedi esattamente cosa ha cambiato e accetti solo le modifiche che ritieni giuste, esattamente come faresti con un collega.",
       "detail": {
@@ -377,9 +377,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "In rollout GA agosto 2026. Preview Frontier da aprile 2026. Word web e desktop.",
-        "changedFrom": "preview",
-        "changedOn": "10 ago 2026"
+        "note": "In rollout GA agosto 2026. Preview Frontier da aprile 2026. Word web e desktop."
       }
     },
     {
@@ -426,7 +424,7 @@
       "ico": "💾",
       "name": "Copilot in Excel funziona sui file locali e con AutoSave disattivato",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, Copilot in Excel è disponibile anche nei workbook con <strong>AutoSave disattivato</strong> — inclusi i file salvati in locale sul tuo PC. Prima era obbligatorio avere AutoSave attivo (e quindi il file su OneDrive/SharePoint). Ora, se AutoSave è off, Excel ti ricorda di abilitarlo prima che Copilot faccia modifiche, ma puoi procedere comunque. Disponibile su Windows e Mac.",
       "example": "Hai un file Excel sul desktop con AutoSave disattivato — prima Copilot non funzionava. Da agosto 2026 Copilot si attiva: Excel mostra un promemoria per abilitare AutoSave, puoi scegliere se farlo o procedere comunque. Addio vincolo del cloud per usare Copilot.",
       "detail": {
@@ -449,9 +447,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "In rollout GA agosto 2026. Excel Windows e Mac. AutoSave-off supportato — Excel avvisa prima di permettere modifiche Copilot.",
-        "changedFrom": "preview",
-        "changedOn": "10 ago 2026"
+        "note": "In rollout GA agosto 2026. Excel Windows e Mac. AutoSave-off supportato — Excel avvisa prima di permettere modifiche Copilot."
       }
     },
     {
@@ -1993,7 +1989,7 @@
       "ico": "📒",
       "name": "Copilot Notebooks sincronizza con OneNote",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026 (<strong>MC1420901</strong>), i Copilot Notebooks si sincronizzano con <strong>OneNote</strong>: i tuoi notebook Copilot sono accessibili e aggiornati anche in OneNote, e viceversa. Un unico spazio di lavoro per le note strutturate e le analisi AI — senza copiare contenuti tra le app.",
       "example": "Hai preso note in OneNote durante una riunione. Le ritrovi automaticamente nel tuo Copilot Notebook — Copilot le usa come contesto per le analisi successive senza che tu debba spostarle manualmente.",
       "detail": {
@@ -2026,7 +2022,7 @@
       "ico": "📊",
       "name": "Copilot in Excel analizza dati Power BI con sicurezza row-level",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026 (<strong>MC1323266</strong>), Copilot in Excel può usare <strong>report Power BI come fonte di grounding</strong> per le analisi, rispettando la sicurezza a livello di riga (row-level security). Aggiungi il report Power BI come contesto dal selettore contenuti: Copilot analizza i dati governati senza che tu debba esportarli in Excel. Disponibile su Excel Web, Windows e Mac.",
       "example": "Il team finance ha il modello finanziario su Power BI con row-level security che nasconde i dati di altre BU. Alleghi il report Power BI a Copilot in Excel: Copilot analizza solo i dati a cui hai accesso, secondo le regole di sicurezza del modello semantico — zero export manuali.",
       "detail": {
@@ -2059,7 +2055,7 @@
       "ico": "📋",
       "name": "Copilot in SharePoint agosto 2026: dashboard live da Liste e pulsanti prompt personalizzati",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, Copilot in SharePoint aggiunge due nuove funzioni. <strong>Live Dashboards da Liste</strong>: Copilot genera un report HTML interattivo da una SharePoint List, collegato ai dati live della lista e aggiornato automaticamente ad ogni apertura — funziona anche con Excel e CSV. <strong>Pulsanti prompt personalizzati</strong>: aggiungi un pulsante su qualsiasi pagina SharePoint collegato a un prompt Copilot specifico — i visitatori lo eseguono con un click, senza dover scrivere il prompt.",
       "example": "Il team IT ha una SharePoint List con lo stato dei ticket aperti. Attiva il Live Dashboard: chiunque apra la pagina vede un report grafico aggiornato senza esportare dati. Il team marketing aggiunge un pulsante 'Riassumi questa pagina' su ogni pagina intranet: i colleghi ottengono la sintesi di Copilot con un click.",
       "detail": {
@@ -2092,7 +2088,7 @@
       "ico": "🎨",
       "name": "PowerPoint: usa il Brand Kit aziendale direttamente nelle slide con Copilot",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da metà luglio 2026 (<strong>MC1405505</strong>), Copilot in PowerPoint accede al <strong>Brand Kit aziendale</strong>: colori, loghi, font e icone ufficiali sono disponibili direttamente nel pannello Copilot quando generi o modifichi le slide. Le presentazioni generate con Copilot usano automaticamente gli asset del brand — senza cercare file loghi o inserire codici colore manualmente.",
       "example": "Chiedi a Copilot di creare una presentazione per un cliente. Con il Brand Kit attivo, Copilot usa automaticamente i colori aziendali, il font standard e il logo nella posizione corretta — zero aggiustamenti manuali di branding.",
       "detail": {
@@ -2116,6 +2112,105 @@
       "rollout": {
         "stage": "ga",
         "note": "GA metà luglio – inizio agosto 2026 (MC1405505). PowerPoint web e desktop."
+      }
+    },
+    {
+      "id": "claude-opus5",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🤖",
+      "name": "Claude Opus 5 nel selettore modelli: il modello Anthropic più potente in M365 Copilot",
+      "st": "avail",
+      "isNew": false,
+      "impact": "Dal <strong>24 luglio 2026</strong>, <strong>Claude Opus 5 di Anthropic</strong> è disponibile nel selettore modelli di Microsoft 365 Copilot. Progettato per uso quotidiano su task complessi multi-step, Opus 5 migliora su Opus 4.8 per reasoning, analisi di documenti, fogli di calcolo, presentazioni e task a lungo orizzonte. Disponibile in <strong>Word, Excel, PowerPoint, Copilot Chat, Cowork e Copilot Studio</strong> con la licenza M365 Copilot standard ($30/utente/mese) — nessun costo aggiuntivo. <strong>⚠️ EU/EFTA/UK: Claude è off per default.</strong> L'admin deve abilitarlo in M365 Admin Center.",
+      "example": "Stai lavorando a un'analisi strategica multi-step su più documenti. Selezioni Claude Opus 5 nel menu modelli: il ragionamento è più profondo e preciso di Sonnet 5, ideale quando la qualità conta più della velocità.",
+      "detail": {
+        "steps": "1. Apri Copilot Chat, Word, Excel, PowerPoint o Cowork con il pannello Copilot attivo.\n2. Nel campo prompt, cerca il selettore modelli (icona a tendina o ingranaggio in alto).\n3. Seleziona 'Claude Opus 5' dall'elenco.\n4. Scrivi il tuo prompt normalmente: Copilot userà Opus 5 per elaborare la risposta.\n5. Il modello scelto rimane attivo per la sessione corrente.",
+        "prompts": [
+          "Analizza questi tre documenti e identifica le contraddizioni, le lacune e i rischi che un revisore esperto solleverebbe.",
+          "Scrivi una proposta commerciale completa per [Cliente] basandoti su questi dati: includi exec summary, analisi competitiva, pricing differenziato e piano di onboarding.",
+          "Esegui un'analisi di scenario su questo foglio Excel: considera i casi ottimistico, base e pessimistico per i prossimi 12 mesi."
+        ],
+        "tips": [
+          "⚠️ EU/EFTA/UK: Claude Opus 5 è off per default. Il tuo Global Admin deve abilitarlo in M365 Admin Center → Copilot → Settings → 'Copilot in M365 apps with Anthropic models'. Senza questa impostazione il modello non è visibile.",
+          "Opus 5 vs Sonnet 5: Opus 5 eccelle su task multi-step ad alta complessità e reasoning profondo. Sonnet 5 è più veloce e sufficiente per la maggior parte dei task agentic quotidiani. Usa Opus 5 per le analisi più importanti.",
+          "Disponibile con la licenza M365 Copilot standard — nessun costo aggiuntivo. L'admin EU deve solo abilitarlo in Admin Center, non acquistare nulla in più."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity M365 Copilot Blog — Available today: Anthropic Claude Opus 5 in Microsoft 365 Copilot (24 lug 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-opus-5-in-microsoft-365-copilot/4540524",
+        "note": "Disponibile dal 24 luglio 2026. Word, Excel, PowerPoint, Copilot Chat, Cowork, Studio. EU: richiede abilitazione admin."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out dal 24 luglio 2026. Word, Excel, PowerPoint, Copilot Chat, Cowork e Copilot Studio. EU: richiede abilitazione admin in M365 Admin Center."
+      }
+    },
+    {
+      "id": "teams-recap-hub",
+      "app": "Teams",
+      "cat": "c-teams",
+      "ico": "📋",
+      "name": "Teams: nuova app dedicata per tutti i tuoi recap riunione in un click",
+      "st": "avail",
+      "isNew": false,
+      "impact": "Da luglio 2026, Teams ha una <strong>app dedicata Meeting Recaps</strong> che raccoglie tutti i tuoi recap AI in un unico posto, puntabile come app fissa nella barra laterale. Sfoglia le riunioni con recap degli <strong>ultimi 30 giorni</strong>, usa i <strong>filtri rapidi</strong> (es. riunioni in cui sei stato menzionato) e genera un <strong>audio recap in stile podcast</strong> che copre più riunioni insieme — ideale per recuperare il filo dopo giorni di assenza.",
+      "example": "Sei tornato dopo una settimana di ferie. Apri l'app Meeting Recaps nella barra di Teams, filtri per 'le riunioni in cui ero coinvolto' e generi un audio recap multi-riunione: in 10 minuti sai tutto quello che è successo senza aprire ogni singolo recap.",
+      "detail": {
+        "steps": "1. Apri Microsoft Teams (desktop Windows, Mac o web).\n2. Cerca 'Meeting Recaps' nella barra delle app a sinistra — puoi fissarla cliccando con tasto destro e scegliendo 'Aggiungi ai preferiti'.\n3. Nell'app vedi tutte le riunioni con recap disponibili degli ultimi 30 giorni.\n4. Usa i filtri rapidi per trovare le riunioni più rilevanti: es. 'Riunioni in cui sei stato menzionato', per progetto, ecc.\n5. Per l'audio recap multi-riunione: seleziona più riunioni → clicca 'Genera audio recap' → ricevi un riepilogo in stile podcast che copre tutte le riunioni selezionate.",
+        "prompts": [
+          "Dammi un audio recap di tutte le riunioni della settimana scorsa in cui ero coinvolto.",
+          "Filtra le riunioni in cui sono stato menzionato e dimmi quali richiedono una mia risposta.",
+          "Mostrami tutte le decisioni prese nelle riunioni del team [Nome] negli ultimi 30 giorni."
+        ],
+        "tips": [
+          "Fissa l'app Meeting Recaps nella barra laterale sinistra di Teams: clicca con tasto destro sull'icona → 'Aggiungi ai preferiti'. Da quel momento hai accesso immediato a tutti i recap senza cercare nelle singole chat di riunione.",
+          "L'audio recap multi-riunione è la funzione più potente: seleziona 3-5 riunioni correlate e genera un podcast che ti mette al corrente di tutto — ideale per recuperare dopo assenze o vacanze.",
+          "Disponibile per tutti gli utenti con licenza Microsoft 365 Copilot. I partecipanti senza licenza Copilot non vedono i recap AI ma possono comunque accedere alle trascrizioni standard."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Teams | July 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoftteamsblog/what%e2%80%99s-new-in-microsoft-teams--july-2026/4542510",
+        "note": "Rolled out luglio 2026. Teams desktop Windows, Mac e web. Richiede licenza Microsoft 365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolled out luglio 2026. App disponibile nella barra laterale di Teams su Windows, Mac e web."
+      }
+    },
+    {
+      "id": "excel-theme-skill",
+      "app": "Excel",
+      "cat": "c-excel",
+      "ico": "🎨",
+      "name": "Copilot in Excel applica un tema grafico professionale al tuo foglio con @theme-design",
+      "st": "avail",
+      "isNew": false,
+      "impact": "Da agosto 2026, la <strong>skill @theme-design</strong> di Copilot in Excel trasforma un foglio grezzo in un report visivamente professionale: palette colori coordinata, grafici stilizzati, layout strutturato con gerarchia visiva chiara. Basta scrivere <code>@theme-design</code> nel prompt. La skill legge la struttura del foglio e applica le best practice del team design di Excel — nessun intervento manuale su celle e colori. Disponibile su Excel web, Windows e Mac.",
+      "example": "Hai un foglio budget con tabelle e grafici creati in fretta, senza uniformità. Scrivi a Copilot: '@theme-design applica un tema professionale al mio foglio' — in pochi secondi colori, stili e gerarchia visiva diventano coerenti e presentabili al cliente.",
+      "detail": {
+        "steps": "1. Apri il tuo foglio Excel (web, Windows o Mac) con il pannello Copilot attivo.\n2. Nel campo prompt, scrivi '@theme-design' seguito dalla tua richiesta (es. 'applica un tema professionale' o 'rendilo presentabile per i clienti').\n3. Copilot legge la struttura del foglio — tabelle, grafici, celle — e applica un tema coordinato con palette colori, stili di bordo, gerarchia dei testi.\n4. Puoi chiedere variazioni: 'usa colori più neutri', 'rendi il titolo più evidente', 'uniforma lo stile di tutti i grafici'.\n5. La skill è abilitata per default — trovi @theme-design anche nella finestra 'Gestisci skill', cartella 'Formattazione'.",
+        "prompts": [
+          "@theme-design trasforma questo foglio in un report professionale pronto per la presentazione al cliente.",
+          "@theme-design applica una palette di colori neutri e professionali, con titoli ben evidenziati e dati leggibili.",
+          "@theme-design uniforma lo stile di tutti i grafici del foglio, mantenendo la coerenza visiva con le tabelle."
+        ],
+        "tips": [
+          "La skill @theme-design è abilitata per default: non serve configurarla. Trovala anche nella finestra 'Gestisci skill' nel pannello Copilot, cartella 'Formattazione'.",
+          "La skill è ottimizzata per fogli con tabelle dati e grafici: più il contenuto è strutturato, migliore è il risultato. Su fogli molto semplici (solo testo), l'impatto è più limitato.",
+          "Combina @theme-design con le altre Excel Skills (es. Skills finanziarie per team FP&A): prima usa le Skills per analizzare e calcolare, poi applica @theme-design per rendere il risultato presentabile senza toccare la formattazione manualmente."
+        ]
+      },
+      "source": {
+        "label": "What's New in Excel — July 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/excelblog/whats-new-in-excel-july-2026/4523403",
+        "note": "Rolling out agosto 2026. Excel web, Windows e Mac. Skill abilitata per default. Richiede licenza Microsoft 365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Excel web, Windows e Mac. Skill @theme-design disponibile per default nel pannello Copilot."
       }
     }
   ],
@@ -2290,6 +2385,15 @@
       "tag": "Word · Excel · Notebooks · SharePoint",
       "cov": "Word Track Changes GA · Excel + Power BI grounding (MC1323266) · Notebooks + OneNote sync (MC1420901) · SharePoint Live Dashboards da Liste · Brand Kit in PowerPoint",
       "note": "Quattro novità pratiche: 1) Word Track Changes GA — Copilot come revisore che lascia modifiche tracciate. 2) Excel + Power BI — analisi dati governati senza export, row-level security rispettata. 3) Notebooks + OneNote sync — note e analisi AI in un unico spazio. 4) SharePoint Live Dashboards — una lista diventa un report grafico live. Chiudere con nota su Domain Exclusion temporaneamente sospesa da Microsoft."
+    },
+    {
+      "w": "W20",
+      "d": "18–22 ago",
+      "hot": false,
+      "theme": "Claude Opus 5, Teams Recap Hub e il tema professionale in Excel",
+      "tag": "Copilot Chat · Teams · Excel",
+      "cov": "Claude Opus 5 nel selettore modelli (24 lug) · App dedicata Meeting Recaps in Teams · Excel skill @theme-design",
+      "note": "Tre novità recenti: 1) Claude Opus 5 — il modello Anthropic più potente ora in M365 Copilot (Word, Excel, PPT, Chat, Cowork, Studio). Spiegare differenza rispetto a Sonnet 5 e Opus 4.8, requisito EU (admin opt-in). Nessun costo aggiuntivo rispetto alla licenza standard. 2) Teams Meeting Recaps Hub — l'app dedicata dove trovare tutti i recap in un posto: filtri rapidi, 30 giorni di storia, audio recap multi-riunione per recuperare dopo assenze. 3) Excel @theme-design — come usare la skill per dare un look professionale ai fogli di lavoro con un solo prompt."
     }
   ]
 }
