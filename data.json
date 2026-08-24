@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "17 ago 2026",
+    "updated": "24 ago 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -699,14 +699,14 @@
       "cat": "c-outlook",
       "ico": "🤖",
       "name": "Outlook: Copilot accetta o rifiuta riunioni automaticamente per te",
-      "st": "soon",
+      "st": "avail",
       "isNew": false,
-      "impact": "Potrai creare <strong>regole personalizzate</strong> che dicono a Copilot come gestire il tuo calendario: accetta automaticamente le riunioni del tuo manager nelle ore lavorative, rifiuta quelle con certi titoli, segui quelle fuori orario. <strong>In distribuzione progressiva</strong> — rollout partito a gennaio 2026, non ancora arrivato a tutti i tenant. Solo nel nuovo Outlook per Windows e Outlook web.",
+      "impact": "Potrai creare <strong>regole personalizzate</strong> che dicono a Copilot come gestire il tuo calendario: accetta automaticamente le riunioni del tuo manager nelle ore lavorative, rifiuta quelle con certi titoli, segui quelle fuori orario. <strong>Disponibile per tutti gli utenti M365 Copilot</strong> nel nuovo Outlook per Windows, Mac, web e mobile.",
       "example": "Imposti la regola: 'Accetta tutte le riunioni di [Nome Manager] se sono tra le 9 e le 18 e il mio calendario è libero.' Da quel momento Copilot gestisce automaticamente quegli inviti — tu li trovi già in agenda senza aver fatto nulla.",
       "source": {
         "label": "Outlook Blog — Agentic experiences for email and calendar",
         "url": "https://techcommunity.microsoft.com/blog/outlook/copilot-in-outlook-new-agentic-experiences-for-email-and-calendar/4499798",
-        "note": "GA su Outlook moderno (Windows, Mac, web, mobile). Annuncio 9 marzo 2026"
+        "note": "GA confermata su Outlook moderno (Windows, Mac, web, mobile) per tutti gli utenti M365 Copilot. Annuncio 9 marzo 2026"
       },
       "detail": {
         "steps": "1. Apri il NUOVO Outlook per Windows (icona blu) oppure Outlook web (outlook.office.com).\n2. Clicca sull'icona Impostazioni (ingranaggio) → cerca \"Copilot\" → seleziona \"Calendar instructions\" (Istruzioni calendario).\n3. Clicca \"Create instructions\" / \"Crea istruzione\": si apre il pannello Copilot che ti guida.\n4. Descrivi la regola in linguaggio naturale: Copilot la interpreta e ti mostra cosa farà prima di applicarla.\n5. Conferma: la regola è attiva. Puoi modificarla o eliminarla in qualsiasi momento dallo stesso menu.",
@@ -716,14 +716,16 @@
           "Segna come 'segui' le riunioni fuori orario a cui sono invitato, senza accettarle."
         ],
         "tips": [
-          "⏳ Rollout in corso: partito a gennaio 2026, atteso completamento entro marzo — ma non ancora arrivato a tutti i tenant. Se in Impostazioni → Copilot non vedi \"Istruzioni calendario\", è normale.",
-          "⚠️ Funziona SOLO nel nuovo Outlook per Windows (icona blu) e in Outlook web. NON funziona nell'Outlook classico né su mobile.",
+          "✅ Disponibile ora nel nuovo Outlook per Windows (icona blu), Outlook web, Mac e mobile. Se in Impostazioni → Copilot non vedi \"Istruzioni calendario\", aggiorna Outlook o contatta il tuo IT.",
+          "⚠️ NON funziona nell'Outlook classico (vecchia interfaccia). Assicurati di usare il nuovo Outlook.",
           "Richiede licenza Microsoft 365 Copilot a pagamento. Verifica con il tuo IT se hai la licenza assegnata al tuo account."
         ]
       },
       "rollout": {
-        "stage": "preview",
-        "note": "GA su Outlook moderno (Windows, Mac, web, mobile). Annuncio 9 marzo 2026"
+        "stage": "ga",
+        "note": "GA confermata su Outlook moderno (Windows, Mac, web, mobile) — disponibile per tutti gli utenti M365 Copilot. Calendar Instructions accessibili da Impostazioni → Copilot → Istruzioni calendario.",
+        "changedFrom": "preview",
+        "changedOn": "24 ago 2026"
       }
     },
     {
@@ -2394,6 +2396,15 @@
       "tag": "Copilot Chat · Teams · Excel",
       "cov": "Claude Opus 5 nel selettore modelli (24 lug) · App dedicata Meeting Recaps in Teams · Excel skill @theme-design",
       "note": "Tre novità recenti: 1) Claude Opus 5 — il modello Anthropic più potente ora in M365 Copilot (Word, Excel, PPT, Chat, Cowork, Studio). Spiegare differenza rispetto a Sonnet 5 e Opus 4.8, requisito EU (admin opt-in). Nessun costo aggiuntivo rispetto alla licenza standard. 2) Teams Meeting Recaps Hub — l'app dedicata dove trovare tutti i recap in un posto: filtri rapidi, 30 giorni di storia, audio recap multi-riunione per recuperare dopo assenze. 3) Excel @theme-design — come usare la skill per dare un look professionale ai fogli di lavoro con un solo prompt."
+    },
+    {
+      "w": "W21",
+      "d": "25–29 ago",
+      "hot": true,
+      "theme": "Copilot gestisce il tuo calendario: Calendar Instructions è ora disponibile per tutti",
+      "tag": "GA — Outlook · Riepilogo agosto · Anticipazione autunno",
+      "cov": "Outlook Calendar Instructions GA (Windows, Mac, web, mobile) · Riepilogo agosto 2026 · Anteprima autunno: Teams recap senza registrazione, SharePoint Copilot Apps, Copilot Tuning",
+      "note": "Apertura con Calendar Instructions finalmente GA per tutti: spiegare cosa è cambiato (prima solo Windows+web, ora anche Mac e mobile), dove si trova nelle impostazioni, esempi pratici di regole da creare subito (accetta riunioni manager, rifiuta certe tipologie). Chiudere agosto con un riepilogo rapido delle novità del mese (Word Track Changes, Excel+Power BI, Notebooks+OneNote, Brand Kit PPT, Claude Opus 5, Teams Recap Hub, SharePoint Live Dashboards). Guardare all'autunno: anticipare Teams recap senza registrazione in GA worldwide (fine agosto–settembre), SharePoint Copilot Apps verso GA, Copilot Tuning in espansione."
     }
   ]
 }
