@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "24 ago 2026",
+    "updated": "31 ago 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -723,9 +723,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "GA confermata su Outlook moderno (Windows, Mac, web, mobile) — disponibile per tutti gli utenti M365 Copilot. Calendar Instructions accessibili da Impostazioni → Copilot → Istruzioni calendario.",
-        "changedFrom": "preview",
-        "changedOn": "24 ago 2026"
+        "note": "GA confermata su Outlook moderno (Windows, Mac, web, mobile) — disponibile per tutti gli utenti M365 Copilot. Calendar Instructions accessibili da Impostazioni → Copilot → Istruzioni calendario."
       }
     },
     {
@@ -2214,6 +2212,39 @@
         "stage": "ga",
         "note": "Rolling out agosto 2026. Excel web, Windows e Mac. Skill @theme-design disponibile per default nel pannello Copilot."
       }
+    },
+    {
+      "id": "excel-change-history",
+      "app": "Excel",
+      "cat": "c-excel",
+      "ico": "🕐",
+      "name": "Copilot in Excel: cronologia modifiche e ripristino con un prompt",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, la <strong>Change History Skill</strong> di Copilot in Excel ti permette di capire come un workbook è cambiato nel tempo. Copilot riepiloga le modifiche recenti, identifica chi le ha fatte (colleghi o Copilot stesso) e può <strong>annullare modifiche specifiche o ripristinare formule</strong> a uno stato precedente — tutto con un prompt in linguaggio naturale.",
+      "example": "Il tuo foglio finanziario ha avuto modifiche da più colleghi nell'ultima settimana. Chiedi a Copilot: 'Cosa è cambiato in questo workbook negli ultimi 5 giorni?' — ottieni un riepilogo con data, autore e tipo di modifica. Se noti un errore puoi chiedere a Copilot di ripristinare una formula specifica.",
+      "detail": {
+        "steps": "1. Apri il file Excel (web, Windows o Mac) con il pannello Copilot attivo. Il file deve essere su OneDrive o SharePoint con cronologia versioni attiva.\n2. Nel campo prompt scrivi una domanda sulla storia del workbook: 'Cosa è stato modificato in questo foglio questa settimana?'\n3. Copilot risponde con un riepilogo: autore, data, tipo di intervento (manuale o Copilot).\n4. Per ripristinare: specifica nel prompt cosa vuoi tornare indietro — 'Ripristina la formula nella cella D12 alla versione di 3 giorni fa'.\n5. Copilot esegue il ripristino con la stessa tracciabilità delle modifiche normali.",
+        "prompts": [
+          "Riepilogami le modifiche fatte in questo workbook negli ultimi 7 giorni: chi ha modificato cosa e quando.",
+          "Qual è l'ultima modifica alla colonna Budget? Mostrami il valore precedente e quello attuale.",
+          "Ripristina la formula nella cella [riferimento] alla versione di 3 giorni fa."
+        ],
+        "tips": [
+          "La Change History Skill funziona solo su file salvati su OneDrive o SharePoint con la cronologia versioni attiva — assicurati che AutoSave sia abilitato.",
+          "Copilot distingue le modifiche fatte da colleghi da quelle fatte da Copilot stesso: puoi chiedere 'Cosa ha modificato Copilot vs cosa ha modificato [Nome Collega]?'",
+          "Usa questa skill prima di condividere un workbook importante: Copilot ti dà una visione completa di tutte le modifiche recenti, aiutandoti a verificare la correttezza del file prima dell'invio."
+        ]
+      },
+      "source": {
+        "label": "What's New in Excel — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/excelblog/whats-new-in-excel-august-2026/4527283",
+        "note": "Rolling out agosto 2026. Excel web, Windows e Mac. Richiede file su OneDrive/SharePoint con cronologia versioni attiva."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Excel web, Windows e Mac."
+      }
     }
   ],
   "plan": [
@@ -2404,7 +2435,16 @@
       "theme": "Copilot gestisce il tuo calendario: Calendar Instructions è ora disponibile per tutti",
       "tag": "GA — Outlook · Riepilogo agosto · Anticipazione autunno",
       "cov": "Outlook Calendar Instructions GA (Windows, Mac, web, mobile) · Riepilogo agosto 2026 · Anteprima autunno: Teams recap senza registrazione, SharePoint Copilot Apps, Copilot Tuning",
-      "note": "Apertura con Calendar Instructions finalmente GA per tutti: spiegare cosa è cambiato (prima solo Windows+web, ora anche Mac e mobile), dove si trova nelle impostazioni, esempi pratici di regole da creare subito (accetta riunioni manager, rifiuta certe tipologie). Chiudere agosto con un riepilogo rapido delle novità del mese (Word Track Changes, Excel+Power BI, Notebooks+OneNote, Brand Kit PPT, Claude Opus 5, Teams Recap Hub, SharePoint Live Dashboards). Guardare all'autunno: anticipare Teams recap senza registrazione in GA worldwide (fine agosto–settembre), SharePoint Copilot Apps verso GA, Copilot Tuning in espansione."
+      "note": "Apertura con Calendar Instructions finalmente GA per tutti: spiegare cosa è cambiato (prima solo Windows+web, ora anche Mac e mobile), dove si trova nelle impostazioni, esempi pratici di regole da creare subito (accetta riunioni manager, rifiuta certe tipologie). Chiudere agosto con un riepilogo rapido delle novità del mese (Word Track Changes, Excel+Power BI, Notebooks+OneNote, Brand Kit PPT, Claude Opus 5, Teams Recap Hub, SharePoint Live Dashboards). Guardare all'autunno: anticipare Teams recap senza registrazione in GA worldwide (ottobre), SharePoint Copilot Apps verso GA, Copilot Tuning in espansione."
+    },
+    {
+      "w": "W22",
+      "d": "1–5 set",
+      "hot": false,
+      "theme": "Excel ricorda tutto: Change History Skill e le novità di agosto in un colpo d'occhio",
+      "tag": "Excel · Riepilogo agosto 2026",
+      "cov": "Excel Change History Skill (agosto 2026) · Riepilogo novità agosto: Brand Kit PPT, Notebooks+OneNote, Excel+Power BI, Teams Recap Hub, Claude Opus 5 · Anticipazione autunno: Teams recap senza registrazione, SharePoint Copilot Apps GA",
+      "note": "Due angoli: 1) Change History Skill in Excel — la novità pratica della settimana: spiegare con esempi concreti come funziona (chi ha modificato cosa, ripristino formula errata, audit di fine periodo). Chiarire il requisito OneDrive/SharePoint con cronologia versioni. 2) Chiudere agosto con un riepilogo visivo delle novità del mese — le 5-6 più impattanti per l'utente non tecnico. Anticipare settembre: Teams recap senza registrazione (Targeted Release ottobre), SharePoint Copilot Apps in arrivo GA, Domain Exclusion sospesa in attesa di aggiornamenti. Tono: autunno che parte con Excel più intelligente che mai."
     }
   ]
 }
