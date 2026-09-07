@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "31 ago 2026",
+    "updated": "7 set 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -2220,7 +2220,7 @@
       "ico": "🕐",
       "name": "Copilot in Excel: cronologia modifiche e ripristino con un prompt",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, la <strong>Change History Skill</strong> di Copilot in Excel ti permette di capire come un workbook è cambiato nel tempo. Copilot riepiloga le modifiche recenti, identifica chi le ha fatte (colleghi o Copilot stesso) e può <strong>annullare modifiche specifiche o ripristinare formule</strong> a uno stato precedente — tutto con un prompt in linguaggio naturale.",
       "example": "Il tuo foglio finanziario ha avuto modifiche da più colleghi nell'ultima settimana. Chiedi a Copilot: 'Cosa è cambiato in questo workbook negli ultimi 5 giorni?' — ottieni un riepilogo con data, autore e tipo di modifica. Se noti un errore puoi chiedere a Copilot di ripristinare una formula specifica.",
       "detail": {
@@ -2244,6 +2244,200 @@
       "rollout": {
         "stage": "ga",
         "note": "Rolling out agosto 2026. Excel web, Windows e Mac."
+      }
+    },
+    {
+      "id": "cowork-effort",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "⚡",
+      "name": "Cowork sceglie quanto impegnarsi: scegli velocità o qualità",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, in <strong>Copilot Cowork</strong> puoi scegliere il <strong>livello di impegno</strong> per ogni task: <strong>Light</strong> (semplice, veloce), <strong>Medium</strong> (default, bilanciato), <strong>High</strong>, <strong>Extra High</strong> e <strong>Max</strong> (analisi approfondita, più crediti). Il controllo del modello e il livello di impegno compaiono affiancati nel campo di composizione — scegli prima di avviare il task.",
+      "example": "Devi riassumere un documento velocemente? Scegli Light: Cowork finisce in pochi secondi. Stai lavorando a un'analisi strategica importante? Scegli High o Max: Cowork esplora più a fondo, ragiona più a lungo, produce un risultato migliore.",
+      "detail": {
+        "steps": "1. Apri Copilot Cowork (in Copilot Chat, sezione Cowork).\n2. Prima di descrivere il task, guarda il campo di composizione: trovi il selettore modello E il selettore livello di impegno affiancati.\n3. Scegli il livello: Light per task veloci e semplici, Medium per il lavoro quotidiano, High/Extra High/Max per analisi complesse o decisioni importanti.\n4. Scrivi il tuo task normalmente: Cowork usa il livello scelto per calibrare profondità e qualità della risposta.\n5. Nota: i livelli High, Extra High e Max consumano più crediti Copilot — usali con consapevolezza.",
+        "prompts": [
+          "Riassumi questo documento in 5 punti chiave. [Light — task semplice, bastano pochi secondi]",
+          "Analizza questa proposta commerciale e identifica i rischi che il cliente potrebbe sollevare. [Medium — equilibrio qualità/velocità]",
+          "Studia questa situazione competitiva, considera tutti gli scenari possibili e proponi una strategia con piano d'azione dettagliato. [Max — per le decisioni più importanti]"
+        ],
+        "tips": [
+          "Il default è Medium: copre bene la maggior parte dei task agentic quotidiani senza consumare crediti extra.",
+          "I livelli alti (High, Extra High, Max) danno più tempo e 'pensieri' a Cowork: il risultato è migliore ma l'attesa è più lunga. Usali per task in cui la qualità conta più della velocità.",
+          "Il selettore del livello è accanto al selettore del modello: entrambi compaiono direttamente nel campo di composizione — nessun menu aggiuntivo da cercare."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960",
+        "note": "Rolling out agosto 2026. Disponibile in Copilot Cowork. Richiede licenza Microsoft 365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Livelli Light, Medium, High, Extra High e Max disponibili nel campo di composizione Cowork."
+      }
+    },
+    {
+      "id": "teams-recap-translate",
+      "app": "Teams",
+      "cat": "c-teams",
+      "ico": "🌍",
+      "name": "Recap riunione in un'altra lingua: traduci dopo la generazione",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, il recap delle riunioni Teams supporta la <strong>traduzione post-generazione</strong>: se il recap è stato creato in inglese, un pulsante <strong>Traduci</strong> lo converte nella lingua che preferisci — italiano incluso. Nessuna rigenerazione, solo una traduzione immediata del testo già disponibile con decisioni, azioni e punti chiave nella tua lingua.",
+      "example": "Il recap di una call internazionale è in inglese. Clicchi 'Traduci' nel pannello Recap, selezioni italiano: in pochi secondi il recap si aggiorna con i punti chiave nella tua lingua — senza riaprire la riunione o riscrivere nulla.",
+      "detail": {
+        "steps": "1. Apri il recap di una riunione Teams (scheda 'Recap' nella chat della riunione).\n2. Cerca il pulsante 'Traduci' in alto nel pannello del recap.\n3. Seleziona la lingua di destinazione dalla lista disponibile.\n4. Il recap si aggiorna inline con la traduzione — nessun ricaricamento della pagina.\n5. Puoi tornare alla lingua originale con lo stesso pulsante.",
+        "prompts": [],
+        "tips": [
+          "Il pulsante 'Traduci' appare nei recap di riunioni con Copilot attivo (non nei recap standard senza licenza Copilot).",
+          "La traduzione è post-generazione: non modifica il recap originale, solo come viene visualizzato. Il recap in lingua originale rimane disponibile.",
+          "Utile per riunioni internazionali: il recap viene generato automaticamente nella lingua parlata nella riunione, poi ciascun partecipante può tradurlo nella propria lingua preferita."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960",
+        "note": "Rolling out agosto 2026. Teams desktop e web."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Teams desktop e web."
+      }
+    },
+    {
+      "id": "word-hyperlinks",
+      "app": "Word",
+      "cat": "c-word",
+      "ico": "🔗",
+      "name": "Copilot inserisce hyperlink nel documento con un prompt",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, Copilot in Word può <strong>inserire e formattare hyperlink direttamente nel testo del documento</strong> su richiesta. Descrivi quale testo vuoi linkare e a quale URL: Copilot inserisce il link correttamente formattato senza che tu debba usare il menu Inserisci di Word.",
+      "example": "Stai scrivendo un report con riferimenti a fonti esterne. Scrivi a Copilot: 'Aggiungi un link al sito ufficiale di [Ente] nel paragrafo dove cito la normativa.' Copilot trova il punto giusto e inserisce il link — zero copia-incolla di URL e navigazione nei menu.",
+      "detail": {
+        "steps": "1. Apri il documento Word (web o desktop) con il pannello Copilot attivo.\n2. Nel campo prompt, descrivi il link da aggiungere: specifica il testo da linkare e l'URL di destinazione.\n3. Copilot inserisce il link direttamente nel documento nel punto specificato.\n4. Puoi aggiungere più link in un unico prompt: 'aggiungi i seguenti link: [Testo 1]→[URL 1], [Testo 2]→[URL 2]'.\n5. Verifica i link cliccandoci sopra: puoi modificarli con il menu contestuale di Word come di consueto.",
+        "prompts": [
+          "Aggiungi un link a [URL] nel punto in cui cito [Argomento] nel paragrafo 2.",
+          "Linka il testo '[Testo]' all'indirizzo [URL] nella sezione Riferimenti.",
+          "Aggiungi questi link in tutto il documento: '[Testo 1]' → [URL 1], '[Testo 2]' → [URL 2]."
+        ],
+        "tips": [
+          "Specifica sia il testo da linkare sia l'URL di destinazione nel prompt: Copilot ha bisogno di entrambe le informazioni per inserire il link correttamente.",
+          "Puoi chiedere a Copilot di linkare parole già esistenti nel testo senza riscrivere nulla: 'Linka la parola \"Microsoft Learn\" nell'introduzione a https://learn.microsoft.com'.",
+          "Disponibile in Word web e desktop. Dopo l'inserimento, i link si comportano esattamente come quelli inseriti manualmente — modificabili e rimovibili con il menu di Word."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960",
+        "note": "Rolling out agosto 2026. Word web e desktop."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Word web e desktop."
+      }
+    },
+    {
+      "id": "chat-text-select",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🖊️",
+      "name": "Seleziona il testo nella risposta di Copilot per lavorarci su",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, in Copilot Chat puoi <strong>selezionare una frase, un paragrafo o una tabella nella risposta di Copilot</strong> e chiedere di lavorare solo su quella parte. Il testo selezionato appare in anteprima nel campo prompt prima dell'invio — ideale per riformulare una sezione specifica, tradurla, espanderla o estrarre ulteriori informazioni senza riscrivere l'intero contesto.",
+      "example": "Copilot ti ha dato una risposta con 5 sezioni. Una è poco chiara. La selezioni con il cursore: appare nel prompt come riferimento. Scrivi 'Espandi questo punto con esempi concreti' — Copilot lavora solo su quel paragrafo.",
+      "detail": {
+        "steps": "1. Nella risposta di Copilot Chat, seleziona il testo su cui vuoi lavorare (frase, paragrafo o tabella).\n2. Il testo selezionato appare automaticamente in anteprima nel campo prompt.\n3. Scrivi la tua istruzione relativa a quel testo: traduci, espandi, riassumi, riformula, estrai informazioni.\n4. Invia il prompt: Copilot lavora solo sul testo selezionato, mantenendo il contesto della conversazione.",
+        "prompts": [
+          "Espandi questo paragrafo con due esempi concreti tratti dal settore [Nome Settore].",
+          "Traduci questa sezione in inglese mantenendo il tono formale.",
+          "Riassumi questa tabella in 3 bullet in ordine di importanza."
+        ],
+        "tips": [
+          "La selezione funziona su qualsiasi parte della risposta di Copilot: testo, bullet point, tabelle.",
+          "Il testo selezionato rimane visibile nel campo prompt fino all'invio — puoi modificare o eliminare la selezione prima di inviare.",
+          "Usa questa funzione per lavorare in modo incrementale su risposte lunghe: affina una sezione alla volta invece di riformulare l'intero prompt."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960",
+        "note": "Rolling out agosto 2026. Copilot Chat web e desktop."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Copilot Chat web e desktop."
+      }
+    },
+    {
+      "id": "notebooks-smart-artifacts",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "💡",
+      "name": "Copilot Notebooks suggerisce automaticamente il documento da generare",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da agosto 2026, <strong>Copilot Notebooks suggerisce proattivamente</strong> quali artefatti generare in base al contenuto del notebook e al contesto di lavoro via <strong>Work IQ</strong>. Invece di chiederti quale formato vuoi, Copilot propone direttamente: 'Genera una presentazione PowerPoint su questo tema' o 'Crea un documento Word di sintesi per il management' — con un click l'artefatto viene generato usando tutto il contenuto del notebook.",
+      "example": "Hai un notebook con i documenti di un progetto in corso. Copilot analizza il contenuto e propone: 'Sembra che tu stia preparando un report di avanzamento — vuoi che generi una presentazione PowerPoint per il management?' Un click e la presentazione è pronta.",
+      "detail": {
+        "steps": "1. Apri un Copilot Notebook con contenuto sufficiente (file di riferimento, email, note).\n2. Copilot analizza il contenuto via Work IQ e propone suggerimenti di artefatti da generare.\n3. I suggerimenti appaiono come chip o pulsanti nel notebook: es. 'Genera PowerPoint', 'Crea documento Word', 'Genera foglio Excel'.\n4. Clicca sul suggerimento: si apre Quick Create con il tipo di artefatto prescelto e le opzioni di personalizzazione.\n5. Puoi sempre generare artefatti manualmente dal menu Quick Create — i suggerimenti proattivi sono un'aggiunta, non un obbligo.",
+        "prompts": [
+          "Genera la presentazione PowerPoint suggerita per il management usando i contenuti di questo notebook.",
+          "Crea il documento Word di sintesi proposto da Copilot con tutti i riferimenti nel notebook.",
+          "Quale artefatto mi consigli di generare per condividere il contenuto di questo notebook con il team?"
+        ],
+        "tips": [
+          "I suggerimenti di artefatti compaiono sia nell'app M365 Copilot che in OneNote (grazie alla sincronizzazione Notebooks+OneNote) — lo stesso suggerimento è disponibile ovunque lavori.",
+          "Work IQ considera non solo il contenuto del notebook ma anche il tuo contesto lavorativo recente (email, riunioni) per proporre il suggerimento più pertinente al momento.",
+          "Se un suggerimento non è rilevante, puoi ignorarlo — i suggerimenti sono opportunità, non interruzioni obbligatorie."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960",
+        "note": "Rolling out agosto 2026. Copilot Notebooks nell'app M365 Copilot e in OneNote."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out agosto 2026. Disponibile nell'app M365 Copilot e in OneNote."
+      }
+    },
+    {
+      "id": "notebooks-multimodal",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "📸",
+      "name": "Copilot Notebooks: cattura audio, immagini e note con il telefono",
+      "st": "soon",
+      "isNew": true,
+      "impact": "Da settembre 2026, nell'app <strong>Microsoft 365 Copilot su iOS e Android</strong>, puoi <strong>catturare audio, immagini e note scritte</strong> in un'unica esperienza e aggiungerle direttamente al tuo Copilot Notebook. Copilot elabora i contenuti e genera automaticamente <strong>note strutturate</strong> pronte per analisi e collaborazione — brainstorm, riunioni informali e momenti di lavoro trasformati in materiale organizzato senza sforzo.",
+      "example": "Sei in una riunione a lavagna. Con l'app mobile avvii la cattura: registri l'audio della discussione e fotografi la lavagna. Copilot elabora entrambi e aggiunge note strutturate al tuo notebook — zero trascrizione manuale.",
+      "detail": {
+        "steps": "1. Aggiorna l'app Microsoft 365 Copilot su iOS o Android all'ultima versione disponibile.\n2. Apri un Copilot Notebook nell'app mobile.\n3. Cerca il pulsante 'Cattura' o l'icona di cattura multimodale nel notebook.\n4. Scegli cosa catturare: audio (registrazione), immagine (fotocamera) o nota scritta — oppure combina più modalità.\n5. Copilot elabora il contenuto e genera note strutturate nel notebook, accessibili da tutti i dispositivi.",
+        "prompts": [
+          "Trascrivi e struttura questa nota audio in punti chiave e azioni da intraprendere.",
+          "Analizza questa foto della lavagna e crea un sommario delle idee principali.",
+          "Combina questa registrazione audio con le note scritte e genera un riepilogo strutturato."
+        ],
+        "tips": [
+          "⏳ In rollout da settembre 2026: aggiorna l'app M365 Copilot su iOS/Android. Se non vedi ancora il pulsante di cattura multimodale, attendi il rollout nel tuo tenant.",
+          "La cattura multimodale è ideale per brainstorm dal vivo e riunioni informali lontano dal PC: trasforma le idee nel momento in cui nascono.",
+          "I contenuti catturati si sincronizzano automaticamente su tutti i dispositivi via Copilot Notebooks — trovi le note strutturate anche dal PC appena torni in ufficio."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960",
+        "note": "In rollout da settembre 2026. App Microsoft 365 Copilot su iOS e Android."
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "In rollout da settembre 2026. App Microsoft 365 Copilot su iOS e Android."
       }
     }
   ],
@@ -2445,6 +2639,15 @@
       "tag": "Excel · Riepilogo agosto 2026",
       "cov": "Excel Change History Skill (agosto 2026) · Riepilogo novità agosto: Brand Kit PPT, Notebooks+OneNote, Excel+Power BI, Teams Recap Hub, Claude Opus 5 · Anticipazione autunno: Teams recap senza registrazione, SharePoint Copilot Apps GA",
       "note": "Due angoli: 1) Change History Skill in Excel — la novità pratica della settimana: spiegare con esempi concreti come funziona (chi ha modificato cosa, ripristino formula errata, audit di fine periodo). Chiarire il requisito OneDrive/SharePoint con cronologia versioni. 2) Chiudere agosto con un riepilogo visivo delle novità del mese — le 5-6 più impattanti per l'utente non tecnico. Anticipare settembre: Teams recap senza registrazione (Targeted Release ottobre), SharePoint Copilot Apps in arrivo GA, Domain Exclusion sospesa in attesa di aggiornamenti. Tono: autunno che parte con Excel più intelligente che mai."
+    },
+    {
+      "w": "W23",
+      "d": "8–12 set",
+      "hot": false,
+      "theme": "Agosto in pillole: Cowork accelera, Word linka da solo, Notebooks anticipa il tuo passo",
+      "tag": "Cowork · Word · Teams · Copilot Chat · Notebooks",
+      "cov": "Cowork effort level (Light→Max) · Word hyperlinks con prompt · Recap riunione tradotto in italiano · Selezione testo nelle risposte Copilot · Notebooks suggerisce artefatti · Notebooks cattura multimodale (iOS/Android, in rollout)",
+      "note": "Sei novità di agosto da presentare con angolo pratico: 1) Cowork effort — spiega con esempi concreti quando usare Light vs Max (riassunto veloce vs analisi strategica). 2) Word hyperlinks — inserire link con un prompt è più veloce del menu Inserisci: mostrare il prima/dopo. 3) Recap in altra lingua — la funzione che mancava per i team internazionali: clicca Traduci, scegli italiano, fatto. 4) Selezione testo in chat — come affinare sezioni specifiche di una risposta lunga senza riscrivere tutto il prompt. 5) Notebooks smart artifacts — Copilot anticipa il passo successivo: propone il documento da generare prima che tu lo chieda. 6) Notebooks multimodal (settembre, in rollout) — cattura audio+foto con il telefono, Copilot struttura le note. Tono: agosto ha portato finezza, non rivoluzione — funzioni che migliorano il flusso quotidiano senza stravolgere le abitudini."
     }
   ]
 }
