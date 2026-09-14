@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "7 set 2026",
+    "updated": "14 set 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -2253,7 +2253,7 @@
       "ico": "⚡",
       "name": "Cowork sceglie quanto impegnarsi: scegli velocità o qualità",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, in <strong>Copilot Cowork</strong> puoi scegliere il <strong>livello di impegno</strong> per ogni task: <strong>Light</strong> (semplice, veloce), <strong>Medium</strong> (default, bilanciato), <strong>High</strong>, <strong>Extra High</strong> e <strong>Max</strong> (analisi approfondita, più crediti). Il controllo del modello e il livello di impegno compaiono affiancati nel campo di composizione — scegli prima di avviare il task.",
       "example": "Devi riassumere un documento velocemente? Scegli Light: Cowork finisce in pochi secondi. Stai lavorando a un'analisi strategica importante? Scegli High o Max: Cowork esplora più a fondo, ragiona più a lungo, produce un risultato migliore.",
       "detail": {
@@ -2286,7 +2286,7 @@
       "ico": "🌍",
       "name": "Recap riunione in un'altra lingua: traduci dopo la generazione",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, il recap delle riunioni Teams supporta la <strong>traduzione post-generazione</strong>: se il recap è stato creato in inglese, un pulsante <strong>Traduci</strong> lo converte nella lingua che preferisci — italiano incluso. Nessuna rigenerazione, solo una traduzione immediata del testo già disponibile con decisioni, azioni e punti chiave nella tua lingua.",
       "example": "Il recap di una call internazionale è in inglese. Clicchi 'Traduci' nel pannello Recap, selezioni italiano: in pochi secondi il recap si aggiorna con i punti chiave nella tua lingua — senza riaprire la riunione o riscrivere nulla.",
       "detail": {
@@ -2315,7 +2315,7 @@
       "ico": "🔗",
       "name": "Copilot inserisce hyperlink nel documento con un prompt",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, Copilot in Word può <strong>inserire e formattare hyperlink direttamente nel testo del documento</strong> su richiesta. Descrivi quale testo vuoi linkare e a quale URL: Copilot inserisce il link correttamente formattato senza che tu debba usare il menu Inserisci di Word.",
       "example": "Stai scrivendo un report con riferimenti a fonti esterne. Scrivi a Copilot: 'Aggiungi un link al sito ufficiale di [Ente] nel paragrafo dove cito la normativa.' Copilot trova il punto giusto e inserisce il link — zero copia-incolla di URL e navigazione nei menu.",
       "detail": {
@@ -2348,7 +2348,7 @@
       "ico": "🖊️",
       "name": "Seleziona il testo nella risposta di Copilot per lavorarci su",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, in Copilot Chat puoi <strong>selezionare una frase, un paragrafo o una tabella nella risposta di Copilot</strong> e chiedere di lavorare solo su quella parte. Il testo selezionato appare in anteprima nel campo prompt prima dell'invio — ideale per riformulare una sezione specifica, tradurla, espanderla o estrarre ulteriori informazioni senza riscrivere l'intero contesto.",
       "example": "Copilot ti ha dato una risposta con 5 sezioni. Una è poco chiara. La selezioni con il cursore: appare nel prompt come riferimento. Scrivi 'Espandi questo punto con esempi concreti' — Copilot lavora solo su quel paragrafo.",
       "detail": {
@@ -2381,7 +2381,7 @@
       "ico": "💡",
       "name": "Copilot Notebooks suggerisce automaticamente il documento da generare",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da agosto 2026, <strong>Copilot Notebooks suggerisce proattivamente</strong> quali artefatti generare in base al contenuto del notebook e al contesto di lavoro via <strong>Work IQ</strong>. Invece di chiederti quale formato vuoi, Copilot propone direttamente: 'Genera una presentazione PowerPoint su questo tema' o 'Crea un documento Word di sintesi per il management' — con un click l'artefatto viene generato usando tutto il contenuto del notebook.",
       "example": "Hai un notebook con i documenti di un progetto in corso. Copilot analizza il contenuto e propone: 'Sembra che tu stia preparando un report di avanzamento — vuoi che generi una presentazione PowerPoint per il management?' Un click e la presentazione è pronta.",
       "detail": {
@@ -2413,8 +2413,8 @@
       "cat": "c-chat",
       "ico": "📸",
       "name": "Copilot Notebooks: cattura audio, immagini e note con il telefono",
-      "st": "soon",
-      "isNew": true,
+      "st": "avail",
+      "isNew": false,
       "impact": "Da settembre 2026, nell'app <strong>Microsoft 365 Copilot su iOS e Android</strong>, puoi <strong>catturare audio, immagini e note scritte</strong> in un'unica esperienza e aggiungerle direttamente al tuo Copilot Notebook. Copilot elabora i contenuti e genera automaticamente <strong>note strutturate</strong> pronte per analisi e collaborazione — brainstorm, riunioni informali e momenti di lavoro trasformati in materiale organizzato senza sforzo.",
       "example": "Sei in una riunione a lavagna. Con l'app mobile avvii la cattura: registri l'audio della discussione e fotografi la lavagna. Copilot elabora entrambi e aggiunge note strutturate al tuo notebook — zero trascrizione manuale.",
       "detail": {
@@ -2425,7 +2425,7 @@
           "Combina questa registrazione audio con le note scritte e genera un riepilogo strutturato."
         ],
         "tips": [
-          "⏳ In rollout da settembre 2026: aggiorna l'app M365 Copilot su iOS/Android. Se non vedi ancora il pulsante di cattura multimodale, attendi il rollout nel tuo tenant.",
+          "✅ Disponibile da settembre 2026 su iOS e Android: aggiorna l'app Microsoft 365 Copilot. Se non vedi ancora il pulsante di cattura multimodale, verifica la versione dell'app e il rollout nel tuo tenant (confermato da MC1450130).",
           "La cattura multimodale è ideale per brainstorm dal vivo e riunioni informali lontano dal PC: trasforma le idee nel momento in cui nascono.",
           "I contenuti catturati si sincronizzano automaticamente su tutti i dispositivi via Copilot Notebooks — trovi le note strutturate anche dal PC appena torni in ufficio."
         ]
@@ -2436,8 +2436,76 @@
         "note": "In rollout da settembre 2026. App Microsoft 365 Copilot su iOS e Android."
       },
       "rollout": {
-        "stage": "preview",
-        "note": "In rollout da settembre 2026. App Microsoft 365 Copilot su iOS e Android."
+        "stage": "ga",
+        "note": "In rollout da settembre 2026. App Microsoft 365 Copilot su iOS e Android. Rollout confermato da MC1450130.",
+        "changedFrom": "preview",
+        "changedOn": "14 set 2026"
+      }
+    },
+    {
+      "id": "workiq-dataverse",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🗄️",
+      "name": "Dataverse disponibile come grounding in Work IQ per Copilot Chat",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da settembre 2026, <strong>Microsoft Dataverse</strong> è disponibile come sorgente di grounding in <strong>Work IQ</strong> per Copilot Chat. Puoi agganciare tabelle, record e dati strutturati da Dataverse direttamente ai prompt: Copilot Chat risponde con dati aggiornati dalle tue app Power Platform senza dover esportare o copiare.",
+      "example": "Hai un'app Power Apps con i contratti dei clienti in Dataverse. Vai in Copilot Chat, abilita la sorgente Dataverse nel pannello Work IQ e chiedi: 'Mostrami i contratti in scadenza nei prossimi 30 giorni.' Copilot legge i dati direttamente.",
+      "detail": {
+        "steps": "1. Apri Copilot Chat (web o desktop).\n2. Nel pannello Work IQ, cerca la sezione 'Sorgenti dati' o 'Grounding'.\n3. Aggiungi Dataverse come sorgente: seleziona l'ambiente e le tabelle/entità da includere.\n4. Scrivi il tuo prompt normalmente: Copilot userà i dati Dataverse come contesto.\n5. Per risultati ottimali, specifica il tipo di record che ti interessa nel prompt.",
+        "prompts": [
+          "Mostrami i record aperti di tipo [entità] con priorità alta.",
+          "Quanti [record] sono stati creati nell'ultimo mese in questo ambiente Dataverse?",
+          "Riassumi lo stato dei [record] assegnati a [Nome Utente] da Dataverse."
+        ],
+        "tips": [
+          "L'accesso a Dataverse tramite Work IQ rispetta le autorizzazioni dell'utente: Copilot mostra solo i record a cui hai già accesso nell'app Power Platform.",
+          "Richiede abilitazione dell'integrazione Dataverse nell'ambiente Power Platform da parte dell'amministratore.",
+          "Utile per team che usano Power Apps/Dynamics 365: collega dati operativi direttamente alle conversazioni Copilot Chat."
+        ]
+      },
+      "source": {
+        "label": "Microsoft 365 Developer Blog — settembre 2026",
+        "url": "https://devblogs.microsoft.com/microsoft365dev/",
+        "note": "GA da settembre 2026. Richiede abilitazione admin nell'ambiente Power Platform."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA da settembre 2026. Richiede integrazione Dataverse abilitata nell'ambiente Power Platform."
+      }
+    },
+    {
+      "id": "sp-copilot-sep26",
+      "app": "SharePoint",
+      "cat": "c-other",
+      "ico": "🔄",
+      "name": "SharePoint Copilot settembre 2026: skill riutilizzabili e analisi immagini",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da settembre 2026, <strong>Copilot in SharePoint</strong> introduce due novità rilevanti: le <strong>skill riutilizzabili</strong> (crea una skill in SharePoint, riusala in OneDrive e viceversa) e l'<strong>analisi immagini su larga scala</strong> (categorizza, etichetta e descrivi automaticamente le immagini nelle raccolte documenti tramite Copilot).",
+      "example": "Il tuo team ha una raccolta con 500 immagini di prodotto in SharePoint. Copilot le analizza in batch, aggiunge etichette automatiche e genera descrizioni per ogni immagine — tutto senza aprire ogni file manualmente.",
+      "detail": {
+        "steps": "1. Per le skill riutilizzabili: crea una skill Copilot in SharePoint o OneDrive — la stessa skill diventa disponibile in entrambe le app automaticamente.\n2. Per l'analisi immagini: apri una raccolta documenti con immagini in SharePoint.\n3. Seleziona le immagini da analizzare (o tutte) e scegli l'azione Copilot per l'analisi.\n4. Copilot elabora le immagini in batch e aggiunge metadati, etichette e descrizioni automaticamente.",
+        "prompts": [
+          "Analizza le immagini in questa raccolta e aggiorna i metadati con categoria e descrizione.",
+          "Etichetta automaticamente tutte le immagini di prodotto in questa libreria SharePoint.",
+          "Questa skill funziona anche in OneDrive?"
+        ],
+        "tips": [
+          "Le skill riutilizzabili sono un cambio architetturale importante: crei una volta, usi ovunque — SharePoint, OneDrive, e in futuro altri servizi M365.",
+          "L'analisi immagini in batch è utile per grandi raccolte di contenuti digitali: automatizza la categorizzazione che altrimenti richiede ore di lavoro manuale.",
+          "Richiede licenza Microsoft 365 Copilot e SharePoint Online."
+        ]
+      },
+      "source": {
+        "label": "What's New in Copilot in SharePoint — September 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422",
+        "note": "Rolling out settembre 2026. SharePoint Online con licenza M365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out settembre 2026. SharePoint Online con licenza M365 Copilot."
       }
     }
   ],
@@ -2648,6 +2716,15 @@
       "tag": "Cowork · Word · Teams · Copilot Chat · Notebooks",
       "cov": "Cowork effort level (Light→Max) · Word hyperlinks con prompt · Recap riunione tradotto in italiano · Selezione testo nelle risposte Copilot · Notebooks suggerisce artefatti · Notebooks cattura multimodale (iOS/Android, in rollout)",
       "note": "Sei novità di agosto da presentare con angolo pratico: 1) Cowork effort — spiega con esempi concreti quando usare Light vs Max (riassunto veloce vs analisi strategica). 2) Word hyperlinks — inserire link con un prompt è più veloce del menu Inserisci: mostrare il prima/dopo. 3) Recap in altra lingua — la funzione che mancava per i team internazionali: clicca Traduci, scegli italiano, fatto. 4) Selezione testo in chat — come affinare sezioni specifiche di una risposta lunga senza riscrivere tutto il prompt. 5) Notebooks smart artifacts — Copilot anticipa il passo successivo: propone il documento da generare prima che tu lo chieda. 6) Notebooks multimodal (settembre, in rollout) — cattura audio+foto con il telefono, Copilot struttura le note. Tono: agosto ha portato finezza, non rivoluzione — funzioni che migliorano il flusso quotidiano senza stravolgere le abitudini."
+    },
+    {
+      "w": "W24",
+      "d": "15–19 set",
+      "hot": false,
+      "theme": "Settembre in avvio: Notebooks multimodale disponibile, Dataverse in Work IQ e SharePoint Copilot si aggiorna",
+      "tag": "Notebooks · Copilot Chat · SharePoint",
+      "cov": "Notebooks cattura multimodale (iOS/Android, ora in rollout GA) · Dataverse in Work IQ (GA) · SharePoint Copilot settembre: skill riutilizzabili + analisi immagini in batch",
+      "note": "Tre novità di settembre: 1) Notebooks multimodale — ora disponibile su iOS/Android (MC1450130): spiegare la cattura audio+foto con Copilot che struttura le note, con esempio pratico di riunione a lavagna. 2) Dataverse in Work IQ — per chi usa Power Apps/Dynamics 365: come collegare dati operativi a Copilot Chat senza export. Sottolineare che rispetta le autorizzazioni esistenti. 3) SharePoint Copilot settembre: le skill riutilizzabili (create in SP, disponibili in OneDrive) e l'analisi immagini in batch — utile per team con grandi raccolte di contenuti. Tono: settembre parte con funzioni che completano esperienze già anticipate ad agosto."
     }
   ]
 }
