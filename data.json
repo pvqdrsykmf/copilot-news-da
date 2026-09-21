@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "14 set 2026",
+    "updated": "21 set 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -2437,9 +2437,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "In rollout da settembre 2026. App Microsoft 365 Copilot su iOS e Android. Rollout confermato da MC1450130.",
-        "changedFrom": "preview",
-        "changedOn": "14 set 2026"
+        "note": "In rollout da settembre 2026. App Microsoft 365 Copilot su iOS e Android. Rollout confermato da MC1450130."
       }
     },
     {
@@ -2449,7 +2447,7 @@
       "ico": "🗄️",
       "name": "Dataverse disponibile come grounding in Work IQ per Copilot Chat",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da settembre 2026, <strong>Microsoft Dataverse</strong> è disponibile come sorgente di grounding in <strong>Work IQ</strong> per Copilot Chat. Puoi agganciare tabelle, record e dati strutturati da Dataverse direttamente ai prompt: Copilot Chat risponde con dati aggiornati dalle tue app Power Platform senza dover esportare o copiare.",
       "example": "Hai un'app Power Apps con i contratti dei clienti in Dataverse. Vai in Copilot Chat, abilita la sorgente Dataverse nel pannello Work IQ e chiedi: 'Mostrami i contratti in scadenza nei prossimi 30 giorni.' Copilot legge i dati direttamente.",
       "detail": {
@@ -2482,7 +2480,7 @@
       "ico": "🔄",
       "name": "SharePoint Copilot settembre 2026: skill riutilizzabili e analisi immagini",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da settembre 2026, <strong>Copilot in SharePoint</strong> introduce due novità rilevanti: le <strong>skill riutilizzabili</strong> (crea una skill in SharePoint, riusala in OneDrive e viceversa) e l'<strong>analisi immagini su larga scala</strong> (categorizza, etichetta e descrivi automaticamente le immagini nelle raccolte documenti tramite Copilot).",
       "example": "Il tuo team ha una raccolta con 500 immagini di prodotto in SharePoint. Copilot le analizza in batch, aggiunge etichette automatiche e genera descrizioni per ogni immagine — tutto senza aprire ogni file manualmente.",
       "detail": {
@@ -2506,6 +2504,68 @@
       "rollout": {
         "stage": "ga",
         "note": "Rolling out settembre 2026. SharePoint Online con licenza M365 Copilot."
+      }
+    },
+    {
+      "id": "cowork-skills-mobile",
+      "app": "Microsoft 365 Copilot",
+      "cat": "c-chat",
+      "ico": "📱",
+      "name": "Cowork: skill riutilizzabili e app mobile (iOS/Android)",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da settembre 2026, <strong>Copilot Cowork</strong> introduce le <strong>skill riutilizzabili</strong> — istruzioni di comportamento che crei una volta e riusi in qualsiasi sessione Cowork — e il supporto <strong>app mobile su iOS e Android</strong>. Cowork porta l'automazione delle attività anche dal telefono, senza aprire il PC.",
+      "example": "Hai creato una skill 'Segretario riunioni' che sa come formattare i verbali nel tuo stile aziendale. Quella skill è ora disponibile dall'app mobile: apri Cowork sul telefono dopo una riunione e la skill è già lì, pronta all'uso.",
+      "detail": {
+        "steps": "1. Per usare Cowork su mobile: aggiorna l'app Microsoft 365 Copilot su iOS o Android.\n2. Cerca l'icona Cowork nell'app mobile (disponibile da settembre 2026).\n3. Per le skill riutilizzabili: apri Cowork su desktop, vai in Impostazioni skill e crea una nuova skill con le istruzioni desiderate.\n4. La skill sarà automaticamente disponibile in tutte le sessioni Cowork, anche da mobile.\n5. Nelle conversazioni Cowork, seleziona la skill prima di avviare il task.",
+        "prompts": [
+          "Usa la skill [Nome Skill] per completare questo task: ...",
+          "Crea una skill 'Analisi contratti' che formatti i risultati con rischi in rosso, opportunità in verde e riassunto in 5 punti.",
+          "Mostrami le skill disponibili e usane una per preparare questo documento."
+        ],
+        "tips": [
+          "Le skill riutilizzabili sono come 'regole di comportamento' per Cowork: definisci una volta come deve lavorare, e quella definizione si applica automaticamente a tutti i task futuri.",
+          "L'app mobile iOS/Android è ideale per avviare task Cowork in mobilità — Cowork lavora in background e controlli il risultato quando torni al PC.",
+          "Le skill si sincronizzano automaticamente tra desktop e mobile: non devi ricrearle."
+        ]
+      },
+      "source": {
+        "label": "Microsoft Learn — What's new in Microsoft Copilot Cowork (settembre 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new",
+        "note": "GA da settembre 2026. Richiede app Microsoft 365 Copilot aggiornata su iOS/Android per il supporto mobile."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA da settembre 2026. Skill riutilizzabili disponibili su tutti i piani M365 Copilot. App mobile: iOS e Android."
+      }
+    },
+    {
+      "id": "copilot-analytics-export",
+      "app": "Microsoft 365 Admin",
+      "cat": "c-other",
+      "ico": "📊",
+      "name": "Dashboard Copilot: esporta i dati di utilizzo (nuova funzione admin)",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da settembre 2026, gli amministratori M365 possono <strong>esportare dati de-identificati riga per riga</strong> dai Dashboard Copilot e Agent 365. Invece di leggere solo i grafici nell'interfaccia admin, puoi scaricare i dati grezzi per analisi personalizzate in Excel o Power BI — con la massima granularità per tracciare l'adozione di Copilot nel tempo.",
+      "example": "L'IT Manager vuole un report mensile sull'adozione Copilot per reparto. Esporta il CSV con i dati de-identificati e lo elabora in Power BI: ottiene un report con filtri per data, app e attività in pochi minuti, senza screenshot dal dashboard.",
+      "detail": {
+        "steps": "1. Accedi all'interfaccia di amministrazione M365 (admin.microsoft.com).\n2. Vai su Report > Utilizzo Copilot oppure Microsoft Copilot Dashboard.\n3. Cerca il pulsante 'Esporta dati' o 'Scarica report' nella barra degli strumenti del dashboard.\n4. Scegli il formato di esportazione (CSV) e il periodo da esportare.\n5. I dati scaricati sono de-identificati: nomi e indirizzi email sono rimossi o codificati per tutelare la privacy degli utenti.",
+        "prompts": [],
+        "tips": [
+          "Dati de-identificati: l'export non include nomi o email reali degli utenti — i record sono anonimi o pseudonimizzati. Verifica la policy di privacy del tuo tenant prima di condividere i dati.",
+          "Utile per monitorare l'adozione nel tempo: esporta ogni mese e confronta le tendenze in Excel o Power BI per identificare team con bassa adozione.",
+          "L'export include sia il Copilot Dashboard standard che l'Agent 365 Dashboard: puoi analizzare l'uso degli agenti personalizzati separatamente dall'uso del Copilot 'core'."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — August 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960",
+        "note": "Rollout settembre 2026. Disponibile per amministratori M365 con accesso al Copilot Dashboard o Agent 365 Dashboard."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rollout settembre 2026. Accesso richiede ruolo admin M365 con accesso al Copilot Dashboard o Agent 365 Dashboard."
       }
     }
   ],
@@ -2725,6 +2785,15 @@
       "tag": "Notebooks · Copilot Chat · SharePoint",
       "cov": "Notebooks cattura multimodale (iOS/Android, ora in rollout GA) · Dataverse in Work IQ (GA) · SharePoint Copilot settembre: skill riutilizzabili + analisi immagini in batch",
       "note": "Tre novità di settembre: 1) Notebooks multimodale — ora disponibile su iOS/Android (MC1450130): spiegare la cattura audio+foto con Copilot che struttura le note, con esempio pratico di riunione a lavagna. 2) Dataverse in Work IQ — per chi usa Power Apps/Dynamics 365: come collegare dati operativi a Copilot Chat senza export. Sottolineare che rispetta le autorizzazioni esistenti. 3) SharePoint Copilot settembre: le skill riutilizzabili (create in SP, disponibili in OneDrive) e l'analisi immagini in batch — utile per team con grandi raccolte di contenuti. Tono: settembre parte con funzioni che completano esperienze già anticipate ad agosto."
+    },
+    {
+      "w": "W25",
+      "d": "28 set–2 ott",
+      "hot": false,
+      "theme": "Cowork si porta in tasca: app mobile, skill riutilizzabili e dati Copilot per i manager IT",
+      "tag": "Cowork · Admin · Anticipazione ottobre",
+      "cov": "Cowork su iOS/Android + skill riutilizzabili (GA settembre) · Export dati de-identificati dal Copilot Dashboard (admin) · Anticipazione ottobre: Teams recap senza registrazione in Targeted Release",
+      "note": "Due angoli principali: 1) Cowork mobile + skill riutilizzabili — il cambiamento più pratico per gli utenti abituali di Cowork: spiegare come creare una skill una volta e usarla da qualsiasi dispositivo, con esempio di 'skill verbali' o 'skill analisi email'. Sottolineare che l'app mobile permette di avviare automazioni anche fuori dall'ufficio. 2) Export analytics per admin — utile per i responsabili IT che devono dimostrare il ROI di Copilot: come esportare il CSV, cosa contiene, come usarlo in Power BI. Chiudere con anticipazione ottobre: Teams recap senza registrazione in Targeted Release — la funzione più attesa di autunno per chi non vuole attivare la registrazione."
     }
   ]
 }
