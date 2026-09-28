@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "21 set 2026",
+    "updated": "28 set 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -2513,7 +2513,7 @@
       "ico": "📱",
       "name": "Cowork: skill riutilizzabili e app mobile (iOS/Android)",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da settembre 2026, <strong>Copilot Cowork</strong> introduce le <strong>skill riutilizzabili</strong> — istruzioni di comportamento che crei una volta e riusi in qualsiasi sessione Cowork — e il supporto <strong>app mobile su iOS e Android</strong>. Cowork porta l'automazione delle attività anche dal telefono, senza aprire il PC.",
       "example": "Hai creato una skill 'Segretario riunioni' che sa come formattare i verbali nel tuo stile aziendale. Quella skill è ora disponibile dall'app mobile: apri Cowork sul telefono dopo una riunione e la skill è già lì, pronta all'uso.",
       "detail": {
@@ -2546,7 +2546,7 @@
       "ico": "📊",
       "name": "Dashboard Copilot: esporta i dati di utilizzo (nuova funzione admin)",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da settembre 2026, gli amministratori M365 possono <strong>esportare dati de-identificati riga per riga</strong> dai Dashboard Copilot e Agent 365. Invece di leggere solo i grafici nell'interfaccia admin, puoi scaricare i dati grezzi per analisi personalizzate in Excel o Power BI — con la massima granularità per tracciare l'adozione di Copilot nel tempo.",
       "example": "L'IT Manager vuole un report mensile sull'adozione Copilot per reparto. Esporta il CSV con i dati de-identificati e lo elabora in Power BI: ottiene un report con filtri per data, app e attività in pochi minuti, senza screenshot dal dashboard.",
       "detail": {
@@ -2566,6 +2566,101 @@
       "rollout": {
         "stage": "ga",
         "note": "Rollout settembre 2026. Accesso richiede ruolo admin M365 con accesso al Copilot Dashboard o Agent 365 Dashboard."
+      }
+    },
+    {
+      "id": "gpt6-astra",
+      "app": "Copilot Cowork / Copilot Studio",
+      "cat": "c-chat",
+      "ico": "🚀",
+      "name": "GPT-6 Astra di OpenAI disponibile in Copilot Cowork e Copilot Studio",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da settembre 2026, <strong>GPT-6 Astra</strong> — il modello frontier di OpenAI ottimizzato per ricerca, uso del computer e creazione di documenti — è disponibile nel selettore modelli di <strong>Copilot Cowork e Copilot Studio</strong>. Astra è progettato per task complessi e di lunga durata: deleghi il lavoro e torni a revisionare il risultato quando è pronto. È il modello più potente di OpenAI disponibile in M365 Copilot, pensato per agenti e automazioni avanzate.",
+      "example": "Hai una ricerca di mercato complessa che richiede ore. Scegli GPT-6 Astra in Cowork: il modello lavora in autonomia su più passaggi, raccoglie dati e produce il report — tu torni a controllarlo quando è finito, senza stare davanti allo schermo.",
+      "detail": {
+        "steps": "1. Apri Copilot Cowork (da Copilot Chat → menu Cowork oppure cowork.microsoft.com).\n2. Nel selettore modelli integrato nella casella di prompt, cerca la sezione OpenAI e seleziona 'GPT-6 Astra'.\n3. Scrivi il tuo task — Astra è adatto a ricerche approfondite, task multi-step, creazione di documenti complessi.\n4. Il modello lavora in background: puoi monitorare lo stato e ricevere notifica quando il risultato è pronto.\n5. In Copilot Studio, scegli Astra come motore del tuo agente personalizzato per workflow aziendali avanzati.",
+        "prompts": [
+          "Analizza le tendenze di mercato nel settore [Nome Settore] degli ultimi 12 mesi, confronta i 5 competitor principali e produci un report con executive summary e raccomandazioni.",
+          "Ricerca e compila un dossier completo su [Azienda/Tema], includendo dati finanziari pubblici, notizie recenti e analisi SWOT.",
+          "Costruisci un agente Copilot Studio che gestisce le richieste di approvazione budget: raccoglie i dati dal modulo, valuta i criteri e invia la raccomandazione al responsabile."
+        ],
+        "tips": [
+          "GPT-6 Astra è un modello frontier: ha un costo computazionale elevato e consuma Copilot Credits (UBB) — usalo per task che richiedono davvero la massima qualità, non per domande rapide.",
+          "In Copilot Cowork il selettore modelli è ora integrato direttamente nella casella di prompt, con una sezione GPT e una sezione Claude: scegli il modello prima di avviare il task.",
+          "⚠️ EU/EFTA/UK: Astra segue le stesse regole dei modelli OpenAI — verifica con il tuo admin che i dati non debbano restare nel Data Boundary EU prima di usarlo per dati sensibili."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity — Available today: OpenAI GPT-6 Astra in Microsoft Copilot",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/available-today-openai-gpt-6-astra-in-microsoft-copilot/4552808",
+        "note": "Disponibile da settembre 2026 in Copilot Cowork e Copilot Studio. Modello frontier a consumo (Copilot Credits)."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA settembre 2026. Disponibile in Copilot Cowork e Copilot Studio. Consuma Copilot Credits (UBB)."
+      }
+    },
+    {
+      "id": "models-sep26",
+      "app": "Microsoft 365 Copilot",
+      "cat": "c-chat",
+      "ico": "🧠",
+      "name": "Nuovi modelli in M365 Copilot: GPT-6 Sol e Claude Opus 5.5",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da settembre 2026, <strong>GPT-6 Sol di OpenAI</strong> e <strong>Claude Opus 5.5 di Anthropic</strong> sono disponibili nel selettore modelli di <strong>Word, Excel, PowerPoint, Copilot Chat, Cowork e Copilot Studio</strong>. GPT-6 Sol sostituisce GPT-5.6 come modello OpenAI principale; Claude Opus 5.5 aggiorna Opus 5.0 con capacità di ragionamento più avanzate. Il selettore modelli ora ha una sezione GPT e una sezione Claude separate per chiarezza.",
+      "example": "Stai scrivendo una proposta commerciale importante. Provi Claude Opus 5.5 per la scrittura narrativa — trovi che il tono è più naturale. Per l'analisi dei dati nella stessa proposta usi GPT-6 Sol, che gestisce meglio i calcoli. Cambi modello con un click, nello stesso documento.",
+      "detail": {
+        "steps": "1. Apri uno qualsiasi dei prodotti M365 Copilot (Word, Excel, PowerPoint, Copilot Chat, Cowork, Copilot Studio).\n2. Trova il selettore modelli: in Cowork è integrato nella casella di prompt (sezione GPT | sezione Claude). In Word/Excel/PPT è nel pannello Copilot.\n3. Scegli GPT-6 Sol (per task analytici, dati, codice) oppure Claude Opus 5.5 (per scrittura, ragionamento complesso, testi lunghi).\n4. Il modello selezionato rimane attivo per la sessione corrente.",
+        "prompts": [
+          "Con GPT-6 Sol: analizza questi dati di vendita e identifica i trend anomali del Q3 2026 rispetto all'anno precedente.",
+          "Con Claude Opus 5.5: riscrivi questa proposta commerciale con un tono più persuasivo, mantenendo tutti i dati tecnici intatti.",
+          "Confronta le due versioni (GPT e Claude) dello stesso brief: quale cattura meglio il messaggio chiave per il cliente?"
+        ],
+        "tips": [
+          "⚠️ EU/EFTA/UK: Claude Opus 5.5 (come tutti i modelli Anthropic) è off per default nei tenant europei. Il Global Admin deve abilitarlo in M365 Admin Center → Copilot → Settings → 'Copilot in M365 apps with Anthropic models'.",
+          "GPT-6 Sol è il nuovo modello everyday di OpenAI in M365 Copilot: si attiva automaticamente quando scegli 'GPT' nel selettore. Non serve azione da parte dell'utente — aggiornamento silenzioso.",
+          "Claude Opus 5.5 è più capace di Opus 5.0 in task di ragionamento complesso e testi lunghi. Se usavi già Claude Opus 5.0, aggiorna mentalmente il confronto: la qualità è migliorata, non devi cambiare il modo di fare i prompt."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity — More Models, One Copilot (settembre 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/more-models-one-copilot/4559035",
+        "note": "GPT-6 Sol e Claude Opus 5.5 disponibili da settembre 2026 in Word, Excel, PowerPoint, Chat, Cowork, Copilot Studio."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA settembre 2026. GPT-6 Sol e Claude Opus 5.5 disponibili su tutti i prodotti M365 Copilot."
+      }
+    },
+    {
+      "id": "copilot-pricing-credits",
+      "app": "Microsoft 365 Admin",
+      "cat": "c-urgent",
+      "ico": "💰",
+      "name": "Nuovo modello prezzi Copilot: AI quotidiana fissa + AI avanzata a crediti",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Microsoft ha annunciato l'<strong>evoluzione del modello di pricing Copilot</strong>: l'AI per il lavoro quotidiano (riassunti, bozze, recap, analisi semplici) resta a <strong>prezzo fisso mensile</strong> con la licenza M365 Copilot. L'AI avanzata (agenti autonomi, Cowork su task complessi, modelli frontier come Astra) usa la <strong>fatturazione a consumo con Copilot Credits</strong>. Gli admin impostano budget per tenant, gruppo e utente — niente spese impreviste. Per default il consumo UBB è disattivato finché l'admin non crea una spending policy.",
+      "example": "Il tuo team usa Copilot ogni giorno per riassumere email, fare recap e scrivere bozze: costo fisso invariato. Il CFO usa Cowork con GPT-6 Astra per un'analisi profonda trimestrale: quel task consuma Copilot Credits, visibili nel dashboard admin con alert configurabili.",
+      "detail": {
+        "steps": "1. Come admin: vai su admin.microsoft.com → Billing → Copilot Credits (o cerca 'Spending policy' nel menu).\n2. Crea una spending policy: imposta il budget mensile per tenant, gruppo (es. Finance, Legal) e — all'interno del gruppo — per singolo utente.\n3. Configura gli alert: ricevi una notifica quando la spesa supera una soglia (es. 80% del budget mensile).\n4. Per gli utenti: nessuna azione richiesta. I task quotidiani continuano senza cambiamenti. I task avanzati (Cowork con modelli frontier, agenti autonomi) mostrano una stima di crediti prima di avviarsi, se configurato.\n5. Per monitorare: usa il Copilot Dashboard per vedere la spesa UBB disaggregata per utente e tipo di task.",
+        "prompts": [],
+        "tips": [
+          "⚠️ UBB disattivato per default: se non crei una spending policy, i task a consumo non si avviano. Nessuna sorpresa di billing senza consenso admin esplicito.",
+          "I task 'saturi' (recap brevi, bozze standard, riassunti email) restano sempre nel piano fisso: non consumano Credits. Solo i task con modelli frontier o agenti autonomi multi-step usano UBB.",
+          "Per capire se un task usa Credits o il piano fisso: in Cowork il selettore mostra un'icona '€' accanto ai modelli frontier come GPT-6 Astra e Fable. I modelli standard (GPT-6 Sol, Claude Opus 5.5) rientrano nel piano fisso."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity — Evolution of the Copilot pricing model (settembre 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/evolution-of-the-copilot-pricing-model/4559416",
+        "note": "Annuncio ufficiale Microsoft settembre 2026. UBB attivo solo con spending policy admin. Prezzi fissi invariati per uso quotidiano."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA settembre 2026. Spending policy admin richiesta per attivare il consumo UBB. Piano fisso mensile invariato per uso quotidiano."
       }
     }
   ],
@@ -2794,6 +2889,15 @@
       "tag": "Cowork · Admin · Anticipazione ottobre",
       "cov": "Cowork su iOS/Android + skill riutilizzabili (GA settembre) · Export dati de-identificati dal Copilot Dashboard (admin) · Anticipazione ottobre: Teams recap senza registrazione in Targeted Release",
       "note": "Due angoli principali: 1) Cowork mobile + skill riutilizzabili — il cambiamento più pratico per gli utenti abituali di Cowork: spiegare come creare una skill una volta e usarla da qualsiasi dispositivo, con esempio di 'skill verbali' o 'skill analisi email'. Sottolineare che l'app mobile permette di avviare automazioni anche fuori dall'ufficio. 2) Export analytics per admin — utile per i responsabili IT che devono dimostrare il ROI di Copilot: come esportare il CSV, cosa contiene, come usarlo in Power BI. Chiudere con anticipazione ottobre: Teams recap senza registrazione in Targeted Release — la funzione più attesa di autunno per chi non vuole attivare la registrazione."
+    },
+    {
+      "w": "W26",
+      "d": "29 set–3 ott",
+      "hot": true,
+      "theme": "Nuovi modelli, nuovi prezzi: settembre chiude con il Copilot più potente e trasparente",
+      "tag": "Modelli · Pricing · Cowork",
+      "cov": "GPT-6 Astra in Cowork (frontier a crediti) · GPT-6 Sol + Claude Opus 5.5 (everyday, piano fisso) · Nuovo pricing Copilot Credits vs piano fisso",
+      "note": "Tre novità grandi da sintetizzare in modo chiaro: 1) GPT-6 Astra — il 'grande lavoro' delegato a un modello che non ti chiede di restare davanti allo schermo. Spiegare il concetto 'frontier a consumo' senza spaventare: è attivo solo se l'admin crea un budget. Esempio concreto di task da Astra vs task da Sol. 2) GPT-6 Sol + Opus 5.5 — aggiornamento silenzioso ma significativo: spiegare la differenza pratica rispetto ai modelli precedenti e quando scegliere GPT vs Claude. 3) Nuovo pricing — svelare il modello senza tecnicismi: 'quello che fai ogni giorno costa uguale; quello che deleghi ore costa a crediti, e l'IT controlla il budget'. Chiudere con mappa pratica 'quale modello per quale task' — la guida tascabile di fine settembre 2026."
     }
   ]
 }
