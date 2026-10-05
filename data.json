@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "28 set 2026",
+    "updated": "5 ott 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1241,13 +1241,13 @@
       "name": "Teams: riepilogo AI della riunione senza salvare la registrazione",
       "st": "soon",
       "isNew": false,
-      "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>⚠️ Data posticipata (aggiornamento 27 lug 2026): Targeted Release inizio ottobre 2026, GA worldwide metà ottobre 2026.</strong>",
+      "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>✅ Targeted Release in rollout da inizio ottobre 2026. GA worldwide attesa metà ottobre 2026.</strong>",
       "example": "La tua azienda non consente la registrazione delle riunioni. Attivi il 'Recap senza transcript' prima della call: Copilot cattura i punti chiave in tempo reale e li condivide con i partecipanti dopo la riunione — niente registrazione salvata, ma niente da perdere.",
       "detail": {
         "steps": "1. Prima della riunione, vai su Opzioni riunione → Copilot e altri AI → attiva 'Recap senza transcript'.\n2. Oppure, durante la riunione, usa il toggle AI in alto a sinistra per attivare la funzione.\n3. Copilot cattura il contesto audio in tempo reale — nessuna trascrizione viene salvata.\n4. Dopo la riunione, il riepilogo AI è disponibile nella scheda Recap per tutti i partecipanti con licenza Copilot.\n5. Il documento di riepilogo viene archiviato nel OneDrive dell'organizzatore per 120 giorni (configurabile dall'admin in admin center).",
         "prompts": [],
         "tips": [
-          "⏳ RITARDO: Targeted Release posticipata a inizio ottobre 2026. GA worldwide: metà ottobre 2026 (aggiornamento MC1275312 del 27 luglio 2026).",
+          "✅ IN ROLLOUT: Targeted Release avviata inizio ottobre 2026. GA worldwide attesa metà ottobre 2026. Verifica la disponibilità nel Message Center (MC1275312) su admin.microsoft.com.",
           "Nessuna trascrizione o registrazione viene salvata: il recap è disponibile come documento post-riunione nel OneDrive dell'organizzatore per 120 giorni (configurabile).",
           "La funzione richiede licenza Microsoft 365 Copilot. I partecipanti senza licenza Copilot non possono visualizzare il riepilogo AI dopo la riunione."
         ]
@@ -1255,11 +1255,13 @@
       "source": {
         "label": "MC1275312 — Microsoft Teams: AI meeting recap without transcript (Message Center)",
         "url": "https://admin.microsoft.com",
-        "note": "⚠️ RITARDO: Targeted Release posticipata a inizio ottobre 2026. GA worldwide: metà ottobre 2026. Accesso richiede ruolo Admin M365."
+        "note": "Targeted Release in rollout da inizio ottobre 2026. GA worldwide: metà ottobre 2026. Accesso richiede ruolo Admin M365."
       },
       "rollout": {
-        "stage": "in-dev",
-        "note": "⚠️ RITARDO: Targeted Release posticipata a inizio ottobre 2026. GA worldwide: metà ottobre 2026 (aggiornamento MC1275312 del 27 luglio 2026)."
+        "stage": "preview",
+        "changedFrom": "in-dev",
+        "changedOn": "5 ott 2026",
+        "note": "Targeted Release in rollout da inizio ottobre 2026. GA worldwide attesa metà ottobre 2026 (MC1275312)."
       }
     },
     {
@@ -2575,7 +2577,7 @@
       "ico": "🚀",
       "name": "GPT-6 Astra di OpenAI disponibile in Copilot Cowork e Copilot Studio",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da settembre 2026, <strong>GPT-6 Astra</strong> — il modello frontier di OpenAI ottimizzato per ricerca, uso del computer e creazione di documenti — è disponibile nel selettore modelli di <strong>Copilot Cowork e Copilot Studio</strong>. Astra è progettato per task complessi e di lunga durata: deleghi il lavoro e torni a revisionare il risultato quando è pronto. È il modello più potente di OpenAI disponibile in M365 Copilot, pensato per agenti e automazioni avanzate.",
       "example": "Hai una ricerca di mercato complessa che richiede ore. Scegli GPT-6 Astra in Cowork: il modello lavora in autonomia su più passaggi, raccoglie dati e produce il report — tu torni a controllarlo quando è finito, senza stare davanti allo schermo.",
       "detail": {
@@ -2608,7 +2610,7 @@
       "ico": "🧠",
       "name": "Nuovi modelli in M365 Copilot: GPT-6 Sol e Claude Opus 5.5",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da settembre 2026, <strong>GPT-6 Sol di OpenAI</strong> e <strong>Claude Opus 5.5 di Anthropic</strong> sono disponibili nel selettore modelli di <strong>Word, Excel, PowerPoint, Copilot Chat, Cowork e Copilot Studio</strong>. GPT-6 Sol sostituisce GPT-5.6 come modello OpenAI principale; Claude Opus 5.5 aggiorna Opus 5.0 con capacità di ragionamento più avanzate. Il selettore modelli ora ha una sezione GPT e una sezione Claude separate per chiarezza.",
       "example": "Stai scrivendo una proposta commerciale importante. Provi Claude Opus 5.5 per la scrittura narrativa — trovi che il tono è più naturale. Per l'analisi dei dati nella stessa proposta usi GPT-6 Sol, che gestisce meglio i calcoli. Cambi modello con un click, nello stesso documento.",
       "detail": {
@@ -2641,7 +2643,7 @@
       "ico": "💰",
       "name": "Nuovo modello prezzi Copilot: AI quotidiana fissa + AI avanzata a crediti",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Microsoft ha annunciato l'<strong>evoluzione del modello di pricing Copilot</strong>: l'AI per il lavoro quotidiano (riassunti, bozze, recap, analisi semplici) resta a <strong>prezzo fisso mensile</strong> con la licenza M365 Copilot. L'AI avanzata (agenti autonomi, Cowork su task complessi, modelli frontier come Astra) usa la <strong>fatturazione a consumo con Copilot Credits</strong>. Gli admin impostano budget per tenant, gruppo e utente — niente spese impreviste. Per default il consumo UBB è disattivato finché l'admin non crea una spending policy.",
       "example": "Il tuo team usa Copilot ogni giorno per riassumere email, fare recap e scrivere bozze: costo fisso invariato. Il CFO usa Cowork con GPT-6 Astra per un'analisi profonda trimestrale: quel task consuma Copilot Credits, visibili nel dashboard admin con alert configurabili.",
       "detail": {
@@ -2661,6 +2663,138 @@
       "rollout": {
         "stage": "ga",
         "note": "GA settembre 2026. Spending policy admin richiesta per attivare il consumo UBB. Piano fisso mensile invariato per uso quotidiano."
+      }
+    },
+    {
+      "id": "copilot-federated-connectors",
+      "app": "Microsoft 365 Copilot",
+      "cat": "c-other",
+      "ico": "🔌",
+      "name": "Federated Copilot Connectors GA: dati esterni in Researcher, Chat ed Excel via MCP",
+      "st": "avail",
+      "isNew": true,
+      "impact": "<strong>Federated Copilot Connectors</strong> è disponibile in GA da settembre 2026. Basato sul protocollo <strong>MCP (Model Context Protocol)</strong>, permette a Copilot di accedere in tempo reale a dati di applicazioni esterne — CRM, ERP, strumenti personalizzati — direttamente dall'interno di <strong>Researcher, Copilot Chat ed Excel</strong>. A differenza dei Graph Connectors tradizionali (che indicizzano dati statici), i Federated Connectors interrogano la fonte live al momento della richiesta: i risultati rispecchiano sempre lo stato corrente del sistema esterno.",
+      "example": "Il tuo team di vendita usa Salesforce. Configuri un Federated Connector MCP per Salesforce: quando un commerciale chiede a Copilot Chat 'Quali opportunità sono aperte su Acme?' riceve dati live da Salesforce senza uscire da Teams o aprire un'altra app.",
+      "detail": {
+        "steps": "1. Vai su Microsoft 365 Admin Center → Copilot → Connectors.\n2. Seleziona 'Federated Connectors' e scegli il connettore per il tuo sistema esterno (Salesforce, ServiceNow, sistemi custom via MCP).\n3. Configura l'autenticazione (OAuth/API key) e i permessi: i dati restano nella fonte, Copilot accede on-demand.\n4. Pubblica il connettore per i gruppi di utenti autorizzati.\n5. Gli utenti trovano i dati del connettore nelle risposte di Researcher, Chat ed Excel senza configurazioni aggiuntive.",
+        "prompts": [
+          "Quali ticket aperti su ServiceNow riguardano il progetto [Nome Progetto] con priorità alta?",
+          "Mostrami le ultime 5 opportunità chiuse nel CRM per il cliente [Nome Cliente] con i dettagli del contratto.",
+          "In Excel: aggiorna questa tabella con i dati live dal connettore vendite per il Q3 2026."
+        ],
+        "tips": [
+          "I Federated Connectors usano MCP (Model Context Protocol) — uno standard aperto che permette agli sviluppatori di creare connettori custom per qualsiasi sistema con un'API REST.",
+          "A differenza dei Graph Connectors, i Federated Connectors non indicizzano i dati nel tenant: la query avviene live. Questo garantisce dati sempre aggiornati ma richiede che la fonte esterna sia disponibile al momento della richiesta.",
+          "⚠️ EU/EFTA/UK: verifica con il tuo admin che il connettore non trasferisca dati sensibili fuori dall'EU Data Boundary. I permessi del connettore ereditano le regole DLP del tenant."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity — What's New in Microsoft Copilot – September 2026",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--september-2026/4559107",
+        "note": "GA settembre 2026. Federated Copilot Connectors disponibili in Researcher, Copilot Chat ed Excel via protocollo MCP."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA settembre 2026. Disponibile in Researcher, Copilot Chat ed Excel. Configurazione tramite M365 Admin Center."
+      }
+    },
+    {
+      "id": "claude-fable51",
+      "app": "Copilot Cowork / Copilot Studio",
+      "cat": "c-chat",
+      "ico": "🎭",
+      "name": "Claude Fable 5.1 di Anthropic disponibile in Copilot Cowork e Copilot Studio",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da <strong>14 settembre 2026</strong>, <strong>Claude Fable 5.1 di Anthropic</strong> è disponibile nel selettore modelli di <strong>Copilot Cowork e Copilot Studio</strong>. Fable 5.1 è il modello creativo-narrativo di Anthropic ottimizzato per scrittura espressiva, storytelling, comunicazione persuasiva e contenuti di marketing. Affianca Claude Opus 5.5 (ragionamento complesso) e i modelli GPT nel selettore, ampliando la scelta per chi lavora su contenuti creativi e comunicazione d'impresa.",
+      "example": "Devi scrivere la comunicazione di lancio di un nuovo prodotto: tono coinvolgente, messaggio chiaro, call-to-action efficace. Scegli Fable 5.1 in Cowork — il modello è addestrato per scrittura narrativa e persuasiva. Confronti la bozza con quella di Opus 5.5 e scegli la versione migliore.",
+      "detail": {
+        "steps": "1. Apri Copilot Cowork (da Copilot Chat → menu Cowork oppure cowork.microsoft.com).\n2. Nel selettore modelli nella casella di prompt, cerca la sezione Claude e seleziona 'Claude Fable 5.1'.\n3. Usa Fable 5.1 per task creativi: comunicati stampa, post social, testi marketing, storytelling aziendale.\n4. In Copilot Studio, scegli Fable 5.1 come motore di un agente per la generazione di contenuti creativi su misura.",
+        "prompts": [
+          "Scrivi un comunicato stampa per il lancio di [Prodotto/Servizio]: tono entusiasta ma professionale, 300 parole, con quote del CEO.",
+          "Trasforma questi bullet point tecnici in una storia coinvolgente per i clienti di [Azienda]: focus sui benefici, non sulle feature.",
+          "Crea 5 varianti di subject line per una email di nurturing al segmento [Target]: tono caldo, curiosità, call-to-action chiara."
+        ],
+        "tips": [
+          "Fable 5.1 eccelle in: scrittura creativa, narrativa d'impresa, comunicazione di marketing, contenuti per social e email. Per analisi dati o ragionamento complesso, usa GPT-6 Sol o Claude Opus 5.5.",
+          "Nel selettore modelli di Cowork la sezione Claude mostra ora tre opzioni: Opus 5.5 (ragionamento), Fable 5.1 (creativo), e il modello di default. Sperimenta qual è più efficace per il tuo caso d'uso specifico.",
+          "⚠️ EU/EFTA/UK: Claude Fable 5.1 (come tutti i modelli Anthropic) è off per default nei tenant europei. Il Global Admin deve abilitarlo in M365 Admin Center → Copilot → Settings → 'Copilot in M365 apps with Anthropic models'."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity — Available today: Anthropic Claude Fable 5.1 in Microsoft Copilot",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-anthropic-claude-fable-5-1-in-microsoft-copilot/4551974",
+        "note": "Disponibile da 14 settembre 2026 in Copilot Cowork e Copilot Studio. Modello creativo-narrativo di Anthropic."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA 14 settembre 2026. Disponibile in Copilot Cowork e Copilot Studio nel selettore modelli sezione Claude."
+      }
+    },
+    {
+      "id": "copilot-home-code",
+      "app": "Microsoft Copilot",
+      "cat": "c-chat",
+      "ico": "🏠",
+      "name": "La nuova app Copilot: Home, Code e Autopilot in anteprima",
+      "st": "soon",
+      "isNew": true,
+      "impact": "Microsoft ha annunciato il <strong>25 settembre 2026</strong> una <strong>nuova esperienza per l'app Copilot</strong> con tre aree distinte: <strong>Home</strong> (dashboard personale con accesso rapido a task, file e continuazioni conversazioni), <strong>Code</strong> (ambiente di sviluppo AI-first con suggerimenti contestuali, debug e generazione di codice), e <strong>Autopilot</strong> (modalità agente autonomo che esegue task complessi multi-step in background). La nuova app è in anteprima e si affianca a Copilot Cowork come esperienza avanzata per utenti power.",
+      "example": "Apri l'app Copilot e trovi in Home tutte le conversazioni e i file su cui stavi lavorando. Passi a Code per far correggere un errore in uno script Python: Copilot spiega il bug e propone la fix. Avvii Autopilot per una ricerca di mercato che richiede ore: torni quando è pronto.",
+      "detail": {
+        "steps": "1. Aggiorna l'app Microsoft Copilot su Windows, iOS o Android all'ultima versione disponibile.\n2. Accedi con il tuo account Microsoft 365 (licenza Copilot richiesta per le funzioni avanzate).\n3. Esplora le tre aree: Home (accesso rapido a task e file recenti), Code (sviluppo assistito AI), Autopilot (task autonomi in background).\n4. In Autopilot: descrivi il task, imposta parametri e lascia che Copilot lavori — ricevi una notifica al completamento.\n5. L'anteprima è in rollout graduale: se non vedi le nuove aree, attendi l'aggiornamento automatico.",
+        "prompts": [
+          "In Code: analizza questo script Python e dimmi perché la funzione [nome_funzione] restituisce un risultato inatteso con input vuoto.",
+          "In Autopilot: ricerca le ultime notizie su [Settore] nelle ultime 2 settimane, sintetizza i trend principali e prepara un report di 1 pagina.",
+          "In Home: riprendi la conversazione su [Progetto] di ieri e aggiungici i punti che ho annotato in questo documento."
+        ],
+        "tips": [
+          "La sezione Code è pensata per sviluppatori e analisti: supporta Python, JavaScript, SQL e altri linguaggi. Non sostituisce un IDE completo ma è ideale per review rapide e debugging in context.",
+          "Autopilot è simile a Copilot Cowork ma integrato nell'app consumer/prosumer Copilot — utile per chi non ha accesso a Cowork aziendale o vuole un'esperienza semplificata.",
+          "⚠️ ANTEPRIMA: la nuova app è in rollout progressivo. Non tutte le funzioni sono disponibili subito per tutti. Tieni aggiornata l'app Copilot per ricevere le novità man mano che vengono rilasciate."
+        ]
+      },
+      "source": {
+        "label": "Microsoft Blog — Introducing the new Copilot with Home, Code and Autopilot",
+        "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+        "note": "Annuncio Microsoft Blog 25 settembre 2026. Nuova app Copilot in anteprima con Home, Code e Autopilot."
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Preview annunciata il 25 settembre 2026. Rollout progressivo su Windows, iOS e Android. GA non ancora annunciata."
+      }
+    },
+    {
+      "id": "sp-copilot-oct26",
+      "app": "SharePoint",
+      "cat": "c-other",
+      "ico": "📄",
+      "name": "SharePoint Copilot ottobre 2026: PDF pagina per pagina, storico versioni e invio email",
+      "st": "soon",
+      "isNew": true,
+      "impact": "L'aggiornamento <strong>ottobre 2026 di Copilot in SharePoint</strong> porta quattro novità principali: <strong>analisi PDF a livello di pagina</strong> (Copilot identifica esattamente in quale pagina si trova un'informazione), <strong>accesso allo storico versioni dei file</strong> (Copilot può confrontare versioni e spiegare le differenze), <strong>generazione di immagini</strong> direttamente in SharePoint Pages tramite Designer, e <strong>invio email contestuale</strong> da SharePoint (Copilot bozza e invia email Outlook basandosi sul contenuto della pagina o del documento selezionato). Queste funzioni si sommano alle skill riutilizzabili e all'analisi immagini in batch già introdotte a settembre.",
+      "example": "Hai un contratto PDF di 80 pagine caricato in SharePoint. Chiedi a Copilot 'A pagina 34 ci sono penali per ritardo?' — Copilot identifica la sezione specifica senza che tu debba cercare manualmente. Poi generi una bozza di email al fornitore basata proprio su quella clausola, senza uscire da SharePoint.",
+      "detail": {
+        "steps": "1. Apri un documento PDF in SharePoint e avvia Copilot dal pannello laterale.\n2. Fai domande specifiche su sezioni o pagine: Copilot cita la pagina esatta dove ha trovato l'informazione.\n3. Per lo storico versioni: seleziona un file → Copilot → 'Confronta con versione precedente' e specifica quale.\n4. Per inviare email: seleziona contenuto in una SharePoint Page → Copilot → 'Invia come email' → modifica la bozza e invia.\n5. Per generare immagini in Pages: usa il menu Inserisci → Designer AI (funzione abilitata dall'admin in SharePoint Admin Center).",
+        "prompts": [
+          "In questo contratto PDF, trova tutte le clausole relative a penali e SLA — indica il numero di pagina per ciascuna.",
+          "Confronta la versione del 1 ottobre con la versione attuale di questo documento: quali sezioni sono cambiate e in che modo?",
+          "Bozza una email da inviare al team di progetto con i punti chiave di questa pagina SharePoint."
+        ],
+        "tips": [
+          "L'analisi PDF pagina per pagina funziona meglio con PDF 'nativi' (creati da Word/Excel/PPT): per i PDF scansionati la qualità dipende dalla qualità OCR del documento.",
+          "L'invio email da SharePoint usa il tuo account Outlook: l'email viene bozzata da Copilot e tu hai sempre l'anteprima prima dell'invio. Non vengono inviate email automatiche senza conferma.",
+          "⚠️ Alcune funzioni (generazione immagini, invio email) richiedono abilitazione da parte dell'admin in SharePoint Admin Center. Verifica con il tuo IT se le funzioni non sono visibili."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity SP Blog — What's New in Copilot in SharePoint – October 2026",
+        "url": "https://techcommunity.microsoft.com/blog/spblog/what%E2%80%99s-new-in-copilot-in-sharepoint-october-2026/4535423",
+        "note": "Aggiornamento ottobre 2026 di Copilot in SharePoint. PDF pagina per pagina, storico versioni, generazione immagini, invio email."
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Preview ottobre 2026. Rollout progressivo in SharePoint Online. Alcune funzioni richiedono abilitazione admin."
       }
     }
   ],
@@ -2898,6 +3032,15 @@
       "tag": "Modelli · Pricing · Cowork",
       "cov": "GPT-6 Astra in Cowork (frontier a crediti) · GPT-6 Sol + Claude Opus 5.5 (everyday, piano fisso) · Nuovo pricing Copilot Credits vs piano fisso",
       "note": "Tre novità grandi da sintetizzare in modo chiaro: 1) GPT-6 Astra — il 'grande lavoro' delegato a un modello che non ti chiede di restare davanti allo schermo. Spiegare il concetto 'frontier a consumo' senza spaventare: è attivo solo se l'admin crea un budget. Esempio concreto di task da Astra vs task da Sol. 2) GPT-6 Sol + Opus 5.5 — aggiornamento silenzioso ma significativo: spiegare la differenza pratica rispetto ai modelli precedenti e quando scegliere GPT vs Claude. 3) Nuovo pricing — svelare il modello senza tecnicismi: 'quello che fai ogni giorno costa uguale; quello che deleghi ore costa a crediti, e l'IT controlla il budget'. Chiudere con mappa pratica 'quale modello per quale task' — la guida tascabile di fine settembre 2026."
+    },
+    {
+      "w": "W27",
+      "d": "6–10 ott",
+      "hot": true,
+      "theme": "La nuova app Copilot: Home, Code e il futuro con Autopilot",
+      "tag": "Copilot App · Modelli · SharePoint · Teams",
+      "cov": "Nuova app Copilot con Home, Code e Autopilot (preview) · Claude Fable 5.1 in Cowork · Federated Connectors GA · SharePoint Copilot ottobre · Teams recap senza registrazione in Targeted Release",
+      "note": "Settimana densa con cinque novità da bilanciare: 1) Nuova app Copilot (Home/Code/Autopilot) — la notizia di apertura: presentare le tre aree con esempi concreti di uso quotidiano. Autopilot come evoluzione naturale di Cowork — 'Copilot che lavora anche quando tu non ci sei'. 2) Fable 5.1 in Cowork — il nuovo modello creativo: quando sceglierlo vs Opus 5.5 (ragionamento) vs GPT-6 Sol (everyday). Aggiornare la mappa modelli tascabile. 3) Federated Connectors GA — spiegare il salto da Graph Connectors (dati statici) a Federated (live). Esempio con CRM Salesforce o ERP. 4) SharePoint Copilot ottobre — focus sui due benefici più pratici: PDF pagina per pagina (con esempio contratto) e invio email contestuale. 5) Teams recap senza registrazione: finalmente in rollout su Targeted Release. Messaggio: 'se la tua azienda non può registrare le riunioni, questa funzione fa per te — attiva ora per il tuo anello'. Tono: ottobre apre con una settimana di annunci importanti — concentrarsi sui benefici concreti, non sull'elenco funzioni."
     }
   ]
 }
