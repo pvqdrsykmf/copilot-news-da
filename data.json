@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "5 ott 2026",
+    "updated": "12 ott 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1259,8 +1259,6 @@
       },
       "rollout": {
         "stage": "preview",
-        "changedFrom": "in-dev",
-        "changedOn": "5 ott 2026",
         "note": "Targeted Release in rollout da inizio ottobre 2026. GA worldwide attesa metà ottobre 2026 (MC1275312)."
       }
     },
@@ -2672,7 +2670,7 @@
       "ico": "🔌",
       "name": "Federated Copilot Connectors GA: dati esterni in Researcher, Chat ed Excel via MCP",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "<strong>Federated Copilot Connectors</strong> è disponibile in GA da settembre 2026. Basato sul protocollo <strong>MCP (Model Context Protocol)</strong>, permette a Copilot di accedere in tempo reale a dati di applicazioni esterne — CRM, ERP, strumenti personalizzati — direttamente dall'interno di <strong>Researcher, Copilot Chat ed Excel</strong>. A differenza dei Graph Connectors tradizionali (che indicizzano dati statici), i Federated Connectors interrogano la fonte live al momento della richiesta: i risultati rispecchiano sempre lo stato corrente del sistema esterno.",
       "example": "Il tuo team di vendita usa Salesforce. Configuri un Federated Connector MCP per Salesforce: quando un commerciale chiede a Copilot Chat 'Quali opportunità sono aperte su Acme?' riceve dati live da Salesforce senza uscire da Teams o aprire un'altra app.",
       "detail": {
@@ -2705,7 +2703,7 @@
       "ico": "🎭",
       "name": "Claude Fable 5.1 di Anthropic disponibile in Copilot Cowork e Copilot Studio",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da <strong>14 settembre 2026</strong>, <strong>Claude Fable 5.1 di Anthropic</strong> è disponibile nel selettore modelli di <strong>Copilot Cowork e Copilot Studio</strong>. Fable 5.1 è il modello creativo-narrativo di Anthropic ottimizzato per scrittura espressiva, storytelling, comunicazione persuasiva e contenuti di marketing. Affianca Claude Opus 5.5 (ragionamento complesso) e i modelli GPT nel selettore, ampliando la scelta per chi lavora su contenuti creativi e comunicazione d'impresa.",
       "example": "Devi scrivere la comunicazione di lancio di un nuovo prodotto: tono coinvolgente, messaggio chiaro, call-to-action efficace. Scegli Fable 5.1 in Cowork — il modello è addestrato per scrittura narrativa e persuasiva. Confronti la bozza con quella di Opus 5.5 e scegli la versione migliore.",
       "detail": {
@@ -2738,7 +2736,7 @@
       "ico": "🏠",
       "name": "La nuova app Copilot: Home, Code e Autopilot in anteprima",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "Microsoft ha annunciato il <strong>25 settembre 2026</strong> una <strong>nuova esperienza per l'app Copilot</strong> con tre aree distinte: <strong>Home</strong> (dashboard personale con accesso rapido a task, file e continuazioni conversazioni), <strong>Code</strong> (ambiente di sviluppo AI-first con suggerimenti contestuali, debug e generazione di codice), e <strong>Autopilot</strong> (modalità agente autonomo che esegue task complessi multi-step in background). La nuova app è in anteprima e si affianca a Copilot Cowork come esperienza avanzata per utenti power.",
       "example": "Apri l'app Copilot e trovi in Home tutte le conversazioni e i file su cui stavi lavorando. Passi a Code per far correggere un errore in uno script Python: Copilot spiega il bug e propone la fix. Avvii Autopilot per una ricerca di mercato che richiede ore: torni quando è pronto.",
       "detail": {
@@ -2771,7 +2769,7 @@
       "ico": "📄",
       "name": "SharePoint Copilot ottobre 2026: PDF pagina per pagina, storico versioni e invio email",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "L'aggiornamento <strong>ottobre 2026 di Copilot in SharePoint</strong> porta quattro novità principali: <strong>analisi PDF a livello di pagina</strong> (Copilot identifica esattamente in quale pagina si trova un'informazione), <strong>accesso allo storico versioni dei file</strong> (Copilot può confrontare versioni e spiegare le differenze), <strong>generazione di immagini</strong> direttamente in SharePoint Pages tramite Designer, e <strong>invio email contestuale</strong> da SharePoint (Copilot bozza e invia email Outlook basandosi sul contenuto della pagina o del documento selezionato). Queste funzioni si sommano alle skill riutilizzabili e all'analisi immagini in batch già introdotte a settembre.",
       "example": "Hai un contratto PDF di 80 pagine caricato in SharePoint. Chiedi a Copilot 'A pagina 34 ci sono penali per ritardo?' — Copilot identifica la sezione specifica senza che tu debba cercare manualmente. Poi generi una bozza di email al fornitore basata proprio su quella clausola, senza uscire da SharePoint.",
       "detail": {
@@ -2795,6 +2793,72 @@
       "rollout": {
         "stage": "preview",
         "note": "Preview ottobre 2026. Rollout progressivo in SharePoint Online. Alcune funzioni richiedono abilitazione admin."
+      }
+    },
+    {
+      "id": "copilot-regenerate",
+      "app": "Microsoft 365 Copilot",
+      "cat": "c-chat",
+      "ico": "🔄",
+      "name": "Azione Rigenera: risposta alternativa o cambio modello senza reinserire il prompt",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da ottobre 2026, <strong>Microsoft 365 Copilot</strong> introduce l'azione <strong>Rigenera</strong> disponibile sotto ogni risposta. Con un click puoi ottenere una risposta alternativa con lo stesso modello oppure passare a un modello diverso — senza dover riscrivere o incollare di nuovo il prompt. La funzione riduce il tempo perso su risposte non ottimali e facilita il confronto tra i modelli disponibili (GPT, Claude, Gemini) per trovare quello più adatto al tuo caso d'uso.",
+      "example": "Hai chiesto a Copilot di bozze un'email di escalation. La risposta è troppo formale. Invece di reinserire il prompt, clicchi 'Rigenera' → 'Prova con Claude Opus 5.5': ottieni una versione più naturale in secondi — senza perdere il contesto della conversazione.",
+      "detail": {
+        "steps": "1. Invia il tuo prompt a Copilot Chat o Copilot in qualsiasi app M365.\n2. Sotto la risposta ricevuta, individua il pulsante 'Rigenera' (icona frecce circolari).\n3. Clicca 'Rigenera' per ricevere una risposta alternativa con lo stesso modello.\n4. Oppure usa il menu a tendina accanto a 'Rigenera' per selezionare un modello diverso.\n5. Copilot genera una nuova risposta senza ripetere la digitazione del prompt.",
+        "prompts": [
+          "Rigenera questa risposta in stile più colloquiale",
+          "Prova con un altro modello per confrontare le risposte",
+          "Ottieni una risposta alternativa più concisa"
+        ],
+        "tips": [
+          "La funzione è disponibile in Copilot Chat e nelle app Microsoft 365 che integrano Copilot.",
+          "Puoi rigenerare più volte la stessa risposta per scegliere quella migliore.",
+          "Cambiare modello nella rigenerazione non modifica la selezione predefinita per le conversazioni future."
+        ]
+      },
+      "source": {
+        "label": "Microsoft 365 Copilot — Release Notes ottobre 2026",
+        "url": "https://learn.microsoft.com/copilot/microsoft-365/release-notes",
+        "note": "Azione Rigenera disponibile in GA da ottobre 2026 in Copilot Chat e app M365."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA ottobre 2026. Disponibile in Copilot Chat e nelle app M365 integrate."
+      }
+    },
+    {
+      "id": "notebooks-oct26",
+      "app": "Microsoft 365 Copilot",
+      "cat": "c-chat",
+      "ico": "📓",
+      "name": "Notebooks ottobre 2026: modifica file Office, report interattivi e nuova navigazione",
+      "st": "soon",
+      "isNew": true,
+      "impact": "<strong>Notebooks</strong> in Microsoft 365 Copilot si aggiorna ad ottobre 2026 con tre novità chiave in preview (Frontier): <strong>modifica file Office direttamente da Notebooks</strong> (apri e modifica Word, Excel, PowerPoint senza uscire dall'interfaccia), <strong>report interattivi</strong> (i risultati delle analisi Copilot diventano report condivisibili con grafici e tabelle live), e <strong>navigazione rinnovata</strong> (pannello laterale riprogettato per accedere più velocemente a notebook recenti, template e ricerche salvate). Queste funzioni ampliano Notebooks da strumento di ricerca a hub di produttività completo.",
+      "example": "Stai analizzando dati di vendita in un Notebook. Copilot genera una tabella riepilogativa. Con ottobre 2026 puoi: (1) aprire il file Excel originale da Notebooks e correggere un dato, (2) esportare la tabella come report interattivo condivisibile con il tuo team, (3) ritrovare il notebook in 2 clic grazie alla navigazione rinnovata.",
+      "detail": {
+        "steps": "1. Apri Microsoft 365 Copilot e vai nella sezione Notebooks.\n2. Crea un nuovo notebook o apri uno esistente.\n3. Collega un file Office (Word/Excel/PowerPoint) tramite il pulsante '+ Aggiungi file'.\n4. Usa Copilot per analizzare il contenuto: ora puoi anche modificare il file direttamente dalla stessa schermata.\n5. Per creare un report interattivo, clicca 'Esporta come report' sulla risposta Copilot desiderata.\n6. Condividi il report con colleghi tramite link o email direttamente da Notebooks.",
+        "prompts": [
+          "Analizza questo file Excel e crea un report interattivo con i trend principali",
+          "Modifica il titolo del documento Word collegato a questo notebook",
+          "Genera una sintesi condivisibile dei risultati di questo notebook"
+        ],
+        "tips": [
+          "✅ IN PREVIEW (Frontier): disponibile da ottobre 2026 per gli utenti nel programma Frontier. GA prevista nei mesi successivi.",
+          "La modifica diretta di file Office da Notebooks richiede che il file sia salvato in OneDrive o SharePoint.",
+          "I report interattivi sono visualizzabili anche da colleghi senza licenza Copilot, ma non modificabili."
+        ]
+      },
+      "source": {
+        "label": "TechCommunity — What's New in Notebooks – October 2026 (9 ott 2026)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-notebooks--october-2026/4559105",
+        "note": "Annuncio ufficiale Microsoft: modifica file Office, report interattivi, navigazione rinnovata. Preview Frontier ottobre 2026."
+      },
+      "rollout": {
+        "stage": "preview",
+        "note": "Preview Frontier ottobre 2026. GA worldwide non ancora annunciata."
       }
     }
   ],
@@ -3041,6 +3105,15 @@
       "tag": "Copilot App · Modelli · SharePoint · Teams",
       "cov": "Nuova app Copilot con Home, Code e Autopilot (preview) · Claude Fable 5.1 in Cowork · Federated Connectors GA · SharePoint Copilot ottobre · Teams recap senza registrazione in Targeted Release",
       "note": "Settimana densa con cinque novità da bilanciare: 1) Nuova app Copilot (Home/Code/Autopilot) — la notizia di apertura: presentare le tre aree con esempi concreti di uso quotidiano. Autopilot come evoluzione naturale di Cowork — 'Copilot che lavora anche quando tu non ci sei'. 2) Fable 5.1 in Cowork — il nuovo modello creativo: quando sceglierlo vs Opus 5.5 (ragionamento) vs GPT-6 Sol (everyday). Aggiornare la mappa modelli tascabile. 3) Federated Connectors GA — spiegare il salto da Graph Connectors (dati statici) a Federated (live). Esempio con CRM Salesforce o ERP. 4) SharePoint Copilot ottobre — focus sui due benefici più pratici: PDF pagina per pagina (con esempio contratto) e invio email contestuale. 5) Teams recap senza registrazione: finalmente in rollout su Targeted Release. Messaggio: 'se la tua azienda non può registrare le riunioni, questa funzione fa per te — attiva ora per il tuo anello'. Tono: ottobre apre con una settimana di annunci importanti — concentrarsi sui benefici concreti, non sull'elenco funzioni."
+    },
+    {
+      "w": "W28",
+      "d": "13–17 ott",
+      "hot": true,
+      "theme": "Rigenera e Notebooks: Copilot diventa più flessibile e collaborativo",
+      "tag": "Copilot Chat · Notebooks · Teams",
+      "cov": "Azione Rigenera GA (risposta alternativa o cambio modello) · Notebooks ottobre: modifica file Office, report interattivi, nuova navigazione · Teams recap senza transcript verso GA worldwide",
+      "note": "Due temi principali da comunicare questa settimana: 1) Azione Rigenera — spiegare il benefit pratico: non riscrivere il prompt quando la risposta non soddisfa. Mostrare il flusso: risposta → Rigenera → stesso modello o cambio modello. Esempi: email troppo formale → Rigenera con Claude per tono più naturale; analisi dati → Rigenera con GPT-6 per visione diversa. 2) Notebooks ottobre — enfatizzare la trasformazione da 'strumento di ricerca' a 'hub di produttività': la modifica diretta di file Office è il salto di qualità principale. Report interattivi condivisibili = Notebooks non solo per chi li crea. Menzionare il contesto: Teams recap senza transcript si avvicina alla GA worldwide (attesa metà ottobre) — aggiornare il tip sul sito quando confermata. Tono: ottobre consolida le funzioni avanzate; questa settimana si parla di flussi di lavoro più fluidi e collaborazione ampliata."
     }
   ]
 }
