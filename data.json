@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "12 ott 2026",
+    "updated": "19 ott 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1239,15 +1239,15 @@
       "cat": "c-teams",
       "ico": "🔇",
       "name": "Teams: riepilogo AI della riunione senza salvare la registrazione",
-      "st": "soon",
-      "isNew": false,
-      "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>✅ Targeted Release in rollout da inizio ottobre 2026. GA worldwide attesa metà ottobre 2026.</strong>",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>✅ GA worldwide disponibile da metà ottobre 2026.</strong>",
       "example": "La tua azienda non consente la registrazione delle riunioni. Attivi il 'Recap senza transcript' prima della call: Copilot cattura i punti chiave in tempo reale e li condivide con i partecipanti dopo la riunione — niente registrazione salvata, ma niente da perdere.",
       "detail": {
         "steps": "1. Prima della riunione, vai su Opzioni riunione → Copilot e altri AI → attiva 'Recap senza transcript'.\n2. Oppure, durante la riunione, usa il toggle AI in alto a sinistra per attivare la funzione.\n3. Copilot cattura il contesto audio in tempo reale — nessuna trascrizione viene salvata.\n4. Dopo la riunione, il riepilogo AI è disponibile nella scheda Recap per tutti i partecipanti con licenza Copilot.\n5. Il documento di riepilogo viene archiviato nel OneDrive dell'organizzatore per 120 giorni (configurabile dall'admin in admin center).",
         "prompts": [],
         "tips": [
-          "✅ IN ROLLOUT: Targeted Release avviata inizio ottobre 2026. GA worldwide attesa metà ottobre 2026. Verifica la disponibilità nel Message Center (MC1275312) su admin.microsoft.com.",
+          "✅ GA worldwide disponibile da ottobre 2026. Funzione attiva per tutti i tenant. Verifica la disponibilità nel Message Center (MC1275312) su admin.microsoft.com.",
           "Nessuna trascrizione o registrazione viene salvata: il recap è disponibile come documento post-riunione nel OneDrive dell'organizzatore per 120 giorni (configurabile).",
           "La funzione richiede licenza Microsoft 365 Copilot. I partecipanti senza licenza Copilot non possono visualizzare il riepilogo AI dopo la riunione."
         ]
@@ -1258,8 +1258,10 @@
         "note": "Targeted Release in rollout da inizio ottobre 2026. GA worldwide: metà ottobre 2026. Accesso richiede ruolo Admin M365."
       },
       "rollout": {
-        "stage": "preview",
-        "note": "Targeted Release in rollout da inizio ottobre 2026. GA worldwide attesa metà ottobre 2026 (MC1275312)."
+        "stage": "ga",
+        "note": "GA worldwide ottobre 2026 (MC1275312).",
+        "changedFrom": "preview",
+        "changedOn": "19 ott 2026"
       }
     },
     {
@@ -2768,8 +2770,8 @@
       "cat": "c-other",
       "ico": "📄",
       "name": "SharePoint Copilot ottobre 2026: PDF pagina per pagina, storico versioni e invio email",
-      "st": "soon",
-      "isNew": false,
+      "st": "avail",
+      "isNew": true,
       "impact": "L'aggiornamento <strong>ottobre 2026 di Copilot in SharePoint</strong> porta quattro novità principali: <strong>analisi PDF a livello di pagina</strong> (Copilot identifica esattamente in quale pagina si trova un'informazione), <strong>accesso allo storico versioni dei file</strong> (Copilot può confrontare versioni e spiegare le differenze), <strong>generazione di immagini</strong> direttamente in SharePoint Pages tramite Designer, e <strong>invio email contestuale</strong> da SharePoint (Copilot bozza e invia email Outlook basandosi sul contenuto della pagina o del documento selezionato). Queste funzioni si sommano alle skill riutilizzabili e all'analisi immagini in batch già introdotte a settembre.",
       "example": "Hai un contratto PDF di 80 pagine caricato in SharePoint. Chiedi a Copilot 'A pagina 34 ci sono penali per ritardo?' — Copilot identifica la sezione specifica senza che tu debba cercare manualmente. Poi generi una bozza di email al fornitore basata proprio su quella clausola, senza uscire da SharePoint.",
       "detail": {
@@ -2791,8 +2793,10 @@
         "note": "Aggiornamento ottobre 2026 di Copilot in SharePoint. PDF pagina per pagina, storico versioni, generazione immagini, invio email."
       },
       "rollout": {
-        "stage": "preview",
-        "note": "Preview ottobre 2026. Rollout progressivo in SharePoint Online. Alcune funzioni richiedono abilitazione admin."
+        "stage": "ga",
+        "note": "GA ottobre 2026 in SharePoint Online. Alcune funzioni richiedono abilitazione admin.",
+        "changedFrom": "preview",
+        "changedOn": "19 ott 2026"
       }
     },
     {
@@ -2802,7 +2806,7 @@
       "ico": "🔄",
       "name": "Azione Rigenera: risposta alternativa o cambio modello senza reinserire il prompt",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da ottobre 2026, <strong>Microsoft 365 Copilot</strong> introduce l'azione <strong>Rigenera</strong> disponibile sotto ogni risposta. Con un click puoi ottenere una risposta alternativa con lo stesso modello oppure passare a un modello diverso — senza dover riscrivere o incollare di nuovo il prompt. La funzione riduce il tempo perso su risposte non ottimali e facilita il confronto tra i modelli disponibili (GPT, Claude, Gemini) per trovare quello più adatto al tuo caso d'uso.",
       "example": "Hai chiesto a Copilot di bozze un'email di escalation. La risposta è troppo formale. Invece di reinserire il prompt, clicchi 'Rigenera' → 'Prova con Claude Opus 5.5': ottieni una versione più naturale in secondi — senza perdere il contesto della conversazione.",
       "detail": {
@@ -2835,7 +2839,7 @@
       "ico": "📓",
       "name": "Notebooks ottobre 2026: modifica file Office, report interattivi e nuova navigazione",
       "st": "soon",
-      "isNew": true,
+      "isNew": false,
       "impact": "<strong>Notebooks</strong> in Microsoft 365 Copilot si aggiorna ad ottobre 2026 con tre novità chiave in preview (Frontier): <strong>modifica file Office direttamente da Notebooks</strong> (apri e modifica Word, Excel, PowerPoint senza uscire dall'interfaccia), <strong>report interattivi</strong> (i risultati delle analisi Copilot diventano report condivisibili con grafici e tabelle live), e <strong>navigazione rinnovata</strong> (pannello laterale riprogettato per accedere più velocemente a notebook recenti, template e ricerche salvate). Queste funzioni ampliano Notebooks da strumento di ricerca a hub di produttività completo.",
       "example": "Stai analizzando dati di vendita in un Notebook. Copilot genera una tabella riepilogativa. Con ottobre 2026 puoi: (1) aprire il file Excel originale da Notebooks e correggere un dato, (2) esportare la tabella come report interattivo condivisibile con il tuo team, (3) ritrovare il notebook in 2 clic grazie alla navigazione rinnovata.",
       "detail": {
@@ -2859,6 +2863,72 @@
       "rollout": {
         "stage": "preview",
         "note": "Preview Frontier ottobre 2026. GA worldwide non ancora annunciata."
+      }
+    },
+    {
+      "id": "copilot-search-chat",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🔍",
+      "name": "Copilot Search: dalla ricerca alla conversazione AI in un click",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da <strong>ottobre 2026</strong>, <strong>Microsoft 365 Copilot Search</strong> integra direttamente la <strong>conversazione AI</strong>: dai risultati di ricerca puoi aprire una chat con Copilot che conosce già il contesto della tua query. Trova un documento, un contatto o una riunione e continua con domande in linguaggio naturale — senza riaprire Copilot Chat separatamente. La ricerca diventa il punto di partenza di un'interazione conversazionale.",
+      "example": "Cerchi 'proposta cliente X' in Copilot Search e trovi 3 documenti. Clicchi 'Chiedi a Copilot' e scrivi 'quali di questi file è stato modificato di recente e cosa è cambiato?' — Copilot risponde subito con il contesto dei risultati che stavi guardando.",
+      "detail": {
+        "steps": "1. Apri Microsoft 365 Copilot e usa la barra di ricerca per trovare documenti, persone o riunioni.\n2. Dai risultati di ricerca, clicca su 'Chiedi a Copilot' o sull'icona di conversazione accanto a un risultato.\n3. Copilot apre una sessione chat con il contesto della tua ricerca già caricato.\n4. Poni domande di follow-up: Copilot usa i risultati come punto di partenza e può approfondire ulteriormente.",
+        "prompts": [
+          "Quali documenti collegati a questo progetto sono stati modificati nell'ultima settimana?",
+          "Riassumi il contenuto di questi tre file di ricerca",
+          "Chi è il referente principale di questo account e cosa ci siamo detti di recente?"
+        ],
+        "tips": [
+          "La funzione è disponibile direttamente dalla barra di ricerca di Microsoft 365 Copilot — non serve aprire Copilot Chat separatamente.",
+          "Copilot mantiene il contesto dei risultati di ricerca durante la conversazione: puoi fare domande di follow-up senza ripetere cosa stavi cercando.",
+          "Funziona con documenti, email, persone, riunioni e Teams channel: tutte le fonti che Copilot Search indicizza."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — ottobre 2026",
+        "url": "https://learn.microsoft.com/copilot/microsoft-365/release-notes",
+        "note": "Disponibile da ottobre 2026 in Microsoft 365 Copilot Search."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA ottobre 2026 in Microsoft 365 Copilot Search."
+      }
+    },
+    {
+      "id": "outlook-paste-coauthor",
+      "app": "Outlook",
+      "cat": "c-outlook",
+      "ico": "📋",
+      "name": "Copilot co-authoring dal menu Incolla in Outlook",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da <strong>ottobre 2026</strong>, Outlook introduce il <strong>Copilot co-authoring direttamente dal menu Incolla</strong>: quando incolli un testo in un'email, Outlook propone di rielaborarlo con Copilot — riformulando, adattando il tono, accorciando o espandendo — senza aprire il pannello Copilot separato. La funzione velocizza il flusso di scrittura: incolli un blocco di testo da un documento, da una chat o da una nota e Copilot lo trasforma nell'email giusta in pochi secondi.",
+      "example": "Copi un paragrafo tecnico da un documento Word e lo incolli in un'email. Il menu Incolla mostra l'opzione 'Riscrivi con Copilot': scegli 'Tono professionale' e Copilot rielabora il testo adattandolo per il destinatario, senza uscire dalla finestra di composizione.",
+      "detail": {
+        "steps": "1. Apri una nuova email o rispondi in Outlook web o nuovo Outlook per Windows.\n2. Copia del testo da qualsiasi fonte (documento, chat, sito web).\n3. Fai Incolla nella finestra di composizione: apparirà il menu contestuale con l'opzione 'Riscrivi con Copilot'.\n4. Scegli l'azione desiderata: riformula, accorcia, espandi o cambia tono.\n5. Copilot sostituisce il testo incollato con la versione rielaborata — puoi accettare, modificare o annullare.",
+        "prompts": [
+          "Riscrivi questo testo in tono professionale per un cliente",
+          "Accorcia questo paragrafo a 2-3 frasi chiave",
+          "Adatta questo contenuto tecnico per un pubblico non specialistico"
+        ],
+        "tips": [
+          "La funzione appare nel menu contestuale quando incolli testo nel corpo dell'email — non nell'oggetto.",
+          "Puoi anche selezionare testo già scritto e usare il menu contestuale per rielaborarlo con Copilot.",
+          "Disponibile in Outlook web (outlook.office.com) e nel nuovo Outlook per Windows. Non nell'app desktop classica Outlook."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — ottobre 2026",
+        "url": "https://learn.microsoft.com/copilot/microsoft-365/release-notes",
+        "note": "Co-authoring dal menu Incolla disponibile in Outlook web e nuovo Outlook per Windows da ottobre 2026."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA ottobre 2026 in Outlook web e nuovo Outlook per Windows."
       }
     }
   ],
@@ -3114,6 +3184,15 @@
       "tag": "Copilot Chat · Notebooks · Teams",
       "cov": "Azione Rigenera GA (risposta alternativa o cambio modello) · Notebooks ottobre: modifica file Office, report interattivi, nuova navigazione · Teams recap senza transcript verso GA worldwide",
       "note": "Due temi principali da comunicare questa settimana: 1) Azione Rigenera — spiegare il benefit pratico: non riscrivere il prompt quando la risposta non soddisfa. Mostrare il flusso: risposta → Rigenera → stesso modello o cambio modello. Esempi: email troppo formale → Rigenera con Claude per tono più naturale; analisi dati → Rigenera con GPT-6 per visione diversa. 2) Notebooks ottobre — enfatizzare la trasformazione da 'strumento di ricerca' a 'hub di produttività': la modifica diretta di file Office è il salto di qualità principale. Report interattivi condivisibili = Notebooks non solo per chi li crea. Menzionare il contesto: Teams recap senza transcript si avvicina alla GA worldwide (attesa metà ottobre) — aggiornare il tip sul sito quando confermata. Tono: ottobre consolida le funzioni avanzate; questa settimana si parla di flussi di lavoro più fluidi e collaborazione ampliata."
+    },
+    {
+      "w": "W29",
+      "d": "20–24 ott",
+      "hot": true,
+      "theme": "Teams senza registrazione, SharePoint PDF e Copilot che capisce cosa stai cercando",
+      "tag": "Teams · SharePoint · Copilot Search · Outlook",
+      "cov": "Teams recap senza transcript GA worldwide · SharePoint Copilot ottobre GA · Copilot Search conversazionale · Copilot co-authoring dal menu Incolla in Outlook",
+      "note": "Quattro novità GA questa settimana — focus sui benefici immediati per l'utente: 1) Teams recap senza transcript — la notizia di apertura: finalmente GA worldwide. Spiegare in modo semplice il valore per chi non può registrare le riunioni ('il riepilogo AI anche senza registrazione'). Includere come attivare dal menu Opzioni riunione. 2) SharePoint Copilot ottobre GA — focus sulle due funzioni più pratiche: PDF pagina per pagina (citazione esatta della pagina) e invio email contestuale. Esempio concreto con contratto PDF. 3) Copilot Search conversazionale — spiegare il cambiamento: la ricerca non termina con i risultati, ma apre una conversazione. Mostrare il flusso ricerca → click → chat con contesto. 4) Copilot co-authoring dal menu Incolla in Outlook — il 'piccolo grande aggiornamento' nascosto: velocizza la riscrittura senza aprire il pannello Copilot. Tono: ottobre si chiude con funzioni GA concrete, non annunci futuri — messaggio 'puoi usare tutto questo già da adesso'."
     }
   ]
 }
