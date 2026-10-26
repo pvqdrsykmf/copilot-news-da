@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "19 ott 2026",
+    "updated": "26 ott 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1240,7 +1240,7 @@
       "ico": "🔇",
       "name": "Teams: riepilogo AI della riunione senza salvare la registrazione",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Con <strong>MC1275312</strong>, Teams aggiunge la possibilità di generare un <strong>riepilogo AI post-riunione anche senza attivare la registrazione o la trascrizione</strong>. Utile per organizzazioni con policy di compliance che vietano il salvataggio delle trascrizioni. Il riepilogo (decisioni, punti chiave, azioni) viene generato da Copilot in tempo reale durante la riunione e reso disponibile ai partecipanti con licenza Copilot dopo la fine. <strong>✅ GA worldwide disponibile da metà ottobre 2026.</strong>",
       "example": "La tua azienda non consente la registrazione delle riunioni. Attivi il 'Recap senza transcript' prima della call: Copilot cattura i punti chiave in tempo reale e li condivide con i partecipanti dopo la riunione — niente registrazione salvata, ma niente da perdere.",
       "detail": {
@@ -1259,9 +1259,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "GA worldwide ottobre 2026 (MC1275312).",
-        "changedFrom": "preview",
-        "changedOn": "19 ott 2026"
+        "note": "GA worldwide ottobre 2026 (MC1275312)."
       }
     },
     {
@@ -2771,7 +2769,7 @@
       "ico": "📄",
       "name": "SharePoint Copilot ottobre 2026: PDF pagina per pagina, storico versioni e invio email",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "L'aggiornamento <strong>ottobre 2026 di Copilot in SharePoint</strong> porta quattro novità principali: <strong>analisi PDF a livello di pagina</strong> (Copilot identifica esattamente in quale pagina si trova un'informazione), <strong>accesso allo storico versioni dei file</strong> (Copilot può confrontare versioni e spiegare le differenze), <strong>generazione di immagini</strong> direttamente in SharePoint Pages tramite Designer, e <strong>invio email contestuale</strong> da SharePoint (Copilot bozza e invia email Outlook basandosi sul contenuto della pagina o del documento selezionato). Queste funzioni si sommano alle skill riutilizzabili e all'analisi immagini in batch già introdotte a settembre.",
       "example": "Hai un contratto PDF di 80 pagine caricato in SharePoint. Chiedi a Copilot 'A pagina 34 ci sono penali per ritardo?' — Copilot identifica la sezione specifica senza che tu debba cercare manualmente. Poi generi una bozza di email al fornitore basata proprio su quella clausola, senza uscire da SharePoint.",
       "detail": {
@@ -2794,9 +2792,7 @@
       },
       "rollout": {
         "stage": "ga",
-        "note": "GA ottobre 2026 in SharePoint Online. Alcune funzioni richiedono abilitazione admin.",
-        "changedFrom": "preview",
-        "changedOn": "19 ott 2026"
+        "note": "GA ottobre 2026 in SharePoint Online. Alcune funzioni richiedono abilitazione admin."
       }
     },
     {
@@ -2872,7 +2868,7 @@
       "ico": "🔍",
       "name": "Copilot Search: dalla ricerca alla conversazione AI in un click",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da <strong>ottobre 2026</strong>, <strong>Microsoft 365 Copilot Search</strong> integra direttamente la <strong>conversazione AI</strong>: dai risultati di ricerca puoi aprire una chat con Copilot che conosce già il contesto della tua query. Trova un documento, un contatto o una riunione e continua con domande in linguaggio naturale — senza riaprire Copilot Chat separatamente. La ricerca diventa il punto di partenza di un'interazione conversazionale.",
       "example": "Cerchi 'proposta cliente X' in Copilot Search e trovi 3 documenti. Clicchi 'Chiedi a Copilot' e scrivi 'quali di questi file è stato modificato di recente e cosa è cambiato?' — Copilot risponde subito con il contesto dei risultati che stavi guardando.",
       "detail": {
@@ -2905,7 +2901,7 @@
       "ico": "📋",
       "name": "Copilot co-authoring dal menu Incolla in Outlook",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Da <strong>ottobre 2026</strong>, Outlook introduce il <strong>Copilot co-authoring direttamente dal menu Incolla</strong>: quando incolli un testo in un'email, Outlook propone di rielaborarlo con Copilot — riformulando, adattando il tono, accorciando o espandendo — senza aprire il pannello Copilot separato. La funzione velocizza il flusso di scrittura: incolli un blocco di testo da un documento, da una chat o da una nota e Copilot lo trasforma nell'email giusta in pochi secondi.",
       "example": "Copi un paragrafo tecnico da un documento Word e lo incolli in un'email. Il menu Incolla mostra l'opzione 'Riscrivi con Copilot': scegli 'Tono professionale' e Copilot rielabora il testo adattandolo per il destinatario, senza uscire dalla finestra di composizione.",
       "detail": {
@@ -2929,6 +2925,39 @@
       "rollout": {
         "stage": "ga",
         "note": "GA ottobre 2026 in Outlook web e nuovo Outlook per Windows."
+      }
+    },
+    {
+      "id": "copilot-for-legal",
+      "app": "Copilot Chat",
+      "cat": "c-other",
+      "ico": "⚖️",
+      "name": "Microsoft 365 Copilot for Legal: oltre 20 skill specializzate per il lavoro legale",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Dal <strong>15 ottobre 2026</strong>, <strong>Microsoft 365 Copilot for Legal</strong> è disponibile con <strong>oltre 20 skill specializzate per il lavoro legale</strong>: redazione e revisione di contratti, ricerca normativa, analisi del rischio, gestione documenti legali e sintesi di contenuti regolatori. Si aggiungono plugin realizzati da partner del settore (Thomson Reuters, LexisNexis e altri) integrabili direttamente in Copilot. Pensato per team legali interni, studi legali e compliance officers che operano in ambienti Microsoft 365.",
+      "example": "Il tuo team legale deve esaminare decine di contratti di fornitura. Con Copilot for Legal chiedi di identificare le clausole di responsabilità e le penali — Copilot risponde citando il documento e la sezione specifica, senza dover aprire ogni file.",
+      "detail": {
+        "steps": "1. Verifica con il tuo admin che Copilot for Legal sia abilitato nel tenant (richiede licenza M365 Copilot).\n2. Accedi a Microsoft 365 Copilot Chat e apri la sezione Plugin o Componenti aggiuntivi per vedere le skill legali disponibili.\n3. Carica o seleziona un documento legale (contratto, normativa, policy) e chiedi a Copilot di analizzarlo con le skill specifiche.\n4. Usa le skill di ricerca normativa per restare aggiornato su modifiche regolamentari rilevanti per il tuo settore.\n5. Per i plugin di terze parti (es. Thomson Reuters Westlaw, LexisNexis), segui le istruzioni di attivazione su Microsoft AppSource.",
+        "prompts": [
+          "Analizza questo contratto e identifica le clausole che aumentano il rischio legale per la nostra azienda.",
+          "Riassumi le principali modifiche normative GDPR degli ultimi 6 mesi rilevanti per il settore finanziario.",
+          "Confronta questa clausola di non concorrenza con le nostre linee guida standard e segnala le differenze."
+        ],
+        "tips": [
+          "Copilot for Legal richiede licenza Microsoft 365 Copilot attiva e abilitazione da parte dell'admin. Verifica la disponibilità nel Message Center del tuo tenant.",
+          "Le skill legali sono ottimizzate per documenti in inglese; per documentazione in italiano la qualità dipende dalla complessità del testo tecnico-giuridico.",
+          "I plugin di partner (es. Thomson Reuters, LexisNexis) richiedono sottoscrizioni separate con i provider: Copilot funge da interfaccia unificata."
+        ]
+      },
+      "source": {
+        "label": "M365 Roadmap — Introducing Microsoft Copilot for Legal (15 ott 2026)",
+        "url": "https://microsoft.com/en-us/microsoft-365/roadmap",
+        "note": "GA dal 15 ottobre 2026. Oltre 20 skill specializzate per il lavoro legale e plugin di partner certificati."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "GA worldwide dal 15 ottobre 2026."
       }
     }
   ],
@@ -3193,6 +3222,15 @@
       "tag": "Teams · SharePoint · Copilot Search · Outlook",
       "cov": "Teams recap senza transcript GA worldwide · SharePoint Copilot ottobre GA · Copilot Search conversazionale · Copilot co-authoring dal menu Incolla in Outlook",
       "note": "Quattro novità GA questa settimana — focus sui benefici immediati per l'utente: 1) Teams recap senza transcript — la notizia di apertura: finalmente GA worldwide. Spiegare in modo semplice il valore per chi non può registrare le riunioni ('il riepilogo AI anche senza registrazione'). Includere come attivare dal menu Opzioni riunione. 2) SharePoint Copilot ottobre GA — focus sulle due funzioni più pratiche: PDF pagina per pagina (citazione esatta della pagina) e invio email contestuale. Esempio concreto con contratto PDF. 3) Copilot Search conversazionale — spiegare il cambiamento: la ricerca non termina con i risultati, ma apre una conversazione. Mostrare il flusso ricerca → click → chat con contesto. 4) Copilot co-authoring dal menu Incolla in Outlook — il 'piccolo grande aggiornamento' nascosto: velocizza la riscrittura senza aprire il pannello Copilot. Tono: ottobre si chiude con funzioni GA concrete, non annunci futuri — messaggio 'puoi usare tutto questo già da adesso'."
+    },
+    {
+      "w": "W30",
+      "d": "27–31 ott",
+      "hot": true,
+      "theme": "Copilot si specializza nel lavoro legale: Copilot for Legal disponibile per tutti",
+      "tag": "Copilot Chat · Legal · Riepilogo ottobre",
+      "cov": "Copilot for Legal GA (15 ott) — 20+ skill specializzate per contratti, normative e compliance · Riepilogo ottobre 2026: Teams recap senza registrazione, SharePoint PDF pagina per pagina, Copilot Search, co-authoring Outlook",
+      "note": "Due angoli per chiudere ottobre: 1) Copilot for Legal — la notizia principale: spiegare le 20+ skill legali in modo accessibile anche per chi non è del settore (compliance, HR, operations hanno tutti contratti da gestire). Esempi pratici: analisi contratti, ricerca normativa, riduzione del rischio. Menzionare i plugin di partner (Thomson Reuters, LexisNexis) come estensione opzionale. Sottolineare che non richiede configurazione aggiuntiva se il tenant ha già Copilot. 2) Riepilogo ottobre 2026 — chiudere il mese con una panoramica rapida delle novità GA: Teams recap senza registrazione worldwide, SharePoint PDF pagina per pagina, Copilot Search conversazionale, co-authoring dal menu Incolla in Outlook, Copilot for Legal. Tono: ottobre si chiude con funzioni concrete e pronte all'uso — nessun 'in arrivo', tutto disponibile adesso."
     }
   ]
 }
