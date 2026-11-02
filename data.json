@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "26 ott 2026",
+    "updated": "2 nov 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -2934,7 +2934,7 @@
       "ico": "⚖️",
       "name": "Microsoft 365 Copilot for Legal: oltre 20 skill specializzate per il lavoro legale",
       "st": "avail",
-      "isNew": true,
+      "isNew": false,
       "impact": "Dal <strong>15 ottobre 2026</strong>, <strong>Microsoft 365 Copilot for Legal</strong> è disponibile con <strong>oltre 20 skill specializzate per il lavoro legale</strong>: redazione e revisione di contratti, ricerca normativa, analisi del rischio, gestione documenti legali e sintesi di contenuti regolatori. Si aggiungono plugin realizzati da partner del settore (Thomson Reuters, LexisNexis e altri) integrabili direttamente in Copilot. Pensato per team legali interni, studi legali e compliance officers che operano in ambienti Microsoft 365.",
       "example": "Il tuo team legale deve esaminare decine di contratti di fornitura. Con Copilot for Legal chiedi di identificare le clausole di responsabilità e le penali — Copilot risponde citando il documento e la sezione specifica, senza dover aprire ogni file.",
       "detail": {
@@ -3231,6 +3231,15 @@
       "tag": "Copilot Chat · Legal · Riepilogo ottobre",
       "cov": "Copilot for Legal GA (15 ott) — 20+ skill specializzate per contratti, normative e compliance · Riepilogo ottobre 2026: Teams recap senza registrazione, SharePoint PDF pagina per pagina, Copilot Search, co-authoring Outlook",
       "note": "Due angoli per chiudere ottobre: 1) Copilot for Legal — la notizia principale: spiegare le 20+ skill legali in modo accessibile anche per chi non è del settore (compliance, HR, operations hanno tutti contratti da gestire). Esempi pratici: analisi contratti, ricerca normativa, riduzione del rischio. Menzionare i plugin di partner (Thomson Reuters, LexisNexis) come estensione opzionale. Sottolineare che non richiede configurazione aggiuntiva se il tenant ha già Copilot. 2) Riepilogo ottobre 2026 — chiudere il mese con una panoramica rapida delle novità GA: Teams recap senza registrazione worldwide, SharePoint PDF pagina per pagina, Copilot Search conversazionale, co-authoring dal menu Incolla in Outlook, Copilot for Legal. Tono: ottobre si chiude con funzioni concrete e pronte all'uso — nessun 'in arrivo', tutto disponibile adesso."
+    },
+    {
+      "w": "W31",
+      "d": "3–7 nov",
+      "hot": false,
+      "theme": "Riepilogo ottobre e novità in arrivo: tutto quello che hai perso",
+      "tag": "Riepilogo · Copilot Legal · Teams",
+      "cov": "Recap ottobre 2026 (Teams senza registrazione GA, Copilot Search conversazionale, co-authoring Outlook, Copilot for Legal) · Anticipo novità novembre",
+      "note": "Chiudere il ciclo di ottobre con un riepilogo pratico delle funzioni ora disponibili per tutti. Focus su Copilot for Legal come novità d'impatto per chi lavora con contratti e compliance."
     }
   ]
 }
