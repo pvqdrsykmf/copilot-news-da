@@ -1,7 +1,7 @@
 {
   "meta": {
     "edition": "Febbraio – Giugno 2026",
-    "updated": "2 nov 2026",
+    "updated": "9 nov 2026",
     "alert": {
       "active": true,
       "text": "Dal 15 aprile 2026 Copilot non è più gratuito nelle app Office per molti utenti. Cerca la scheda \"Copilot sparisce da Word, Excel e PowerPoint\" per capire se sei coinvolto."
@@ -1070,14 +1070,14 @@
       "cat": "c-teams",
       "ico": "🔍",
       "name": "PowerPoint Live in Teams: Copilot spiega i termini durante la presentazione",
-      "st": "soon",
-      "isNew": false,
+      "st": "avail",
+      "isNew": true,
       "impact": "Nelle riunioni Teams con PowerPoint Live, i partecipanti potranno <strong>selezionare un termine o acronimo nelle slide e chiedere a Copilot una spiegazione privata</strong> — senza interrompere il presentatore. Annunciato per metà maggio 2026, ma rollout non ancora confermato nei release notes ufficiali Microsoft (ultimo aggiornamento: 19 maggio 2026).",
       "example": "Il CFO sta presentando i risultati Q2. Nelle slide appare 'EBITDA adjusted'. Il nuovo collega non conosce il termine: lo seleziona, chiede a Copilot — riceve la spiegazione sul suo schermo in privato. La presentazione continua senza interruzioni.",
       "source": {
-        "label": "What's New Maggio 2026 — Microsoft 365 Copilot Blog",
-        "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--may-2026/4522010",
-        "note": "Rolling out giugno 2026. Annuncio nel blog What's New maggio 2026 (fonte primaria Microsoft)."
+        "label": "M365 Copilot Release Notes — PowerPoint Live attendee questions (25 ago 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+        "note": "GA agosto 2026. Release Notes ufficiali M365 Copilot (25 agosto 2026). Windows."
       },
       "detail": {
         "steps": "1. Il presentatore avvia una riunione Teams e condivide la presentazione con PowerPoint Live (non come condivisione schermo, ma caricando il file PPT).\n2. I partecipanti vedono le slide nella loro finestra Teams individualmente.\n3. Per chiedere una spiegazione: seleziona del testo nella slide con il cursore, poi clicca sull'icona Copilot che appare accanto alla selezione.\n4. Copilot risponde privatamente: solo tu vedi la spiegazione, il presentatore non viene interrotto.",
@@ -1093,8 +1093,10 @@
         ]
       },
       "rollout": {
-        "stage": "preview",
-        "note": "Rolling out giugno 2026 — confermato nel What's New maggio 2026 blog Microsoft."
+        "stage": "ga",
+        "changedFrom": "preview",
+        "changedOn": "9 nov 2026",
+        "note": "GA agosto 2026 — confermato nelle Release Notes ufficiali M365 Copilot (25 agosto 2026). Windows."
       }
     },
     {
@@ -2959,6 +2961,167 @@
         "stage": "ga",
         "note": "GA worldwide dal 15 ottobre 2026."
       }
+    },
+    {
+      "id": "chat-skills",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "🧰",
+      "name": "Skill personalizzate in Copilot Chat: Copilot impara il tuo stile",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da novembre 2026, le <strong>skill personalizzate</strong> — precedentemente disponibili solo in Copilot Cowork — arrivano in <strong>Copilot Chat</strong>. Con linguaggio naturale crei istruzioni di comportamento persistenti (formato risposte, stile, struttura output) che Copilot Chat applica automaticamente nelle sessioni future. Le skill si sincronizzano tra Copilot Chat e Cowork.",
+      "example": "Crei una skill 'Verbale riunione': 'usa sempre Decisioni / Azioni con responsabile e scadenza / Punti aperti'. Da quel momento ogni verbale che chiedi in Copilot Chat esce nel tuo formato — senza doverlo specificare ogni volta.",
+      "detail": {
+        "steps": "1. In Copilot Chat, cerca la voce 'Skill' nel menu laterale o nelle impostazioni della conversazione.\n2. Clicca 'Crea nuova skill' e descrivi il comportamento desiderato in linguaggio naturale.\n3. Dai un nome alla skill (es. 'Verbale riunione', 'Comunicazione management') e salvala.\n4. Nelle sessioni successive, attiva la skill selezionandola prima di iniziare: Copilot la applica automaticamente.\n5. Le skill in Chat sono le stesse di Cowork — se le hai già create lì, non devi rifarle.",
+        "prompts": [
+          "Crea una skill che, per i verbali, usa sempre: 1) Decisioni prese 2) Azioni con responsabile e scadenza 3) Punti aperti.",
+          "Crea una skill 'Comunicazione formale' che risponde sempre in italiano formale, con frasi brevi e sezioni ben separate.",
+          "Crea una skill 'Risk Assessment' che classifica sempre i rischi con il semaforo: 🟢 basso, 🟡 medio, 🔴 alto."
+        ],
+        "tips": [
+          "Le skill in Copilot Chat sono le stesse disponibili in Cowork: le crei una volta e le usi in entrambi i contesti senza rifarle.",
+          "Parti da comportamenti semplici: 'includi sempre una sezione FAQ' è più efficace di 'rispondi bene'. Aggiungi complessità dopo aver verificato che la skill base funziona come ti aspetti.",
+          "Le skill si sincronizzano automaticamente tra desktop e mobile: una skill creata sul PC è disponibile anche dall'app mobile Copilot."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — October 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528",
+        "note": "Rolling out in Copilot Chat novembre 2026. Già disponibili in Copilot Cowork da settembre 2026."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out in Copilot Chat novembre 2026. Già disponibili in Copilot Cowork da settembre 2026."
+      }
+    },
+    {
+      "id": "chat-projects",
+      "app": "Copilot Chat",
+      "cat": "c-chat",
+      "ico": "📁",
+      "name": "Progetti in Copilot Chat: raggruppa conversazioni, file e task in un unico spazio",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da novembre 2026, i <strong>Progetti</strong> — precedentemente disponibili solo in Copilot Cowork — arrivano in <strong>Copilot Chat</strong>. Raggruppa conversazioni correlate, istruzioni, file e task in un unico spazio persistente. Una <strong>vista Outputs centralizzata</strong> raccoglie tutti gli artefatti prodotti (documenti, presentazioni, email). Il contesto del progetto viene ricordato: riprendi da dove hai lasciato senza dover rispiegare tutto.",
+      "example": "Crei il progetto 'Proposta Cliente X': ci aggiungi le email di contesto, i file e le conversazioni precedenti con Copilot. Ogni volta che riapri il progetto, Copilot conosce già tutta la storia — nessun recap necessario.",
+      "detail": {
+        "steps": "1. In Copilot Chat, cerca la voce 'Progetti' nel menu laterale o nel selettore di contesto della conversazione.\n2. Clicca 'Crea nuovo progetto', dagli un nome e aggiungi una descrizione del contesto.\n3. Collega le conversazioni esistenti, i file rilevanti (SharePoint, OneDrive) e le istruzioni fisse al progetto.\n4. Nella vista Outputs vedi tutti gli artefatti prodotti (documenti, email, slide) generati nelle conversazioni del progetto.\n5. Condividi il progetto con colleghi per collaborare sullo stesso contesto.",
+        "prompts": [
+          "Riassumi lo stato attuale di questo progetto basandoti sulle conversazioni e i file presenti.",
+          "Quali sono i punti aperti emersi finora in questo progetto? Organizzali per priorità e assegna un responsabile.",
+          "Genera un aggiornamento di stato per il management sulla base del contenuto di questo progetto."
+        ],
+        "tips": [
+          "I Progetti in Copilot Chat sono gli stessi di Cowork: se usi già Cowork, i tuoi progetti sono accessibili anche in Copilot Chat.",
+          "La vista Outputs è la funzione più utile dei Progetti: raccoglie in un unico posto tutti i documenti, le email e le presentazioni prodotte, senza doverli cercare nelle singole conversazioni.",
+          "Aggiungi le istruzioni fisse del progetto al momento della creazione: Copilot le applica a tutte le conversazioni nel progetto senza che tu debba ripetere il contesto."
+        ]
+      },
+      "source": {
+        "label": "What's New in Microsoft Copilot — October 2026 (TechCommunity Blog)",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528",
+        "note": "Rolling out in Copilot Chat novembre 2026. Già disponibili in Copilot Cowork da ottobre 2026."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rolling out in Copilot Chat novembre 2026. Già disponibili in Copilot Cowork da ottobre 2026."
+      }
+    },
+    {
+      "id": "copilot-fairuse",
+      "app": "Copilot Chat",
+      "cat": "c-urgent",
+      "ico": "⚠️",
+      "name": "Limiti di utilizzo per Copilot Chat senza licenza a pagamento",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da novembre 2026, Microsoft introduce <strong>limiti di utilizzo equo (fair use)</strong> per le funzionalità avanzate di <strong>Copilot Chat senza licenza Microsoft 365 Copilot a pagamento</strong>. I limiti sono partiti il <strong>2 novembre 2026</strong> per organizzazioni con 2.000 o meno utenti e sono attivi dal <strong>9 novembre 2026</strong> per le organizzazioni più grandi. Chi ha già la licenza M365 Copilot a pagamento non subisce alcuna modifica.",
+      "example": "Se usi Copilot Chat senza la licenza M365 Copilot a pagamento (€30/mese), alcune funzionalità avanzate come la connessione ai dati aziendali potrebbero essere limitate nel numero di utilizzi giornalieri o mensili. Per chi ha la licenza, tutto rimane invariato.",
+      "detail": {
+        "steps": "1. Se hai la licenza Microsoft 365 Copilot a pagamento: nessuna azione richiesta, nessun limite si applica a te.\n2. Se usi Copilot Chat senza licenza a pagamento: potresti vedere messaggi che segnalano il raggiungimento del limite di utilizzo su alcune funzioni avanzate.\n3. Per verificare se hai la licenza: vai in account.microsoft.com oppure chiedi al tuo IT admin.\n4. Se la tua organizzazione vuole mantenere l'accesso completo per tutti: valuta l'adozione della licenza Microsoft 365 Copilot ($30/utente/mese).\n5. Per gli admin: i limiti si applicano automaticamente — non è necessaria alcuna configurazione.",
+        "prompts": [],
+        "tips": [
+          "I limiti si applicano solo agli utenti SENZA licenza Microsoft 365 Copilot a pagamento. Chi ha la licenza non nota alcuna differenza.",
+          "Le funzioni di base di Copilot Chat (chat generico, risposte semplici) rimangono disponibili anche senza licenza. I limiti riguardano le funzionalità avanzate come la connessione ai dati aziendali (Work mode), Researcher e Cowork.",
+          "Le organizzazioni più piccole (≤2.000 utenti) sono già entrate nei nuovi limiti dal 2 novembre 2026. Le organizzazioni più grandi li hanno attivi dal 9 novembre 2026."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — Fair use limits for Copilot Chat (novembre 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+        "note": "Attivo dal 2 novembre 2026 per ≤2.000 utenti, dal 9 novembre 2026 per le organizzazioni più grandi."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Attivo dal 2 novembre 2026 (organizzazioni ≤2.000 utenti) e dal 9 novembre 2026 (organizzazioni più grandi)."
+      }
+    },
+    {
+      "id": "excel-nav-links",
+      "app": "Excel",
+      "cat": "c-excel",
+      "ico": "🔗",
+      "name": "Copilot in Excel: i risultati mostrano link diretti alle celle e ai fogli modificati",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da novembre 2026, le risposte di <strong>Copilot in Excel</strong> includono <strong>link cliccabili</strong> che portano direttamente alle celle, ai fogli, ai range e agli oggetti (grafici, forme) che Copilot ha modificato o citato nella risposta. Non devi più cercare manualmente nel foglio cosa ha cambiato: segui il link e sei esattamente nel punto giusto.",
+      "example": "Hai chiesto a Copilot di aggiungere una colonna con i totali mensili. Nella risposta appare un link '[Foglio2 — C3:C15]': clicchi e sei direttamente sulle celle appena create, pronto a verificare il risultato senza scorrerci su.",
+      "detail": {
+        "steps": "1. Apri un file Excel con il pannello Copilot attivo.\n2. Fai la tua richiesta normalmente: 'aggiungi una colonna con i totali', 'crea un grafico', 'sposta questi dati in un nuovo foglio'.\n3. Nella risposta di Copilot, trovi link cliccabili che puntano alle celle, ai fogli o agli oggetti coinvolti.\n4. Clicca il link per navigare direttamente al punto giusto nel foglio.",
+        "prompts": [
+          "Aggiungi una colonna con il totale per riga e mostrami dove l'hai inserita.",
+          "Crea un nuovo foglio con la tabella pivot dei dati e portami lì quando hai finito.",
+          "Dove hai aggiunto il grafico? Mostrami il link diretto."
+        ],
+        "tips": [
+          "I link nelle risposte Copilot appaiono automaticamente senza che tu debba chiederli: compaiono ogni volta che Copilot aggiunge, sposta o modifica celle, fogli o oggetti.",
+          "Utile in particolare con file grandi e complessi: invece di cercare cosa ha cambiato Copilot, segui il link nella risposta e sei direttamente lì.",
+          "Funziona anche per link a grafici e forme, non solo celle: se Copilot crea o aggiorna un grafico, il link porta direttamente all'oggetto nel foglio."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — Navigate to new sheets, tables, ranges and objects (4 nov 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+        "note": "Rilasciato 4 novembre 2026 nelle Release Notes ufficiali M365 Copilot. Excel web e desktop."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rilasciato 4 novembre 2026. Excel web e desktop."
+      }
+    },
+    {
+      "id": "sp-list-agent",
+      "app": "SharePoint",
+      "cat": "c-other",
+      "ico": "📋",
+      "name": "SharePoint: crea Liste di Microsoft con una frase in linguaggio naturale",
+      "st": "avail",
+      "isNew": true,
+      "impact": "Da novembre 2026, gli utenti Copilot possono <strong>creare Microsoft Lists tramite il SharePoint list agent</strong> descrivendo la struttura in linguaggio naturale. Scrivi cosa vuoi tracciare — 'una lista di richieste IT con priorità, stato e responsabile' — e Copilot genera la lista con le colonne giuste, già pronta all'uso. Non devi più configurare manualmente le colonne.",
+      "example": "Hai bisogno di tracciare le richieste di acquisto del team. Scrivi al SharePoint list agent: 'crea una lista per le richieste di acquisto con colonne Articolo, Fornitore, Importo, Stato e Responsabile'. In pochi secondi la lista è pronta su SharePoint.",
+      "detail": {
+        "steps": "1. Apri un sito SharePoint e cerca il SharePoint list agent nel pannello Copilot o nell'opzione 'Crea' di SharePoint.\n2. Descrivi in linguaggio naturale la lista che vuoi creare: nome, colonne, tipi di dati, valori possibili.\n3. Copilot genera la struttura della lista — colonne, tipi e metadata — e te la mostra prima di salvarla.\n4. Revedi e approva: la lista viene creata sul sito SharePoint scelto.\n5. Aggiungi i primi elementi manualmente o chiedi a Copilot di importarli da un file.",
+        "prompts": [
+          "Crea una lista di richieste di acquisto con: Articolo, Fornitore, Importo, Priorità (Alta/Media/Bassa), Stato (In attesa/Approvata/Rifiutata) e Responsabile approvazione.",
+          "Crea una lista per il monitoraggio dei rischi di progetto con: Descrizione rischio, Probabilità, Impatto, Piano di mitigazione e Data revisione.",
+          "Crea una lista di contatti fornitori con: Ragione sociale, Referente, Email, Telefono, Categoria e Ultimo ordine."
+        ],
+        "tips": [
+          "Più dettagliata è la descrizione, migliore è la struttura generata: includi sempre i tipi di dati (testo, numero, data, scelta) e i valori possibili per le colonne a scelta multipla.",
+          "Le liste create con il SharePoint list agent sono liste standard di Microsoft 365 — le puoi modificare, condividere e usare con Power Automate come qualsiasi altra lista SharePoint.",
+          "Utile per creare velocemente tracking list per progetti, richieste, contratti, audit: definisci la struttura in 30 secondi invece di configurare manualmente ogni colonna."
+        ]
+      },
+      "source": {
+        "label": "M365 Copilot Release Notes — Create Microsoft Lists using SharePoint list agent (nov 2026)",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+        "note": "Rilasciato novembre 2026 nelle Release Notes ufficiali M365 Copilot."
+      },
+      "rollout": {
+        "stage": "ga",
+        "note": "Rilasciato novembre 2026. Disponibile per utenti con licenza Microsoft 365 Copilot."
+      }
     }
   ],
   "plan": [
@@ -3240,6 +3403,15 @@
       "tag": "Riepilogo · Copilot Legal · Teams",
       "cov": "Recap ottobre 2026 (Teams senza registrazione GA, Copilot Search conversazionale, co-authoring Outlook, Copilot for Legal) · Anticipo novità novembre",
       "note": "Chiudere il ciclo di ottobre con un riepilogo pratico delle funzioni ora disponibili per tutti. Focus su Copilot for Legal come novità d'impatto per chi lavora con contratti e compliance."
+    },
+    {
+      "w": "W32",
+      "d": "10–14 nov",
+      "hot": true,
+      "theme": "Skill e Progetti in Copilot Chat: le funzioni avanzate di Cowork arrivano dove lavori già",
+      "tag": "GA — Copilot Chat · Skill · Progetti · Anticipazione Ignite",
+      "cov": "Skill personalizzate in Copilot Chat (rollout novembre) · Progetti in Copilot Chat (rollout novembre) · Limiti fair-use per Copilot Chat senza licenza (attivi 2/9 nov) · Excel link navigazione celle · SharePoint list agent · Anticipazione Microsoft Ignite (17–20 nov)",
+      "note": "Tre angoli principali: 1) Skill e Progetti in Chat — le funzioni più potenti di Cowork arrivano in Copilot Chat: chi non aveva accesso a Cowork le trova adesso nel contesto normale di lavoro. Focus: skill per standardizzare output aziendali, progetti per mantenere il contesto di lavori complessi. 2) Limiti fair-use — comunicare con chiarezza: chi ha la licenza M365 Copilot non cambia nulla; chi usa Copilot Chat senza licenza potrà vedere nuovi limiti su funzioni avanzate (Work mode, Researcher, Cowork) a partire da oggi per le grandi organizzazioni. 3) Microsoft Ignite 17–20 novembre: il principale evento Microsoft dell'anno — anticipare che ci saranno annunci su Copilot, agenti e roadmap 2027. Consigliare di seguire il blog ufficiale Microsoft durante l'evento. Tono: settimana di consolidamento con novità concrete + occhi puntati su Ignite la settimana successiva."
     }
   ]
 }
